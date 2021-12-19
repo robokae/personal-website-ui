@@ -1,0 +1,48 @@
+@import "../../scss/variables";
+
+.navbar-container {
+    width: 100%;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    background-color: $light-theme-primary-bg-col;
+    border-bottom: 1px solid $light-theme-line-col;
+}
+
+.navbar-content {
+    width: 80%;
+    height: 50%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+Link, NavLink {
+    color: $light-theme-primary-font-col;
+}
+
+.logo {
+    text-transform: uppercase;
+}
+
+.nav-links {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.active {
+    font-weight: bold;
+}
+
+.theme-toggle-switch {
+    width: 5rem;
+    height: 2.25rem;
+    background-color: $light-theme-accent-col;
+}
