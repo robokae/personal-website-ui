@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { Link } from "react-scroll";
+import ThemeToggler from "../themeToggler/ThemeToggler";
 import "./Navbar.scss";
 
 function Navbar() {
@@ -8,29 +9,34 @@ function Navbar() {
             <div className="navbar-content">
                 <NavLink to="/" className="logo">Alexander Hom</NavLink>
                 <div className="nav-links">
-                    <Link 
-                        to="about-me-section"
-                        spy={true}
-                        smooth={true}
+                    <NavLink 
+                        to="/#about-me-section"
                         duration={500}
-                        activeClass="active"
+                        className="nav-link"
                     >
                         About Me
-                    </Link>
-                    <NavLink to="/blog">Blog</NavLink>
-                    <NavLink to="/portfolio">Portfolio</NavLink>
-                    <Link
-                        to="contact-section"
-                        smooth={true}
+                    </NavLink>
+                    <NavLink 
+                        to="/blog" 
+                        className="nav-link"
+                    >
+                        Blog
+                    </NavLink>
+                    <NavLink 
+                        to="/portfolio" 
+                        className="nav-link"
+                    >
+                        Portfolio
+                    </NavLink>
+                    <NavLink
+                        to="/#contact-section"
                         duration={500}
-                        activeClass="active-link"
+                        className="nav-link"
                     >
                         Contact
-                    </Link>
+                    </NavLink>
                 </div>
-                <div className="theme-toggle-switch">
-
-                </div>
+                <ThemeToggler />
             </div>
         </div>
     );

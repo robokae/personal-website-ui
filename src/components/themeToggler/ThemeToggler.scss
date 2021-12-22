@@ -1,0 +1,40 @@
+@import "../../scss/variables";
+
+.theme-toggler {
+    width: 4rem;
+    height: 2rem;
+    position: relative;
+    justify-self: right;
+}
+
+.toggle {
+    display: none;
+}
+
+.slider {   
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $light-theme-accent-col;
+    border-radius: 3rem;
+    cursor: pointer;
+}
+
+.slider::before {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    content: " ";
+    width: calc(2rem - 6px);
+    height: calc(2rem - 6px);
+    background-color: $light-theme-primary-bg-col;
+    border-radius: 3rem;
+    transition: all .2s ease-in-out;
+}
+
+.toggle:checked + .slider::before {
+    transform: translateX(32px);
+}
+

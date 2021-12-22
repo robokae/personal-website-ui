@@ -16,33 +16,34 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
     justify-content: space-between;
     align-items: center;
 }
 
-Link, NavLink {
+.nav-link {
     color: $light-theme-primary-font-col;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .logo {
     text-transform: uppercase;
+    text-decoration: none;
+    color: $light-theme-primary-font-col;
 }
 
 .nav-links {
-    width: 35%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    justify-self: center;
 }
 
-.active {
-    font-weight: bold;
-}
-
-.theme-toggle-switch {
-    width: 5rem;
-    height: 2.25rem;
-    background-color: $light-theme-accent-col;
+ThemeToggler {
+    width: 100%;
+    height: 100%;
+    justify-self: right;
 }
