@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { Link } from "react-scroll";
 import ThemeToggler from "../themeToggler/ThemeToggler";
 import "./Navbar.scss";
 

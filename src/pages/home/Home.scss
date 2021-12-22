@@ -1,3 +1,84 @@
+@import "../../scss/variables";
+
+.home-page-container,
+.home-page-container section {
+    width: 100%; 
+}
+
 .home-page-container {
+    position: absolute;
+    top: 5rem;
+}
+
+.home-page-container section {
+    position: relative;
+}
+
+.landing-section-content,
+.about-me-section-content,
+.my-experience-section-content,
+.contact-section-content {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.landing-section {
+    height: calc(100vh - 5rem);
+
+    &-content {
+
+        &-left,
+        &-right {
+            display: flex;
+        }
+
+        &-left {
+            width: 60%;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            .landing-heading {
+                span {
+                    color: $light-theme-accent-col;
+                }
+            }
+
+            h3 {
+                font-weight: normal;
+                font-size: 1.5rem;
+            }
+
+            .quick-links-container {
+                display: flex;
+                gap: 2rem;
+
+                .quick-link {
+                    cursor: pointer;
+                    font-size: 2.5rem;
+                    transition: all .15s ease-in-out;
+                }
+
+                .quick-link:hover {
+                    transform: scale(1.08);
+                }
+
+            }
+        }
     
+        &-right {
+            width: 40%;
+            justify-content: right;
+            align-items: center;
+
+            img {
+                height: 80%;
+                border-radius: 1rem;
+            }
+        }
+    }
 }
