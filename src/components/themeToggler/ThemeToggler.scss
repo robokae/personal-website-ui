@@ -17,7 +17,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $light-theme-accent-col;
     border-radius: 3rem;
     cursor: pointer;
 }
@@ -29,7 +28,6 @@
     content: " ";
     width: calc(2rem - 6px);
     height: calc(2rem - 6px);
-    background-color: $light-theme-primary-bg-col;
     border-radius: 3rem;
     transition: all .2s ease-in-out;
 }

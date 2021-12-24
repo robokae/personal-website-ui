@@ -2,7 +2,9 @@ import { NavLink } from "react-router-dom";
 import ThemeToggler from "../themeToggler/ThemeToggler";
 import "./Navbar.scss";
 
-function Navbar() {
+function Navbar(props) {
+    const { toggleTheme } = props;
+
     return (
         <div className="navbar-container">
             <div className="navbar-content">
@@ -41,7 +43,7 @@ function Navbar() {
                         Contact
                     </NavLink>
                 </div>
-                <ThemeToggler />
+                <ThemeToggler toggleTheme={toggleTheme} />
             </div>
         </div>
     );

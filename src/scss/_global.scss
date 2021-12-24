@@ -12,8 +12,6 @@ body {
     padding: 0;
     font-family: Inter, Arial, Helvetica, sans-serif;
     position: relative;
-    background-color: $light-theme-primary-bg-col;
-    color: $light-theme-primary-font-col;
 }
 
 .home-page-container,
@@ -27,6 +25,5 @@ body {
 .dot {
     width: .5rem;
     height: .5rem;
-    background-color: $light-theme-primary-font-col;
     border-radius: 50%;
 }
