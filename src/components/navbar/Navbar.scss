@@ -7,6 +7,7 @@
     top: 0;
     background-color: $light-theme-primary-bg-col;
     border-bottom: 1px solid $light-theme-line-col;
+    z-index: 1;
 }
 
 .navbar-content {
@@ -20,12 +21,17 @@
     grid-template-columns: 1fr 3fr 1fr;
     justify-content: space-between;
     align-items: center;
+    transition: all .15s ease-in-out;
 }
 
 .nav-link {
     color: $light-theme-primary-font-col;
     text-decoration: none;
     cursor: pointer;
+}
+
+.nav-link:hover {
+    transform: scale(1.05);
 }
 
 .logo {

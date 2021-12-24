@@ -2,7 +2,9 @@ import "./Portfolio.scss";
 
 function Portfolio() {
     return (
-        <h1>Portfolio Page</h1>
+        <div className="portfolio-page-container">
+            <h1>Portfolio page</h1>
+        </div>
     );
 }
 

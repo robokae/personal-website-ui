@@ -15,3 +15,18 @@ body {
     background-color: $light-theme-primary-bg-col;
     color: $light-theme-primary-font-col;
 }
+
+.home-page-container,
+.blog-page-container,
+.portfolio-page-container,
+.resume-page-container {
+    position: absolute;
+    top: 5rem;
+}
+
+.dot {
+    width: .5rem;
+    height: .5rem;
+    background-color: $light-theme-primary-font-col;
+    border-radius: 50%;
+}

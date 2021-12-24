@@ -1,0 +1,90 @@
+@import "../../scss/variables";
+
+.resume-page-container {
+    height: 100%;
+    width: 100%;
+}
+
+.resume-page-content {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    // border: 1px solid $light-theme-line-col;
+    padding: 1in;
+    font-size: 1.25rem;
+}
+
+.resume-page-content p, 
+.resume-page-content a {
+    font-size: 1.25rem;
+    line-height: 2rem;
+}
+
+.resume-page-content a {
+    border: 1px solid transparent;
+}
+
+.resume-page-content a:hover {
+    border-bottom: 1px solid $light-theme-primary-font-col;
+}
+
+.resume-title-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.contact-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5rem;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: $light-theme-primary-font-col;
+}
+
+.resume-section-title {
+    width: 100%;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $light-theme-primary-font-col;
+}
+
+.subsection-heading p:first-of-type {
+    font-weight: bold;
+}
+
+.heading-with-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+ul {
+    margin-top: .5rem;
+}
+
+li:not(:last-child) {
+    margin-bottom: .5rem;
+}
+

@@ -9,7 +9,7 @@ function Navbar() {
                 <NavLink to="/" className="logo">Alexander Hom</NavLink>
                 <div className="nav-links">
                     <NavLink 
-                        to="/#about-me-section"
+                        to="/#about-me"
                         duration={500}
                         className="nav-link"
                     >
@@ -28,7 +28,13 @@ function Navbar() {
                         Portfolio
                     </NavLink>
                     <NavLink
-                        to="/#contact-section"
+                        to="/resume"
+                        className="nav-link"
+                    >
+                        Resume
+                    </NavLink>
+                    <NavLink
+                        to="/#contact"
                         duration={500}
                         className="nav-link"
                     >

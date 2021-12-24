@@ -5,11 +5,6 @@
     width: 100%; 
 }
 
-.home-page-container {
-    position: absolute;
-    top: 5rem;
-}
-
 .home-page-container section {
     position: relative;
 }
@@ -79,6 +74,25 @@
                 height: 80%;
                 border-radius: 1rem;
             }
+        }
+    }
+}
+
+.about-me-section {
+    min-height: 60vh;
+    background-color: $light-theme-secondary-bg-col;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+        
         }
     }
 }
