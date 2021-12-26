@@ -1,5 +1,3 @@
-import ThemeToggler from "./themeToggler/ThemeToggler";
-
 const lightTheme = {
     primaryBgCol: "#F8F8F8",
     secondaryBgCol: "#F0F1F2",

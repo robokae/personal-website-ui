@@ -2,7 +2,7 @@
 
 .navbar-container {
     width: 100%;
-    height: 5rem;
+    height: 3.5rem;
     position: fixed;
     top: 0;
     z-index: 1;
@@ -10,7 +10,7 @@
 
 .navbar-content {
     width: 80%;
-    height: 50%;
+    height: 75%;
     position: relative;
     top: 50%;
     left: 50%;
@@ -22,13 +22,25 @@
     transition: all .15s ease-in-out;
 }
 
-.nav-link {
-    text-decoration: none;
-    cursor: pointer;
+
+.nav-links {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    justify-self: center;
 }
 
-.nav-link:hover {
-    transform: scale(1.05);
+.nav-link {
+    height: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: .5rem;
+    transition: background-color .2s ease-in-out;
+    cursor: pointer;
 }
 
 .logo {
@@ -36,13 +48,6 @@
     text-decoration: none;
 }
 
-.nav-links {
-    width: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    justify-self: center;
-}
 
 ThemeToggler {
     width: 100%;

@@ -25,6 +25,10 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.primaryFontCol};
     }
 
+    .nav-link:hover {
+        background-color: ${({ theme }) => theme.secondaryBgCol};
+    }
+
     /* Theme toggler theme styling */
     .slider {
         background-color: ${({ theme }) => theme.themeTogglerBgCol};
@@ -41,6 +45,10 @@ export const GlobalStyles = createGlobalStyle`
 
     .about-me-section {
         background-color: ${({ theme }) => theme.secondaryBgCol};
+    }
+
+    .experience-card-container {
+        border: 1px solid ${({ theme }) => theme.lineCol};
     }
 
     /* Resume page theme styling */

@@ -11,13 +11,12 @@ function Navbar(props) {
                 <NavLink to="/" className="logo">Alexander Hom</NavLink>
                 <div className="nav-links">
                     <NavLink 
-                        to="/#about-me"
-                        duration={500}
+                        to="/#about"
                         className="nav-link"
                     >
-                        About Me
+                        About
                     </NavLink>
-                    <NavLink 
+                    {/* <NavLink 
                         to="/blog" 
                         className="nav-link"
                     >
@@ -28,7 +27,7 @@ function Navbar(props) {
                         className="nav-link"
                     >
                         Portfolio
-                    </NavLink>
+                    </NavLink> */}
                     <NavLink
                         to="/resume"
                         className="nav-link"
@@ -37,7 +36,6 @@ function Navbar(props) {
                     </NavLink>
                     <NavLink
                         to="/#contact"
-                        duration={500}
                         className="nav-link"
                     >
                         Contact

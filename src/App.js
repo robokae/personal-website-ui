@@ -1,5 +1,5 @@
-import { useState, useEffect, Fragment } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import WebFont from "webfontloader";
 
 import { ThemeProvider } from "styled-components";
@@ -27,10 +27,21 @@ function App() {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
+
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <>
         <BrowserRouter>
+          <ScrollToTop />
           <GlobalStyles />
           <Navbar toggleTheme={toggleTheme} />
           <Routes>

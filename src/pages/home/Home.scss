@@ -1,11 +1,11 @@
 @import "../../scss/variables";
 
 .home-page-container,
-.home-page-container section {
+.home-page-section {
     width: 100%; 
 }
 
-.home-page-container section {
+.home-page-section {
     position: relative;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .landing-section {
-    height: calc(100vh - 5rem);
+    height: calc(100vh - 3.5rem);
 
     &-content {
 
@@ -86,6 +86,28 @@
 
         p {
         
+        }
+    }
+}
+
+.my-experience-section {
+    min-height: 100vh;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h2 {
+            text-align: center;
+        }
+
+        .experience-cards-container {
+            height: 75%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 2rem;
         }
     }
 }
