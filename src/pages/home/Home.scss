@@ -111,3 +111,17 @@
         }
     }
 }
+
+.contact-section {
+    min-height: 50vh;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        h2 {
+            text-align: center;
+        }
+    }
+}

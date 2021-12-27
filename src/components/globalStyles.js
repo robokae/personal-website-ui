@@ -43,7 +43,8 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.accentCol};
     }
 
-    .about-me-section {
+    .about-me-section,
+    .contact-section {
         background-color: ${({ theme }) => theme.secondaryBgCol};
     }
 
@@ -62,6 +63,11 @@ export const GlobalStyles = createGlobalStyle`
 
     .resume-section-title {
         border-bottom: 1px solid ${({ theme }) => theme.primaryFontCol};
+    }
+
+    /* Footer styling */
+    .footer-container {
+        border-top: 1px solid ${({ theme }) => theme.lineCol};
     }
 
 `;

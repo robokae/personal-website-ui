@@ -72,7 +72,8 @@ function Home() {
             </section>
             <section id="contact" className="contact-section home-page-section">
                 <div className="contact-section-content">
-
+                    <h2 className="section-heading">Reaching Out</h2>
+                    <p>I am currently looking for a full-time full stack web development job. If you are interested in my being a member of your web development team, feel free to contact me through email at alexanderhom19@gmail.com or by leaving me a message.</p>
                 </div>
             </section>
         </div>
