@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
     /* General theme styling */
     body, .navbar-container {
-        transition: all .25s ease-in-out;
+        transition: all .2s ease-in-out;
     }
 
     body {
@@ -43,12 +43,27 @@ export const GlobalStyles = createGlobalStyle`
         color: ${({ theme }) => theme.accentCol};
     }
 
-    .about-me-section,
     .contact-section {
         background-color: ${({ theme }) => theme.secondaryBgCol};
     }
 
-    .experience-card-container {
+    .about-me-section-content {
+        background-color: ${({ theme }) => theme.secondaryBgCol};
+    }
+
+    .experience-options {
+
+        .selected {
+            background-color: ${({ theme }) => theme.secondaryBgCol};
+
+            &::before {
+                background-color: ${({ theme }) => theme.accentCol};
+            }
+        }
+        
+    }
+
+    .experience-card {
         border: 1px solid ${({ theme }) => theme.lineCol};
     }
 

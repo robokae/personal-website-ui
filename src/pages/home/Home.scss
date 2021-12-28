@@ -23,75 +23,56 @@
 }
 
 .landing-section {
-    height: calc(100vh - 3.5rem);
-
-    &-content {
-
-        &-left,
-        &-right {
-            display: flex;
-        }
-
-        &-left {
-            width: 60%;
-            flex-direction: column;
-            justify-content: space-evenly;
-
-            h3 {
-                font-weight: normal;
-                font-size: 1.5rem;
-            }
-
-            .quick-links-container {
-                display: flex;
-                gap: 2rem;
-
-                .quick-link {
-                    cursor: pointer;
-                    font-size: 2.5rem;
-                    transition: transform .15s ease-in-out;
-                }
-
-                .quick-link:hover {
-                    transform: scale(1.08);
-                }
-
-            }
-        }
-    
-        &-right {
-            width: 40%;
-            justify-content: right;
-            align-items: center;
-
-            img {
-                height: 80%;
-                border-radius: 1rem;
-            }
-        }
-    }
-}
-
-.about-me-section {
-    min-height: 60vh;
+    min-height: 65vh;
+    background: linear-gradient(98.68deg, #2566A3 0%, #942FE4 100%);
+    background-blend-mode: lighten;
 
     &-content {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
 
-        h2 {
-            text-align: center;
+        .landing-heading {
+            font-weight: bold;
         }
-
-        p {
         
+        .quick-links-container {
+            display: flex;
+            gap: 2rem;
+
+            .quick-link {
+                cursor: pointer;
+                font-size: 2.5rem;
+                transition: transform .15s ease-in-out;
+            }
+
+            .quick-link:hover {
+                transform: scale(1.08);
+            }
+
         }
     }
 }
 
+.about-me-section {
+    height: 50vh;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 3rem;
+        border-radius: 1rem;
+
+        h2 {
+            text-align: center;
+        }
+        
+    }
+}
+
 .my-experience-section {
-    min-height: 100vh;
+    min-height: 80vh;
 
     &-content {
         display: flex;
@@ -99,15 +80,59 @@
         justify-content: space-between;
 
         h2 {
-            text-align: center;
+            text-align: left;
         }
 
-        .experience-cards-container {
-            height: 75%;
+        .experience-container {
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .experience-options {
+            width: 20%;
+            padding: 0;
+            margin: 0;
+
+            li {
+                list-style: none;
+                height: auto;
+                padding: 1rem;
+                position: relative;
+                text-transform: capitalize;
+                border-radius: .5rem;
+                cursor: pointer; 
+            }
+
+            li:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            li::before {
+                width: 3px;
+                height: 100%;
+                position: absolute;
+                content: " ";
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .experience-cards {
+            width: 70%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
             gap: 2rem;
+        }
+
+        .experience-card {
+           flex: 1 0 calc(33% - 2rem); 
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           border-radius: 1rem;
         }
     }
 }

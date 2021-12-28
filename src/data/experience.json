@@ -1,0 +1,46 @@
+{
+    "options": [
+        "languages",
+        "frameworks"
+    ],
+    "languages": [
+        {
+            "name": "HTML",
+            "experience": 2
+        },
+        {
+            "name": "CSS",
+            "experience": 2
+        },
+        {
+            "name": "JavaScript",
+            "experience": 1.5
+        },
+        {
+            "name": "Python",
+            "experience": 1.5
+        },
+        {
+            "name": "SQL",
+            "experience": 1
+        },
+        {
+            "name": "C++",
+            "experience": 2
+        },
+        {
+            "name": "Java",
+            "experience": 2
+        }
+    ],
+    "frameworks": [
+        {
+            "name": "React",
+            "experience": 1.5
+        },
+        {
+            "name": "Flask",
+            "experience": 1
+        }
+    ]
+}

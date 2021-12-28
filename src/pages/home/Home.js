@@ -1,12 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import ExperienceCard from "../../components/experienceCard/ExperienceCard";
-import Portrait from "./Portrait.jpg";
 import "./Home.scss";
+
+import data from "../../data/experience.json";
+const { options } = data;
 
 function Home() {
     const location = useLocation();
@@ -25,55 +27,70 @@ function Home() {
         }
     }, [location,]);
 
+    const [optionsIndex, setOptionsIndex] = useState(0);
+    
+    let experienceToDisplay = data[options[optionsIndex]];
+
     return (
         <div className="home-page-container">
             <section className="landing-section home-page-section">
                 <div className="landing-section-content">
-                    <div className="landing-section-content-left">
-                        <h1 className="landing-heading">
-                            Hello there, 
-                            <br></br>
-                            my name is 
-                            <br></br>
-                            <span>Alexander Hom</span>
-                        </h1>
-                        <h3>Full Stack Developer | San Francisco, CA</h3>
-                        <div className="quick-links-container">
+                    <h1 className="landing-heading">
+                        Hello there! 
+                        <br></br>
+                        My name is <span>Alexander Hom</span>,
+                        <br></br>
+                        and I'm a full-stack web developer
+                        <br></br>
+                        from San Francisco
+                    </h1>
+                    <div className="quick-links-container">
+                        <a href="https://github.com/robokae">
                             <FontAwesomeIcon className="quick-link" icon={faGithub} />
+                        </a>
+                       <a href="https://www.linkedin.com/in/alexander-hom-94811b188/"> 
                             <FontAwesomeIcon className="quick-link" icon={faLinkedin} />
-                        </div>
-                    </div>
-                    <div className="landing-section-content-right">
-                        <img src={Portrait} alt="portrait of Alex" />
+                        </a>
                     </div>
                 </div>
             </section>
             <section id="about" className="about-me-section home-page-section">
                 <div className="about-me-section-content">
-                    <h2 className="section-heading">About Me</h2>
-                    <p>I am a computer science student from San Francisco who is passionate about UI/UX and full stack web development. In my free time, I enjoy designing and coding up websites. My current tech stack in 2021 consists of React and Flask. In addition to making websites, I also enjoy coding in general. Python, JavaScript, and C++ are among my favorite programming languages. Other topics I am interested in are operating systems and computer networks.</p>
+                    <p>I am a computer science student who is passionate about UI/UX and full stack web development. In my free time, I enjoy designing and coding up websites. My current tech stack in 2021 consists of React and Flask. In addition to making websites, I also enjoy coding in general. Python, JavaScript, and C++ are among my favorite programming languages. Other topics I am interested in are operating systems and computer networks.</p>
                 </div>
             </section>
             <section className="my-experience-section home-page-section">
                 <div className="my-experience-section-content">
-                    <h2>My Experience</h2>
-                    <div className="experience-cards-container">
-                        <ExperienceCard language="HTML" yearsOfExperience={2} />
-                        <ExperienceCard language="CSS" yearsOfExperience={2} />
-                        <ExperienceCard language="JavaScript" yearsOfExperience={1.5} />
-                        <ExperienceCard language="React" yearsOfExperience={1.5} />
-                        <ExperienceCard language="Flask" yearsOfExperience={1} />
-                        <ExperienceCard language="SQL" yearsOfExperience={1} />
-                        <ExperienceCard language="Python" yearsOfExperience={1.5} />
-                        <ExperienceCard language="C++" yearsOfExperience={2} />
-                        <ExperienceCard language="Java" yearsOfExperience={2} />
+                    <h2>Experience</h2>
+                    <div className="experience-container">
+                        <ul className="experience-options">
+                            {options.map((option, index) => (
+                                <li 
+                                    key={index}
+                                    className={index === optionsIndex ? "selected" : null}
+                                    onClick={() => setOptionsIndex(index)}
+                                >
+                                    {option}
+                                </li>
+                            ))} 
+                        </ul>
+                        <div className="experience-cards">
+                            {experienceToDisplay.map((value, index) => (
+                                <div key={index} className="experience-card">
+                                    <h3>{value.name}</h3>
+                                    <p>
+                                        {value.experience === 1 ? `${value.experience} year` : `${value.experience} years`}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
             <section id="contact" className="contact-section home-page-section">
                 <div className="contact-section-content">
-                    <h2 className="section-heading">Reaching Out</h2>
-                    <p>I am currently looking for a full-time full stack web development job. If you are interested in my being a member of your web development team, feel free to contact me through email at alexanderhom19@gmail.com or by leaving me a message.</p>
+                    <h2 className="section-heading">Contact</h2>
+                    <p>I am currently looking for a full-time full stack web development job. If you are interested in my being a member of your web development team, feel free to email me at alexanderhom19@gmail.com.</p>
                 </div>
             </section>
         </div>

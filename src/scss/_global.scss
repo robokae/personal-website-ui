@@ -23,11 +23,16 @@ body {
 .portfolio-page-container,
 .resume-page-container {
     position: absolute;
-    top: 5rem;
+    top: 3.5rem;
 }
 
 .dot {
     width: .5rem;
     height: .5rem;
     border-radius: 50%;
+}
+
+.landing-section-content,
+.quick-links-container a {
+    color: #F8F8F8;
 }
