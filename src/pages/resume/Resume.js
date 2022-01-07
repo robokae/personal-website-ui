@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import "./Resume.scss";
 
 function Resume() {
+    useEffect(() => {
+        window.scroll(0, 0);
+    }, []);
+
     return (
         <div className="resume-page-container">
             <div className="resume-page-content">

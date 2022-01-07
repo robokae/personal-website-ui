@@ -1,0 +1,28 @@
+@import "../../scss/variables";
+
+.project-card-container {
+   width: 100%;
+   height: auto;
+   border-radius: .5rem;
+
+   &__thumbnail {
+      border-radius: .5rem .5rem 0 0; 
+      width: 100%;
+   }
+
+   &__details-container {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+   }
+
+   &__text {
+
+      &--paragraph {
+         font-size: 1.5rem;
+         line-height: 2rem;
+      }
+   }
+}
+

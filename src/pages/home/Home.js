@@ -4,11 +4,15 @@ import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-import ExperienceCard from "../../components/experienceCard/ExperienceCard";
 import "./Home.scss";
 
-import data from "../../data/experience.json";
-const { options } = data;
+import ExperienceCard from "../../components/experienceCard/ExperienceCard";
+import ProjectCard from "../../components/projectCard/ProjectCard";
+
+import experienceData from "../../data/experience.json";
+import projects from "../../data/project";
+
+const { options } = experienceData;
 
 function Home() {
     const location = useLocation();
@@ -29,15 +33,15 @@ function Home() {
 
     const [optionsIndex, setOptionsIndex] = useState(0);
     
-    let experienceToDisplay = data[options[optionsIndex]];
+    let experienceToDisplay = experienceData[options[optionsIndex]];
 
     return (
         <div className="home-page-container">
             <section className="landing-section home-page-section">
                 <div className="landing-section-content">
                     <h1 className="landing-heading">
-                        Hello there! 
-                        <br></br>
+                        {/* Hello there! 
+                        <br></br> */}
                         My name is <span>Alexander Hom</span>,
                         <br></br>
                         and I'm a full-stack web developer
@@ -84,6 +88,24 @@ function Home() {
                                 </div>
                             ))}
                         </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section className="projects-section home-page-section">
+                <div className="projects-section-content">
+                    <h2>Projects</h2>
+                    <div className="projects-container">
+                        {projects.map((project, index) => (
+                            <ProjectCard
+                                key={index}
+                                className="project-card"
+                                projectName={project.name}
+                                projectThumbnailSrc={project.thumbnailSrc}
+                                projectStack={project.stack}
+                                projectDescription={project.description}
+                            />
+                        ))}
                     </div>
                 </div>
             </section>

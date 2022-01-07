@@ -12,6 +12,7 @@ import Footer from "./components/footer/Footer";
 import Blog from "./pages/blog/Blog";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Resume from "./pages/resume/Resume";
+import ProjectCard from "./components/projectCard/ProjectCard";
 
 function App() {
   useEffect(() => {
@@ -42,7 +43,7 @@ function App() {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <>
         <BrowserRouter>
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <GlobalStyles />
           <Navbar toggleTheme={toggleTheme} />
           <Routes>
@@ -50,6 +51,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/resume" element={<Resume />} />
+            <Route path="/projects" element={<ProjectCard />} />
           </Routes>
           {/* <Footer /> */}
         </BrowserRouter>
