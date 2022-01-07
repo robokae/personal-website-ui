@@ -1,4 +1,4 @@
-{
+const experience =  {
     "options": [
         "languages",
         "frameworks"
@@ -52,4 +52,6 @@
             "proficiency": "intermediate"
         }
     ]
-}
+};
+
+export default experience; 

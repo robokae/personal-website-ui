@@ -1,0 +1,83 @@
+.my-experience-section {
+    width: 100%;
+    min-height: 35vh;
+    max-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    &__content {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 5rem;
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__experience-details {
+        max-height: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    
+    &__experience-details-options {
+        width: 15%;
+        padding: 0;
+        margin: 0;
+
+        li {
+            list-style: none;
+            height: auto;
+            padding: 1rem 0 1rem 2rem;
+            position: relative;
+            text-transform: capitalize;
+            border-radius: .5rem;
+            cursor: pointer; 
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        li::before {
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            content: " ";
+            top: 0;
+            left: 0;
+        }
+    }
+
+    &__experience-cards {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-columns: min-content;
+        grid-auto-rows: min-content;
+        gap: 1rem;
+    }
+
+    &__experience-card {
+        height: auto;
+        padding: 1rem;
+        flex: 1 0 calc(33% - 1rem); 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        border-radius: .5rem;
+
+        p {
+            font-size: 1.25rem;
+        }
+    }
+}

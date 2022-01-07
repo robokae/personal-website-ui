@@ -1,0 +1,19 @@
+.projects-section {
+    max-height: 80vh;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    &__project-cards-container {
+        height: 80%;
+        display: flex;
+        // grid-template-columns: repeat(auto-fill, calc((100% - 4rem) / 3));
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+}    
