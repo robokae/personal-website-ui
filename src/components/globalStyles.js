@@ -39,8 +39,20 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     /* Home page theme styling */
+    
+    .landing-heading {
+        color: ${({ theme }) => theme.primaryFontCol};
+    }
+
     .landing-heading span {
-        color: ${({ theme }) => theme.accentCol};
+        background: linear-gradient(98.68deg, #2566A3 0%, #942FE4 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .quick-link {
+        color: ${({ theme }) => theme.primaryFontCol};
     }
 
     .contact-section {
@@ -64,6 +76,10 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .experience-card {
+        border: 1px solid ${({ theme }) => theme.lineCol};
+    }
+
+    .project-card-container {
         border: 1px solid ${({ theme }) => theme.lineCol};
     }
 
