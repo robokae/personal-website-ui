@@ -1,5 +1,10 @@
 @import "../../scss/variables";
 
+.home-page-container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
 .home-page-container,
 .home-page-section {
     width: 100%; 
@@ -76,7 +81,7 @@
 }
 
 .my-experience-section {
-    min-height: 80vh;
+    height: 80vh;
 
     &-content {
         display: flex;
@@ -134,44 +139,60 @@
 
         .experience-card {
             min-height: 10rem;
-            flex: 1 0 calc(33% - 2rem); 
+            flex: 1 0 calc(33% - 1rem); 
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 1rem;
             border-radius: .5rem;
+
+            p {
+                font-size: 1.25rem;
+            }
         }
     }
 }
 
 .projects-section {
-    min-height: 80vh;
+    height: 80vh;
 
     &-content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
 
         .projects-container {
             height: 80%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            // grid-template-columns: repeat(auto-fill, calc((100% - 4rem) / 3));
+            flex-direction: row;
+            justify-content: center;
             gap: 2rem;
         }
     }
 }    
 
 .contact-section {
-    min-height: 50vh;
+    width: 80%;
+    height: 35vh;
+    align-self: center;
+    border-radius: .5rem;
+    margin-bottom: 5rem;
 
     &-content {
+        width: 100%;
+        height: 100%;
+        padding: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        gap: 2rem;
 
         h2 {
             text-align: center;
         }
+
     }
 }

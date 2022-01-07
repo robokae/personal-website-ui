@@ -83,7 +83,11 @@ function Home() {
                                 <div key={index} className="experience-card">
                                     <h3>{value.name}</h3>
                                     <p>
-                                        {value.experience === 1 ? `${value.experience} year` : `${value.experience} years`}
+                                        {
+                                            value.experience === 1 
+                                                ? `${value.experience} year, ${value.proficiency}` 
+                                                : `${value.experience} years, ${value.proficiency}`
+                                        }
                                     </p>
                                 </div>
                             ))}
@@ -94,7 +98,7 @@ function Home() {
             </section>
             <section className="projects-section home-page-section">
                 <div className="projects-section-content">
-                    <h2>Projects</h2>
+                    <h2>Projects I've Worked On</h2>
                     <div className="projects-container">
                         {projects.map((project, index) => (
                             <ProjectCard
