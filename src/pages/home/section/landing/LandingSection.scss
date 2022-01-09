@@ -1,7 +1,7 @@
 .landing-section {
     width: 100%;
     min-height: 60vh;
-    max-height: 100vh;
+    max-height: max-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,4 +37,27 @@
         }
     }
 
+}
+
+@media screen and (max-width: 1124px) {
+    .landing-section {
+        &__heading {
+            font-size: 3rem;
+            line-height: 4rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .landing-section {
+        min-height: 55vh;
+        &__heading {
+            font-size: 2.5rem;
+            line-height: 3rem;
+        }
+
+        &__quick-link-icon {
+            font-size: 2rem;
+        }
+    }
 }

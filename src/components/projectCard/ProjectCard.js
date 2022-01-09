@@ -9,8 +9,8 @@ function ProjectCard(props) {
                 <img className="project-card-container__thumbnail" src={require(`../../../public/images/${projectThumbnailSrc}`).default} />
             </div>
             <div className="project-card-container__details-container">
-                <h3 className="project-card-container__text--heading">{projectName}</h3>
-                <p className="project-card-container__text--paragraph">{projectDescription}</p>
+                <h3 className="project-card-container__heading">{projectName}</h3>
+                <p className="project-card-container__text">{projectDescription}</p>
             </div>
         </div>
     );

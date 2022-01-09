@@ -1,7 +1,7 @@
 .my-experience-section {
     width: 100%;
     min-height: 35vh;
-    max-height: 100vh;
+    max-height: max-content;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -28,14 +28,14 @@
     }
     
     &__experience-details-options {
-        width: 15%;
+        max-width: max-content;
         padding: 0;
         margin: 0;
 
         li {
             list-style: none;
             height: auto;
-            padding: 1rem 0 1rem 2rem;
+            padding: 1rem 2rem;
             position: relative;
             text-transform: capitalize;
             border-radius: .5rem;
@@ -76,8 +76,84 @@
         gap: 1rem;
         border-radius: .5rem;
 
-        p {
-            font-size: 1.25rem;
+    }
+
+    &__experience-card-text {
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        line-height: 2rem;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1260px) {
+    .my-experience-section {
+        &__experience-cards {
+            width: 75%;
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .my-experience-section {
+
+        &__experience-cards {
+            width: 100%;
+        }
+
+        &__experience-details {
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        &__experience-details-options {
+            max-width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 5rem;
+
+            li {
+                background-color: transparent;
+                padding: 1rem 0;
+            }
+
+            li::before {
+                width: 100%;
+                height: 2px;
+                top: 100%;
+            }
+
+            li:not(:last-child) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__experience-card-heading {
+            font-size: 1.75rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .my-experience-section {
+
+        &__content {
+            gap: 3rem;
+        }
+
+        &__experience-cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__experience-card-heading {
+            font-size: 1.5rem;
+        }
+
+        &__experience-card-text {
+            font-size: 1rem;
+            line-height: 1.5rem;
         }
     }
 }

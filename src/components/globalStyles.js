@@ -83,7 +83,7 @@ export const GlobalStyles = createGlobalStyle`
         border: 1px solid ${({ theme }) => theme.lineCol};
 
         &__thumbnail-container {
-            border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+            /* border-bottom: 1px solid ${({ theme }) => theme.lineCol}; */
         }
     }
 

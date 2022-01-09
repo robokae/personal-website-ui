@@ -44,7 +44,10 @@
 }
 
 .logo {
-    text-transform: uppercase;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: capitalize;
     text-decoration: none;
 }
 
@@ -53,4 +56,16 @@ ThemeToggler {
     width: 100%;
     height: 100%;
     justify-self: right;
+}
+
+@media screen and (max-width: 1024px) {
+    .logo {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-content {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }

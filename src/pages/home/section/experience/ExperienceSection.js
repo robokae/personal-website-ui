@@ -28,11 +28,13 @@ function ExperienceSection() {
                     <div className="my-experience-section__experience-cards">
                         {experienceToDisplay.map((value, index) => (
                             <div key={index} className="my-experience-section__experience-card">
-                                <h3>{value.name}</h3>
-                                <p>
+                                <h3 className="my-experience-section__experience-card-heading">{value.name}</h3>
+                                <p className="my-experience-section__experience-card-text">
                                     {value.experience === 1 
-                                        ? `${value.experience} year, ${value.proficiency}` 
-                                        : `${value.experience} years, ${value.proficiency}`}
+                                        ? `${value.experience} year` 
+                                        : `${value.experience} years`}
+                                    <br></br>
+                                    {value.proficiency}
                                 </p>
                             </div>
                         ))}

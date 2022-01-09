@@ -1,8 +1,9 @@
 @import "../../scss/variables";
 
 .project-card-container {
-   max-width: 35rem;
-   height: auto;
+   width: max-content;
+   max-width: 30rem;
+   height: max-content;
    border-radius: .25rem;
 
    &__thumbnail-container {
@@ -16,7 +17,7 @@
    }
 
    &__details-container {
-      height: 40%;
+      max-height: max-content;
       padding: 1rem;
       display: flex;
       flex-direction: column;
@@ -24,11 +25,28 @@
    }
 
    &__text {
+      font-size: 1.25rem;
+      line-height: 2rem;
+   }
+}
 
-      &--paragraph {
-         font-size: 1.25rem;
+@media screen and (max-width: 1260px) {
+   .project-card-container {
+      max-width: 23rem;
+   }
+}
+
+@media screen and (max-width: 980px) {
+   .project-card-container {
+      max-width: 100%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .project-card-container {
+      &__text {
+         font-size: 1rem;
          line-height: 2rem;
       }
    }
 }
-

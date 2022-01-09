@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import ThemeToggler from "../themeToggler/ThemeToggler";
+import logo from "./Logo.png";
 import "./Navbar.scss";
 
 function Navbar(props) {
@@ -8,14 +9,16 @@ function Navbar(props) {
     return (
         <div className="navbar-container">
             <div className="navbar-content">
-                <NavLink to="/" className="logo">Alexander Hom</NavLink>
+                <NavLink to="/" className="logo">
+                    Alexander Hom
+                </NavLink>
                 <div className="nav-links">
-                    <NavLink 
+                    {/* <NavLink 
                         to="/#about"
                         className="nav-link"
                     >
                         About
-                    </NavLink>
+                    </NavLink> */}
                     {/* <NavLink 
                         to="/blog" 
                         className="nav-link"
@@ -28,18 +31,18 @@ function Navbar(props) {
                     >
                         Portfolio
                     </NavLink> */}
-                    <NavLink
+                    {/* <NavLink
                         to="/resume"
                         className="nav-link"
                     >
                         Resume
-                    </NavLink>
-                    <NavLink
+                    </NavLink> */}
+                    {/* <NavLink
                         to="/#contact"
                         className="nav-link"
                     >
                         Contact
-                    </NavLink>
+                    </NavLink> */}
                 </div>
                 <ThemeToggler toggleTheme={toggleTheme} />
             </div>

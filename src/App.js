@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Inter:400,700"]
+        families: ["Inter:400,700", "Poppins:700"]
       }
     });
   }, []);

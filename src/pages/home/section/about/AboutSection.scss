@@ -1,6 +1,6 @@
 .about-me-section {
     width: 100%;
-    max-height: 100vh;
+    max-height: max-content;
     display: flex;
     justify-content: center;
 
@@ -11,5 +11,27 @@
         flex-direction: column;
         padding: 3rem;
         border-radius: .5rem;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .about-me-section {
+        &__text {
+            font-size: 1.25rem;
+            line-height: 2.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-me-section {
+        &__content {
+            padding: 2rem;
+        }
+
+        &__text {
+            font-size: 1rem;
+            line-height: 2rem;
+        }
     }
 }
