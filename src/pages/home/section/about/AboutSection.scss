@@ -14,24 +14,11 @@
     }
 }
 
-@media screen and (max-width: 980px) {
-    .about-me-section {
-        &__text {
-            font-size: 1.25rem;
-            line-height: 2.5rem;
-        }
-    }
-}
-
 @media screen and (max-width: 768px) {
     .about-me-section {
         &__content {
             padding: 2rem;
         }
 
-        &__text {
-            font-size: 1rem;
-            line-height: 2rem;
-        }
     }
 }

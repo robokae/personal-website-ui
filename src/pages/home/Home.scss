@@ -6,7 +6,7 @@
     top: 3.5rem; 
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 1rem;
 
         &__section {
         width: 100%; 
@@ -17,6 +17,6 @@
 
 @media screen and (max-width: 768px) {
     .home-page {
-        gap: 3rem;
+        gap: 2rem;
     }
 }

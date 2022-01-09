@@ -25,7 +25,12 @@ function ExperienceSection() {
                             </li>
                         ))} 
                     </ul>
-                    <div className="my-experience-section__experience-cards">
+                    <div 
+                        className={`my-experience-section__experience-cards 
+                                    ${experienceToDisplay.length <= 2
+                                        ? "my-experience-section__experience-cards--flex"
+                                        : "my-experience-section__experience-cards--grid"}`}
+                    >
                         {experienceToDisplay.map((value, index) => (
                             <div key={index} className="my-experience-section__experience-card">
                                 <h3 className="my-experience-section__experience-card-heading">{value.name}</h3>
