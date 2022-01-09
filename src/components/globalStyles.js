@@ -39,48 +39,56 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     /* Home page theme styling */
-    
-    .landing-heading {
-        color: ${({ theme }) => theme.primaryFontCol};
-    }
+    .landing-section {
+        &__heading {
+            color: ${({ theme }) => theme.primaryFontCol};
 
-    .landing-heading span {
-        background: linear-gradient(98.68deg, #2566A3 0%, #942FE4 100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .quick-link {
-        color: ${({ theme }) => theme.primaryFontCol};
-    }
-
-    .contact-section {
-        background-color: ${({ theme }) => theme.secondaryBgCol};
-    }
-
-    .about-me-section-content {
-        background-color: ${({ theme }) => theme.secondaryBgCol};
-    }
-
-    .experience-options {
-
-        .selected {
-            background-color: ${({ theme }) => theme.secondaryBgCol};
-
-            &::before {
-                background-color: ${({ theme }) => theme.accentCol};
+            &--highlight {
+                background: linear-gradient(98.68deg, #2566A3 0%, #942FE4 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
-        
+
+        &__quick-link-icon {
+            color: ${({ theme }) => theme.primaryFontCol};
+
+        }
     }
 
-    .experience-card {
-        border: 1px solid ${({ theme }) => theme.lineCol};
+    .about-me-section {
+        &__content {
+            background-color: ${({ theme }) => theme.secondaryBgCol};
+        }
+    }
+
+    .my-experience-section {
+        &__experience-details-options {
+            &--selected {
+                background-color: ${({ theme }) => theme.secondaryBgCol};
+
+                &::before {
+                    background-color: ${({ theme }) => theme.accentCol};
+                }
+            }
+        }
+
+        &__experience-card {
+            border: 1px solid ${({ theme }) => theme.lineCol};
+        }
     }
 
     .project-card-container {
         border: 1px solid ${({ theme }) => theme.lineCol};
+
+        &__thumbnail-container {
+            /* border-bottom: 1px solid ${({ theme }) => theme.lineCol}; */
+        }
+    }
+
+    .contact-section {
+        background-color: ${({ theme }) => theme.secondaryBgCol};
     }
 
     /* Resume page theme styling */

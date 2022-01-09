@@ -1,7 +1,7 @@
 import "./ExperienceCard.scss";
 
 function ExperienceCard(props) {
-    const { language, yearsOfExperience } = props;
+    const { language, yearsOfExperience, proficiency } = props;
 
     return (
         <div className="experience-card-container">

@@ -1,0 +1,36 @@
+.projects-section {
+    width: 100%;
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+
+    &__content {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    &__heading {
+        text-align: center;
+    }
+
+    &__project-cards-container {
+        width: 100%;
+        max-height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+    }
+}    
+
+@media screen and (max-width: 768px) {
+    .projects-section {
+        &__content {
+            gap: 3rem;
+        }
+    }
+}
