@@ -8,11 +8,13 @@ function LandingSection() {
         <section className="landing-section">
             <div className="landing-section__content">
                 <h1 className="landing-section__heading">
-                    My name is <span className="landing-section__heading--highlight">Alexander Hom</span>,
+                    Hello, my name is 
                     <br></br>
-                    and I'm a full-stack web developer
+                    <span className="landing-section__heading--highlight">Alexander Hom</span>
                     <br></br>
-                    from San Francisco
+                    and I am a full-stack web developer 
+                    <br></br> 
+                    from San Francisco.
                 </h1>
                 <div className="landing-section__quick-links-container">
                     <a 

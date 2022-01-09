@@ -85,6 +85,16 @@ export const GlobalStyles = createGlobalStyle`
         &__thumbnail-container {
             /* border-bottom: 1px solid ${({ theme }) => theme.lineCol}; */
         }
+
+        &__project-link {
+            color: ${({ theme }) => theme.primaryFontCol};
+
+            /* &:hover {
+                border-bottom: 2px solid ${({ theme }) => theme.primaryFontCol};
+            } */
+        }
+
+
     }
 
     .contact-section {
