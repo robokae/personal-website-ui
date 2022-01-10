@@ -8,7 +8,6 @@ import { lightTheme, darkTheme } from "./components/theme";
 
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
-import Footer from "./components/footer/Footer";
 import Blog from "./pages/blog/Blog";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Resume from "./pages/resume/Resume";
@@ -53,7 +52,6 @@ function App() {
             <Route path="/resume" element={<Resume />} />
             <Route path="/projects" element={<ProjectCard />} />
           </Routes>
-          {/* <Footer /> */}
         </BrowserRouter>
       </>
     </ThemeProvider>

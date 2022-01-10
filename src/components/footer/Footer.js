@@ -3,10 +3,10 @@ import "./Footer.scss";
 function Footer() {
     return (
         <div className="footer-container">
-            <div className="footer-content">
-                <p>Made with React and Flask</p>
-                <div className="dot"></div>
-                <p>Alexander Hom 2021</p>
+            <div className="footer-container__content">
+                <p className="footer-container__text">Made with React, Sass, and Flask</p>
+                <div className="footer-container__text-separator"></div>
+                <p className="footer-container__text">Alexander Hom 2022</p>
             </div>
         </div>
     );

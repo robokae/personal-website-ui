@@ -6,6 +6,7 @@ import AboutSection from "./section/about/AboutSection";
 import ExperienceSection from "./section/experience/ExperienceSection";
 import ProjectsSection from "./section/projects/ProjectsSection";
 import ContactSection from "./section/contact/ContactSection";
+import Footer from "../../components/footer/Footer";
 
 import "./Home.scss";
 
@@ -35,6 +36,7 @@ function Home() {
             <ExperienceSection className="home-page__section" />
             <ProjectsSection className="home-page__section" />
             <ContactSection className="home-page__section" />
+            <Footer />
         </div>
     );
 }

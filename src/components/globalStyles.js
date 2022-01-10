@@ -58,9 +58,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .about-me-section {
-        &__content {
-            background-color: ${({ theme }) => theme.secondaryBgCol};
-        }
+        background-color: ${({ theme }) => theme.secondaryBgCol};
+        /* &__content {
+        } */
     }
 
     .my-experience-section {
@@ -79,11 +79,16 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+   .projects-section {
+       background-color: ${({ theme }) => theme.secondaryBgCol};
+   } 
+
     .project-card-container {
+        background-color: ${({ theme }) => theme.primaryBgCol};
         border: 1px solid ${({ theme }) => theme.lineCol};
 
-        &__thumbnail-container {
-            /* border-bottom: 1px solid ${({ theme }) => theme.lineCol}; */
+        &__thumbnail {
+            border-bottom: 1px solid ${({ theme }) => theme.lineCol};
         }
 
         &__project-link {
@@ -97,8 +102,25 @@ export const GlobalStyles = createGlobalStyle`
 
     }
 
-    .contact-section {
+    .contact-form {
+        border: 1px solid ${({ theme }) => theme.lineCol};
         background-color: ${({ theme }) => theme.secondaryBgCol};
+
+        &__input {
+            background-color: ${({ theme }) => theme.primaryBgCol};
+            color: ${({ theme }) => theme.primaryFontCol};
+            border: 1px solid ${({ theme }) => theme.lineCol};
+
+            &:focus {
+                border-color: ${({ theme }) => theme.accentCol};
+            }
+        }
+
+        &__submit-button {
+            background-color: ${({ theme }) => theme.accentCol};
+            color: ${({ theme }) => theme.primaryBgCol};
+            border: 1px solid ${({ theme }) => theme.accentCol};
+        }
     }
 
     /* Resume page theme styling */
@@ -117,6 +139,10 @@ export const GlobalStyles = createGlobalStyle`
     /* Footer styling */
     .footer-container {
         border-top: 1px solid ${({ theme }) => theme.lineCol};
+
+        &__text-separator {
+            background-color: ${({ theme }) => theme.primaryFontCol};
+        }
     }
 
 `;

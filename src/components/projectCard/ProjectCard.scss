@@ -1,8 +1,8 @@
 @import "../../scss/variables";
 
 .project-card-container {
-   width: max-content;
-   max-width: 30rem;
+   width: calc(50% - .5rem);
+   max-width: 100%;
    height: max-content;
    border-radius: .25rem;
    box-sizing: border-box;
