@@ -7,43 +7,43 @@ function Navbar(props) {
 
     return (
         <div className="navbar-container">
-            <div className="navbar-content">
-                <NavLink to="/" className="logo">
+            <div className="navbar-container__content">
+                <NavLink to="/" className="navbar-container__logo">
                     Alexander Hom
                 </NavLink>
-                <div className="nav-links">
+                <div className="navbar-container__links">
                     {/* <NavLink 
                         to="/#about"
-                        className="nav-link"
+                        className="navbar-container__link"
                     >
                         About
                     </NavLink> */}
                     {/* <NavLink 
                         to="/blog" 
-                        className="nav-link"
+                        className="navbar-container__link"
                     >
                         Blog
                     </NavLink>
                     <NavLink 
                         to="/portfolio" 
-                        className="nav-link"
+                        className="navbar-container__link"
                     >
                         Portfolio
                     </NavLink> */}
                     {/* <NavLink
                         to="/resume"
-                        className="nav-link"
+                        className="navbar-container__link"
                     >
                         Resume
                     </NavLink> */}
                     {/* <NavLink
                         to="/#contact"
-                        className="nav-link"
+                        className="navbar-container__link"
                     >
                         Contact
                     </NavLink> */}
                 </div>
-                <ThemeToggler toggleTheme={toggleTheme} />
+                <ThemeToggler className="navbar-container__theme-toggler" toggleTheme={toggleTheme} />
             </div>
         </div>
     );

@@ -6,6 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: .5rem 0;
 
     &__content {
         width: 100%;
@@ -24,5 +25,20 @@
         width: .25rem;
         height: .25rem;
         border-radius: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer-container {
+        padding: 1rem 0;
+
+        &__content {
+            flex-direction: column;
+            gap: 0rem;
+        }
+
+        &__text-separator {
+            display: none;
+        }
     }
 }
