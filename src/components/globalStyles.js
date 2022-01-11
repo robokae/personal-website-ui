@@ -125,6 +125,18 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+    .contact-section {
+        &__contact-details-container {
+            border: 1px solid ${({ theme }) => theme.lineCol};
+            border-left: none;
+            border-right: none;
+        }
+
+        &__link {
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
+    }
+
     .contact-form {
         border: 1px solid ${({ theme }) => theme.lineCol};
         background-color: ${({ theme }) => theme.secondaryBgCol};
