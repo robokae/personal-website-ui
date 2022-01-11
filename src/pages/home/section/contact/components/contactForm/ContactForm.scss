@@ -1,4 +1,5 @@
 .contact-form {
+    width: 80%;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -11,9 +12,9 @@
         gap: .5rem;
     }
 
-    // &__label {
-    //     text-transform: uppercase;
-    // }
+    &__label {
+        text-transform: uppercase;
+    }
 
     &__input {
         padding: .5rem;
@@ -34,6 +35,16 @@
         border-radius: .25rem;
         cursor: pointer;
     }
+}
 
+@media screen and (max-width: 980px) {
+    .contact-form {
+        width: 100%;
+    }
+}
 
+@media screen and (max-width: 768px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
 }

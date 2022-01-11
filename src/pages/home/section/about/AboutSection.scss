@@ -5,8 +5,7 @@
     justify-content: center;
 
     &__content {
-        width: 80%;
-        height: 50vh;
+        width: 70%;
         max-height: max-content;
         display: flex;
         justify-content: center;
@@ -16,16 +15,32 @@
     }
 
     &__text {
-        width: 80%;
+        width: 100%;
         text-align: center;  
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .about-me-section {
+        &__content {
+            width: 80%;
+        }
     }
 }
 
 @media screen and (max-width: 768px) {
     .about-me-section {
         &__content {
-            padding: 2rem;
+            padding: 3rem 0;
         }
 
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about-me-section {
+        &__content {
+            width: 90%;
+        }
     }
 }

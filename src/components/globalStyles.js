@@ -1,4 +1,20 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const StyledButton = styled.button`
+    background-color: ${({ theme }) => theme.accentCol};
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: ${({ theme }) => theme.primaryBgCol};
+    border: transparent;
+
+    &:hover {
+        background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.1) 100%
+        ); 
+    }
+`;
 
 export const GlobalStyles = createGlobalStyle`
     /* General theme styling */
@@ -19,15 +35,16 @@ export const GlobalStyles = createGlobalStyle`
     .navbar-container {
         background-color: ${({ theme }) => theme.primaryBgCol};
         border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+
+        &__link, &__logo {
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
+
+        &__link:hover {
+            background-color: ${({ theme }) => theme.secondaryBgCol};
+        }
     }
 
-    .nav-link, .logo {
-        color: ${({ theme }) => theme.primaryFontCol};
-    }
-
-    .nav-link:hover {
-        background-color: ${({ theme }) => theme.secondaryBgCol};
-    }
 
     /* Theme toggler theme styling */
     .slider {
@@ -77,6 +94,10 @@ export const GlobalStyles = createGlobalStyle`
         &__experience-card {
             border: 1px solid ${({ theme }) => theme.lineCol};
         }
+
+        &__experience-card-text {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        }
     }
 
    .projects-section {
@@ -99,12 +120,18 @@ export const GlobalStyles = createGlobalStyle`
             } */
         }
 
-
+        &__text {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        }
     }
 
     .contact-form {
         border: 1px solid ${({ theme }) => theme.lineCol};
         background-color: ${({ theme }) => theme.secondaryBgCol};
+
+        &__label {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        }
 
         &__input {
             background-color: ${({ theme }) => theme.primaryBgCol};
@@ -114,12 +141,6 @@ export const GlobalStyles = createGlobalStyle`
             &:focus {
                 border-color: ${({ theme }) => theme.accentCol};
             }
-        }
-
-        &__submit-button {
-            background-color: ${({ theme }) => theme.accentCol};
-            color: ${({ theme }) => theme.primaryBgCol};
-            border: 1px solid ${({ theme }) => theme.accentCol};
         }
     }
 

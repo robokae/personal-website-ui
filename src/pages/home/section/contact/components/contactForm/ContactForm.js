@@ -1,3 +1,4 @@
+import { StyledButton } from "../../../../../../components/globalStyles";
 import "./ContactForm.scss";
 
 function ContactForm() {
@@ -33,7 +34,7 @@ function ContactForm() {
                 <textarea id="contact-form__message" className="contact-form__input contact-form__input--message"></textarea> 
             </div>
 
-            <button type="submit" className="contact-form__submit-button">Submit</button>
+            <StyledButton type="submit" className="contact-form__submit-button">Submit</StyledButton>
         </form>
     );
 }

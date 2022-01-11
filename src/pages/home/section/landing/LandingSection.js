@@ -10,9 +10,9 @@ function LandingSection() {
                 <h1 className="landing-section__heading">
                     Hello, my name is 
                     <br></br>
-                    <span className="landing-section__heading--highlight">Alexander Hom</span>
+                    <span className="landing-section__heading--highlight">Alexander Hom</span>.
                     <br></br>
-                    and I am a full-stack web developer 
+                    I am a full-stack web developer 
                     <br></br> 
                     from San Francisco.
                 </h1>
