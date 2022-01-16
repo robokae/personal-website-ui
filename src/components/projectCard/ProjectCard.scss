@@ -57,5 +57,9 @@
 @media screen and (max-width: 768px) {
    .project-card-container {
       width: 100%;
+
+      &__text {
+         font-size: 1rem;
+      }
    }
 }
