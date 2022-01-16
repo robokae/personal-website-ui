@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
 export const GlobalStyles = createGlobalStyle`
     /* General theme styling */
     body, .navbar-container {
-        transition: all .2s ease-in-out;
+        /* transition: all .25s ease-in-out; */
     }
 
     body {
@@ -42,6 +42,21 @@ export const GlobalStyles = createGlobalStyle`
 
         &__link:hover {
             background-color: ${({ theme }) => theme.secondaryBgCol};
+        }
+    }
+
+    /* Slide out menu styling */
+    .slide-out-menu {
+        background-color: ${({ theme }) => theme.primaryBgCol};
+
+        &__option {
+            &:hover {
+                background-color: ${({ theme }) => theme.secondaryBgCol};
+            }
+        }
+
+        &__link {
+            color: ${({ theme }) => theme.primaryFontCol};
         }
     }
 

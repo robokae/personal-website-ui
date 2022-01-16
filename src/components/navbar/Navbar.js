@@ -1,9 +1,15 @@
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggler from "../themeToggler/ThemeToggler";
+import SlideOutMenu from "../slideOutMenu/SlideOutMenu";
 import "./Navbar.scss";
 
 function Navbar(props) {
     const { toggleTheme } = props;
+
+    const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
 
     return (
         <div className="navbar-container">
@@ -36,15 +42,24 @@ function Navbar(props) {
                     >
                         Resume
                     </NavLink> */}
-                    {/* <NavLink
+                    <NavLink
                         to="/#contact"
                         className="navbar-container__link"
+                        // onClick={() => setDisplaySlideOutMenu(false)}
                     >
                         Contact
-                    </NavLink> */}
+                    </NavLink>
                 </div>
-                <ThemeToggler className="navbar-container__theme-toggler" toggleTheme={toggleTheme} />
+                <div className="navbar-container__theme-toggler-container">
+                    <ThemeToggler className="navbar-container__theme-toggler" toggleTheme={toggleTheme} />
+                </div> 
+                <FontAwesomeIcon 
+                    className="navbar-container__hamburger-menu-icon" 
+                    icon={faBars} 
+                    onClick={() => setDisplaySlideOutMenu(true)} 
+                /> 
             </div>
+            <SlideOutMenu display={displaySlideOutMenu} setDisplay={setDisplaySlideOutMenu} toggleTheme={toggleTheme} />
         </div>
     );
 }   

@@ -5,6 +5,7 @@
     height: 2rem;
     position: relative;
     justify-self: right;
+    display: inline-block;
 }
 
 .toggle {
@@ -29,10 +30,15 @@
     width: calc(2rem - 6px);
     height: calc(2rem - 6px);
     border-radius: 3rem;
-    transition: all .2s ease-in-out;
+    transition: transform .2s ease-in-out;
 }
 
 .toggle:checked + .slider::before {
     transform: translateX(32px);
 }
 
+@media screen and (max-width: 768px) {
+    .theme-toggler {
+        // display: none;
+    }
+}

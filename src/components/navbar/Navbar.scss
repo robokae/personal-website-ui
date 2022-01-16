@@ -18,7 +18,7 @@
         grid-template-columns: 25% 65% 10%;
         justify-content: space-between;
         align-items: center;
-        transition: all .15s ease-in-out;
+        transition: all .2s ease-in-out;
     }
 
     &__logo {
@@ -35,12 +35,13 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        justify-self: center;
+        justify-self: right;
     }
 
     &__link {
         height: 100%;
         padding: 0 1rem;
+        font-size: 1rem;
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -49,10 +50,17 @@
         cursor: pointer;
     }
 
-    &__theme-toggler {
+    &__theme-toggler-container {
         width: 100%;
         height: 100%;
         justify-self: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__hamburger-menu-icon {
+        display: none;
     }
 }
 
@@ -70,9 +78,26 @@
 @media screen and (max-width: 768px) {
     .navbar-container {
         &__content {
-            grid-template-columns: 50% 0% 50%;
+            grid-template-columns: 50% 50%;
+        }
+
+        &__links {
+            display: none;
+        }
+
+        &__theme-toggler-container {
+            display: none;
+        }
+
+        &__hamburger-menu-icon {
+            display: inline-block;
+            justify-self: flex-end;
+            font-size: 1.5rem; 
+            cursor: pointer;
+            z-index: 2;
         }
     }
+
 }
 
 @media screen and (max-width: 500px) {
