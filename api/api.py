@@ -2,9 +2,6 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
+@app.route('/message', methods=['POST'])
+def message(): 
     return '<h1>My portfolio website</h1>'
-
-if __name__ == '__main__':
-    app.run()

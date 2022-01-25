@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 api/venv
 api/__pycache__
+api/.env
