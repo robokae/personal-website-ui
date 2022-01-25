@@ -1,13 +1,12 @@
 .projects-section {
     width: 100%;
-    // height: 75vh;
-    max-height: max-content;
+    height: max-content;
     display: flex;
     justify-content: center;
     padding: 5rem 0;
 
     &__content {
-        width: 80%;
+        width: 70%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -21,19 +20,40 @@
 
     &__project-cards-container {
         width: 100%;
-        max-height: 100%;
+        height: max-content;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 2rem;
+        gap: 1rem;
     }
 }    
+
+@media screen and (max-width: 980px) {
+    .projects-section {
+        &__content {
+            width: 80%;
+        }
+    }
+}
 
 @media screen and (max-width: 768px) {
     .projects-section {
         &__content {
             gap: 3rem;
+        }
+
+        &__project-cards-container {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .projects-section {
+        &__content {
+            width: 90%;
         }
     }
 }

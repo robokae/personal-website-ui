@@ -1,9 +1,25 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+
+export const StyledButton = styled.button`
+    background-color: ${({ theme }) => theme.accentCol};
+    padding-top: .75rem;
+    padding-bottom: .75rem;
+    color: ${({ theme }) => theme.primaryBgCol};
+    border: transparent;
+
+    &:hover {
+        background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.1) 100%
+        ); 
+    }
+`;
 
 export const GlobalStyles = createGlobalStyle`
     /* General theme styling */
     body, .navbar-container {
-        transition: all .2s ease-in-out;
+        /* transition: all .25s ease-in-out; */
     }
 
     body {
@@ -19,15 +35,31 @@ export const GlobalStyles = createGlobalStyle`
     .navbar-container {
         background-color: ${({ theme }) => theme.primaryBgCol};
         border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+
+        &__link, &__logo {
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
+
+        &__link:hover {
+            background-color: ${({ theme }) => theme.secondaryBgCol};
+        }
     }
 
-    .nav-link, .logo {
-        color: ${({ theme }) => theme.primaryFontCol};
+    /* Slide out menu styling */
+    .slide-out-menu {
+        background-color: ${({ theme }) => theme.primaryBgCol};
+
+        &__option {
+            &:hover {
+                background-color: ${({ theme }) => theme.secondaryBgCol};
+            }
+        }
+
+        &__link {
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
     }
 
-    .nav-link:hover {
-        background-color: ${({ theme }) => theme.secondaryBgCol};
-    }
 
     /* Theme toggler theme styling */
     .slider {
@@ -58,9 +90,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .about-me-section {
-        &__content {
-            background-color: ${({ theme }) => theme.secondaryBgCol};
-        }
+        background-color: ${({ theme }) => theme.secondaryBgCol};
+        /* &__content {
+        } */
     }
 
     .my-experience-section {
@@ -77,13 +109,22 @@ export const GlobalStyles = createGlobalStyle`
         &__experience-card {
             border: 1px solid ${({ theme }) => theme.lineCol};
         }
+
+        &__experience-card-text {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        }
     }
 
+   .projects-section {
+       background-color: ${({ theme }) => theme.secondaryBgCol};
+   } 
+
     .project-card-container {
+        background-color: ${({ theme }) => theme.primaryBgCol};
         border: 1px solid ${({ theme }) => theme.lineCol};
 
-        &__thumbnail-container {
-            /* border-bottom: 1px solid ${({ theme }) => theme.lineCol}; */
+        &__thumbnail {
+            border-bottom: 1px solid ${({ theme }) => theme.lineCol};
         }
 
         &__project-link {
@@ -94,11 +135,40 @@ export const GlobalStyles = createGlobalStyle`
             } */
         }
 
-
+        &__text {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        }
     }
 
     .contact-section {
+        &__contact-details-container {
+            border: 1px solid ${({ theme }) => theme.lineCol};
+            border-left: none;
+            border-right: none;
+        }
+
+        &__link {
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
+    }
+
+    .contact-form {
+        border: 1px solid ${({ theme }) => theme.lineCol};
         background-color: ${({ theme }) => theme.secondaryBgCol};
+
+        &__label {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        }
+
+        &__input {
+            background-color: ${({ theme }) => theme.primaryBgCol};
+            color: ${({ theme }) => theme.primaryFontCol};
+            border: 1px solid ${({ theme }) => theme.lineCol};
+
+            &:focus {
+                border-color: ${({ theme }) => theme.accentCol};
+            }
+        }
     }
 
     /* Resume page theme styling */
@@ -117,6 +187,10 @@ export const GlobalStyles = createGlobalStyle`
     /* Footer styling */
     .footer-container {
         border-top: 1px solid ${({ theme }) => theme.lineCol};
+
+        &__text-separator {
+            background-color: ${({ theme }) => theme.primaryFontCol};
+        }
     }
 
 `;

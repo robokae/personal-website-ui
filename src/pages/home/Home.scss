@@ -2,16 +2,11 @@
 
 .home-page {
     width: 100%;
+    max-height: max-content;
     position: absolute;
     top: 3.5rem; 
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-
-        &__section {
-        width: 100%; 
-        position: relative;
-        }
 }
 
 

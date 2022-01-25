@@ -12,7 +12,7 @@ function ExperienceSection() {
     return (
         <section className="my-experience-section">
             <div className="my-experience-section__content">
-                <h2 className="my-experience-section__heading">Programming Experience</h2>
+                <h2 className="my-experience-section__heading">My Experience</h2>
                 <div className="my-experience-section__experience-details">
                     <ul className="my-experience-section__experience-details-options">
                         {options.map((option, index) => (
