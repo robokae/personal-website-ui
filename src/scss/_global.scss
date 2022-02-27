@@ -16,15 +16,17 @@ body {
     font-family: Inter, Arial, Helvetica, sans-serif;
     position: relative;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     overflow: auto;
 }
 
-.home-page-container,
-.blog-page-container,
-.resume-page-container {
+.home-page,
+.blog-page {
+    max-width: 1280px;
     position: absolute;
     top: 3.5rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .dot {
@@ -33,7 +35,7 @@ body {
     border-radius: 50%;
 }
 
-.landing-section-content,
-.quick-links-container a {
-    color: #F8F8F8;
-}
+// .landing-section-content,
+// .quick-links-container a {
+//     color: #F8F8F8;
+// }

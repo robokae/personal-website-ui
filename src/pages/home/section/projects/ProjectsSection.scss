@@ -29,6 +29,12 @@
     }
 }    
 
+@media screen and (min-width: 1280px) {
+    .projects-section {
+        border-radius: .5rem;
+    }
+}
+
 @media screen and (max-width: 980px) {
     .projects-section {
         &__content {

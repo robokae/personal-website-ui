@@ -20,6 +20,12 @@
     }
 }
 
+@media screen and (min-width: 1280px) {
+    .about-me-section {
+        border-radius: .5rem;
+    } 
+}
+
 @media screen and (max-width: 980px) {
     .about-me-section {
         &__content {
