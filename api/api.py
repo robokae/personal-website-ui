@@ -1,7 +1,10 @@
-from flask import Flask
+import os
+from app import create_app, db
+from app.models import Post
+from flask_migrate import Migrate
 
-app = Flask(__name__)
+config = os.environ.get('FLASK_CONFIG')
 
-@app.route('/message', methods=['POST'])
-def message(): 
-    return '<h1>My portfolio website</h1>'
+app = create_app(config or 'default')
+migrate = Migrate(app, db)
+

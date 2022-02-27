@@ -3,3 +3,4 @@ node_modules
 api/venv
 api/__pycache__
 api/.env
+api/*.sqlite
