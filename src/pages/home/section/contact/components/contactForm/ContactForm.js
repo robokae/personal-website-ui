@@ -1,6 +1,9 @@
 import axios from "axios";
+import { useState } from 'react';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { StyledButton } from "../../../../../../components/globalStyles";
 import "./ContactForm.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ContactForm() {
     const handleSubmitContactForm = (event) => {
