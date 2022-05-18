@@ -1,10 +1,10 @@
-package com.alexhom.personalwebsite;
+package com.personalwebsite.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PersonalwebsiteApplicationTests {
+class ApiApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,3 +1,4 @@
 node_modules
 .DS_Store
 backend/personalwebsite/src/main/resources/application.properties
+.vscode/settings.json
