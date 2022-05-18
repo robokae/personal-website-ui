@@ -12,7 +12,7 @@ function ContactForm() {
         let dataToSend = {
             "name": event.target.name.value,
             "email": event.target.email.value,
-            "message": event.target.message.value
+            "body": event.target.message.value
         };
 
         axios.post(`${url}/message`, dataToSend);
