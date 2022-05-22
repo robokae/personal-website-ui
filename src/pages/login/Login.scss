@@ -1,0 +1,12 @@
+@import "../../scss/variables";
+
+.login-page {
+    width: 100%;
+    max-height: max-content;
+    position: absolute;
+    top: 3.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
