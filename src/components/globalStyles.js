@@ -184,6 +184,28 @@ export const GlobalStyles = createGlobalStyle`
         border-bottom: 1px solid ${({ theme }) => theme.primaryFontCol};
     }
 
+    /* Login page theme styling */
+    .login-page {
+        &__login-container {
+            border: 1px solid ${({ theme }) => theme.lineCol};
+        }
+
+        &__input {
+            border: 1px solid ${({ theme }) => theme.lineCol};
+            background-color: ${({ theme }) => theme.primaryBgCol};
+            color: ${({ theme }) => theme.primaryFontCol};
+
+            &:focus {
+                border-color: ${({ theme }) => theme.accentCol};
+            }
+        }
+
+        &__submit-button {
+            color: ${({ theme }) => theme.primaryBgCol};
+            background-color: ${({ theme }) => theme.accentCol};
+        }
+    }
+
     /* Footer styling */
     .footer-container {
         border-top: 1px solid ${({ theme }) => theme.lineCol};
