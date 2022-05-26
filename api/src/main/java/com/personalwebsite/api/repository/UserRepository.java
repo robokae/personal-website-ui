@@ -1,9 +1,9 @@
-package com.personalwebsite.api.User;
+package com.personalwebsite.api.repository;
+
+import com.personalwebsite.api.model.User;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     
 }

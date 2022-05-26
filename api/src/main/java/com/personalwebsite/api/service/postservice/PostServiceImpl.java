@@ -1,4 +1,4 @@
-package com.personalwebsite.api.Post;
+package com.personalwebsite.api.service.postservice;
 
 public class PostServiceImpl implements PostService {
     

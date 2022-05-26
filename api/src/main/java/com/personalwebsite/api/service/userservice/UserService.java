@@ -1,4 +1,4 @@
-package com.personalwebsite.api.User;
+package com.personalwebsite.api.service.userservice;
 
 import org.springframework.stereotype.Service;
 

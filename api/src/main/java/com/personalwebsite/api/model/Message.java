@@ -1,4 +1,4 @@
-package com.personalwebsite.api.Message;
+package com.personalwebsite.api.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
