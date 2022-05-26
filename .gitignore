@@ -1,4 +1,5 @@
 node_modules
 .DS_Store
 backend/personalwebsite/src/main/resources/application.properties
+api/src/main/resources/.env
 .vscode/settings.json
