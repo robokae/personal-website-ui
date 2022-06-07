@@ -11,6 +11,8 @@ import Home from "./pages/home/Home";
 import Blog from "./pages/blog/Blog";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Resume from "./pages/resume/Resume";
+import Login from "./pages/login/Login";
+
 import ProjectCard from "./components/projectCard/ProjectCard";
 
 function App() {
@@ -51,6 +53,7 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/projects" element={<ProjectCard />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </BrowserRouter>
       </>
