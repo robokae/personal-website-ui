@@ -62,11 +62,12 @@ export const GlobalStyles = createGlobalStyle`
 
 
     /* Theme toggler theme styling */
-    .slider {
-        background-color: ${({ theme }) => theme.themeTogglerBgCol};
+    .ThemeToggler {
+        color: ${({ theme }) => theme.primaryFontCol};
 
-        &::before {
-            background-color: ${({ theme }) => theme.themeTogglerSliderBgCol};
+        &:hover {
+            background-color: ${({ theme }) => theme.secondaryBgCol};
+            color: ${({ theme }) => theme.accentCol};
         }
     }
 

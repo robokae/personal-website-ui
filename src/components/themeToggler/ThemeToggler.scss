@@ -1,44 +1,11 @@
-@import "../../scss/variables";
+@import "../../scss/abstract/variables";
 
-.theme-toggler {
-    width: 4rem;
-    height: 2rem;
-    position: relative;
-    justify-self: right;
-    display: inline-block;
-}
-
-.toggle {
-    display: none;
-}
-
-.slider {   
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    border-radius: 3rem;
+.ThemeToggler {
+    padding: .5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
     cursor: pointer;
-}
-
-.slider::before {
-    position: absolute;
-    left: 3px;
-    top: 3px;
-    content: " ";
-    width: calc(2rem - 6px);
-    height: calc(2rem - 6px);
-    border-radius: 3rem;
-    transition: transform .2s ease-in-out;
-}
-
-.toggle:checked + .slider::before {
-    transform: translateX(32px);
-}
-
-@media screen and (max-width: 768px) {
-    .theme-toggler {
-        // display: none;
-    }
+    transition: color .25s, background-color .25s;
 }
