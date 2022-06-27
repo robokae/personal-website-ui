@@ -1,4 +1,6 @@
-package com.personalwebsite.api.Message;
+package com.personalwebsite.api.controller;
+
+import com.personalwebsite.api.model.Message;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
