@@ -1,4 +1,4 @@
-import "./Footer.scss";
+import "../../scss/layout/_footer.scss";
 
 function Footer() {
     return (

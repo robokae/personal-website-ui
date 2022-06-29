@@ -8,8 +8,7 @@ import ProjectsSection from "./section/projects/ProjectsSection";
 import ContactSection from "./section/contact/ContactSection";
 import Footer from "../../components/footer/Footer";
 
-import "./Home.scss";
-
+import "../../scss/pages/_home.scss";
 
 function Home() {
     const location = useLocation();
