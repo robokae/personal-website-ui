@@ -8,7 +8,7 @@
     z-index: 1;
 
     &__content {
-        width: 70%;
+        width: 80%;
         max-width: 1280px;
         height: 75%;
         position: relative;
@@ -16,17 +16,17 @@
         left: 50%;
         transform: translate(-50%, -50%);
         display: grid;
-        grid-template-columns: 25% 65% 10%;
+        grid-template-columns: 25% 75%;
         justify-content: space-between;
         align-items: center;
         transition: all .2s ease-in-out;
     }
 
     &__logo {
-        font-family: Poppins, Arial, Helvetica, sans-serif;
-        font-size: 1.25rem;
+        font-family: "Grand Hotel", Arial, Helvetica, sans-serif;
+        font-size: 2rem;
         font-weight: bold;
-        text-transform: capitalize;
+        // text-transform: capitalize;
         text-decoration: none;
     }
 
@@ -37,6 +37,7 @@
         flex-direction: row;
         justify-content: space-evenly;
         justify-self: right;
+        gap: 1rem;
     }
 
     &__link {
@@ -52,11 +53,12 @@
     }
 
     &__theme-toggler-container {
-        width: 100%;
+        width: max-content;
         height: 100%;
+        padding: 0;
         justify-self: right;
         display: flex;
-        justify-content: center;
+        justify-content: right;
         align-items: center;
     }
 

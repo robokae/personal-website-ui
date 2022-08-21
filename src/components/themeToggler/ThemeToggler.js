@@ -1,13 +1,14 @@
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import "./ThemeToggler.scss";
 
 function ThemeToggler(props) {
-    const { toggleTheme } = props;
+    const { toggleTheme, theme } = props;
 
     return (
         <button className="ThemeToggler" onClick={toggleTheme}>
-            <FontAwesomeIcon icon={faMoon} />
+            <FontAwesomeIcon icon={theme == "light" ? faMoon : faSun} />
         </button>
     );
 }   

@@ -142,14 +142,24 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .contact-section {
+        &__heading {
+            &:before, &:after {
+                background-color: ${({ theme }) => theme.lineCol};
+            }
+        }
+
         &__contact-details-container {
-            border: 1px solid ${({ theme }) => theme.lineCol};
+            /* border: 1px solid ${({ theme }) => theme.lineCol}; */
             border-left: none;
             border-right: none;
         }
 
         &__link {
             color: ${({ theme }) => theme.primaryFontCol};
+        }
+
+        &__email-popup {
+            background-color: ${({ theme }) => theme.secondaryBgCol};
         }
     }
 

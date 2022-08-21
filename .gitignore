@@ -3,3 +3,4 @@ node_modules
 backend/personalwebsite/src/main/resources/application.properties
 .vscode/settings.json
 api/src/main/java/com/personalwebsite/api/.env
+.idea
