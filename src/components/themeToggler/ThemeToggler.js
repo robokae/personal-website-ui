@@ -1,13 +1,15 @@
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import "./ThemeToggler.scss";
 
 function ThemeToggler(props) {
-    const { toggleTheme } = props;
+    const { toggleTheme, theme } = props;
 
     return (
-        <label className="theme-toggler" htmlFor="toggle">
-            <input type="checkbox" className="toggle" id="toggle" onClick={toggleTheme} />
-            <span className="slider"></span>
-        </label>
+        <button className="ThemeToggler" onClick={toggleTheme}>
+            <FontAwesomeIcon icon={theme == "light" ? faMoon : faSun} />
+        </button>
     );
 }   
 

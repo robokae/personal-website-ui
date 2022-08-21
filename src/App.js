@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Inter:400,700", "Poppins:700"]
+        families: ["Inter:400,700", "Poppins:700", "Grand Hotel:400"]
       }
     });
   }, []);
@@ -46,7 +46,7 @@ function App() {
         <BrowserRouter>
           {/* <ScrollToTop /> */}
           <GlobalStyles />
-          <Navbar toggleTheme={toggleTheme} />
+          <Navbar toggleTheme={toggleTheme} theme={theme}/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />

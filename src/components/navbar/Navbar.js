@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggler from "../themeToggler/ThemeToggler";
 import SlideOutMenu from "../slideOutMenu/SlideOutMenu";
-import "./Navbar.scss";
+import "../../scss/layout/_navbar.scss";
 
 function Navbar(props) {
-    const { toggleTheme } = props;
+    const { toggleTheme, theme } = props;
 
     const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
 
@@ -15,7 +15,7 @@ function Navbar(props) {
         <div className="navbar-container">
             <div className="navbar-container__content">
                 <NavLink to="/" className="navbar-container__logo">
-                    Alexander Hom
+                    alexander hom
                 </NavLink>
                 <div className="navbar-container__links">
                     {/* <NavLink 
@@ -49,10 +49,10 @@ function Navbar(props) {
                     >
                         Contact
                     </NavLink>
+                    <div className="navbar-container__theme-toggler-container">
+                        <ThemeToggler className="navbar-container__theme-toggler" toggleTheme={toggleTheme} theme={theme} />
+                    </div> 
                 </div>
-                <div className="navbar-container__theme-toggler-container">
-                    <ThemeToggler className="navbar-container__theme-toggler" toggleTheme={toggleTheme} />
-                </div> 
                 <FontAwesomeIcon 
                     className="navbar-container__hamburger-menu-icon" 
                     icon={faBars} 
