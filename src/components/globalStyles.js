@@ -128,17 +128,34 @@ export const GlobalStyles = createGlobalStyle`
             border-bottom: 1px solid ${({ theme }) => theme.lineCol};
         }
 
-        &__project-link {
-            color: ${({ theme }) => theme.primaryFontCol};
-
-            /* &:hover {
-                border-bottom: 2px solid ${({ theme }) => theme.primaryFontCol};
-            } */
-        }
-
-        &__text {
+        &__tag {
             color: ${({ theme }) => theme.secondaryFontCol};
+            border: 1px solid ${({ theme }) => theme.lineCol};
         }
+
+        &__project-link {
+            color: ${({ theme }) => theme.accentCol};
+            border: 1px solid ${({ theme }) => theme.accentCol};
+
+            &:hover {
+                color: ${({ theme }) => theme.primaryBgCol};
+                background-color: ${({ theme }) => theme.accentCol};
+            }
+
+            &--secondary {
+                color: ${({ theme }) => theme.secondaryFontCol};
+                border: 1px solid ${({ theme }) => theme.secondaryFontCol};
+
+                &:hover {
+                    color: ${({ theme }) => theme.primaryBgCol};
+                    background-color: ${({ theme }) => theme.secondaryFontCol};
+                }
+            }
+        }
+
+        /* &__text {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        } */
     }
 
     .contact-section {

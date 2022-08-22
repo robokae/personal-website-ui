@@ -7,6 +7,10 @@
    border-radius: .25rem;
    box-sizing: border-box;
 
+   &__heading {
+      font-size: 1.75rem;
+   }
+
    &__thumbnail-container {
       height: 60%;
    }
@@ -25,18 +29,37 @@
       gap: 1rem;
    }
 
-   &__project-link {
-      // max-width: max-content;
-      // max-height: max-content;
-      text-decoration: none;
+   &__tag-container {
+      margin-bottom: .5rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: .5rem;
+   }
 
-      &:hover {
-         text-decoration: underline;
-      }
+   &__tag {
+      width: max-content;
+      padding: .25rem 1rem;
+      border: 1px solid gray;
+      border-radius: 5rem;
+   }
+
+   &__links {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+   }
+
+   &__project-link {
+      padding: 0 1rem;
+      border-radius: .5rem;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: .2s all ease-in-out;
    }
 
    &__text {
-      font-size: 1.25rem;
+      font-size: 1rem;
       line-height: 2rem;
    }
 

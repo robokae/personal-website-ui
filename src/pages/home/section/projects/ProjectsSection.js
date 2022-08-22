@@ -14,7 +14,9 @@ function ProjectsSection() {
                             className="projects-section__project-card"
                             projectName={project.name}
                             projectThumbnailSrc={project.thumbnailSrc}
-                            projectLink={project.link}
+                            isProjectDeployed={project.deployed}
+                            projectProdLink={project.prodLink}
+                            projectGitHubLink={project.githubLink}
                             projectStack={project.stack}
                             projectDescription={project.description}
                         />
