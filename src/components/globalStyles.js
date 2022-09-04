@@ -98,6 +98,12 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .my-experience-section {
+        &__heading {
+            &:before, &:after {
+                background-color: ${({ theme }) => theme.lineCol};
+            }
+        }
+
         &__experience-details-options {
             &--selected {
                 background-color: ${({ theme }) => theme.secondaryBgCol};
