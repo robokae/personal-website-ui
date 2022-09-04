@@ -247,7 +247,7 @@ export const GlobalStyles = createGlobalStyle`
         border-top: 1px solid ${({ theme }) => theme.lineCol};
 
         &__text-separator {
-            background-color: ${({ theme }) => theme.primaryFontCol};
+            color: ${({ theme }) => theme.primaryFontCol};
         }
     }
 

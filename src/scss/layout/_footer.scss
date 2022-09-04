@@ -20,15 +20,9 @@
     &__text {
         font-size: 1rem;
     }
-
-    &__text-separator {
-        width: .25rem;
-        height: .25rem;
-        border-radius: 50%;
-    }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 768px) {
     .footer-container {
         padding: 1rem 0;
 
