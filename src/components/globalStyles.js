@@ -77,10 +77,11 @@ export const GlobalStyles = createGlobalStyle`
             color: ${({ theme }) => theme.primaryFontCol};
 
             &--highlight {
-                background: linear-gradient(98.68deg, #2566A3 0%, #942FE4 100%);
+                color: ${({ theme }) => theme.accentCol};
+                /* background: linear-gradient(98.68deg, #2566A3 0%, #942FE4 100%);
                 background-clip: text;
                 -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                -webkit-text-fill-color: transparent; */
             }
         }
 
