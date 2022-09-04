@@ -19,7 +19,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["Inter:400,700", "Poppins:700", "Grand Hotel:400"]
+        families: ["Inter:400,700", "Poppins:700", "Prata:400"]
       }
     });
   }, []);

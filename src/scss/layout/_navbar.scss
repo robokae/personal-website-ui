@@ -16,17 +16,17 @@
         left: 50%;
         transform: translate(-50%, -50%);
         display: grid;
-        grid-template-columns: 25% 75%;
+        grid-template-columns: max-content max-content;
         justify-content: space-between;
         align-items: center;
         transition: all .2s ease-in-out;
     }
 
     &__logo {
-        font-family: "Grand Hotel", Arial, Helvetica, sans-serif;
-        font-size: 2rem;
+        font-family: "Prata", Arial, Helvetica, sans-serif;
+        font-size: 1.5rem;
         font-weight: bold;
-        // text-transform: capitalize;
+        text-transform: capitalize;
         text-decoration: none;
     }
 
@@ -72,9 +72,6 @@
         &__content {
             width: 80%;
         }
-        &__logo {
-            font-size: 1rem;
-        }
     }
 }
 
@@ -82,6 +79,10 @@
     .navbar-container {
         &__content {
             grid-template-columns: 50% 50%;
+        }
+
+        &__logo {
+            font-size: 1.25rem;
         }
 
         &__links {
