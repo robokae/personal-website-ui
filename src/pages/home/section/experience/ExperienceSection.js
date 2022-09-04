@@ -6,12 +6,12 @@ import experience from "../../../../data/experience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ExperienceSection() {
-    const [dropdownIsActive, setDropdownIsActive] = useState(false);
-    const [activeDropdown, setActiveDropdown] = useState(null);
+    const [activeDropdowns, setActiveDropdowns] = useState([]);
 
     const displayDropdown = (id) => {
-        activeDropdown === id ? setActiveDropdown(null) : setActiveDropdown(id);
-        setDropdownIsActive(!dropdownIsActive);
+        activeDropdowns.indexOf(id) >= 0 
+            ? setActiveDropdowns(activeDropdowns.filter(dropdownId => dropdownId != id))
+            : setActiveDropdowns(activeDropdowns => [...activeDropdowns, id]);
     };
 
     return (
@@ -30,13 +30,13 @@ function ExperienceSection() {
                             >
                                 <h3 className="my-experience-section__experience-detail-title">{experience.title}</h3>
                                 <FontAwesomeIcon 
-                                    icon={dropdownIsActive && activeDropdown == experience.id ? faChevronUp : faChevronDown} 
+                                    icon={activeDropdowns.indexOf(experience.id) >= 0 ? faChevronUp : faChevronDown} 
                                     className="my-experience-section__dropdown-icon" 
                                 />
                             </div>
                             <div 
                                 className={`my-experience-section__experience-cards 
-                                    ${dropdownIsActive && activeDropdown == experience.id 
+                                    ${activeDropdowns.indexOf(experience.id) >= 0
                                         ? "" 
                                         : "my-experience-section__experience-cards--hide"}`}
                             >
