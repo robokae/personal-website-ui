@@ -8,7 +8,7 @@
     z-index: 1;
 
     &__content {
-        width: 80%;
+        width: 90%;
         max-width: 1280px;
         height: 75%;
         position: relative;
@@ -70,7 +70,7 @@
 @media screen and (max-width: 980px) {
     .navbar-container {
         &__content {
-            width: 80%;
+            width: 90%;
         }
     }
 }

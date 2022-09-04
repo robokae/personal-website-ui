@@ -29,7 +29,7 @@
 @media screen and (max-width: 980px) {
     .about-me-section {
         &__content {
-            width: 80%;
+            width: 90%;
         }
     }
 }
@@ -37,7 +37,7 @@
 @media screen and (max-width: 768px) {
     .about-me-section {
         &__content {
-            padding: 3rem 0;
+            // padding: 3rem 0;
         }
 
     }
