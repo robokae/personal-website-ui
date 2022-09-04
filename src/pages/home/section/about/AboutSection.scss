@@ -37,9 +37,13 @@
 @media screen and (max-width: 768px) {
     .about-me-section {
         &__content {
-            // padding: 3rem 0;
+            padding: 3rem 0;
+            justify-content: left;
         }
 
+        &__text {
+            text-align: left;
+        }
     }
 }
 
