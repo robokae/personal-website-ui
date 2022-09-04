@@ -48,6 +48,7 @@ export const GlobalStyles = createGlobalStyle`
     /* Slide out menu styling */
     .slide-out-menu {
         background-color: ${({ theme }) => theme.primaryBgCol};
+        border-left: 1px solid ${({ theme }) => theme.lineCol};
 
         &__option {
             &:hover {

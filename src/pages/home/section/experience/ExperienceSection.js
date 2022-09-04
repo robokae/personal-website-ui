@@ -10,7 +10,7 @@ function ExperienceSection() {
 
     const displayDropdown = (id) => {
         activeDropdowns.indexOf(id) >= 0 
-            ? setActiveDropdowns(activeDropdowns.filter(dropdownId => dropdownId != id))
+            ? setActiveDropdowns(activeDropdowns.filter(dropdownId => dropdownId !== id))
             : setActiveDropdowns(activeDropdowns => [...activeDropdowns, id]);
     };
 
