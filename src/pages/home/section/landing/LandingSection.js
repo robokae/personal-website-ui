@@ -17,24 +17,30 @@ function LandingSection() {
                     from San Francisco.
                 </h1>
                 <div className="landing-section__quick-links-container">
-                    <a 
-                        href="https://github.com/robokae"
-                        className="landing-section__quick-link"
-                    >
-                        <FontAwesomeIcon 
-                            className="landing-section__quick-link-icon" 
-                            icon={faGithub} 
-                        />
-                    </a>
-                    <a 
-                        href="https://www.linkedin.com/in/alexander-hom-94811b188/"
-                        className="landing-section__quick-link"
-                    > 
-                        <FontAwesomeIcon 
-                            className="landing-section__quick-link-icon" 
-                            icon={faLinkedin} 
-                        />
-                    </a>
+                    <div className="landing-section__quick-link">
+                        <a 
+                            href="https://github.com/robokae"
+                            className="landing-section__quick-link"
+                        >
+                            <FontAwesomeIcon 
+                                className="landing-section__quick-link-icon" 
+                                icon={faGithub} 
+                            />
+                            <p>GitHub</p>
+                        </a>
+                    </div>
+                    <div className="landing-section__quick-link">
+                        <a 
+                            href="https://www.linkedin.com/in/alexander-hom-94811b188/"
+                            className="landing-section__quick-link"
+                        > 
+                            <FontAwesomeIcon 
+                                className="landing-section__quick-link-icon" 
+                                icon={faLinkedin} 
+                            />
+                            <p>LinkedIn</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>

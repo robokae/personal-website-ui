@@ -86,6 +86,10 @@ export const GlobalStyles = createGlobalStyle`
             }
         }
 
+        &__quick-link {
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
+
         &__quick-link-icon {
             color: ${({ theme }) => theme.primaryFontCol};
 
