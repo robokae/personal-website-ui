@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import "./Post.scss";
 
 const Post = ({ post }) => {
   return (
     <div className="post">
-      <h3 className="post__title">{post.title}</h3>
+      <Link to={`/blog/${post.title}`} className="post__title">
+        {post.title}
+      </Link>
       <p className="post__publish-date">{post.publishDate}</p>
       <p className="post__description">{post.description}</p>
       <div className="post__tags-container">
