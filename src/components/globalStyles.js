@@ -1,19 +1,19 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const StyledButton = styled.button`
-    background-color: ${({ theme }) => theme.accentCol};
-    padding-top: .75rem;
-    padding-bottom: .75rem;
-    color: ${({ theme }) => theme.primaryBgCol};
-    border: transparent;
+  background-color: ${({ theme }) => theme.accentCol};
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  color: ${({ theme }) => theme.primaryBgCol};
+  border: transparent;
 
-    &:hover {
-        background-image: linear-gradient(
-            0deg,
-            rgba(0, 0, 0, 0.1) 0%,
-            rgba(0, 0, 0, 0.1) 100%
-        ); 
-    }
+  &:hover {
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
 `;
 
 export const GlobalStyles = createGlobalStyle`
@@ -25,6 +25,10 @@ export const GlobalStyles = createGlobalStyle`
     body {
         background-color: ${({ theme }) => theme.primaryBgCol};
         color: ${({ theme }) => theme.primaryFontCol};
+    }
+
+    ::placeholder {
+        color: ${({ theme }) => theme.secondaryFontCol};
     }
 
     .dot {
@@ -246,6 +250,46 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+    /* Blog page styling */
+    .blog-page {
+        input {
+            border-color: transparent;
+            background-color: ${({ theme }) => theme.primaryBgCol};
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
+
+        a {
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
+
+        &__icon {
+            color: ${({ theme }) => theme.primaryFontCol};
+        }
+
+        &__search-bar,
+        &__email-updates-input-container {
+            border: 1px solid ${({ theme }) => theme.lineCol};
+        }
+
+        @media screen and (max-width: 980px) {
+            .blog-page {
+                &__side-menu-container {
+                    border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+                }
+            } 
+        }
+    }
+
+    .post {
+        /* &:hover {
+            border: 1px solid ${({ theme }) => theme.lineCol};
+        } */
+
+        &__publish-date {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        }
+    }
+
     /* Footer styling */
     .footer-container {
         border-top: 1px solid ${({ theme }) => theme.lineCol};
@@ -254,5 +298,4 @@ export const GlobalStyles = createGlobalStyle`
             color: ${({ theme }) => theme.primaryFontCol};
         }
     }
-
 `;
