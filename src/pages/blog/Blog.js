@@ -40,6 +40,13 @@ function Blog() {
               />
             </div>
           </div> */}
+          <div className="blog-page__about-me-container">
+            <h3 className="blog-page__about-me-heading">About Me</h3>
+            <p className="blog-page__about-me">
+              I am a software developer from San Francisco who is passionate
+              about UI/UX and full-stack development.
+            </p>
+          </div>
           <div className="blog-page__contact-links-container">
             <h3>Follow Me</h3>
             <div className="blog-page__contact-links">
