@@ -78,14 +78,14 @@
     &__experience-card {
         // max-width: max-content;
         height: auto;
-        padding: 1rem;
+        padding: .5rem;
         flex: 1 0 calc(33% - 1rem); 
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 1rem;
-        border-radius: .5rem;
+        border-radius: .25rem;
 
     }
 
