@@ -26,3 +26,11 @@
         }
     }
 }
+
+@media screen and (max-width: 980px) {
+    .post-page {
+        &__content {
+            width: 100%;
+        }
+    }
+}

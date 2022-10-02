@@ -1,12 +1,24 @@
-import posts from "../../data/posts";
+// import posts from "../../data/posts";
 import Post from "../../components/blog/Post";
 import Footer from "../../components/footer/Footer";
 // import { faSearch, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./Blog.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Blog() {
+  const [posts, setPosts] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await axios.get("/api/posts/all");
+      setPosts(res.data);
+    };
+    fetchPosts();
+  }, []);
+
   return (
     <div className="blog-page">
       <div className="blog-page__content">
@@ -86,9 +98,7 @@ function Blog() {
             </div>
           </div> */}
           <div className="blog-page__blog-feed">
-            {posts.map((post, index) => (
-              <Post key={index} post={post} />
-            ))}
+            {posts && posts.map((post) => <Post key={post.id} post={post} />)}
           </div>
         </div>
       </div>
