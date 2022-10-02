@@ -1,9 +1,12 @@
 package com.personalwebsite.api;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashSet;
 
+import com.personalwebsite.api.model.Post;
 import com.personalwebsite.api.model.User;
+import com.personalwebsite.api.repository.PostRepository;
 import com.personalwebsite.api.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,20 +20,26 @@ public class InitializeDatabase implements CommandLineRunner  {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private PostRepository postRepository;
+
     // for development purposes
     private final String ADMIN_USERNAME = "admin";
     private final String ADMIN_PASSWORD = "password";
     
     @Override
     public void run(String... args) throws Exception {
-        // create the admin user  
-        Collection<SimpleGrantedAuthority> authorities = new HashSet<SimpleGrantedAuthority>();
-        authorities.add(new SimpleGrantedAuthority("ADMIN"));
-        
-        // User admin = new User(username, password, authorities);
-        User admin = new User(ADMIN_USERNAME, ADMIN_PASSWORD, authorities);
-
-        // load the admin user into the database
-        userRepository.save(admin);
+//        // create the admin user
+//        Collection<SimpleGrantedAuthority> authorities = new HashSet<SimpleGrantedAuthority>();
+//        authorities.add(new SimpleGrantedAuthority("ADMIN"));
+//
+//        // User admin = new User(username, password, authorities);
+//        User admin = new User(ADMIN_USERNAME, ADMIN_PASSWORD, authorities);
+//
+//        // load the admin user into the database
+//        userRepository.save(admin);
+        postRepository.deleteAll();
+        Post post = new Post("My First Post", new Date(), "Alexander Hom", "This is my first post!");
+        postRepository.save(post);
     }
 }
