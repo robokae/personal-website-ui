@@ -16,12 +16,12 @@ body {
     font-family: Inter, Arial, Helvetica, sans-serif;
     position: relative;
     display: flex;
-    // flex-direction: column;
     overflow: auto;
 }
 
 .home-page,
-.blog-page {
+.blog-page,
+.post-page {
     max-width: 1280px;
     position: absolute;
     top: 3.5rem;
