@@ -1,7 +1,7 @@
 import posts from "../../data/posts";
 import Post from "../../components/blog/Post";
 import Footer from "../../components/footer/Footer";
-import { faSearch, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+// import { faSearch, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./Blog.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
@@ -86,8 +86,8 @@ function Blog() {
             </div>
           </div> */}
           <div className="blog-page__blog-feed">
-            {posts.map((post) => (
-              <Post post={post} />
+            {posts.map((post, index) => (
+              <Post key={index} post={post} />
             ))}
           </div>
         </div>
