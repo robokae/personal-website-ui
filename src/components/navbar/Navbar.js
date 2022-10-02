@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggler from "../themeToggler/ThemeToggler";
 import SlideOutMenu from "../slideOutMenu/SlideOutMenu";
-import "../../scss/layout/_navbar.scss";
+import "./Navbar.scss";
 
 function Navbar(props) {
   const { toggleTheme, theme } = props;
