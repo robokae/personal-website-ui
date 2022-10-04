@@ -9,7 +9,7 @@ const Post = ({ post }) => {
         {post.title}
       </Link>
       <p className="post__publish-date">
-        {JSONDateConverter(post.publishDate)}
+        {new JSONDateConverter(post.publishDate).toFullDate()}
       </p>
       <p className="post__description">{post.body}</p>
       {/* <div className="post__tags-container">

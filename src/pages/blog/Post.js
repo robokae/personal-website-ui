@@ -25,7 +25,7 @@ const Post = () => {
           <>
             <h3 className="post-page__post-title">{post.title}</h3>
             <p className="post-page__post-publish-date">
-              {JSONDateConverter(post.publishDate)}
+              {new JSONDateConverter(post.publishDate).toFullDate()}
             </p>
             <p
               className={`post-page__post-body post-page__post-body--${
