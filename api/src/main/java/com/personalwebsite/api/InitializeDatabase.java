@@ -10,6 +10,7 @@ import com.personalwebsite.api.repository.PostRepository;
 import com.personalwebsite.api.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
@@ -23,23 +24,28 @@ public class InitializeDatabase implements CommandLineRunner  {
     @Autowired
     private PostRepository postRepository;
 
-    // for development purposes
-    private final String ADMIN_USERNAME = "admin";
-    private final String ADMIN_PASSWORD = "password";
+    // For development purposes
+    @Value("${blog.admin.username}")
+    private String ADMIN_USERNAME;
+
+    @Value("${blog.admin.password}")
+    private String ADMIN_PASSWORD;
+
+    @Value("${blog.admin.role}")
+    private String ADMIN_ROLE;
     
     @Override
     public void run(String... args) throws Exception {
-//        // create the admin user
-//        Collection<SimpleGrantedAuthority> authorities = new HashSet<SimpleGrantedAuthority>();
-//        authorities.add(new SimpleGrantedAuthority("ADMIN"));
-//
-//        // User admin = new User(username, password, authorities);
-//        User admin = new User(ADMIN_USERNAME, ADMIN_PASSWORD, authorities);
-//
-//        // load the admin user into the database
-//        userRepository.save(admin);
+        userRepository.deleteAll();
         postRepository.deleteAll();
+
+        Collection<SimpleGrantedAuthority> authorities = new HashSet<>();
+        authorities.add(new SimpleGrantedAuthority(ADMIN_ROLE));
+        User admin = new User(ADMIN_USERNAME, ADMIN_PASSWORD, authorities);
+
         Post post = new Post("My First Post", new Date(), "Alexander Hom", "This is my first post!");
+
+        userRepository.save(admin);
         postRepository.save(post);
     }
 }
