@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -24,24 +25,28 @@ public class InitializeDatabase implements CommandLineRunner  {
     @Autowired
     private PostRepository postRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     // For development purposes
     @Value("${blog.admin.username}")
-    private String ADMIN_USERNAME;
+    private String adminUser;
 
     @Value("${blog.admin.password}")
-    private String ADMIN_PASSWORD;
+    private String adminPassword;
 
     @Value("${blog.admin.role}")
-    private String ADMIN_ROLE;
+    private String adminRole;
     
     @Override
     public void run(String... args) throws Exception {
         userRepository.deleteAll();
         postRepository.deleteAll();
 
+        adminPassword = passwordEncoder.encode(adminPassword);
         Collection<SimpleGrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority(ADMIN_ROLE));
-        User admin = new User(ADMIN_USERNAME, ADMIN_PASSWORD, authorities);
+        authorities.add(new SimpleGrantedAuthority(adminRole));
+        User admin = new User(adminUser, adminPassword, authorities);
 
         Post post = new Post("My First Post", new Date(), "Alexander Hom", "This is my first post!");
 
