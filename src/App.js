@@ -15,6 +15,9 @@ import Resume from "./pages/resume/Resume";
 import Login from "./pages/login/Login";
 
 import ProjectCard from "./components/projectCard/ProjectCard";
+import AdminDashboard from "./pages/admin/dashboard/AdminDashboard";
+import CreatePost from "./pages/admin/createPost/CreatePost";
+import EditPost from "./pages/admin/editPost/EditPost";
 
 function App() {
   useEffect(() => {
@@ -49,13 +52,18 @@ function App() {
           <GlobalStyles />
           <Navbar toggleTheme={toggleTheme} theme={theme} />
           <Routes>
+            {/* Home */}
             <Route path="/" element={<Home />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/post/:postTitle" element={<Post />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/projects" element={<ProjectCard />} />
+            {/* Admin */}
             <Route path="/login" element={<Login />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/createPost" element={<CreatePost />} />
+            <Route path="/admin/editPost" element={<EditPost />} />
           </Routes>
         </BrowserRouter>
       </>
