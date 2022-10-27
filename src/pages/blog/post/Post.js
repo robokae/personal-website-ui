@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import JSONDateConverter from "../../util/JSONDateConverter";
+import JSONDateConverter from "../../../util/JSONDateConverter";
 import "./Post.scss";
 
 const MAX_CHAR_FOR_DISPLAY_CENTER = 500;

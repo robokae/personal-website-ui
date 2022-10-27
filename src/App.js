@@ -8,8 +8,8 @@ import { lightTheme, darkTheme } from "./components/theme";
 
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
-import Blog from "./pages/blog/Blog";
-import Post from "./pages/blog/Post";
+import Blog from "./pages/blog/home/Blog";
+import Post from "./pages/blog/post/Post";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Resume from "./pages/resume/Resume";
 import Login from "./pages/login/Login";

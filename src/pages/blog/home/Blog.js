@@ -1,6 +1,6 @@
 // import posts from "../../data/posts";
-import Post from "../../components/blog/Post";
-import Footer from "../../components/footer/Footer";
+import Post from "../../../components/blog/Post";
+import Footer from "../../../components/footer/Footer";
 // import { faSearch, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import "./Blog.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
