@@ -2,19 +2,21 @@ import { useState } from "react";
 import "./TextEditor.scss";
 
 const TextEditor = ({ submitHandler, discardHandler, saveHandler }) => {
+  const [text, setText] = useState("");
   const [numChars, setNumChars] = useState(0);
   const [numWords, setNumWords] = useState(0);
 
   let numCharsSuffix = "character";
   let numWordsSuffix = "word";
 
-  const updateInputMetadata = (e) => {
+  const updateTextInput = (e) => {
     let input = e.target.value;
     let charCount = input.length;
     let wordCount = input.split(" ").filter((w) => w !== "").length;
 
     setNumChars(charCount);
     setNumWords(wordCount);
+    setText(input);
   };
 
   const getGramaticallyCorrectSuffix = (suffix, len) => {
@@ -26,7 +28,7 @@ const TextEditor = ({ submitHandler, discardHandler, saveHandler }) => {
       <div className="text-editor__text-input-container">
         <textarea
           className="text-editor__text-input"
-          onChange={updateInputMetadata}
+          onChange={updateTextInput}
         />
       </div>
       <div className="text-editor__options-container">
@@ -46,7 +48,7 @@ const TextEditor = ({ submitHandler, discardHandler, saveHandler }) => {
           </button>
           <button
             className="text-editor__action-button"
-            onClick={submitHandler}
+            onClick={() => submitHandler(text)}
           >
             Submit
           </button>

@@ -1,9 +1,9 @@
 package com.personalwebsite.api.controller;
 
 import com.personalwebsite.api.model.Post;
-import com.personalwebsite.api.repository.PostRepository;
 import com.personalwebsite.api.service.postservice.PostService;
-import com.personalwebsite.api.service.postservice.PostServiceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +14,10 @@ import java.util.List;
 @RequestMapping("api/posts")
 public class PostController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(PostController.class);
+
     @Autowired
-    private PostServiceImpl postService;
+    private PostService postService;
 
     @GetMapping("/all")
     public List<Post> getAllPosts() {
@@ -27,9 +29,10 @@ public class PostController {
         return postService.getPostByTitle(title);
     }
 
-    @PostMapping()
-    public void createPost(HttpRequest request) {
-
+    @PostMapping("/create")
+    public void createPost(@RequestBody Post post) {
+        LOGGER.info("Saving post: {}", post);
+        postService.createPost(post);
     }
 
     @PutMapping()

@@ -98,7 +98,14 @@ function Blog() {
             </div>
           </div> */}
           <div className="blog-page__blog-feed">
-            {posts && posts.map((post) => <Post key={post.id} post={post} />)}
+            {posts &&
+              posts.map((post, index) => (
+                <Post
+                  key={post.id}
+                  post={post}
+                  border={index === posts.length - 1 ? false : true}
+                />
+              ))}
           </div>
         </div>
       </div>

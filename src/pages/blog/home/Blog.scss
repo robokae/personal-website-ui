@@ -83,6 +83,11 @@
         gap: 2rem;
     }
 
+    &__blog-feed {
+        display: flex;
+        flex-direction: column;
+    }
+
     &__blog-feed-display-options {
         width: 100%;
         display: flex;

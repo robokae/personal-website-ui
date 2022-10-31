@@ -40,8 +40,8 @@ public class InitializeDatabase implements CommandLineRunner  {
     
     @Override
     public void run(String... args) throws Exception {
-        userRepository.deleteAll();
-        postRepository.deleteAll();
+//        userRepository.deleteAll();
+//        postRepository.deleteAll();
 
         adminPassword = passwordEncoder.encode(adminPassword);
         Collection<SimpleGrantedAuthority> authorities = new HashSet<>();

@@ -8,13 +8,31 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface PostService {
+public class PostService {
 
-    public List<Post> getAllPosts();
+    @Autowired
+    private PostRepository postRepository;
 
-    public Post getPostById(Long postId);
-    public Post getPostByTitle(String title);
-    public void createPost(Post post);
-    public void updatePost();
-    public void deletePost(Long postId);
+    public List<Post> getAllPosts() {
+        return postRepository.findAll();
+    }
+
+    public Post getPostById(Long postId) {
+        return postRepository.getById(postId);
+    }
+
+    public Post getPostByTitle(String title) {
+        return postRepository.findByTitle(title);
+    }
+
+    public void createPost(Post post) {
+        postRepository.save(post);
+    }
+
+    public void updatePost() {
+    }
+
+    public void deletePost(Long postId) {
+        postRepository.deleteById(postId);
+    }
 }

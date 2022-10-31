@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import JSONDateConverter from "../../util/JSONDateConverter";
 import "./Post.scss";
 
-const Post = ({ post }) => {
+const Post = ({ post, border }) => {
   return (
-    <div className="post">
+    <div className={`post ${!border && "post--no-border"}`}>
       <Link to={`/post/${post.title}`} className="post__title">
         {post.title}
       </Link>

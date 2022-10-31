@@ -321,6 +321,11 @@ export const GlobalStyles = createGlobalStyle`
         /* &:hover {
             border: 1px solid ${({ theme }) => theme.lineCol};
         } */
+        border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+
+        &--no-border {
+            border-bottom: none;
+        }
 
         &__publish-date {
             color: ${({ theme }) => theme.secondaryFontCol};

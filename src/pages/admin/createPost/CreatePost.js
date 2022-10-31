@@ -1,10 +1,26 @@
+import axios from "axios";
+import { useState } from "react";
 import TextEditor from "../../../components/admin/TextEditor";
 import "./CreatePost.scss";
 
 const CreatePost = () => {
-  const submitPost = () => {
-    console.log("Submit post");
-    // TODO: Implement submit post logic
+  const AUTHOR = "Alexander Hom";
+  const [title, setTitle] = useState("");
+
+  const submitPost = (postBody) => {
+    let postTitle = title;
+    let publishDate = new Date();
+
+    let post = {
+      title: postTitle,
+      publishDate: publishDate,
+      author: AUTHOR,
+      body: postBody,
+    };
+
+    axios.post("/api/posts/create", post).then((res) => {
+      console.log(res);
+    });
   };
 
   const savePost = () => {
@@ -26,6 +42,7 @@ const CreatePost = () => {
             className="create-post-page__title-input"
             type="text"
             placeholder="Title"
+            onChange={(e) => setTitle(e.target.value)}
           />
           <TextEditor
             submitHandler={submitPost}
