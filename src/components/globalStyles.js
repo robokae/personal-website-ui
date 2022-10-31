@@ -6,6 +6,8 @@ export const StyledButton = styled.button`
   padding-bottom: 0.75rem;
   color: ${({ theme }) => theme.primaryBgCol};
   border: transparent;
+  border-radius: 0.25rem;
+  cursor: pointer;
 
   &:hover {
     background-image: linear-gradient(
@@ -277,6 +279,41 @@ export const GlobalStyles = createGlobalStyle`
                     border-bottom: 1px solid ${({ theme }) => theme.lineCol};
                 }
             } 
+        }
+    }
+
+    .create-post-page {
+        input, textarea {
+            color: ${({ theme }) => theme.primaryFontCol};
+            background-color: ${({ theme }) => theme.primaryBgCol};
+            border: 1px solid ${({ theme }) => theme.lineCol};
+        }
+    }
+
+    .text-editor {
+        &__num-words {
+            color: ${({ theme }) => theme.secondaryFontCol};
+        }        
+
+        &__action-button {
+            border: 1px solid ${({ theme }) => theme.accentCol};
+            background-color: ${({ theme }) => theme.primaryBgCol};
+            color: ${({ theme }) => theme.accentCol};
+
+            &:hover {
+                background-color: ${({ theme }) => theme.accentCol};
+                color: ${({ theme }) => theme.primaryBgCol};
+            }
+
+            &--warning {
+                border-color: ${({ theme }) => theme.warningCol};
+                color: ${({ theme }) => theme.warningCol};
+
+                &:hover {
+                    background-color: ${({ theme }) => theme.warningCol};
+                }
+            }
+
         }
     }
 
