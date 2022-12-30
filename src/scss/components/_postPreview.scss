@@ -1,0 +1,19 @@
+@import "../abstract/mixins";
+@import "../abstract/variables";
+
+.post {
+    @include position-page;
+
+    width: 100%;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column; 
+    gap: .5rem;
+    border-radius: .25rem;
+
+    &__title {
+        font-family: 'Prata', 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+}

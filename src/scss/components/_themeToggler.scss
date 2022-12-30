@@ -1,0 +1,11 @@
+@import "../abstract/variables";
+
+.ThemeToggler {
+    padding: .5rem;
+    font-size: 1rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color .25s, background-color .25s;
+}

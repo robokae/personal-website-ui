@@ -1,0 +1,117 @@
+.landing-section {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    &__heading {
+        width: 100%;
+        text-align: center;
+        font-size: 3.5rem;
+        font-family: "Prata", 'Times New Roman', Times, serif;
+        font-weight: bold;
+
+        &--highlight {
+            font-family: "Prata", 'Times New Roman', Times, serif;
+        }
+    }
+
+    
+    &__quick-links-container {
+        display: flex;
+        flex-direction: row;
+        gap: 5rem;
+    }
+
+    &__quick-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+        cursor: pointer;
+        font-size: 1.25rem;
+        transition: transform .15s ease-in-out;
+
+        &:hover {
+            transform: scale(1.08);
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__quick-link-icon {
+        font-size: 1.75rem;
+    }
+
+}
+
+@media screen and (max-width: 980px) {
+    .landing-section {
+        height: 50vh;
+
+        &__content {
+            width: 90%;
+        }
+
+        &__heading {
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .landing-section {
+        &__content {
+            align-items: flex-start;
+        }
+
+        &__heading {
+            text-align: left;
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+
+        &__quick-links-container {
+            gap: 3rem;
+        }
+
+        &__quick-link {
+            gap: .5rem;
+        }
+
+        &__quick-link-icon {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .landing-section {
+        height: 35vh;
+
+        &__content {
+            width: 90%;
+            gap: 2rem; 
+        }
+
+        &__heading {
+            font-size: 1.75rem;
+            line-height: 2.5rem;
+        }
+    }
+}

@@ -6,18 +6,18 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/theme";
 
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/Header";
 import Home from "./pages/home/Home";
-import Blog from "./pages/blog/home/Blog";
-import Post from "./pages/blog/post/Post";
-import Portfolio from "./pages/portfolio/Portfolio";
-import Resume from "./pages/resume/Resume";
-import Login from "./pages/login/Login";
+import Blog from "./pages/blog/Blog";
+import Post from "./pages/blog/Post";
+import Portfolio from "./pages/Portfolio";
+import Resume from "./pages/Resume";
+import Login from "./pages/Login";
 
-import ProjectCard from "./components/projectCard/ProjectCard";
-import AdminDashboard from "./pages/admin/dashboard/AdminDashboard";
-import CreatePost from "./pages/admin/createPost/CreatePost";
-import EditPost from "./pages/admin/editPost/EditPost";
+import ProjectCard from "./components/home/ProjectCard";
+import Admin from "./pages/admin/Admin";
+import CreatePost from "./pages/admin/CreatePost";
+import EditPost from "./pages/admin/EditPost";
 
 function App() {
   useEffect(() => {
@@ -61,7 +61,7 @@ function App() {
             <Route path="/projects" element={<ProjectCard />} />
             {/* Admin */}
             <Route path="/login" element={<Login />} />
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/admin/createPost" element={<CreatePost />} />
             <Route path="/admin/editPost" element={<EditPost />} />
           </Routes>

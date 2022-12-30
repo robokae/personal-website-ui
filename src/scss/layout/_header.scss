@@ -1,0 +1,113 @@
+@import "../abstract/variables";
+
+.navbar-container {
+    width: 100%;
+    height: 3.5rem;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    &__content {
+        width: 90%;
+        max-width: 1280px;
+        height: 75%;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: grid;
+        grid-template-columns: max-content max-content;
+        justify-content: space-between;
+        align-items: center;
+        transition: all .2s ease-in-out;
+    }
+
+    &__logo {
+        font-family: "Prata", Arial, Helvetica, sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+
+    &__links {
+        max-width: max-content;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        justify-self: right;
+        gap: 1rem;
+    }
+
+    &__link {
+        height: 100%;
+        padding: 0 1rem;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: .5rem;
+        transition: background-color .2s ease-in-out;
+        cursor: pointer;
+    }
+
+    &__theme-toggler-container {
+        width: max-content;
+        height: 100%;
+        padding: 0;
+        justify-self: right;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+
+    &__hamburger-menu-icon {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .navbar-container {
+        &__content {
+            width: 90%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-container {
+        &__content {
+            grid-template-columns: 50% 50%;
+        }
+
+        &__logo {
+            font-size: 1.25rem;
+        }
+
+        &__links {
+            display: none;
+        }
+
+        &__theme-toggler-container {
+            display: none;
+        }
+
+        &__hamburger-menu-icon {
+            display: inline-block;
+            justify-self: flex-end;
+            font-size: 1.5rem; 
+            cursor: pointer;
+            z-index: 2;
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-container {
+        &__content {
+            width: 90%;
+        }
+    }
+}

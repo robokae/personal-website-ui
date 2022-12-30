@@ -4,8 +4,8 @@ const lightTheme = {
   primaryFontCol: "#0C1821",
   secondaryFontCol: "#6C757D",
   lineCol: "#D8DCE0",
-  accentCol: "#57CC99",
-  themeTogglerBgCol: "#57CC99",
+  accentCol: "#27b3dd",
+  themeTogglerBgCol: "#36a977",
   themeTogglerSliderBgCol: "#F8F8F8",
   warningCol: "#CC5E57",
 };

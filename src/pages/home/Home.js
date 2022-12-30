@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import LandingSection from "./landing/LandingSection";
-import AboutSection from "./about/AboutSection";
-import ExperienceSection from "./experience/ExperienceSection";
-import ProjectsSection from "./projects/ProjectsSection";
+import LandingSection from "./LandingSection";
+import AboutSection from "./AboutSection";
+import ExperienceSection from "./ExperienceSection";
+import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./contact/ContactSection";
-import Footer from "../../components/footer/Footer";
-
-import "./Home.scss";
+import Footer from "../../components/Footer";
 
 function Home() {
   const location = useLocation();
