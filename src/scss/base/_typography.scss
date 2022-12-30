@@ -1,37 +1,37 @@
+/* Major Third type scale */
+html {
+    font-size: 112.5%; /* 18px */
+}
+
 body {
     font-family: Inter, Arial, Helvetica, sans-serif;
+    line-height: 1.75;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3, h4, h5 {
     font-family: "Prata", 'Times New Roman', Times, serif;
     font-weight: bold;
-}
-
-h1, 
-h2, 
-h3, 
-p {
-    padding: 0;
-    margin: 0;
+    line-height: 1.3;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.052rem;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.441rem;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.953rem;
 }
 
-p {
-    font-size: 1rem;
-    line-height: 1.75rem;
+h4 {
+    font-size: 1.563rem;
+}
+
+h5 {
+    font-size: 1.25rem;
 }
 
 a {
@@ -47,41 +47,82 @@ input, textarea, button {
     font-size: 1rem;
 }
 
-@media screen and (max-width: 980px) {
-    h2 {
-        font-size: 2.5rem;
-    }
-}
-
 @media screen and (max-width: 768px) {
-   h1 {
-       font-size: 2.5rem;
-   } 
+    /* Minor Third type scale */
+    html {
+        font-size: 100%; /* 16px */
+    }
 
-   h2 {
-       font-size: 2rem;
-   }
-
-   h3 {
-       font-size: 1.5rem;
-   }
-   
-   li {
-       font-size: 1rem;
-   }
-}
-
-@media screen and (max-width: 500px) {
     h1 {
-        font-size: 2.25rem;
-        line-height: 2.5rem;
+        font-size: 2.488rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 2.074rem;
     }
 
     h3 {
+        font-size: 1.728rem;
+    }
+
+    h4 {
+        font-size: 1.44rem;
+    }
+
+    h5 {
+        font-size: 1.2rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
         font-size: 1.25rem;
+    }
+
+    input, textarea, button {
+        font-family: Inter, Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* Major Second type scale */
+    html {
+        font-size: 87.5%; /* 14px */
+    }
+
+    h1 {
+        font-size: 1.802rem;
+    }
+
+    h2 {
+        font-size: 1.602rem;
+    }
+
+    h3 {
+        font-size: 1.424rem;
+    }
+
+    h4 {
+        font-size: 1.266rem;
+    }
+
+    h5 {
+        font-size: 1.125rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        font-size: 1.25rem;
+    }
+
+    input, textarea, button {
+        font-family: Inter, Arial, Helvetica, sans-serif;
+        font-size: 1rem;
     }
 }

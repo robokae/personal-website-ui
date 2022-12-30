@@ -1,29 +1,30 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import ThemeToggler from "./ThemeToggler";
 import SlideOutMenu from "./SlideOutMenu";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-function Navbar(props) {
+function Header(props) {
   const { toggleTheme, theme } = props;
 
   const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
 
   return (
-    <div className="navbar-container">
-      <div className="navbar-container__content">
-        <NavLink to="/" className="navbar-container__logo">
+    <div className="header">
+      <div className="header__content">
+        <NavLink to="/" className="header__logo">
           alexander hom
         </NavLink>
-        <div className="navbar-container__links">
+        <div className="header__links">
           {/* <NavLink 
                         to="/#about"
                         className="navbar-container__link"
                     >
                         About
                     </NavLink> */}
-          <NavLink to="/blog" className="navbar-container__link">
+          <NavLink to="/blog" className="header__link">
             Blog
           </NavLink>
           {/* <NavLink 
@@ -40,21 +41,29 @@ function Navbar(props) {
                     </NavLink> */}
           <NavLink
             to="/#contact"
-            className="navbar-container__link"
+            className="header__link"
             // onClick={() => setDisplaySlideOutMenu(false)}
           >
             Contact
           </NavLink>
-          <div className="navbar-container__theme-toggler-container">
-            <ThemeToggler
-              className="navbar-container__theme-toggler"
-              toggleTheme={toggleTheme}
-              theme={theme}
+          <a href="https://github.com/robokae" className="header__link">
+            <FontAwesomeIcon className="header__icon" icon={faGithub} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/alexander-hom-94811b188/"
+            className="header__link"
+          >
+            <FontAwesomeIcon className="header__icon" icon={faLinkedin} />
+          </a>
+          <button className="header__theme-toggler" onClick={toggleTheme}>
+            <FontAwesomeIcon
+              className="header__icon"
+              icon={theme === "light" ? faMoon : faSun}
             />
-          </div>
+          </button>
         </div>
         <FontAwesomeIcon
-          className="navbar-container__hamburger-menu-icon"
+          className="header__hamburger-menu-icon"
           icon={faBars}
           onClick={() => setDisplaySlideOutMenu(true)}
         />
@@ -68,4 +77,4 @@ function Navbar(props) {
   );
 }
 
-export default Navbar;
+export default Header;

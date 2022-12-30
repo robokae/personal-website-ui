@@ -1,8 +1,13 @@
+@import "../../abstract/variables";
+
 .about-me-section {
     width: 100%;
     max-height: max-content;
     display: flex;
     justify-content: center;
+    animation: fadeIn .5s ease-in;
+    animation-fill-mode: backwards;
+    animation-delay: $about-animation-delay;
 
     &__content {
         width: 90%;
@@ -17,6 +22,16 @@
     &__text {
         width: 100%;
         text-align: center;  
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
     }
 }
 

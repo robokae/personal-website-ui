@@ -6,42 +6,19 @@ function LandingSection() {
     <section className="landing-section">
       <div className="landing-section__content">
         <h1 className="landing-section__heading">
-          Hello there!
-          <br></br>
-          My name is{" "}
-          <span className="landing-section__heading--highlight">
-            Alexander Hom
+          <span className="landing-section__heading-text landing-section__heading-text--line-1">
+            Hello there!
           </span>
-          .<br></br>I am a full-stack web developer
-          <br></br>
-          from San Francisco.
+          <span className="landing-section__heading-text landing-section__heading-text--line-2">
+            My name is Alexander Hom.
+          </span>
+          <span className="landing-section__heading-text landing-section__heading-text--line-3">
+            I am a full-stack web developer
+          </span>
+          <span className="landing-section__heading-text landing-section__heading-text--line-4">
+            from San Francisco.
+          </span>
         </h1>
-        <div className="landing-section__quick-links-container">
-          <div className="landing-section__quick-link">
-            <a
-              href="https://github.com/robokae"
-              className="landing-section__quick-link"
-            >
-              <FontAwesomeIcon
-                className="landing-section__quick-link-icon"
-                icon={faGithub}
-              />
-              <p>GitHub</p>
-            </a>
-          </div>
-          <div className="landing-section__quick-link">
-            <a
-              href="https://www.linkedin.com/in/alexander-hom-94811b188/"
-              className="landing-section__quick-link"
-            >
-              <FontAwesomeIcon
-                className="landing-section__quick-link-icon"
-                icon={faLinkedin}
-              />
-              <p>LinkedIn</p>
-            </a>
-          </div>
-        </div>
       </div>
     </section>
   );

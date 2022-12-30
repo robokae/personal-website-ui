@@ -38,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     /* Navbar theme styling */
-    .navbar-container {
+    .header {
         background-color: ${({ theme }) => theme.primaryBgCol};
         border-bottom: 1px solid ${({ theme }) => theme.lineCol};
 
@@ -48,6 +48,15 @@ export const GlobalStyles = createGlobalStyle`
 
         &__link:hover {
             background-color: ${({ theme }) => theme.secondaryBgCol};
+        }
+
+        /* Theme toggler theme styling */
+        &__theme-toggler {
+            color: ${({ theme }) => theme.primaryFontCol};
+
+            &:hover {
+                background-color: ${({ theme }) => theme.secondaryBgCol};
+            }
         }
     }
 
@@ -68,15 +77,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
 
-    /* Theme toggler theme styling */
-    .ThemeToggler {
-        color: ${({ theme }) => theme.primaryFontCol};
-
-        &:hover {
-            background-color: ${({ theme }) => theme.secondaryBgCol};
-            color: ${({ theme }) => theme.accentCol};
-        }
-    }
 
     /* Home page theme styling */
     .landing-section {

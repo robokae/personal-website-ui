@@ -1,20 +1,23 @@
 @import "../abstract/variables";
 
-.navbar-container {
+.header {
     width: 100%;
-    height: 3.5rem;
+    height: $header-height; 
     position: fixed;
     top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    animation: slideDown .5s ease-in;
+    animation-fill-mode: backwards;
+    animation-delay: $header-animation-delay;
     z-index: 1;
 
     &__content {
         width: 90%;
         max-width: 1280px;
-        height: 75%;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        height: max-content;
         display: grid;
         grid-template-columns: max-content max-content;
         justify-content: space-between;
@@ -37,13 +40,12 @@
         flex-direction: row;
         justify-content: space-evenly;
         justify-self: right;
-        gap: 1rem;
+        gap: .25rem;
     }
 
     &__link {
         height: 100%;
         padding: 0 1rem;
-        font-size: 1rem;
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -52,14 +54,17 @@
         cursor: pointer;
     }
 
-    &__theme-toggler-container {
-        width: max-content;
-        height: 100%;
-        padding: 0;
-        justify-self: right;
-        display: flex;
-        justify-content: right;
-        align-items: center;
+    &__icon, &__theme-toggler {
+        font-size: $icon-size;
+    }
+
+    &__theme-toggler {
+        padding: 0 1rem;
+        background-color: transparent;
+        border: none;
+        border-radius: .25rem;
+        cursor: pointer;
+        transition: color .25s, background-color .25s;
     }
 
     &__hamburger-menu-icon {
@@ -67,8 +72,18 @@
     }
 }
 
+@keyframes slideDown {
+    0% {
+        transform: translateY(-$header-height);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
 @media screen and (max-width: 980px) {
-    .navbar-container {
+    .header {
         &__content {
             width: 90%;
         }
@@ -76,7 +91,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .navbar-container {
+    .header {
         &__content {
             grid-template-columns: 50% 50%;
         }
@@ -98,14 +113,13 @@
             justify-self: flex-end;
             font-size: 1.5rem; 
             cursor: pointer;
-            z-index: 2;
         }
     }
 
 }
 
 @media screen and (max-width: 500px) {
-    .navbar-container {
+    .header {
         &__content {
             width: 90%;
         }
