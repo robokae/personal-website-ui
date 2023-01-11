@@ -9,9 +9,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    animation: slideDown .5s ease-in;
-    animation-fill-mode: backwards;
-    animation-delay: $header-animation-delay;
     z-index: 1;
 
     &__content {
@@ -69,16 +66,6 @@
 
     &__hamburger-menu-icon {
         display: none;
-    }
-}
-
-@keyframes slideDown {
-    0% {
-        transform: translateY(-$header-height);
-    }
-
-    100% {
-        transform: translate(0);
     }
 }
 

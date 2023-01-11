@@ -104,8 +104,19 @@ export const GlobalStyles = createGlobalStyle`
 
     .about-me-section {
         background-color: ${({ theme }) => theme.secondaryBgCol};
-        /* &__content {
-        } */
+
+        &__about-square:not(:last-of-type) {
+            border-right: 1px solid ${({ theme }) => theme.lineCol};
+
+            @media screen and (max-width: 980px) {
+                border-right: none;
+            }
+        }
+
+        &__text-container {
+            border-left: 1px solid ${({ theme }) => theme.lineCol};
+        }
+
     }
 
     .my-experience-section {

@@ -1,21 +1,50 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSchool,
+  faHeart,
+  faCode,
+  faBook,
+} from "@fortawesome/free-solid-svg-icons";
+
 function AboutSection() {
   return (
     <section id="about" className="about-me-section">
-      <div className="about-me-section__content">
-        <p className="about-me-section__text">
-          Born in San Francisco, I studied computer science at the University of
-          California, Merced from 2018 to 2022. During that time, I gained a
-          passion for UI/UX and full-stack software development. Since my first
-          time coding with HTML in the fall of 2019, I’ve designed and coded
-          many web applications using React, CSS/Sass, Flask, and Spring Boot.
-          In addition, in February 2022, I started developing Android
-          applications with Java.
-          <br></br>
-          <br></br>
-          Outside of full-stack software development, I like to program with
-          Java, Python, and C++, in addition to learning more about operating
-          systems, computer networks, database internals, and game development.
-        </p>
+      <div className="about-me-section__content-container">
+        <div className="about-me-section__about-squares">
+          <div className="about-me-section__about-square">
+            <FontAwesomeIcon
+              className="about-me-section__icon"
+              icon={faSchool}
+            />
+            <p className="about-me-section__about-square-title">
+              Studied computer science at the University of California, Merced
+              from 2018 to 2022
+            </p>
+          </div>
+          <div className="about-me-section__about-square">
+            <FontAwesomeIcon
+              className="about-me-section__icon about-me-section__icon--red"
+              icon={faHeart}
+            />
+            <p className="about-me-section__about-square-title">
+              Passionate about UI/UX and full-stack software development
+            </p>
+          </div>
+          <div className="about-me-section__about-square">
+            <FontAwesomeIcon className="about-me-section__icon" icon={faCode} />
+            <p className="about-me-section__about-square-title">
+              Skilled in React, Spring Boot, SQL databases, and cloud
+              technologies
+            </p>
+          </div>
+          <div className="about-me-section__about-square">
+            <FontAwesomeIcon className="about-me-section__icon" icon={faBook} />
+            <p className="about-me-section__about-square-title">
+              Love learning about technology, designing application UIs, and
+              programming
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

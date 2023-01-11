@@ -1,21 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
 function LandingSection() {
   return (
     <section className="landing-section">
       <div className="landing-section__content">
         <h1 className="landing-section__heading">
-          <span className="landing-section__heading-text landing-section__heading-text--line-1">
-            Hello there!
-          </span>
-          <span className="landing-section__heading-text landing-section__heading-text--line-2">
+          <span className="landing-section__heading-text">Hello there!</span>
+          <span className="landing-section__heading-text">
             My name is Alexander Hom.
           </span>
-          <span className="landing-section__heading-text landing-section__heading-text--line-3">
+          <span className="landing-section__heading-text">
             I am a full-stack web developer
           </span>
-          <span className="landing-section__heading-text landing-section__heading-text--line-4">
+          <span className="landing-section__heading-text">
             from San Francisco.
           </span>
         </h1>

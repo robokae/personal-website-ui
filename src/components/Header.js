@@ -2,7 +2,6 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-import ThemeToggler from "./ThemeToggler";
 import SlideOutMenu from "./SlideOutMenu";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
