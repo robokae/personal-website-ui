@@ -8,6 +8,8 @@ const lightTheme = {
   themeTogglerBgCol: "#36a977",
   themeTogglerSliderBgCol: "#F8F8F8",
   warningCol: "#CC5E57",
+  tooltipBgCol: "#22272A",
+  tooltipFontCol: "#F8F8F8",
 };
 
 const darkTheme = {
@@ -20,6 +22,8 @@ const darkTheme = {
   themeTogglerBgCol: "#293135",
   themeTogglerSliderBgCol: "#97DBFB",
   warningCol: "#CC5E57",
+  tooltipBgCol: "#1F2A32",
+  tooltipFontCol: "#F8F8F8",
 };
 
 export { lightTheme, darkTheme };

@@ -19,7 +19,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.4",
-    "react-tooltip": "^5.3.4",
+    "react-tooltip": "^5.4.0",
     "sass": "^1.45.0",
     "styled-components": "^5.3.3",
     "web-vitals": "^1.0.1",
@@ -53,5 +53,8 @@
     "node": "16.17.0",
     "npm": "8.15.0"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "@types/react-tooltip": "^4.2.4"
+  }
 }

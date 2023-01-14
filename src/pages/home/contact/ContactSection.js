@@ -3,11 +3,11 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 // import ContactForm from "./ContactForm";
 import { useState } from "react";
+import { Tooltip } from "react-tooltip";
 
 const EMAIL = "alexanderhom19@gmail.com";
 
 function ContactSection() {
-  const [displayPopup, setDisplayPopup] = useState(false);
   const [emailPopupClicked, setEmailPopupClicked] = useState(false);
 
   const handleEmailPopupClick = () => {
@@ -29,23 +29,6 @@ function ContactSection() {
             <div className="contact-section__contact-detail">
               <FontAwesomeIcon
                 className="contact-section__contact-detail-icon"
-                icon={faEnvelope}
-              />
-              <p
-                className="contact-section__text contact-section__text--email"
-                onMouseEnter={() => setDisplayPopup(true)}
-                onMouseLeave={() => {
-                  setDisplayPopup(false);
-                  setEmailPopupClicked(false);
-                }}
-                onClick={handleEmailPopupClick}
-              >
-                alexanderhom19@gmail.com
-              </p>
-            </div>
-            <div className="contact-section__contact-detail">
-              <FontAwesomeIcon
-                className="contact-section__contact-detail-icon"
                 icon={faGithub}
               />
               <a
@@ -54,6 +37,32 @@ function ContactSection() {
               >
                 GitHub
               </a>
+            </div>
+            <div className="contact-section__contact-detail">
+              <FontAwesomeIcon
+                className="contact-section__contact-detail-icon"
+                icon={faEnvelope}
+              />
+              <p
+                id="email"
+                className="contact-section__text contact-section__text--email"
+                onMouseLeave={() => {
+                  setEmailPopupClicked(false);
+                }}
+                onClick={handleEmailPopupClick}
+              >
+                alexanderhom19@gmail.com
+              </p>
+              <div className="tooltip-container">
+                <Tooltip
+                  anchorId="email"
+                  className="custom-tooltip"
+                  content={
+                    emailPopupClicked ? "Email copied" : "Click to copy email"
+                  }
+                  place="bottom"
+                />
+              </div>
             </div>
             <div className="contact-section__contact-detail">
               <FontAwesomeIcon
@@ -67,13 +76,6 @@ function ContactSection() {
                 LinkedIn
               </a>
             </div>
-            {displayPopup && (
-              <div className="contact-section__contact-detail contact-section__email-popup">
-                <p>
-                  {emailPopupClicked ? "Email copied" : "Click to copy email"}
-                </p>
-              </div>
-            )}
           </div>
           {/* <ContactForm className="contact-section__contact-form" /> */}
         </div>

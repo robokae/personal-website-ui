@@ -37,6 +37,12 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${({ theme }) => theme.primaryFontCol};
     }
 
+    .tooltip-container .custom-tooltip {
+        background-color: ${({ theme }) => theme.tooltipBgCol};
+        color: ${({ theme }) => theme.tooltipFontCol};
+        opacity: 1;
+    }
+
     /* Navbar theme styling */
     .header {
         background-color: ${({ theme }) => theme.primaryBgCol};

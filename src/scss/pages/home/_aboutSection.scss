@@ -51,11 +51,12 @@
     }
 
     &__icon {
-        font-size: 2rem;
-        transition: color .15s ease-in;
+        font-size: 2.5rem;
+        transition: all .15s ease-in;
 
         &:hover {
             color: $blue;
+            transform: scale(1.15);
         }
 
         &--red {

@@ -46,12 +46,12 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        border-radius: .5rem;
+        border-radius: .25rem;
         transition: background-color .2s ease-in-out;
         cursor: pointer;
     }
 
-    &__icon, &__theme-toggler {
+    &__icon {
         font-size: $icon-size;
     }
 
