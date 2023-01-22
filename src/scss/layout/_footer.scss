@@ -29,6 +29,10 @@
         &__content {
             flex-direction: column;
             gap: 0rem;
+
+            div {
+                display: none;
+            }
         }
 
         &__text-separator {

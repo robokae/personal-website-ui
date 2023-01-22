@@ -135,8 +135,23 @@ export const GlobalStyles = createGlobalStyle`
             }
         }
 
+        &__experience-cards {
+            @media screen and (max-width: 768px) {
+                border: 1px solid ${({ theme }) => theme.lineCol};
+            }
+
+        }
+
         &__experience-card {
             border: 1px solid ${({ theme }) => theme.lineCol};
+
+            @media screen and (max-width: 768px) {
+                border: none;
+
+                :not(:last-of-type) {
+                    border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+                }
+            }
         }
 
         &__experience-card-text {

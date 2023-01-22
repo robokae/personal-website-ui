@@ -76,7 +76,6 @@
 
 @media screen and (max-width: 768px) {
     .landing-section {
-        height: 35vh;
         &__content {
             align-items: flex-start;
         }
@@ -100,10 +99,9 @@
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 500px) {
     .landing-section {
-        height: 25vh;
-
+        height: 40vh;
         &__content {
             width: 90%;
             gap: 2rem; 

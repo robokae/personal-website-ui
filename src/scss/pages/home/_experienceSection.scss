@@ -95,7 +95,7 @@
     }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 980px) {
     .my-experience-section {
         &__content {
             width: 90%;
@@ -103,14 +103,6 @@
 
         &__experience-details {
             width: 100%;
-        }
-    }
-}
-
-@media screen and (max-width: 980px) {
-    .my-experience-section {
-
-        &__experience-details {
             gap: 3rem;
         }
 
@@ -157,9 +149,16 @@
         }
 
         &__experience-cards {
+            border-radius: .25rem;
+            gap: 0;
             &--hide {
                 display: none;
             }
+        }
+
+        &__experience-card {
+            border-radius: 0;
+            padding: 1rem;
         }
 
         &__experience-card-text {

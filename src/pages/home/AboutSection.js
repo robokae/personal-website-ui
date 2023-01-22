@@ -17,8 +17,8 @@ function AboutSection() {
               icon={faSchool}
             />
             <p className="about-me-section__about-square-title">
-              Studied computer science at the University of California, Merced
-              from 2018 to 2022
+              B.S. in computer science from the University of California, Merced
+              (graduated 2022)
             </p>
           </div>
           <div className="about-me-section__about-square">

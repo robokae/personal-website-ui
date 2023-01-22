@@ -37,7 +37,7 @@
 
    &__tag {
       width: max-content;
-      padding: .25rem 1rem;
+      padding: 0 1rem;
       border-radius: 5rem;
    }
 
@@ -48,7 +48,7 @@
    }
 
    &__project-link {
-      padding: .5rem;
+      padding: .2rem 1rem;
       border-radius: .5rem;
       text-decoration: none;
       transition: .2s all ease-in-out;
