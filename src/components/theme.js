@@ -1,7 +1,8 @@
 const lightTheme = {
   primaryBgCol: "#F8F8F8",
+  headerCol: "rgb(240, 241, 242)",
   secondaryBgCol: "#F0F1F2",
-  primaryFontCol: "#0C1821",
+  primaryFontCol: "#233b45",
   secondaryFontCol: "#6C757D",
   lineCol: "#D8DCE0",
   accentCol: "#27b3dd",
@@ -14,8 +15,9 @@ const lightTheme = {
 
 const darkTheme = {
   primaryBgCol: "#121B20",
+  headerCol: "rgb(23, 31, 37)",
   secondaryBgCol: "#171F25",
-  primaryFontCol: "#F5F5F5",
+  primaryFontCol: "#dfebf5",
   secondaryFontCol: "#A4ADB7",
   lineCol: "#2D343A",
   accentCol: "#97DBFB",

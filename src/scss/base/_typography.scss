@@ -4,12 +4,11 @@ html {
 }
 
 body {
-    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: "Prata", 'Times New Roman', Times, serif;
     font-weight: bold;
     line-height: 1.3;
 }
@@ -43,7 +42,7 @@ li {
 }
 
 input, textarea, button {
-    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
 
@@ -85,11 +84,6 @@ input, textarea, button {
     li {
         font-size: 1.25rem;
     }
-
-    input, textarea, button {
-        font-family: Inter, Arial, Helvetica, sans-serif;
-        font-size: 1rem;
-    }
 }
 
 @media screen and (max-width: 500px) {
@@ -124,10 +118,5 @@ input, textarea, button {
 
     li {
         font-size: 1.25rem;
-    }
-
-    input, textarea, button {
-        font-family: Inter, Arial, Helvetica, sans-serif;
-        font-size: 1rem;
     }
 }

@@ -45,7 +45,7 @@ export const GlobalStyles = createGlobalStyle`
 
     /* Navbar theme styling */
     .header {
-        background-color: ${({ theme }) => theme.primaryBgCol};
+        background: ${({ theme }) => theme.primaryBgCol};
         border-bottom: 1px solid ${({ theme }) => theme.lineCol};
 
         &__link, &__logo {
@@ -86,15 +86,14 @@ export const GlobalStyles = createGlobalStyle`
 
     /* Home page theme styling */
     .landing-section {
+        background: linear-gradient(to right, #348fe3 0%, #942FE4 100%);
+
         &__heading {
-            color: ${({ theme }) => theme.primaryFontCol};
+            color: #bde7f4;
+            text-shadow: .25rem .25rem 2rem rgba(0,0,0,0.3);
 
             &--highlight {
                 color: ${({ theme }) => theme.accentCol};
-                /* background: linear-gradient(98.68deg, #2566A3 0%, #942FE4 100%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent; */
             }
         }
 
@@ -111,13 +110,13 @@ export const GlobalStyles = createGlobalStyle`
     .about-me-section {
         background-color: ${({ theme }) => theme.secondaryBgCol};
 
-        &__about-square:not(:last-of-type) {
+        /* &__about-square:not(:last-of-type) {
             border-right: 1px solid ${({ theme }) => theme.lineCol};
 
             @media screen and (max-width: 980px) {
                 border-right: none;
             }
-        }
+        } */
 
         &__text-container {
             border-left: 1px solid ${({ theme }) => theme.lineCol};
@@ -126,12 +125,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .my-experience-section {
-        &__heading {
-            &:before, &:after {
-                background-color: ${({ theme }) => theme.lineCol};
-            }
-        }
-
         &__experience-details-options {
             &--selected {
                 background-color: ${({ theme }) => theme.secondaryBgCol};
@@ -194,12 +187,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     .contact-section {
-        &__heading {
-            &:before, &:after {
-                background-color: ${({ theme }) => theme.lineCol};
-            }
-        }
-
         &__contact-details-container {
             /* border: 1px solid ${({ theme }) => theme.lineCol}; */
             border-left: none;

@@ -29,9 +29,9 @@ function ExperienceSection() {
                 className="my-experience-section__experience-detail-title-container"
                 onClick={() => displayDropdown(experience.id)}
               >
-                <h3 className="my-experience-section__experience-detail-title">
+                <h4 className="my-experience-section__experience-detail-title">
                   {experience.title}
-                </h3>
+                </h4>
                 <FontAwesomeIcon
                   icon={
                     activeDropdowns.indexOf(experience.id) >= 0

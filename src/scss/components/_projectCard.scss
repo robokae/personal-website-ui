@@ -1,12 +1,9 @@
 @import "../abstract/variables";
 
 .project-card-container {
-   // width: calc(50% - .5rem);
-   // max-width: 100%;
-   // width: 50%;
-   // height: max-content;
    border-radius: .25rem;
    box-sizing: border-box;
+   backdrop-filter: blur(2rem);
 
    &__heading {
       font-size: 1.5rem;

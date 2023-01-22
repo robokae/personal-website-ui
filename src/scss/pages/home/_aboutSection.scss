@@ -2,7 +2,7 @@
 
 .about-me-section {
     width: 100%;
-    max-height: max-content;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,13 +14,13 @@
     }
 
     &__content-container {
-        width: 100%;
+        width: 90%;
+        max-width: $content-max-width;
         height: 100%;
         display: flex;
         flex-direction: row;
         align-items: center; 
-        padding: 2rem 1rem;
-        border-radius: $border-radius;
+        padding: 2rem 0;
     }
 
     &__about-squares {
@@ -30,6 +30,7 @@
         grid-template-columns: repeat(4, 1fr);
         justify-content: center;
         align-items: center;
+        gap: 2rem;
     }
 
     &__about-square {
@@ -46,7 +47,7 @@
 
     &__about-square-title {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         flex: 1;
     }
 

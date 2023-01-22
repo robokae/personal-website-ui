@@ -1,3 +1,5 @@
+@import "../../abstract/variables";
+
 .my-experience-section {
     width: 100%;
     max-height: max-content;
@@ -9,7 +11,8 @@
     gap: 5rem;
 
     &__content {
-        width: 100%;
+        width: 90%;
+        max-width: $content-max-width;
         height: 80%;
         display: flex;
         flex-direction: column;
@@ -41,7 +44,7 @@
     }
 
     &__experience-details {
-        width: 90%;
+        width: 100%;
         max-height: 80%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -64,10 +67,6 @@
         display: none;
     }
     
-    &__experience-card-heading {
-        font-family: "Inter", Arial, Helvetica, sans-serif;
-    }
-
     &__experience-cards {
         width: 100%;
         display: flex;

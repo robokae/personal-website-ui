@@ -5,15 +5,16 @@
     height: $header-height; 
     position: fixed;
     top: 0;
+    // backdrop-filter: blur(1.5rem);
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 5;
 
     &__content {
         width: 90%;
-        max-width: 1280px;
+        max-width: $content-max-width;
         height: max-content;
         display: grid;
         grid-template-columns: max-content max-content;
@@ -23,7 +24,6 @@
     }
 
     &__logo {
-        font-family: "Prata", Arial, Helvetica, sans-serif;
         font-size: 1.5rem;
         font-weight: bold;
         text-transform: capitalize;
