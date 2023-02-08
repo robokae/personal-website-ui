@@ -37,8 +37,8 @@ a {
     text-decoration: none;
 }
 
-li {
-    font-size: 1.25rem;
+li, a {
+    font-size: 1rem;
 }
 
 input, textarea, button {
@@ -82,7 +82,7 @@ input, textarea, button {
     }
 
     li {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 }
 
@@ -117,6 +117,6 @@ input, textarea, button {
     }
 
     li {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 }

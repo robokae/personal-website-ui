@@ -10,8 +10,8 @@ import Navbar from "./components/Header";
 import Home from "./pages/home/Home";
 import Blog from "./pages/blog/Blog";
 import Post from "./pages/blog/Post";
-import Portfolio from "./pages/Portfolio";
-import Resume from "./pages/Resume";
+import Portfolio from "./pages/portfolio/Portfolio";
+import Resume from "./pages/resume/Resume";
 import Login from "./pages/Login";
 
 import ProjectCard from "./components/home/ProjectCard";
@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["IBM Plex Sans:400,700"],
+        families: ["IBM Plex Sans:400,700", "Yellowtail"],
       },
     });
   }, []);

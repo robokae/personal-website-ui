@@ -17,7 +17,7 @@ function SlideOutMenu(props) {
             onClick={() => setDisplay(false)}
           />
         </div>
-        <h2 className="slide-out-menu__heading">Menu</h2>
+        <h2 className="slide-out-menu__heading">Welcome</h2>
         <div className="slide-out-menu__bottom">
           <ul className="slide-out-menu__options">
             <li className="slide-out-menu__option">

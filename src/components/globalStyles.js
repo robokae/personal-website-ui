@@ -45,23 +45,47 @@ export const GlobalStyles = createGlobalStyle`
 
     /* Navbar theme styling */
     .header {
-        background: ${({ theme }) => theme.primaryBgCol};
-        border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+        &--initial {
+            border-bottom: 1px solid transparent;
+        }
 
-        &__link, &__logo {
-            color: ${({ theme }) => theme.primaryFontCol};
+        &--active {
+            background-color: ${({ theme }) => theme.primaryBgCol};
+            border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+        }
+
+        &__link, &__logo, &__icon {
+            &--initial {
+                color: ${({ theme }) => theme.headerInitialFontCol};
+            }
+
+            &--active {
+                color: ${({ theme }) => theme.primaryFontCol};
+            }
         }
 
         &__link:hover {
-            background-color: ${({ theme }) => theme.secondaryBgCol};
+            &--initial {
+
+            }
+
+            &--active {
+                background-color: ${({ theme }) => theme.secondaryBgCol};
+            }
         }
 
         /* Theme toggler theme styling */
         &__theme-toggler {
-            color: ${({ theme }) => theme.primaryFontCol};
+            &--initial {
+                color: ${({ theme }) => theme.headerInitialFontCol};
+            }
 
-            &:hover {
-                background-color: ${({ theme }) => theme.secondaryBgCol};
+            &--active {
+                color: ${({ theme }) => theme.primaryFontCol};
+
+                &:hover {
+                    background-color: ${({ theme }) => theme.secondaryBgCol};
+                }
             }
         }
     }
@@ -70,6 +94,10 @@ export const GlobalStyles = createGlobalStyle`
     .slide-out-menu {
         background-color: ${({ theme }) => theme.primaryBgCol};
         border-left: 1px solid ${({ theme }) => theme.lineCol};
+
+        &__heading {
+            border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+        }
 
         &__option {
             &:hover {
@@ -110,18 +138,14 @@ export const GlobalStyles = createGlobalStyle`
     .about-me-section {
         background-color: ${({ theme }) => theme.secondaryBgCol};
 
-        /* &__about-square:not(:last-of-type) {
-            border-right: 1px solid ${({ theme }) => theme.lineCol};
-
-            @media screen and (max-width: 980px) {
-                border-right: none;
-            }
-        } */
-
         &__text-container {
             border-left: 1px solid ${({ theme }) => theme.lineCol};
         }
 
+        &__icon {
+            color: ${({ theme }) => theme.accentCol};
+            filter: drop-shadow(0 0 2.75rem ${({ theme }) => theme.accentCol});
+        }
     }
 
     .my-experience-section {

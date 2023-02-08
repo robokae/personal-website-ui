@@ -2,7 +2,7 @@
 
 .about-me-section {
     width: 100%;
-    height: 40vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,18 +46,6 @@
 
     &__icon {
         font-size: 2.5rem;
-        transition: all .15s ease-in;
-
-        &:hover {
-            color: $blue;
-            transform: scale(1.15);
-        }
-
-        &--red {
-            &:hover {
-                color: $red;
-            }
-        }
     }
 }
 

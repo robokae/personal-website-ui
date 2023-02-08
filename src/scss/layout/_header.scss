@@ -10,6 +10,7 @@
     justify-content: center;
     align-items: center;
     z-index: 5;
+    transition: background-color .25s ease-in, border-bottom .25s ease-in;
 
     &__content {
         width: 90%;
@@ -19,11 +20,12 @@
         grid-template-columns: max-content max-content;
         justify-content: space-between;
         align-items: center;
-        transition: all .2s ease-in-out;
+        // transition: all .2s ease-in-out;
     }
 
     &__logo {
-        font-size: 1.5rem;
+        font-family: "Yellowtail", Arial, Helvetica, sans-serif;
+        font-size: 1.75rem;
         font-weight: bold;
         text-transform: capitalize;
         text-decoration: none;
