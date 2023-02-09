@@ -1,7 +1,7 @@
 node_modules
 .DS_Store
 backend/personalwebsite/src/main/resources/application.properties
-.vscode/settings.json
+.vscode
 api/src/main/java/com/personalwebsite/api/.env
 .idea
 logfile
