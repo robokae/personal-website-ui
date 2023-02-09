@@ -18,16 +18,18 @@ import ProjectCard from "./components/home/ProjectCard";
 import Admin from "./pages/admin/Admin";
 import CreatePost from "./pages/admin/CreatePost";
 import EditPost from "./pages/admin/EditPost";
+import {
+  DARK_THEME,
+  FONT_FAMILIES,
+  LIGHT_THEME,
+  THEME,
+} from "./constants/Constants";
 
 function App() {
-  const LIGHT_THEME = "light";
-  const DARK_THEME = "dark";
-  const THEME = "theme";
-
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ["IBM Plex Sans:400,700", "Yellowtail"],
+        families: FONT_FAMILIES,
       },
     });
   }, []);
