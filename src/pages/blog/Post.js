@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import JSONDateConverter from "../../util/JSONDateConverter";
+import { toFullDate } from "../../util/DateUtil";
 
 const MAX_CHAR_FOR_DISPLAY_CENTER = 500;
 
@@ -24,7 +24,7 @@ const Post = () => {
           <>
             <h3 className="post-page__post-title">{post.title}</h3>
             <p className="post-page__post-publish-date">
-              {new JSONDateConverter(post.publishDate).toFullDate()}
+              {toFullDate(post.publishDate)}
             </p>
             <p
               className={`post-page__post-body post-page__post-body--${

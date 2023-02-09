@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import JSONDateConverter from "../../util/JSONDateConverter";
+import toFullDate from "../../util/DateUtil";
 
 const Post = ({ post, border }) => {
   return (
@@ -7,9 +7,7 @@ const Post = ({ post, border }) => {
       <Link to={`/post/${post.title}`} className="post__title">
         {post.title}
       </Link>
-      <p className="post__publish-date">
-        {new JSONDateConverter(post.publishDate).toFullDate()}
-      </p>
+      <p className="post__publish-date">{toFullDate(post.publishDate)}</p>
       <p className="post__description">{post.body}</p>
       {/* <div className="post__tags-container">
         {post.tags.length > 0 &&
