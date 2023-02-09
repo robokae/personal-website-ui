@@ -20,6 +20,10 @@ import CreatePost from "./pages/admin/CreatePost";
 import EditPost from "./pages/admin/EditPost";
 
 function App() {
+  const LIGHT_THEME = "light";
+  const DARK_THEME = "dark";
+  const THEME = "theme";
+
   useEffect(() => {
     WebFont.load({
       google: {
@@ -28,10 +32,23 @@ function App() {
     });
   }, []);
 
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(LIGHT_THEME);
+
+  useEffect(() => {
+    let currentTheme = localStorage.getItem(THEME);
+    if (currentTheme) {
+      setTheme(currentTheme);
+    }
+  }, []);
 
   const toggleTheme = () => {
-    theme === "light" ? setTheme("dark") : setTheme("light");
+    if (theme === LIGHT_THEME) {
+      setTheme(DARK_THEME);
+      localStorage.setItem(THEME, DARK_THEME);
+      return;
+    }
+    setTheme(LIGHT_THEME);
+    localStorage.setItem(THEME, LIGHT_THEME);
   };
 
   // const ScrollToTop = () => {
@@ -45,7 +62,7 @@ function App() {
   // };
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === LIGHT_THEME ? lightTheme : darkTheme}>
       <>
         <BrowserRouter>
           {/* <ScrollToTop /> */}

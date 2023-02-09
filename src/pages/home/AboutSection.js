@@ -18,7 +18,6 @@ function AboutSection() {
             />
             <p className="about-me-section__about-square-title">
               B.S. in computer science from the University of California, Merced
-              (graduated 2022)
             </p>
           </div>
           <div className="about-me-section__about-square">

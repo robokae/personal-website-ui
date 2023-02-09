@@ -144,7 +144,8 @@ export const GlobalStyles = createGlobalStyle`
 
         &__icon {
             color: ${({ theme }) => theme.accentCol};
-            filter: drop-shadow(0 0 2.75rem ${({ theme }) => theme.accentCol});
+            /* filter: drop-shadow(0 0 2.75rem ${({ theme }) =>
+              theme.accentCol}); */
         }
     }
 
