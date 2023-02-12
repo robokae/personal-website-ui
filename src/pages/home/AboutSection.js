@@ -1,12 +1,10 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { about } from "../../data/home";
 import IconTextCard from "../../components/IconTextCard";
 import Grid from "../../components/layout/Grid";
 import { Content, Section } from "../../components/layout/Layout";
+import { getFontAwesomeIcon } from "../../util/IconUtil";
 
 function AboutSection() {
-  const getIcon = (iconName) => <FontAwesomeIcon icon={iconName} />;
-
   return (
     <Section>
       <Content>
@@ -14,7 +12,7 @@ function AboutSection() {
           {about.map((aboutItem) => (
             <IconTextCard
               key={aboutItem.id}
-              icon={getIcon(aboutItem.icon)}
+              icon={getFontAwesomeIcon(aboutItem.icon)}
               iconCol={({ theme }) => theme.accentCol}
               text={aboutItem.description}
             />
