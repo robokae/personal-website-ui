@@ -135,20 +135,6 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
-    .about-me-section {
-        background-color: ${({ theme }) => theme.secondaryBgCol};
-
-        &__text-container {
-            border-left: 1px solid ${({ theme }) => theme.lineCol};
-        }
-
-        &__icon {
-            color: ${({ theme }) => theme.accentCol};
-            /* filter: drop-shadow(0 0 2.75rem ${({ theme }) =>
-              theme.accentCol}); */
-        }
-    }
-
     .my-experience-section {
         &__experience-details-options {
             &--selected {

@@ -1,12 +1,12 @@
 const lightTheme = {
   primaryBgCol: "#F8F8F8",
-  headerInitialFontCol: "#dfebf5",
+  headerInitialFontCol: "#DFEBF5",
   secondaryBgCol: "#F0F1F2",
-  primaryFontCol: "#233b45",
+  primaryFontCol: "#233B45",
   secondaryFontCol: "#6C757D",
   lineCol: "#D8DCE0",
-  accentCol: "#27b3dd",
-  themeTogglerBgCol: "#36a977",
+  accentCol: "#27B3DD",
+  themeTogglerBgCol: "#36A977",
   themeTogglerSliderBgCol: "#F8F8F8",
   warningCol: "#CC5E57",
   tooltipBgCol: "#22272A",
@@ -15,9 +15,9 @@ const lightTheme = {
 
 const darkTheme = {
   primaryBgCol: "#121B20",
-  headerInitialFontCol: "#dfebf5",
+  headerInitialFontCol: "#DFEBF5",
   secondaryBgCol: "#171F25",
-  primaryFontCol: "#dfebf5",
+  primaryFontCol: "#DFEBF5",
   secondaryFontCol: "#A4ADB7",
   lineCol: "#2D343A",
   accentCol: "#97DBFB",

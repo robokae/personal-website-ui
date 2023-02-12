@@ -20,14 +20,11 @@
         grid-template-columns: max-content max-content;
         justify-content: space-between;
         align-items: center;
-        // transition: all .2s ease-in-out;
     }
 
     &__logo {
-        font-family: "Yellowtail", Arial, Helvetica, sans-serif;
-        font-size: 1.75rem;
-        font-weight: bold;
-        text-transform: capitalize;
+        font-family: "IBM Plex Mono", Arial, Helvetica, sans-serif;
+        text-transform: uppercase;
         text-decoration: none;
     }
 

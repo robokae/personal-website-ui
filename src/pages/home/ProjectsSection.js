@@ -1,5 +1,5 @@
 import ProjectCard from "../../components/home/ProjectCard";
-import projects from "../../data/project";
+import { projects } from "../../data/home";
 
 function ProjectsSection() {
   return (

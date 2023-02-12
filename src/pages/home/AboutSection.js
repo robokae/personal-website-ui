@@ -1,51 +1,27 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSchool,
-  faHeart,
-  faCode,
-  faBook,
-} from "@fortawesome/free-solid-svg-icons";
+import { about } from "../../data/home";
+import IconTextCard from "../../components/IconTextCard";
+import Grid from "../../components/layout/Grid";
+import { Content, Section } from "../../components/layout/Layout";
 
 function AboutSection() {
+  const getIcon = (iconName) => <FontAwesomeIcon icon={iconName} />;
+
   return (
-    <section id="about" className="about-me-section">
-      <div className="about-me-section__content-container">
-        <div className="about-me-section__about-squares">
-          <div className="about-me-section__about-square">
-            <FontAwesomeIcon
-              className="about-me-section__icon"
-              icon={faSchool}
+    <Section>
+      <Content>
+        <Grid size={about.length}>
+          {about.map((aboutItem) => (
+            <IconTextCard
+              key={aboutItem.id}
+              icon={getIcon(aboutItem.icon)}
+              iconCol={({ theme }) => theme.accentCol}
+              text={aboutItem.description}
             />
-            <p className="about-me-section__about-square-title">
-              B.S. in computer science from the University of California, Merced
-            </p>
-          </div>
-          <div className="about-me-section__about-square">
-            <FontAwesomeIcon
-              className="about-me-section__icon about-me-section__icon--red"
-              icon={faHeart}
-            />
-            <p className="about-me-section__about-square-title">
-              Passionate about UI/UX and full-stack software development
-            </p>
-          </div>
-          <div className="about-me-section__about-square">
-            <FontAwesomeIcon className="about-me-section__icon" icon={faCode} />
-            <p className="about-me-section__about-square-title">
-              Skilled in React, Spring Boot, SQL databases, and cloud
-              technologies
-            </p>
-          </div>
-          <div className="about-me-section__about-square">
-            <FontAwesomeIcon className="about-me-section__icon" icon={faBook} />
-            <p className="about-me-section__about-square-title">
-              Love learning about technology, designing application UIs, and
-              programming
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+          ))}
+        </Grid>
+      </Content>
+    </Section>
   );
 }
 
