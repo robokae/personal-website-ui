@@ -37,59 +37,6 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${({ theme }) => theme.primaryFontCol};
     }
 
-    .tooltip-container .custom-tooltip {
-        background-color: ${({ theme }) => theme.tooltipBgCol};
-        color: ${({ theme }) => theme.tooltipFontCol};
-        opacity: 1;
-    }
-
-    /* Navbar theme styling */
-    .header {
-        &--initial {
-            border-bottom: 1px solid transparent;
-        }
-
-        &--active {
-            background-color: ${({ theme }) => theme.primaryBgCol};
-            border-bottom: 1px solid ${({ theme }) => theme.lineCol};
-        }
-
-        &__link, &__logo, &__icon {
-            &--initial {
-                color: ${({ theme }) => theme.headerInitialFontCol};
-            }
-
-            &--active {
-                color: ${({ theme }) => theme.primaryFontCol};
-            }
-        }
-
-        &__link:hover {
-            &--initial {
-
-            }
-
-            &--active {
-                background-color: ${({ theme }) => theme.secondaryBgCol};
-            }
-        }
-
-        /* Theme toggler theme styling */
-        &__theme-toggler {
-            &--initial {
-                color: ${({ theme }) => theme.headerInitialFontCol};
-            }
-
-            &--active {
-                color: ${({ theme }) => theme.primaryFontCol};
-
-                &:hover {
-                    background-color: ${({ theme }) => theme.secondaryBgCol};
-                }
-            }
-        }
-    }
-
     /* Slide out menu styling */
     .slide-out-menu {
         background-color: ${({ theme }) => theme.primaryBgCol};
@@ -109,8 +56,6 @@ export const GlobalStyles = createGlobalStyle`
             color: ${({ theme }) => theme.primaryFontCol};
         }
     }
-
-
 
     /* Home page theme styling */
     .landing-section {

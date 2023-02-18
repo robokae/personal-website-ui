@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function SlideOutMenu(props) {
-  const { display, setDisplay, toggleTheme } = props;
+  const { display, setDisplay, onChangeTheme } = props;
 
   return (
     <div
@@ -36,7 +36,10 @@ function SlideOutMenu(props) {
               </NavLink>
             </li>
             <li className="slide-out-menu__option">
-              <p className="slide-out-menu__option-text" onClick={toggleTheme}>
+              <p
+                className="slide-out-menu__option-text"
+                onClick={onChangeTheme}
+              >
                 Toggle Theme
               </p>
             </li>

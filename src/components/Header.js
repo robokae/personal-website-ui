@@ -1,14 +1,109 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import SlideOutMenu from "./SlideOutMenu";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import styled from "styled-components";
+import {
+  CONTENT_MAX_WIDTH,
+  HAMBURGER_MENU_ICON,
+  HEADER_HEIGHT,
+  LOGO_FONT,
+  MEDIA_QUERY_BREAKPOINT_MED,
+  MEDIA_QUERY_BREAKPOINT_XL,
+  TRANSITION_DURATION,
+} from "../constants/StyleConstants";
+import IconWithTooltip from "./IconWithTooltip";
+import ThemeSwitcher from "./ThemeSwitcher";
+import Icon from "./Icon";
 
-function Header(props) {
-  const { toggleTheme, theme } = props;
+const Container = styled.header`
+  width: 100%;
+  height: ${HEADER_HEIGHT};
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) =>
+    props.isActive ? ({ theme }) => theme.primaryBgCol : "transparent"};
+  border-bottom: 1px solid
+    ${(props) =>
+      props.isActive ? ({ theme }) => theme.lineCol : "transparent"};
+  z-index: 5;
+  transition: background-color ${TRANSITION_DURATION} ease-in,
+    border-bottom ${TRANSITION_DURATION} ease-in;
+`;
+
+const Content = styled.div`
+  width: ${CONTENT_MAX_WIDTH};
+  height: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_XL}) {
+    width: 95%;
+  }
+`;
+
+const Link = styled(NavLink)`
+  color: ${(props) =>
+    props.$isActive
+      ? ({ theme }) => theme.primaryFontCol
+      : ({ theme }) => theme.headerInitialFontCol};
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+`;
+
+const Logo = styled(Link)`
+  font-family: ${LOGO_FONT};
+  text-transform: uppercase;
+`;
+
+const LinkContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
+    display: none;
+  }
+`;
+
+const MenuIcon = styled(Icon)`
+  display: none;
+
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
+    display: inline-block;
+    justify-self: flex-end;
+    cursor: pointer;
+  }
+`;
+
+const getLinkFromObject = (linkObj, headerState) =>
+  Object.keys(linkObj.icon).length > 0 ? (
+    <Link
+      key={linkObj.id}
+      id={linkObj.tooltip.anchorId}
+      to={linkObj.to}
+      $isActive={headerState}
+    >
+      <IconWithTooltip
+        iconDetails={linkObj.icon}
+        tooltipDetails={linkObj.tooltip}
+      />
+    </Link>
+  ) : (
+    <Link key={linkObj.id} to={linkObj.to} $isActive={headerState}>
+      {linkObj.name}
+    </Link>
+  );
+
+function Header({ links, theme, onChangeTheme, isActive }) {
   const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
   const [headerIsActive, setHeaderIsActive] = useState(false);
 
@@ -18,135 +113,40 @@ function Header(props) {
 
   useEffect(() => window.addEventListener("scroll", handlePageScroll));
 
+  const logoLink = links.find((link) => link.isLogo);
+  const regLinks = links.filter((link) => !link.isLogo);
+
   return (
-    <div className={`header header--${headerIsActive ? "active" : "initial"}`}>
-      <div className="header__content">
-        <NavLink
-          to="/"
-          className={`header__logo header__logo--${
-            headerIsActive ? "active" : "initial"
-          }`}
-        >
-          Alexander Hom
-        </NavLink>
-        <div className="header__links">
-          {/* <NavLink 
-                        to="/#about"
-                        className="navbar-container__link"
-                    >
-                        About
-                    </NavLink> */}
-          <NavLink
-            to="/blog"
-            className={`header__link header__link--${
-              headerIsActive ? "active" : "initial"
-            }`}
-          >
-            Blog
-          </NavLink>
-          {/* <NavLink 
-                        to="/portfolio" 
-                        className="navbar-container__link"
-                    >
-                        Portfolio
-                    </NavLink> */}
-          {/* <NavLink
-                        to="/resume"
-                        className="navbar-container__link"
-                    >
-                        Resume
-                    </NavLink> */}
-          <NavLink
-            to="/#contact"
-            className={`header__link header__link--${
-              headerIsActive ? "active" : "initial"
-            }`}
-            // onClick={() => setDisplaySlideOutMenu(false)}
-          >
-            Contact
-          </NavLink>
-          <a
-            id="linkedin"
-            href="https://www.linkedin.com/in/alexander-hom-94811b188/"
-            className={`header__link header__link--${
-              headerIsActive ? "active" : "initial"
-            }`}
-          >
-            <FontAwesomeIcon
-              className={`header__icon header__icon--${
-                headerIsActive ? "active" : "initial"
-              }`}
-              icon={faLinkedin}
-            />
-            <div className="tooltip-container">
-              <Tooltip
-                anchorId="linkedin"
-                content="LinkedIn"
-                place="bottom"
-                className="custom-tooltip"
-              />
-            </div>
-          </a>
-          <a
-            id="github"
-            href="https://github.com/robokae"
-            className={`header__link header__link--${
-              headerIsActive ? "active" : "initial"
-            }`}
-          >
-            <FontAwesomeIcon
-              className={`header__icon header__icon--${
-                headerIsActive ? "active" : "initial"
-              }`}
-              icon={faGithub}
-            />
-            <div className="tooltip-container">
-              <Tooltip
-                anchorId="github"
-                content="GitHub"
-                place="bottom"
-                className="custom-tooltip"
-              />
-            </div>
-          </a>
-          <button
-            id="toggle-theme"
-            className={`header__theme-toggler header__theme-toggler--${
-              headerIsActive ? "active" : "initial"
-            }`}
-            onClick={toggleTheme}
-          >
-            <FontAwesomeIcon
-              id="toggle-theme"
-              className={`header__icon header__icon--${
-                headerIsActive ? "active" : "initial"
-              }`}
-              icon={theme === "light" ? faMoon : faSun}
-            />
-            <div className="tooltip-container">
-              <Tooltip
-                anchorId="toggle-theme"
-                content={theme === "light" ? "Dark theme" : "Light theme"}
-                place="bottom"
-                className="custom-tooltip"
-              />
-            </div>
-          </button>
-        </div>
-        <FontAwesomeIcon
-          className={`header__hamburger-menu-icon header__icon header__icon--${
-            headerIsActive ? "active" : "initial"
-          }`}
-          icon={faBars}
+    <Container isActive={headerIsActive}>
+      <Content>
+        <Logo key={logoLink.id} to={logoLink.to} $isActive={headerIsActive}>
+          {logoLink.name}
+        </Logo>
+        <LinkContainer>
+          {regLinks.length > 0 &&
+            regLinks.map((link) => getLinkFromObject(link, headerIsActive))}
+          <ThemeSwitcher
+            onChangeTheme={onChangeTheme}
+            theme={theme}
+            headerIsActive={headerIsActive}
+          />
+        </LinkContainer>
+        <MenuIcon
+          icon={HAMBURGER_MENU_ICON}
+          $color={
+            headerIsActive
+              ? ({ theme }) => theme.primaryFontCol
+              : ({ theme }) => theme.headerInitialFontCol
+          }
           onClick={() => setDisplaySlideOutMenu(true)}
         />
-      </div>
+      </Content>
       <SlideOutMenu
         display={displaySlideOutMenu}
         setDisplay={setDisplaySlideOutMenu}
-        toggleTheme={toggleTheme}
+        onChangeTheme={onChangeTheme}
       />
-    </div>
+    </Container>
   );
 }
 

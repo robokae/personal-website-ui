@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  Route,
+  createRoutesFromElements,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import WebFont from "webfontloader";
 
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/globalStyles";
 import { lightTheme, darkTheme } from "./components/theme";
 
-import Navbar from "./components/Header";
 import Home from "./pages/home/Home";
 import Blog from "./pages/blog/Blog";
 import Post from "./pages/blog/Post";
@@ -18,15 +22,12 @@ import ProjectCard from "./components/home/ProjectCard";
 import Admin from "./pages/admin/Admin";
 import CreatePost from "./pages/admin/CreatePost";
 import EditPost from "./pages/admin/EditPost";
-import {
-  DARK_THEME,
-  FONT_FAMILIES,
-  LIGHT_THEME,
-  THEME,
-} from "./constants/StyleConstants";
+import { FONT_FAMILIES } from "./constants/StyleConstants";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import HomeLayout from "./components/layout/HomeLayout";
+import { DARK, LIGHT, THEME } from "./constants/AppConstants";
 
 library.add(fab, fas);
 
@@ -39,7 +40,7 @@ function App() {
     });
   }, []);
 
-  const [theme, setTheme] = useState(LIGHT_THEME);
+  const [theme, setTheme] = useState(LIGHT);
 
   useEffect(() => {
     let currentTheme = localStorage.getItem(THEME);
@@ -48,14 +49,14 @@ function App() {
     }
   }, []);
 
-  const toggleTheme = () => {
-    if (theme === LIGHT_THEME) {
-      setTheme(DARK_THEME);
-      localStorage.setItem(THEME, DARK_THEME);
+  const changeTheme = () => {
+    if (theme === LIGHT) {
+      setTheme(DARK);
+      localStorage.setItem(THEME, DARK);
       return;
     }
-    setTheme(LIGHT_THEME);
-    localStorage.setItem(THEME, LIGHT_THEME);
+    setTheme(LIGHT);
+    localStorage.setItem(THEME, LIGHT);
   };
 
   // const ScrollToTop = () => {
@@ -68,29 +69,31 @@ function App() {
   //   return null;
   // };
 
-  return (
-    <ThemeProvider theme={theme === LIGHT_THEME ? lightTheme : darkTheme}>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
       <>
-        <BrowserRouter>
-          {/* <ScrollToTop /> */}
-          <GlobalStyles />
-          <Navbar toggleTheme={toggleTheme} theme={theme} />
-          <Routes>
-            {/* Home */}
-            <Route path="/" element={<Home />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/post/:postTitle" element={<Post />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/resume" element={<Resume />} />
-            <Route path="/projects" element={<ProjectCard />} />
-            {/* Admin */}
-            <Route path="/login" element={<Login />} />
-            <Route path="/admin" element={<Admin />} />
-            <Route path="/admin/createPost" element={<CreatePost />} />
-            <Route path="/admin/editPost" element={<EditPost />} />
-          </Routes>
-        </BrowserRouter>
+        <Route
+          element={<HomeLayout theme={theme} onChangeTheme={changeTheme} />}
+        >
+          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/projects" element={<ProjectCard />} />
+        </Route>
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/post/:postTitle" element={<Post />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/createPost" element={<CreatePost />} />
+        <Route path="/admin/editPost" element={<EditPost />} />
       </>
+    )
+  );
+
+  return (
+    <ThemeProvider theme={theme === LIGHT ? lightTheme : darkTheme}>
+      <RouterProvider router={router} />
+      <GlobalStyles />
     </ThemeProvider>
   );
 }

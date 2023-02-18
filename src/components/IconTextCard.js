@@ -17,7 +17,7 @@ const Container = styled.div`
 const Icon = styled.div`
   font-size: 2rem;
   color: ${(props) =>
-    props.col ? props.col : (theme) => theme.primaryFontCol};
+    props.col ? props.col : ({ theme }) => theme.primaryFontCol};
 `;
 
 const Text = styled.p`

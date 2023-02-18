@@ -31,11 +31,18 @@ export const about = [
   },
 ];
 
+export const reflection = `
+  Growing up, I was fascinated with computers. At the same time, I also enjoyed 
+  making art and building stuff out of Legos and paper. Software development 
+  combines my love of computers, art, and building things, providing me with a 
+  canvas to design and create applications with elegant user interfaces.
+`;
+
 export const projects = [
   {
     id: 0,
     name: "Emazon",
-    stack: ["Figma", "React", "CSS", "Flask"],
+    stack: ["React", "Flask"],
     thumbnailSrc: "Emazon.png",
     deployed: true,
     prodLink: "https://emazon-final-project.herokuapp.com/",
@@ -45,7 +52,7 @@ export const projects = [
   {
     id: 1,
     name: "Encapsulate",
-    stack: ["Figma", "React", "CSS", "Flask", "SQLite"],
+    stack: ["React", "Flask", "SQLite"],
     thumbnailSrc: "Encapsulate.png",
     deployed: false,
     prodLink: "",
@@ -55,7 +62,7 @@ export const projects = [
   {
     id: 2,
     name: "Nocturnal",
-    stack: ["Figma", "Java", "Parse", "Android Studio"],
+    stack: ["Java", "Parse"],
     thumbnailSrc: "",
     deployed: false,
     prodLink: "",
@@ -66,7 +73,7 @@ export const projects = [
   {
     id: 3,
     name: "UCM ACM Chapter Website",
-    stack: ["Figma", "React", "Sass", "Firebase"],
+    stack: ["React", "Sass", "Firebase"],
     thumbnailSrc: "",
     deployed: true,
     prodLink: "https://acm-chapter-website.web.app/",
@@ -77,7 +84,7 @@ export const projects = [
   {
     id: 4,
     name: "Education Hackathon Project",
-    stack: ["Figma", "HTML", "CSS", "Spring Boot"],
+    stack: ["Spring Boot"],
     thumbnailSrc: "",
     deployed: false,
     prodLink: "",
@@ -88,7 +95,7 @@ export const projects = [
   {
     id: 5,
     name: "Minimalistic Todo List",
-    stack: ["Figma", "React"],
+    stack: ["React"],
     thumbnailSrc: "",
     deployed: false,
     prodLink: "",
