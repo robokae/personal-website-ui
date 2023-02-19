@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BORDER_RADIUS } from "../constants/StyleConstants";
+import { BORDER_RADIUS } from "../../constants/StyleConstants";
 
 const Container = styled.div`
   padding: 1rem;

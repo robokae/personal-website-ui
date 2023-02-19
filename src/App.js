@@ -8,8 +8,8 @@ import {
 import WebFont from "webfontloader";
 
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./components/globalStyles";
-import { lightTheme, darkTheme } from "./components/theme";
+import { GlobalStyles } from "./components/global/globalStyles";
+import { lightTheme, darkTheme } from "./components/global/theme";
 
 import Home from "./pages/home/Home";
 import Blog from "./pages/blog/Blog";

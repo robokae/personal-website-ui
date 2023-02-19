@@ -1,4 +1,4 @@
-import toFullDate, { getYearsSince, toNumericDate } from "../../util/DateUtil";
+import { toNumericDate, toFullDate } from "../../util/DateUtil";
 
 describe("DateUtil", () => {
   const date = "2022-10-02T21:23:51.421+00:00";

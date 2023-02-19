@@ -1,8 +1,9 @@
 import { about } from "../../data/home";
-import IconTextCard from "../../components/IconTextCard";
 import Grid from "../../components/layout/Grid";
-import { Content, Section } from "../../components/layout/Layout";
 import { getFontAwesomeIcon } from "../../util/IconUtil";
+import Section from "../../components/layout/SectionLayout";
+import Content from "../../components/layout/ContentLayout";
+import IconTextCard from "../../components/icon/IconTextCard";
 
 function AboutSection() {
   return (

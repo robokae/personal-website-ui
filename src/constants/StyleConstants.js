@@ -6,7 +6,7 @@ export const MEDIA_QUERY_BREAKPOINT_LG = "992px";
 export const MEDIA_QUERY_BREAKPOINT_MED = "768px";
 export const MEDIA_QUERY_BREAKPOINT_SM = "600px";
 
-export const ICON_SIZE = "1.5rem";
+export const ICON_SIZE = "1.25rem";
 export const SCHOOL_ICON = "school";
 export const HEART_ICON = "heart";
 export const CODE_ICON = "code";
@@ -19,11 +19,11 @@ export const BORDER_RADIUS = ".25rem";
 
 export const MAX_GRID_ELEMENTS_PER_ROW = 4;
 
-export const GAP = "1.5rem";
+export const GAP = "1.75rem";
 
 export const SECTION_PADDING = "3rem 0";
 
-export const HEADER_HEIGHT = "3rem";
+export const HEADER_HEIGHT = "3.5rem";
 export const CONTENT_MAX_WIDTH = "1200px";
 
 export const TRANSITION_DURATION = ".25s";

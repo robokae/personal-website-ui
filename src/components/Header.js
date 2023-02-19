@@ -12,9 +12,9 @@ import {
   MEDIA_QUERY_BREAKPOINT_XL,
   TRANSITION_DURATION,
 } from "../constants/StyleConstants";
-import IconWithTooltip from "./IconWithTooltip";
 import ThemeSwitcher from "./ThemeSwitcher";
-import Icon from "./Icon";
+import Icon from "./icon/Icon";
+import IconWithTooltip from "./icon/IconWithTooltip";
 
 const Container = styled.header`
   width: 100%;

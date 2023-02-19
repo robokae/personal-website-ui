@@ -5,7 +5,7 @@ import {
   MOON_ICON,
   SUN_ICON,
 } from "../constants/StyleConstants";
-import IconWithTooltip from "./IconWithTooltip";
+import IconWithTooltip from "./icon/IconWithTooltip";
 
 const Button = styled.button`
   background-color: transparent;
