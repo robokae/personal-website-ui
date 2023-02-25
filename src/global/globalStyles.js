@@ -59,7 +59,7 @@ export const GlobalStyles = createGlobalStyle`
 
     /* Home page theme styling */
     .landing-section {
-        background: linear-gradient(to right, #348fe3 0%, #942FE4 100%);
+        background: linear-gradient(to right, #348fe3, #942FE4);
 
         &__heading {
             color: #bde7f4;

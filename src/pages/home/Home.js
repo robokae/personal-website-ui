@@ -6,7 +6,12 @@ import AboutSection from "./AboutSection";
 import ExperienceSection from "./ExperienceSection";
 import ProjectsSection from "./ProjectsSection";
 import ContactSection from "./contact/ContactSection";
-import Footer from "../../components/Footer";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 function Home() {
   const location = useLocation();
@@ -25,14 +30,13 @@ function Home() {
   }, [location]);
 
   return (
-    <div className="home-page">
+    <Container>
       <LandingSection className="home-page__section" />
       <AboutSection className="home-page__section" />
       <ExperienceSection className="home-page__section" />
       <ProjectsSection className="home-page__section" />
       <ContactSection className="home-page__section" />
-      <Footer />
-    </div>
+    </Container>
   );
 }
 

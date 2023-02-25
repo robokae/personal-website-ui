@@ -5,6 +5,41 @@ import {
   SCHOOL_ICON,
 } from "../constants/StyleConstants";
 
+export const terminalDetails = [
+  {
+    command: "describe",
+    output: [
+      `I am a software engineer from San Francisco who enjoys designing 
+    user interfaces and developing applications using a variety of programming 
+    languages, tools, and software.`,
+    ],
+  },
+  {
+    command: "technical-skills",
+    output: [
+      "JavaScript",
+      "Java",
+      "HTML",
+      "CSS",
+      "Python",
+      "SQL",
+      "MongoDB",
+      "Google Cloud",
+    ],
+  },
+  {
+    command: "interests",
+    output: [
+      "Web design",
+      "Cloud",
+      "DevOps",
+      "Linux",
+      "Distributed systems",
+      "Databases",
+    ],
+  },
+];
+
 export const about = [
   {
     id: 0,

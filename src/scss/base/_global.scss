@@ -12,9 +12,11 @@
 // }
 
 body {
-    max-height: max-content;
+    width: 100%;
+    height: max-content;
     position: relative;
     display: flex;
+    flex-direction: column;
     overflow: auto;
     box-sizing: border-box;
     overscroll-behavior-y: none;

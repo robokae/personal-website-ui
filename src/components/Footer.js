@@ -1,14 +1,35 @@
+import styled from "styled-components";
+import { FOOTER_HEIGHT } from "../constants/StyleConstants";
+
+const Container = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: ${FOOTER_HEIGHT};
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid ${({ theme }) => theme.lineCol};
+`;
+
+const Content = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
 function Footer() {
   return (
-    <div className="footer-container">
-      <div className="footer-container__content">
-        <p className="footer-container__text">Made with React and Sass</p>
-        <div>&#8226;</div>
-        <p className="footer-container__text">
-          Alexander Hom {new Date().getFullYear()}
-        </p>
-      </div>
-    </div>
+    <Container>
+      <Content>
+        <p>Designed and developed by Alexander Hom</p>
+        <p>Alexander Hom {new Date().getFullYear()}</p>
+      </Content>
+    </Container>
   );
 }
 

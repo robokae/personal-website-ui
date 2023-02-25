@@ -8,8 +8,8 @@ import {
 import WebFont from "webfontloader";
 
 import { ThemeProvider } from "styled-components";
-import { GlobalStyles } from "./components/global/globalStyles";
-import { lightTheme, darkTheme } from "./components/global/theme";
+import { GlobalStyles } from "./global/globalStyles";
+import { lightTheme, darkTheme } from "./global/theme";
 
 import Home from "./pages/home/Home";
 import Blog from "./pages/blog/Blog";
@@ -73,9 +73,10 @@ function App() {
     createRoutesFromElements(
       <>
         <Route
+          path="/"
           element={<HomeLayout theme={theme} onChangeTheme={changeTheme} />}
         >
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/projects" element={<ProjectCard />} />

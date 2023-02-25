@@ -1,19 +1,21 @@
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
+import { FOOTER_HEIGHT } from "../../constants/StyleConstants";
 import { homeHeader } from "../../data/header";
 import Footer from "../Footer";
 import Header from "../Header";
-import { BaseLayout } from "./BaseLayout";
 
-const Home = styled(BaseLayout)`
+const Container = styled.div`
+  margin-bottom: ${FOOTER_HEIGHT};
   width: 100%;
-  max-height: max-content;
-  position: absolute;
+  display: flex;
+  flex-direction: column;
 `;
 
-function HomeLayout({ theme, onChangeTheme, children }) {
+function HomeLayout(props) {
+  const { theme, onChangeTheme } = props;
   return (
-    <Home>
+    <Container>
       <Header
         logo={homeHeader.logo}
         links={homeHeader.links}
@@ -21,10 +23,9 @@ function HomeLayout({ theme, onChangeTheme, children }) {
         theme={theme}
         onChangeTheme={onChangeTheme}
       />
-      {children}
-      <Footer />
       <Outlet />
-    </Home>
+      <Footer />
+    </Container>
   );
 }
 
