@@ -8,7 +8,6 @@ import {
   MEDIA_QUERY_BREAKPOINT_LG,
   MEDIA_QUERY_BREAKPOINT_MED,
 } from "../../constants/StyleConstants";
-import { terminalDetails } from "../../data/home";
 
 const Content = styled.div`
   max-width: ${CONTENT_MAX_WIDTH};
@@ -19,6 +18,13 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   gap: ${LARGE_GAP};
+`;
+
+const Heading = styled.h1`
+  color: #bde7f4;
+  text-shadow: 0.25rem 0.25rem 2rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-weight: bold;
 `;
 
 const StyledTerminal = styled.div`
@@ -33,17 +39,20 @@ const StyledTerminal = styled.div`
   }
 `;
 
-function LandingSection() {
+function LandingSection({ content }) {
   return (
     <LandingLayout>
       <Content>
-        <h1 className="landing-section__heading">
-          Hello there!
-          <br />
-          My name is Alexander Hom.
-        </h1>
+        <Heading>
+          {content.heading.map((line, index) => (
+            <div key={index}>
+              <span>{line}</span>
+              <br />
+            </div>
+          ))}
+        </Heading>
         <StyledTerminal>
-          <Terminal terminalDetails={terminalDetails} />
+          <Terminal details={content.terminal} />
         </StyledTerminal>
       </Content>
     </LandingLayout>

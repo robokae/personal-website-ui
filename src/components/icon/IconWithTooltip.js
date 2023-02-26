@@ -1,13 +1,12 @@
 import { Tooltip } from "react-tooltip";
 import styled from "styled-components";
+import { FAB } from "../../constants/AppConstants";
 import Icon from "./Icon";
 
 const StyledTooltip = styled(Tooltip)`
   background-color: ${({ theme }) => theme.tooltipBgCol};
   color: ${({ theme }) => theme.tooltipFontCol};
 `;
-
-const FAB = "fab";
 
 function IconWithTooltip({ iconDetails, tooltipDetails, color }) {
   return (

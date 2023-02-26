@@ -58,28 +58,6 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     /* Home page theme styling */
-    .landing-section {
-        background: linear-gradient(to right, #348fe3, #942FE4);
-
-        &__heading {
-            color: #bde7f4;
-            text-shadow: .25rem .25rem 2rem rgba(0,0,0,0.3);
-
-            &--highlight {
-                color: ${({ theme }) => theme.accentCol};
-            }
-        }
-
-        &__quick-link {
-            color: ${({ theme }) => theme.primaryFontCol};
-        }
-
-        &__quick-link-icon {
-            color: ${({ theme }) => theme.primaryFontCol};
-
-        }
-    }
-
     .my-experience-section {
         &__experience-details-options {
             &--selected {
@@ -304,15 +282,6 @@ export const GlobalStyles = createGlobalStyle`
 
         &__publish-date {
             color: ${({ theme }) => theme.secondaryFontCol};
-        }
-    }
-
-    /* Footer styling */
-    .footer-container {
-        border-top: 1px solid ${({ theme }) => theme.lineCol};
-
-        &__text-separator {
-            color: ${({ theme }) => theme.primaryFontCol};
         }
     }
 `;

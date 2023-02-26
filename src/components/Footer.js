@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FOOTER_HEIGHT } from "../constants/StyleConstants";
+import { getYear } from "../util/DateUtil";
 
 const Container = styled.div`
   position: absolute;
@@ -22,12 +23,13 @@ const Content = styled.div`
   align-items: center;
 `;
 
-function Footer() {
+function Footer({ textContent }) {
   return (
     <Container>
       <Content>
-        <p>Designed and developed by Alexander Hom</p>
-        <p>Alexander Hom {new Date().getFullYear()}</p>
+        {textContent &&
+          textContent.map((text, index) => <p key={index}>{text}</p>)}
+        <p>Alexander Hom {getYear()}</p>
       </Content>
     </Container>
   );

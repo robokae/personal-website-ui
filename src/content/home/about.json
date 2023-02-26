@@ -1,0 +1,30 @@
+{
+    "name": "about",
+    "page": "home",
+    "heading": "About Me",
+    "content": [
+        {
+            "id": 0,
+            "icon": "SCHOOL_ICON",
+            "description":
+            "B.S. in computer science from the University of California, Merced"
+        },
+        {
+            "id": 1,
+            "icon": "HEART_ICON",
+            "description": "Passionate about UI/UX and full-stack software development"
+        },
+        {
+            "id": 2,
+            "icon": "CODE_ICON",
+            "description":
+            "Skilled in React, Spring Boot, SQL databases, and cloud technologies"
+        },
+        {
+            "id": 3,
+            "icon": "BOOK_ICON",
+            "description":
+            "Love learning about technology, designing application UIs, and programming"
+        }
+    ]
+}

@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
-import experience from "../../data/experience";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function ExperienceSection() {
+function ExperienceSection({ content }) {
   const [activeDropdowns, setActiveDropdowns] = useState([]);
 
   const displayDropdown = (id) => {
@@ -20,7 +19,7 @@ function ExperienceSection() {
       <div className="my-experience-section__content">
         <h2 className="my-experience-section__heading">My Experience</h2>
         <div className="my-experience-section__experience-details">
-          {experience.map((experience) => (
+          {content.map((experience) => (
             <div
               key={experience.id}
               className="my-experience-section__experience-detail"

@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { FOOTER_HEIGHT } from "../../constants/StyleConstants";
-import { homeHeader } from "../../data/header";
+import { home } from "../../content/header.json";
+import footer from "../../content/footer.json";
 import Footer from "../Footer";
 import Header from "../Header";
 
@@ -17,14 +18,14 @@ function HomeLayout(props) {
   return (
     <Container>
       <Header
-        logo={homeHeader.logo}
-        links={homeHeader.links}
+        logo={home.logo}
+        links={home.links}
         isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
       />
       <Outlet />
-      <Footer />
+      <Footer textContent={footer.text} />
     </Container>
   );
 }

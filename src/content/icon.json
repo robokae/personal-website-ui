@@ -1,0 +1,14 @@
+{
+    "type": "fontawesome",
+    "iconMap": {
+        "SCHOOL_ICON": "school",
+        "HEART_ICON": "heart",
+        "CODE_ICON": "code",
+        "BOOK_ICON": "book",
+        "SUN_ICON": "sun",
+        "MOON_ICON": "moon",
+        "HAMBURGER_MENU_ICON": "bars",
+        "LINKEDIN_ICON": "linkedin",
+        "GITHUB_ICON": "github"
+    }
+}

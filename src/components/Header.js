@@ -103,7 +103,7 @@ const getLinkFromObject = (linkObj, headerState) =>
     </Link>
   );
 
-function Header({ links, theme, onChangeTheme, isActive }) {
+function Header({ logo, links, theme, onChangeTheme, isActive }) {
   const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
   const [headerIsActive, setHeaderIsActive] = useState(false);
 
@@ -113,18 +113,15 @@ function Header({ links, theme, onChangeTheme, isActive }) {
 
   useEffect(() => window.addEventListener("scroll", handlePageScroll));
 
-  const logoLink = links.find((link) => link.isLogo);
-  const regLinks = links.filter((link) => !link.isLogo);
-
   return (
     <Container isActive={headerIsActive}>
       <Content>
-        <Logo key={logoLink.id} to={logoLink.to} $isActive={headerIsActive}>
-          {logoLink.name}
+        <Logo to={logo.to} $isActive={headerIsActive}>
+          {logo.name}
         </Logo>
         <LinkContainer>
-          {regLinks.length > 0 &&
-            regLinks.map((link) => getLinkFromObject(link, headerIsActive))}
+          {links.length > 0 &&
+            links.map((link) => getLinkFromObject(link, headerIsActive))}
           <ThemeSwitcher
             onChangeTheme={onChangeTheme}
             theme={theme}

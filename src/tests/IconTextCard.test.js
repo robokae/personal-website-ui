@@ -1,9 +1,9 @@
 import React from "react";
-import IconTextCard from "../components/IconTextCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { render, screen } from "@testing-library/react";
 import { toHaveClass } from "@testing-library/jest-dom";
+import IconTextCard from "../components/icon/IconTextCard";
 
 describe("IconTextCard", () => {
   let icon, text;

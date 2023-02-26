@@ -9,3 +9,7 @@ export const toFullDate = (dateString) => {
     day: "numeric",
   });
 };
+
+export const getYear = () => {
+  return new Date().getFullYear();
+};

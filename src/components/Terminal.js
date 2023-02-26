@@ -9,8 +9,6 @@ const Container = styled.div`
   padding: 1.5rem;
   background: ${TERMINAL_BG};
   box-shadow: 0.25rem 0.25rem 2rem rgba(65, 79, 109, 0.2);
-  backdrop-filter: blur(2rem);
-  backface-visibility: hidden;
   border: 1px solid ${TERMINAL_BORDER_COLOR};
   border-radius: 0.5rem 0.5rem 0 0;
   border-bottom: none;
@@ -42,10 +40,10 @@ const Output = styled.div`
   color: ${({ theme }) => theme.terminalCommandOutputCol};
 `;
 
-function Terminal({ terminalDetails, width }) {
+function Terminal({ details, width }) {
   return (
     <Container width={width}>
-      {terminalDetails.map((terminalDetail, index) => (
+      {details.map((terminalDetail, index) => (
         <CommandContainer key={index}>
           <Command>
             <p>{">"}</p>

@@ -1,0 +1,67 @@
+{
+  "home": {
+    "logo": {
+      "name": "Alexander Hom",
+      "isLogo": true,
+      "to": "/",
+      "icon": {},
+      "tooltip": {}
+    },
+    "links": [
+      {
+        "id": 0,
+        "name": "About",
+        "isLogo": false,
+        "to": "/about",
+        "icon": {},
+        "tooltip": {}
+      },
+      {
+        "id": 1,
+        "name": "Blog",
+        "isLogo": false,
+        "to": "/blog",
+        "icon": {},
+        "tooltip": {}
+      },
+      {
+        "id": 2,
+        "name": "Contact",
+        "isLogo": false,
+        "to": "/#contact",
+        "icon": {},
+        "tooltip": {}
+      },
+      {
+        "id": 3,
+        "name": "LinkedIn",
+        "isLogo": false,
+        "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
+        "icon": {
+          "name": "linkedin",
+          "isBrandIcon": true
+        },
+        "tooltip": {
+          "anchorId": "linkedin",
+          "content": "LinkedIn",
+          "place": "bottom"
+        }
+      },
+      {
+        "id": 4,
+        "name": "GitHub",
+        "isLogo": false,
+        "to": "https://github.com/robokae",
+        "icon": {
+          "name": "github",
+          "isBrandIcon": true
+        },
+        "tooltip": {
+          "anchorId": "github",
+          "content": "GitHub",
+          "place": "bottom"
+        }
+      }
+    ]
+  }
+}
