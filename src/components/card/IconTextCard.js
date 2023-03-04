@@ -12,6 +12,11 @@ const Container = styled.div`
   background-color: ${({ theme }) => theme.secondaryBgCol};
   border: 1px solid ${({ theme }) => theme.lineCol};
   border-radius: ${BORDER_RADIUS};
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
 
 const Icon = styled.div`

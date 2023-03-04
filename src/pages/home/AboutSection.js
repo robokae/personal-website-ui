@@ -2,7 +2,7 @@ import Grid from "../../components/layout/Grid";
 import { getFontAwesomeIcon } from "../../util/IconUtil";
 import Section from "../../components/layout/SectionLayout";
 import Content from "../../components/layout/ContentLayout";
-import IconTextCard from "../../components/icon/IconTextCard";
+import IconTextCard from "../../components/card/IconTextCard";
 
 function AboutSection({ content }) {
   return (

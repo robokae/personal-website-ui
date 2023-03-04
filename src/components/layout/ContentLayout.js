@@ -7,6 +7,7 @@ import { BaseLayout } from "./BaseLayout";
 
 const Content = styled(BaseLayout)`
   max-width: ${CONTENT_MAX_WIDTH};
+  gap: 5rem;
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_XL}) {
     width: 95%;
   }

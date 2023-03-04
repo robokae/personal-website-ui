@@ -1,7 +1,7 @@
 const lightTheme = {
-  primaryBgCol: "#F8F8F8",
+  primaryBgCol: "#F0F1F2",
   headerInitialFontCol: "#DFEBF5",
-  secondaryBgCol: "#F0F1F2",
+  secondaryBgCol: "#F8F8F8",
   landingBg: "linear-gradient(to right, #3491e3, #9c2fe4)",
   primaryFontCol: "#233B45",
   secondaryFontCol: "#6C757D",
