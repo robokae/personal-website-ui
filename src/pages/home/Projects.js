@@ -1,6 +1,6 @@
 import ItemDetailCard from "../../components/card/ItemDetailCard";
 import styled from "styled-components";
-import { GAP } from "../../constants/StyleConstants";
+import { GAP, MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 import { useState } from "react";
 import HorizontalCategoryPanel from "../../components/menu/HorizontalCategoryPanel";
@@ -12,11 +12,22 @@ const Heading = styled.h2`
   text-align: center;
 `;
 
+const MainContent = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: calc(${GAP} * 1.5);
+`;
+
 const CardLayout = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: ${GAP};
+
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    gap: 1rem;
+  }
 `;
 
 function Projects({ heading, content }) {
@@ -34,24 +45,28 @@ function Projects({ heading, content }) {
     <StyledSection>
       <ContentLayout>
         <Heading>{heading}</Heading>
-        <CardLayout>
+        <MainContent>
           <HorizontalCategoryPanel
             content={projectCategories}
             currentlySelected={projectCategoryId}
             setCategory={setProjectCategoryId}
           />
-          {content.projects
-            .find((projectCategory) => projectCategory.id === projectCategoryId)
-            .projects.map((project) => (
-              <ItemDetailCard
-                key={project.id}
-                name={project.name}
-                tags={project.stack}
-                description={project.description}
-                links={project.links}
-              />
-            ))}
-        </CardLayout>
+          <CardLayout>
+            {content.projects
+              .find(
+                (projectCategory) => projectCategory.id === projectCategoryId
+              )
+              .projects.map((project) => (
+                <ItemDetailCard
+                  key={project.id}
+                  name={project.name}
+                  tags={project.stack}
+                  description={project.description}
+                  links={project.links}
+                />
+              ))}
+          </CardLayout>
+        </MainContent>
       </ContentLayout>
     </StyledSection>
   );

@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import {
   BORDER_RADIUS,
   CARD_PADDING,
-  RIGHT_ARROW_ICON,
+  RIGHT_CHEVRON_ICON,
 } from "../../constants/StyleConstants";
 
 const Container = styled.div`
@@ -38,19 +39,35 @@ const Tag = styled.p`
 const LinkContainer = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 2.5rem;
+  gap: 3rem;
   margin-top: auto;
 `;
 
 const Link = styled(NavLink)`
-  color: ${({ theme }) => theme.primaryFontCol};
+  color: ${({ theme }) => theme.accentCol};
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
 `;
 
+const AnimatedIcon = styled(FontAwesomeIcon)`
+  animation: ${(props) =>
+    props.$animate ? "0.25s ease-in-out slideRight" : ""};
+  animation-fill-mode: forwards;
+  @keyframes slideRight {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(0.5rem);
+    }
+  }
+`;
+
 function ItemDetailCard({ name, tags, description, links }) {
+  const [animateIcon, setAnimateIcon] = useState({});
   return (
     <Container>
       <Content>
@@ -63,9 +80,21 @@ function ItemDetailCard({ name, tags, description, links }) {
         <p>{description}</p>
         <LinkContainer>
           {links.map((link, index) => (
-            <Link key={index} to={link.url}>
+            <Link
+              key={index}
+              to={link.url}
+              onMouseEnter={() =>
+                setAnimateIcon({ linkId: index, animate: true })
+              }
+              onMouseLeave={() =>
+                setAnimateIcon({ linkId: index, animate: false })
+              }
+            >
               <p>{link.title}</p>
-              <FontAwesomeIcon icon={RIGHT_ARROW_ICON} />
+              <AnimatedIcon
+                $animate={animateIcon.linkId === index && animateIcon.animate}
+                icon={RIGHT_CHEVRON_ICON}
+              />
             </Link>
           ))}
         </LinkContainer>

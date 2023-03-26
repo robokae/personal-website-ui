@@ -16,6 +16,7 @@ export const SUN_ICON = "sun";
 export const MOON_ICON = "moon";
 export const HAMBURGER_MENU_ICON = "bars";
 export const RIGHT_ARROW_ICON = "arrow-right";
+export const RIGHT_CHEVRON_ICON = "chevron-right";
 
 export const BORDER_RADIUS = ".5rem";
 
