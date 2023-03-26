@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { FOOTER_HEIGHT } from "../constants/StyleConstants";
-import { getYear } from "../util/DateUtil";
+import { FOOTER_HEIGHT } from "../../constants/StyleConstants";
+import { getYear } from "../../util/DateUtil";
 
 const Container = styled.div`
   position: absolute;

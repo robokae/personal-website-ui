@@ -7,6 +7,7 @@ import {
 } from "../../constants/StyleConstants";
 
 const Grid = styled.div`
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(
     ${(props) =>
@@ -16,6 +17,7 @@ const Grid = styled.div`
     1fr
   );
   gap: ${GAP};
+  grid-auto-rows: 1fr;
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
     grid-template-columns: repeat(2, 1fr);
@@ -23,6 +25,7 @@ const Grid = styled.div`
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 `;
 

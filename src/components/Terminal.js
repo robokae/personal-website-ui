@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import {
+  CARD_PADDING,
   MONOSPACE_FONT,
   TERMINAL_BG,
   TERMINAL_BORDER_COLOR,
 } from "../constants/StyleConstants";
 
 const Container = styled.div`
-  padding: 1.5rem;
+  padding: ${CARD_PADDING};
   background: ${TERMINAL_BG};
   box-shadow: 0.25rem 0.25rem 2rem rgba(65, 79, 109, 0.2);
   border: 1px solid ${TERMINAL_BORDER_COLOR};

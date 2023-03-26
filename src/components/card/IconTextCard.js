@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import { BORDER_RADIUS } from "../../constants/StyleConstants";
+import {
+  BORDER_RADIUS,
+  CARD_PADDING,
+  MEDIA_QUERY_BREAKPOINT_SM,
+} from "../../constants/StyleConstants";
 
 const Container = styled.div`
-  padding: 1rem;
+  padding: ${CARD_PADDING};
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -10,12 +14,14 @@ const Container = styled.div`
   text-align: center;
   gap: 1rem;
   background-color: ${({ theme }) => theme.secondaryBgCol};
-  border: 1px solid ${({ theme }) => theme.lineCol};
+  box-shadow: ${({ theme }) => theme.boxShadow};
   border-radius: ${BORDER_RADIUS};
   transition: transform 0.2s ease-in-out;
 
-  &:hover {
-    transform: scale(1.03);
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    text-align: left;
   }
 `;
 
@@ -23,17 +29,17 @@ const Icon = styled.div`
   font-size: 2rem;
   color: ${(props) =>
     props.col ? props.col : ({ theme }) => theme.primaryFontCol};
-`;
 
-const Text = styled.p`
-  font-size: 0.9rem;
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    justify-self: center;
+  }
 `;
 
 function IconTextCard({ icon, iconCol, text }) {
   return (
     <Container>
       <Icon col={iconCol}>{icon}</Icon>
-      <Text>{text}</Text>
+      <p>{text}</p>
     </Container>
   );
 }

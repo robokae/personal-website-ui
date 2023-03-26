@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { FOOTER_HEIGHT } from "../../constants/StyleConstants";
 import { home } from "../../content/header.json";
 import footer from "../../content/footer.json";
-import Footer from "../Footer";
-import Header from "../Header";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Container = styled.div`
   margin-bottom: ${FOOTER_HEIGHT};

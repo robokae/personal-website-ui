@@ -17,8 +17,9 @@
         },
         {
             "id": 2,
-            "heading": "Cloud Certification",
-            "body": "Google Cloud Certified Associate Cloud Engineer (obtained December 2022)"
+            "heading": "Cloud Certified",
+            "body": "Up to date with the latest cloud computing technologies through continuing education and obtaining certifications",
+            "bulletPoints": ["Google Cloud Certified Associate Cloud Engineer (obtained December 2022)"]
         }
     ]
 }

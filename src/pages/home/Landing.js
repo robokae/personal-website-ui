@@ -1,22 +1,17 @@
 import styled from "styled-components";
-import LandingLayout from "../../components/layout/LandingLayout";
+import { ContentLayout, LandingLayout } from "../../components/layout/Layout";
 import Terminal from "../../components/Terminal";
 import {
-  CONTENT_MAX_WIDTH,
   LARGE_GAP,
   LARGE_PADDING,
   MEDIA_QUERY_BREAKPOINT_LG,
   MEDIA_QUERY_BREAKPOINT_MED,
 } from "../../constants/StyleConstants";
 
-const Content = styled.div`
-  max-width: ${CONTENT_MAX_WIDTH};
+const Content = styled(ContentLayout)`
   height: max-content;
   padding-top: ${LARGE_PADDING};
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   gap: ${LARGE_GAP};
 `;
 
@@ -39,7 +34,7 @@ const StyledTerminal = styled.div`
   }
 `;
 
-function LandingSection({ content }) {
+function Landing({ content }) {
   return (
     <LandingLayout>
       <Content>
@@ -59,4 +54,4 @@ function LandingSection({ content }) {
   );
 }
 
-export default LandingSection;
+export default Landing;

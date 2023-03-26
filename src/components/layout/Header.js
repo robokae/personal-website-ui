@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import SlideOutMenu from "./SlideOutMenu";
 import "react-tooltip/dist/react-tooltip.css";
 import styled from "styled-components";
 import {
@@ -11,10 +9,12 @@ import {
   MEDIA_QUERY_BREAKPOINT_MED,
   MEDIA_QUERY_BREAKPOINT_XL,
   TRANSITION_DURATION,
-} from "../constants/StyleConstants";
-import ThemeSwitcher from "./ThemeSwitcher";
-import Icon from "./icon/Icon";
-import IconWithTooltip from "./icon/IconWithTooltip";
+} from "../../constants/StyleConstants";
+import ThemeSwitcher from "../ThemeSwitcher";
+import Icon from "../icon/Icon";
+import IconWithTooltip from "../icon/IconWithTooltip";
+import { Link } from "../Link";
+import SlideOutMenu from "../menu/SlideOutMenu";
 
 const Container = styled.header`
   width: 100%;
@@ -46,16 +46,6 @@ const Content = styled.div`
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_XL}) {
     width: 95%;
   }
-`;
-
-const Link = styled(NavLink)`
-  color: ${(props) =>
-    props.$isActive
-      ? ({ theme }) => theme.primaryFontCol
-      : ({ theme }) => theme.headerInitialFontCol};
-  display: flex;
-  align-items: center;
-  text-decoration: none;
 `;
 
 const Logo = styled(Link)`

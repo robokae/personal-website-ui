@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import { BORDER_RADIUS } from "../../constants/StyleConstants";
+import { BORDER_RADIUS, CARD_PADDING } from "../../constants/StyleConstants";
 
 const Container = styled.div`
+  padding: ${CARD_PADDING};
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.secondaryBgCol};
-  border: 1px solid ${({ theme }) => theme.lineCol};
   border-radius: ${BORDER_RADIUS};
+  box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 
 const Content = styled.div`
@@ -16,7 +17,6 @@ const Content = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   gap: 1rem;
 `;
 
@@ -27,10 +27,11 @@ const Heading = styled.h4`
 
 const List = styled.ul`
   margin-left: 0.5rem;
+  padding-left: 1rem;
 `;
 
 const ListItem = styled.li`
-  list-style-position: inside;
+  list-style-position: outside;
 `;
 
 function TextCard({ content }) {

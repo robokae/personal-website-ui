@@ -7,7 +7,7 @@ import { Tooltip } from "react-tooltip";
 
 const EMAIL = "alexanderhom19@gmail.com";
 
-function ContactSection() {
+function Contact() {
   const [emailPopupClicked, setEmailPopupClicked] = useState(false);
 
   const handleEmailPopupClick = () => {
@@ -84,4 +84,4 @@ function ContactSection() {
   );
 }
 
-export default ContactSection;
+export default Contact;

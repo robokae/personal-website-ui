@@ -9,6 +9,7 @@
         "MOON_ICON": "moon",
         "HAMBURGER_MENU_ICON": "bars",
         "LINKEDIN_ICON": "linkedin",
-        "GITHUB_ICON": "github"
+        "GITHUB_ICON": "github",
+        "RIGHT_ARROW_ICON": "arrow-right"
     }
 }

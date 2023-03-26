@@ -1,9 +1,9 @@
 import Post from "../../components/blog/PostPreview";
-import Footer from "../../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Footer from "../../components/layout/Footer";
 
 function Blog() {
   const [posts, setPosts] = useState(null);

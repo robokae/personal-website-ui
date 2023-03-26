@@ -18,7 +18,6 @@ import Portfolio from "./pages/portfolio/Portfolio";
 import Resume from "./pages/resume/Resume";
 import Login from "./pages/Login";
 
-import ProjectCard from "./components/home/ProjectCard";
 import Admin from "./pages/admin/Admin";
 import CreatePost from "./pages/admin/CreatePost";
 import EditPost from "./pages/admin/EditPost";
@@ -79,7 +78,6 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resume" element={<Resume />} />
-          <Route path="/projects" element={<ProjectCard />} />
         </Route>
         <Route path="/blog" element={<Blog />} />
         <Route path="/post/:postTitle" element={<Post />} />

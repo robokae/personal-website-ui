@@ -1,70 +1,86 @@
 {
     "name": "projects",
     "page": "home",
-    "heading": "Projects I'm Working On",
-    "content": [
-        {
-            "id": 0,
-            "name": "Emazon",
-            "stack": ["React", "Flask"],
-            "thumbnailSrc": "Emazon.png",
-            "deployed": true,
-            "prodLink": "https://emazon-final-project.herokuapp.com/",
-            "githubLink": "https://github.com/kennyjung0223/emazon",
-            "description": "Full-stack e-commerce web application."
-        },
-        {
-            "id": 1,
-            "name": "Encapsulate",
-            "stack": ["React", "Flask", "SQLite"],
-            "thumbnailSrc": "Encapsulate.png",
-            "deployed": false,
-            "prodLink": "",
-            "githubLink": "https://github.com/robokae/Encapsulate",
-            "description": "Full-stack social networking web application."
-        },
-        {
-            "id": 2,
-            "name": "Nocturnal",
-            "stack": ["Java", "Parse"],
-            "thumbnailSrc": "",
-            "deployed": false,
-            "prodLink": "",
-            "githubLink": "https://github.com/UCM-CodePath-Social-Media/Nocturnal",
-            "description":
-            "Minimalistic social networking Android application. Final project for CodePath Android course."
-        },
-        {
-            "id": 3,
-            "name": "UCM ACM Chapter Website",
-            "stack": ["React", "Sass", "Firebase"],
-            "thumbnailSrc": "",
-            "deployed": true,
-            "prodLink": "https://acm-chapter-website.web.app/",
-            "githubLink": "https://github.com/UCMercedACM/Chapter-Website",
-            "description":
-            "Fully re-designed website for UC Merced's Association for Computing Machinery (ACM) chapter."
-        },
-        {
-            "id": 4,
-            "name": "Education Hackathon Project",
-            "stack": ["Spring Boot"],
-            "thumbnailSrc": "",
-            "deployed": false,
-            "prodLink": "",
-            "githubLink": "https://github.com/HackMerced-2022-Team/Education-Project",
-            "description":
-            "Education-themed full-stack web application built during UC Merced's HackMerced 2022 hackathon. My first Spring Boot project."
-        },
-        {
-            "id": 5,
-            "name": "Minimalistic Todo List",
-            "stack": ["React"],
-            "thumbnailSrc": "",
-            "deployed": false,
-            "prodLink": "",
-            "githubLink": "https://github.com/robokae/Minimal-React-Todo-List",
-            "description": "Simple todo list. My first major React project."
-        }
-    ]
+    "heading": "Projects I've Worked On",
+    "content": {
+        "projects": [
+            {
+                "id": 0,
+                "name": "Current Projects",
+                "projects": [ 
+                    {
+                        "id": 0,
+                        "name": "Minimal Todo List",
+                        "stack": ["React", "Sass"],
+                        "description": "Web-based todo list with a simple user interface. Features include creating, removing, and searching todos.",
+                        "links": [
+                            {
+                                "title": "GitHub",
+                                "url": "https://github.com/robokae/Minimal-React-Todo-List"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 1,
+                        "name": "Encapsulate",
+                        "stack": ["React", "Sass", "Spring Boot"],
+                        "description": "Technology and software engineering blog.",
+                        "links": [
+                            {
+                                "title": "GitHub",
+                                "url": "https://github.com/EncapsulateSocial/Encapsulate"
+                            }
+                        ] 
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Past Projects",
+                "projects": [
+                    {
+                        "id": 0,
+                        "name": "Emazon",
+                        "stack": ["React", "Flask", "SQLite"],
+                        "appLink": "https://emazon-final-project.herokuapp.com/",
+                        "description": "Full-stack e-commerce web application where users can browse items, add items to cart, and checkout. Users can also sign into their accounts.",
+                        "links": [
+                            {
+                                "title": "GitHub",
+                                "url": "https://github.com/kennyjung0223/emazon"
+                            }
+                        ] 
+                    },
+                    {
+                        "id": 2,
+                        "name": "Nocturnal",
+                        "stack": ["Java", "Parse"],
+                        "description": "Minimalistic social networking Android application. Users can view and create posts, which are saved to a Parse database.",
+                        "links": [
+                            {
+                                "title": "GitHub",
+                                "url": "https://github.com/UCM-CodePath-Social-Media/Nocturnal"
+                            }
+                        ] 
+                    },
+                    {
+                        "id": 3,
+                        "name": "UC Merced ACM Chapter Website",
+                        "stack": ["React", "Sass", "Firebase"],
+                        "description": "Fully re-designed website for my alma mater's Association for Computing Machinery (ACM) chapter.",
+                        "links": [
+                            {
+                                "title": "Check Out App",
+                                "url": "https://acm-chapter-website.web.app/"
+                            },
+                            {
+                                "title": "GitHub",
+                                "url":  "https://github.com/UCMercedACM/Chapter-Website"
+                            } 
+                        ] 
+                    }
+                ]
+            }
+        ]
+    }
 }

@@ -1,13 +1,12 @@
 import Grid from "../../components/layout/Grid";
 import { getFontAwesomeIcon } from "../../util/IconUtil";
-import Section from "../../components/layout/SectionLayout";
-import Content from "../../components/layout/ContentLayout";
 import IconTextCard from "../../components/card/IconTextCard";
+import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 
-function AboutSection({ content }) {
+function About({ content }) {
   return (
-    <Section>
-      <Content>
+    <SectionLayout>
+      <ContentLayout>
         <Grid size={content.length}>
           {content.map((aboutItem) => (
             <IconTextCard
@@ -18,9 +17,9 @@ function AboutSection({ content }) {
             />
           ))}
         </Grid>
-      </Content>
-    </Section>
+      </ContentLayout>
+    </SectionLayout>
   );
 }
 
-export default AboutSection;
+export default About;
