@@ -10,6 +10,10 @@
         "HAMBURGER_MENU_ICON": "bars",
         "LINKEDIN_ICON": "linkedin",
         "GITHUB_ICON": "github",
-        "RIGHT_ARROW_ICON": "arrow-right"
+        "RIGHT_ARROW_ICON": "arrow-right",
+        "RIGHT_CHEVRON_ICON": "chevron-right",
+        "REACT_ICON": "react",
+        "SERVER_ICON": "server",
+        "CLOUD_ICON": "cloud"
     }
 }

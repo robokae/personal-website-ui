@@ -6,18 +6,21 @@
         {
             "id": 0,
             "heading": "Frontend Development",
+            "icon": "CODE_ICON",
             "body": "3 years of frontend development experience using",
             "bulletPoints": ["HTML", "CSS/Sass", "JavaScript", "React"]
         },
         {
             "id": 1,
             "heading": "Backend Development",
+            "icon": "SERVER_ICON",
             "body": "1.5 years of backend development experience using",
             "bulletPoints": ["Spring and Spring Boot (Java)", "Flask (Python)", "SQLite", "PostgreSQL", "MongoDB"]
         },
         {
             "id": 2,
             "heading": "Cloud Certified",
+            "icon": "CLOUD_ICON",
             "body": "Up to date with the latest cloud computing technologies through continuing education and obtaining certifications",
             "bulletPoints": ["Google Cloud Certified Associate Cloud Engineer (obtained December 2022)"]
         }

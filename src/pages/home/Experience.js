@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import TextCard from "../../components/card/TextCard";
+import PhotoCard from "../../components/card/PhotoCard";
 import Grid from "../../components/layout/Grid";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
+import { getFontAwesomeIcon } from "../../util/IconUtil";
 
 const Heading = styled.h2`
   width: 100%;
@@ -15,7 +16,12 @@ function Experience({ heading, content }) {
         <Heading>{heading}</Heading>
         <Grid size={content.length}>
           {content.map((experience, index) => (
-            <TextCard key={index} content={experience} />
+            <PhotoCard
+              key={index}
+              content={experience}
+              photo={getFontAwesomeIcon(experience.icon)}
+              gradient={true}
+            />
           ))}
         </Grid>
       </ContentLayout>

@@ -43,3 +43,14 @@ export const TERMINAL_BG = `linear-gradient(
     to right bottom,
     rgba(137, 181, 222, 0.3), 
     rgba(137, 181, 222, 0.1))`;
+
+export const GRADIENT_DIRECTIONS = {
+  TO_LEFT: "to left",
+  TO_RIGHT: "to right",
+  TO_TOP: "to top",
+  TO_BOTTOM: "to bottom",
+  TO_TOP_LEFT: "to top left",
+  TO_TOP_RIGHT: "to top right",
+  TO_BOTTOM_LEFT: "to bottom left",
+  TO_BOTTOM_RIGHT: "to bottom right",
+};
