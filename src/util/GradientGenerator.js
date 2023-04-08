@@ -9,8 +9,6 @@ const getRandomGradient = (colorPalette) => {
     numRight = generateRandomNumber(0, numColors, false, true);
   }
 
-  console.log("numLeft", numLeft, "numRight", numRight);
-
   return {
     colorLeft: colorPalette[numLeft],
     colorRight: colorPalette[numRight],

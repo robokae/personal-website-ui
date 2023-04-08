@@ -48,6 +48,9 @@ const GradientContainer = styled(GraphicsContainer)`
 const PhotoContainer = styled(GraphicsContainer)``;
 
 const TextContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: ${CARD_PADDING};
   padding-top: 0.5rem;
 `;
@@ -56,7 +59,7 @@ const Heading = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 0.5rem 0;
+  padding: 0.25rem 0;
   border-bottom: 1px solid ${({ theme }) => theme.lineCol};
 `;
 

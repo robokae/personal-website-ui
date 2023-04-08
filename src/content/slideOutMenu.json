@@ -1,0 +1,30 @@
+{
+    "name": "slideOutMenu",
+    "content": {
+        "heading": "Welcome",
+        "links": [
+            {
+                "id": 0,
+                "type": "text",
+                "name": "Home",
+                "to": "/",
+                "icon": "home"
+            },
+            {
+                "id": 1,
+                "type": "text",
+                "name": "Blog",
+                "to": "/blog",
+                "icon": "newspaper"
+            },
+            {
+                "id": 2,
+                "type": "text",
+                "name": "Contact",
+                "to": "/#contact",
+                "icon": "envelope"
+            }
+        ],
+        "additionalItems": ["socialLinks","themeSwitcher"]
+    }
+}

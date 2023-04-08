@@ -37,26 +37,6 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${({ theme }) => theme.primaryFontCol};
     }
 
-    /* Slide out menu styling */
-    .slide-out-menu {
-        background-color: ${({ theme }) => theme.primaryBgCol};
-        border-left: 1px solid ${({ theme }) => theme.lineCol};
-
-        &__heading {
-            border-bottom: 1px solid ${({ theme }) => theme.lineCol};
-        }
-
-        &__option {
-            &:hover {
-                background-color: ${({ theme }) => theme.secondaryBgCol};
-            }
-        }
-
-        &__link {
-            color: ${({ theme }) => theme.primaryFontCol};
-        }
-    }
-
     /* Home page theme styling */
     .contact-section {
         &__contact-details-container {

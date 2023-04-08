@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FOOTER_HEIGHT } from "../../constants/StyleConstants";
 import { home } from "../../content/header.json";
 import footer from "../../content/footer.json";
+import slideOutMenu from "../../content/slideOutMenu.json";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -23,6 +24,7 @@ function HomeLayout(props) {
         isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
+        slideOutMenuContent={slideOutMenu.content}
       />
       <Outlet />
       <Footer textContent={footer.text} />

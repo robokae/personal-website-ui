@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { render, screen } from "@testing-library/react";
 import { toHaveClass } from "@testing-library/jest-dom";
-import IconTextCard from "../components/icon/IconTextCard";
+import IconTextCard from "../components/card/IconTextCard";
 
 describe("IconTextCard", () => {
   let icon, text;

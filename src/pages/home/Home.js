@@ -15,7 +15,7 @@ import experience from "../../content/home/experience.json";
 import projects from "../../content/home/projects.json";
 import Reflection from "../../components/home/Reflection";
 
-const Container = styled.div`
+const Container = styled.main`
   display: flex;
   flex-direction: column;
 `;

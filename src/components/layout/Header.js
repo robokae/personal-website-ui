@@ -10,13 +10,13 @@ import {
   MEDIA_QUERY_BREAKPOINT_XL,
   TRANSITION_DURATION,
 } from "../../constants/StyleConstants";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "../themeSwitcher/ThemeSwitcher";
 import Icon from "../icon/Icon";
-import IconWithTooltip from "../icon/IconWithTooltip";
 import { Link } from "../Link";
 import SlideOutMenu from "../menu/SlideOutMenu";
+import { getLinkFromObject } from "../../util/LinkUtil";
 
-const Container = styled.header`
+const HeaderContainer = styled.header`
   width: 100%;
   height: ${HEADER_HEIGHT};
   position: fixed;
@@ -35,7 +35,7 @@ const Container = styled.header`
     border-bottom ${TRANSITION_DURATION} ease-in;
 `;
 
-const Content = styled.div`
+const Nav = styled.nav`
   width: ${CONTENT_MAX_WIDTH};
   height: max-content;
   display: flex;
@@ -53,7 +53,7 @@ const Logo = styled(Link)`
   text-transform: uppercase;
 `;
 
-const LinkContainer = styled.div`
+const LinkContainer = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,26 +74,14 @@ const MenuIcon = styled(Icon)`
   }
 `;
 
-const getLinkFromObject = (linkObj, headerState) =>
-  Object.keys(linkObj.icon).length > 0 ? (
-    <Link
-      key={linkObj.id}
-      id={linkObj.tooltip.anchorId}
-      to={linkObj.to}
-      $isActive={headerState}
-    >
-      <IconWithTooltip
-        iconDetails={linkObj.icon}
-        tooltipDetails={linkObj.tooltip}
-      />
-    </Link>
-  ) : (
-    <Link key={linkObj.id} to={linkObj.to} $isActive={headerState}>
-      {linkObj.name}
-    </Link>
-  );
-
-function Header({ logo, links, theme, onChangeTheme, isActive }) {
+function Header({
+  logo,
+  links,
+  theme,
+  onChangeTheme,
+  isActive,
+  slideOutMenuContent,
+}) {
   const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
   const [headerIsActive, setHeaderIsActive] = useState(false);
 
@@ -104,14 +92,14 @@ function Header({ logo, links, theme, onChangeTheme, isActive }) {
   useEffect(() => window.addEventListener("scroll", handlePageScroll));
 
   return (
-    <Container isActive={headerIsActive}>
-      <Content>
+    <HeaderContainer isActive={headerIsActive}>
+      <Nav>
         <Logo to={logo.to} $isActive={headerIsActive}>
           {logo.name}
         </Logo>
         <LinkContainer>
           {links.length > 0 &&
-            links.map((link) => getLinkFromObject(link, headerIsActive))}
+            links.map((link) => getLinkFromObject(link, headerIsActive, true))}
           <ThemeSwitcher
             onChangeTheme={onChangeTheme}
             theme={theme}
@@ -127,13 +115,15 @@ function Header({ logo, links, theme, onChangeTheme, isActive }) {
           }
           onClick={() => setDisplaySlideOutMenu(true)}
         />
-      </Content>
+      </Nav>
       <SlideOutMenu
         display={displaySlideOutMenu}
         setDisplay={setDisplaySlideOutMenu}
+        theme={theme}
         onChangeTheme={onChangeTheme}
+        content={slideOutMenuContent}
       />
-    </Container>
+    </HeaderContainer>
   );
 }
 

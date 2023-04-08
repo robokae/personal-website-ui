@@ -10,6 +10,7 @@
     "links": [
       {
         "id": 0,
+        "type": "text",
         "name": "About",
         "isLogo": false,
         "to": "/about",
@@ -18,6 +19,7 @@
       },
       {
         "id": 1,
+        "type": "text",
         "name": "Blog",
         "isLogo": false,
         "to": "/blog",
@@ -26,6 +28,7 @@
       },
       {
         "id": 2,
+        "type": "text",
         "name": "Contact",
         "isLogo": false,
         "to": "/#contact",
@@ -34,6 +37,7 @@
       },
       {
         "id": 3,
+        "type": "icon",
         "name": "LinkedIn",
         "isLogo": false,
         "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
@@ -49,6 +53,7 @@
       },
       {
         "id": 4,
+        "type": "icon",
         "name": "GitHub",
         "isLogo": false,
         "to": "https://github.com/robokae",

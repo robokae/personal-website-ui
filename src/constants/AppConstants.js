@@ -7,3 +7,9 @@ export const FAB = "fab";
 
 export const CURRENT = "current";
 export const PAST = "past";
+
+export const THEME_SWITCHER = "themeSwitcher";
+
+export const ICON = "icon";
+export const TEXT = "text";
+export const ICONTEXT = "icontext";

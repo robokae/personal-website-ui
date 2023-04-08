@@ -14,6 +14,9 @@
         "RIGHT_CHEVRON_ICON": "chevron-right",
         "REACT_ICON": "react",
         "SERVER_ICON": "server",
-        "CLOUD_ICON": "cloud"
+        "CLOUD_ICON": "cloud",
+        "HOME_ICON": "home",
+        "BLOG_ICON": "newspaper",
+        "CONTACT_ICON": "envelope"
     }
 }

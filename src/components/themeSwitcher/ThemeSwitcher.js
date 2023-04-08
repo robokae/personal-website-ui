@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { DARK_THEME, LIGHT, LIGHT_THEME } from "../constants/AppConstants";
+import { DARK_THEME, LIGHT, LIGHT_THEME } from "../../constants/AppConstants";
 import {
   BORDER_RADIUS,
   MOON_ICON,
   SUN_ICON,
-} from "../constants/StyleConstants";
-import IconWithTooltip from "./icon/IconWithTooltip";
+} from "../../constants/StyleConstants";
+import IconWithTooltip from "../icon/IconWithTooltip";
 
 const Button = styled.button`
   background-color: transparent;
