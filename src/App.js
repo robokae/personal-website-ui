@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import {
   Route,
   createRoutesFromElements,
@@ -26,7 +26,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import HomeLayout from "./components/layout/HomeLayout";
-import { DARK, LIGHT, THEME } from "./constants/AppConstants";
+import useTheme from "./hooks/useTheme";
+import { LIGHT } from "./constants/AppConstants";
 
 library.add(fab, fas);
 
@@ -39,24 +40,7 @@ function App() {
     });
   }, []);
 
-  const [theme, setTheme] = useState(LIGHT);
-
-  useEffect(() => {
-    let currentTheme = localStorage.getItem(THEME);
-    if (currentTheme) {
-      setTheme(currentTheme);
-    }
-  }, []);
-
-  const changeTheme = () => {
-    if (theme === LIGHT) {
-      setTheme(DARK);
-      localStorage.setItem(THEME, DARK);
-      return;
-    }
-    setTheme(LIGHT);
-    localStorage.setItem(THEME, LIGHT);
-  };
+  const [theme, changeTheme] = useTheme();
 
   // const ScrollToTop = () => {
   //   const { pathname } = useLocation();
