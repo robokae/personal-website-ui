@@ -1,5 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { iconMap } from "../content/icon.json";
+import icon from "../content/icon.json";
+
+const { iconMap } = icon;
 
 export const getFontAwesomeIcon = (iconName) => {
   if (iconMap[iconName]) {

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { FOOTER_HEIGHT } from "../../constants/StyleConstants";
-import { home } from "../../content/header.json";
+import header from "../../content/header.json";
 import footer from "../../content/footer.json";
 import slideOutMenu from "../../content/slideOutMenu.json";
 import Header from "./Header";
@@ -13,6 +13,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+const { home } = header;
 
 function HomeLayout(props) {
   const { theme, onChangeTheme } = props;
