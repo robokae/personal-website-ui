@@ -1,5 +1,6 @@
 export const FONT_FAMILIES = ["IBM Plex Sans:400,500,700", "IBM Plex Mono"];
 export const LOGO_FONT = "IBM Plex Mono";
+export const REGULAR_FONT = "IBM Plex Sans";
 export const MONOSPACE_FONT = "IBM Plex Mono";
 
 export const MEDIA_QUERY_BREAKPOINT_XL = "1200px";
@@ -37,12 +38,6 @@ export const FOOTER_HEIGHT = "5rem";
 export const CONTENT_MAX_WIDTH = "1200px";
 
 export const TRANSITION_DURATION = ".25s";
-
-export const TERMINAL_BORDER_COLOR = "rgba(152, 196, 232, 0.75)";
-export const TERMINAL_BG = `linear-gradient(
-    to right bottom,
-    rgba(137, 181, 222, 0.3), 
-    rgba(137, 181, 222, 0.1))`;
 
 export const GRADIENT_DIRECTIONS = {
   TO_LEFT: "to left",

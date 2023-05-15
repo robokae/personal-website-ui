@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { getLinkFromObject } from "../../util/LinkUtil";
+import { MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
 
 const Container = styled.div`
   width: 100vw;
@@ -32,6 +33,10 @@ const Content = styled.section`
   transition: all 0.2s ease-in-out;
   overflow-y: auto;
   z-index: 3;
+
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    min-width: 80%;
+  }
 `;
 
 const Header = styled.h3`

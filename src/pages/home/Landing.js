@@ -30,7 +30,7 @@ const StyledTerminal = styled.div`
   }
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
-    width: 95%;
+    width: 100%;
   }
 `;
 

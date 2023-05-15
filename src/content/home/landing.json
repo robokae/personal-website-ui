@@ -4,37 +4,42 @@
     "heading": "",
     "content": {
         "heading": ["Hello there!", "My name is Alexander Hom."],
-        "terminal": [
-            {
-                "command": "describe",
-                "output": [
-                    "I am a software engineer from San Francisco who enjoys designing user interfaces and developing applications using a variety of programming languages, tools, and software."
-                ]
+        "terminal": {
+            "titleBar": {
+                "name": "alexhom ~"
             },
-            {
-                "command": "technical-skills",
-                "output": [
-                    "JavaScript",
-                    "Java",
-                    "HTML",
-                    "CSS",
-                    "Python",
-                    "SQL",
-                    "MongoDB",
-                    "Google Cloud"
-                ]
-            },
-            {
-                "command": "interests",
-                "output": [
-                    "Web design",
-                    "Cloud",
-                    "DevOps",
-                    "Linux",
-                    "Distributed systems",
-                    "Databases"
-                ]
-            }
-        ]
+            "content": [
+                {
+                    "command": "describe",
+                    "output": [
+                        "I am a software engineer from San Francisco who enjoys designing user interfaces and developing applications using a variety of programming languages, tools, and software."
+                    ]
+                },
+                {
+                    "command": "technical-skills",
+                    "output": [
+                        "JavaScript",
+                        "Java",
+                        "HTML",
+                        "CSS",
+                        "Python",
+                        "SQL",
+                        "MongoDB",
+                        "Google Cloud"
+                    ]
+                },
+                {
+                    "command": "interests",
+                    "output": [
+                        "Web design",
+                        "Cloud",
+                        "DevOps",
+                        "Linux",
+                        "Distributed systems",
+                        "Databases"
+                    ]
+                }
+            ]
+        }
     }
 }
