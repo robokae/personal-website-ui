@@ -1,14 +1,15 @@
 import styled from "styled-components";
+import { terminalColors } from "../global/colors";
 import { MONOSPACE_FONT, REGULAR_FONT } from "../constants/StyleConstants";
 
 const Container = styled.div`
   background: linear-gradient(
     to right bottom,
-    rgba(39, 54, 68, 0.8),
-    rgba(19, 31, 42, 0.8)
+    ${terminalColors.bgGradientLeftCol},
+    ${terminalColors.bgGradientRightCol}
   );
-  box-shadow: 0.25rem 0.25rem 2rem rgba(65, 79, 109, 0.2);
-  border: 1px solid #20282e;
+  box-shadow: 0.25rem 0.25rem 2rem ${terminalColors.boxShadowCol};
+  border: 1px solid ${terminalColors.borderCol};
   border-radius: 0.5rem 0.5rem 0 0;
   border-bottom: none;
   font-family: ${MONOSPACE_FONT}, monospace;
@@ -21,7 +22,7 @@ const TitleBar = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  background-color: #263137;
+  background-color: ${terminalColors.titleBarBgCol};
   border-radius: 0.5rem 0.5rem 0 0;
 `;
 
@@ -44,7 +45,7 @@ const TitleBarName = styled.p`
   top: 50%;
   transform: translate(-50%, -50%);
   font-family: ${REGULAR_FONT};
-  color: ${({ theme }) => theme.terminalCommandOutputCol};
+  color: ${terminalColors.titleBarFontCol};
 `;
 
 const CommandContainer = styled.div`
@@ -58,7 +59,7 @@ const Command = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  color: ${({ theme }) => theme.terminalCommandCol};
+  color: ${terminalColors.commandCol};
 `;
 
 const Output = styled.div`
@@ -67,7 +68,7 @@ const Output = styled.div`
   flex-wrap: wrap;
   row-gap: 0.25rem;
   column-gap: 1.5rem;
-  color: ${({ theme }) => theme.terminalCommandOutputCol};
+  color: ${terminalColors.commandOutputCol};
 `;
 
 function Terminal({ details, width }) {
@@ -75,9 +76,9 @@ function Terminal({ details, width }) {
     <Container width={width}>
       <TitleBar>
         <TitleBarButtonContainer>
-          <TitleBarButton color="#da5656" />
-          <TitleBarButton color="#e0c146" />
-          <TitleBarButton color="#42bc55" />
+          <TitleBarButton color={terminalColors.titleBarCloseBtnCol} />
+          <TitleBarButton color={terminalColors.titleBarMinimizeBtnCol} />
+          <TitleBarButton color={terminalColors.titleBarMaximizeBtnCol} />
         </TitleBarButtonContainer>
         <TitleBarName>{details.titleBar.name}</TitleBarName>
       </TitleBar>

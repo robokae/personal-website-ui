@@ -4,7 +4,7 @@ import {
   CARD_PADDING,
   GRADIENT_DIRECTIONS,
 } from "../../constants/StyleConstants";
-import { gradientPalette } from "../../global/gradientPalette";
+import { gradientPalette } from "../../global/colors";
 import getRandomGradient from "../../util/GradientGenerator";
 
 const Container = styled.div`
