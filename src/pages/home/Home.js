@@ -14,6 +14,7 @@ import reflection from "../../content/home/reflection.json";
 import experience from "../../content/home/experience.json";
 import projects from "../../content/home/projects.json";
 import Reflection from "../../components/home/Reflection";
+import contact from "../../content/home/contact.json";
 
 const Container = styled.main`
   display: flex;
@@ -43,7 +44,7 @@ function Home() {
       <Reflection content={reflection.content} />
       <Experience heading={experience.heading} content={experience.content} />
       <Projects heading={projects.heading} content={projects.content} />
-      <Contact />
+      <Contact content={contact.content} />
     </Container>
   );
 }

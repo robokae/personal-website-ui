@@ -13,3 +13,5 @@ export const THEME_SWITCHER = "themeSwitcher";
 export const ICON = "icon";
 export const TEXT = "text";
 export const ICONTEXT = "icontext";
+
+export const EMAIL = "alexanderhom19@gmail.com";

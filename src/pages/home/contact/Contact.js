@@ -1,86 +1,76 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-// import ContactForm from "./ContactForm";
-import { useState } from "react";
-import { Tooltip } from "react-tooltip";
+import {
+  ContentLayout,
+  SectionLayout,
+} from "../../../components/layout/Layout";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import Icon from "../../../components/icon/Icon";
+import { FAB } from "../../../constants/AppConstants";
+import { MEDIA_QUERY_BREAKPOINT_SM } from "../../../constants/StyleConstants";
 
-const EMAIL = "alexanderhom19@gmail.com";
+const DetailsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 
-function Contact() {
-  const [emailPopupClicked, setEmailPopupClicked] = useState(false);
+  p {
+    text-align: center;
+  }
+`;
 
-  const handleEmailPopupClick = () => {
-    setEmailPopupClicked(true);
-    navigator.clipboard.writeText(EMAIL);
-  };
+const ContactInfo = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+`;
 
+const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.primaryFontCol};
+`;
+
+const ContactInfoContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+`;
+
+function Contact({ content }) {
   return (
-    <section id="contact" className="contact-section">
-      <div className="contact-section__content">
-        <h2 className="contact-section__heading">Let's Work Together</h2>
-        <div className="contact-section__details">
-          <p className="contact-section__text">
-            If you like my work and want to reach out for collaboration, feel
-            free to send me an email or connect with me through my LinkedIn, and
-            I will try to get back to you as soon as possible.
-          </p>
-          <div className="contact-section__contact-details-container">
-            <div className="contact-section__contact-detail">
-              <FontAwesomeIcon
-                className="contact-section__contact-detail-icon"
-                icon={faGithub}
-              />
-              <a
-                className="contact-section__link"
-                href="https://github.com/robokae"
-              >
-                GitHub
-              </a>
-            </div>
-            <div className="contact-section__contact-detail">
-              <FontAwesomeIcon
-                className="contact-section__contact-detail-icon"
-                icon={faEnvelope}
-              />
-              <p
-                id="email"
-                className="contact-section__text contact-section__text--email"
-                onMouseLeave={() => {
-                  setEmailPopupClicked(false);
-                }}
-                onClick={handleEmailPopupClick}
-              >
-                alexanderhom19@gmail.com
-              </p>
-              <div className="tooltip-container">
-                <Tooltip
-                  anchorId="email"
-                  className="custom-tooltip"
-                  content={
-                    emailPopupClicked ? "Email copied" : "Click to copy email"
+    <SectionLayout>
+      <ContentLayout>
+        <h2>{content.heading}</h2>
+        <DetailsContainer>
+          <p>{content.detailsText}</p>
+          <ContactInfoContainer>
+            {content.contactInfoList.map((contactInfo, index) => (
+              <ContactInfo key={index}>
+                <Icon
+                  icon={
+                    contactInfo.icon.isBrandIcon
+                      ? [FAB, contactInfo.icon.name]
+                      : contactInfo.icon.name
                   }
-                  place="bottom"
                 />
-              </div>
-            </div>
-            <div className="contact-section__contact-detail">
-              <FontAwesomeIcon
-                className="contact-section__contact-detail-icon"
-                icon={faLinkedin}
-              />
-              <a
-                className="contact-section__link"
-                href="https://www.linkedin.com/in/alexander-hom-94811b188/"
-              >
-                LinkedIn
-              </a>
-            </div>
-          </div>
-          {/* <ContactForm className="contact-section__contact-form" /> */}
-        </div>
-      </div>
-    </section>
+                {contactInfo.isLink ? (
+                  <StyledLink to={contactInfo.link}>
+                    {contactInfo.text}
+                  </StyledLink>
+                ) : (
+                  <p>{contactInfo.text}</p>
+                )}
+              </ContactInfo>
+            ))}
+          </ContactInfoContainer>
+        </DetailsContainer>
+      </ContentLayout>
+    </SectionLayout>
   );
 }
 
