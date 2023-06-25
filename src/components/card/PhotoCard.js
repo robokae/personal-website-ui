@@ -35,6 +35,10 @@ const GraphicsContainer = styled.div`
 `;
 
 const GradientContainer = styled(GraphicsContainer)`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 0;
   color: #f5f5f5;
   background: ${(props) =>
     `linear-gradient(
@@ -52,15 +56,15 @@ const TextContent = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   padding: ${CARD_PADDING};
-  padding-top: 0.5rem;
+  padding-top: 1rem;
 `;
 
 const Heading = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  text-align: center;
   padding: 0.25rem 0;
-  border-bottom: 1px solid ${({ theme }) => theme.lineCol};
 `;
 
 const List = styled.ul`
@@ -85,15 +89,15 @@ function PhotoCard({ content, photo, gradient }) {
               $gradientDirection={GRADIENT_DIRECTIONS.TO_RIGHT}
             >
               {photo}
+              <Heading>
+                <h4>{content.heading}</h4>
+              </Heading>
             </GradientContainer>
           ) : (
             <PhotoContainer>{photo}</PhotoContainer>
           )}
         </div>
         <TextContent>
-          <Heading>
-            <h4>{content.heading}</h4>
-          </Heading>
           <p>{content.body}</p>
           {content.bulletPoints && (
             <List>
