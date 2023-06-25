@@ -26,6 +26,10 @@ export const LandingLayout = styled(BaseLayout)`
   background: ${({ theme }) => theme.primaryGradient};
 `;
 
-export const SectionLayout = styled(BaseLayout)`
+export const SectionLayout = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: ${SECTION_PADDING};
 `;

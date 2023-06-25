@@ -43,7 +43,7 @@ const ContactInfoContainer = styled.div`
 
 function Contact({ content }) {
   return (
-    <SectionLayout>
+    <SectionLayout id="contact">
       <ContentLayout>
         <h2>{content.heading}</h2>
         <DetailsContainer>

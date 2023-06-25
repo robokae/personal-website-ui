@@ -1,22 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
-
-export const StyledButton = styled.button`
-  background-color: ${({ theme }) => theme.accentCol};
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-  color: ${({ theme }) => theme.primaryBgCol};
-  border: transparent;
-  border-radius: 0.25rem;
-  cursor: pointer;
-
-  &:hover {
-    background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.1) 100%
-    );
-  }
-`;
+import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
     /* General theme styling */

@@ -28,6 +28,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import HomeLayout from "./components/layout/HomeLayout";
 import useTheme from "./hooks/useTheme";
 import { LIGHT } from "./constants/AppConstants";
+import Error from "./pages/Error";
 
 library.add(fab, fas);
 
@@ -69,6 +70,10 @@ function App() {
         <Route path="/admin" element={<Admin />} />
         <Route path="/admin/createPost" element={<CreatePost />} />
         <Route path="/admin/editPost" element={<EditPost />} />
+        <Route
+          path="/*"
+          element={<Error theme={theme} onChangeTheme={changeTheme} />}
+        />
       </>
     )
   );

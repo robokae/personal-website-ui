@@ -1,0 +1,11 @@
+{
+    "name": "error",
+    "page": "error",
+    "content": {
+        "heading": "Oh no!",
+        "text": "It looks like you have come to a page that does not exist",
+        "icon": "",
+        "ctaText": "Return Home",
+        "ctaUrl": "/"
+    }
+}

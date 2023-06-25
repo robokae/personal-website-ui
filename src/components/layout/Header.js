@@ -31,8 +31,8 @@ const HeaderContainer = styled.header`
     ${(props) =>
       props.isActive ? ({ theme }) => theme.lineCol : "transparent"};
   z-index: 5;
-  transition: background-color ${TRANSITION_DURATION} ease-in,
-    border-bottom ${TRANSITION_DURATION} ease-in;
+  /* transition: background-color ${TRANSITION_DURATION} ease-in,
+    border-bottom ${TRANSITION_DURATION} ease-in; */
 `;
 
 const Nav = styled.nav`
@@ -79,7 +79,7 @@ function Header({
   links,
   theme,
   onChangeTheme,
-  isActive,
+  changeBgOnScroll = true,
   slideOutMenuContent,
 }) {
   const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
@@ -89,7 +89,10 @@ function Header({
     window.scrollY > 20 ? setHeaderIsActive(true) : setHeaderIsActive(false);
   };
 
-  useEffect(() => window.addEventListener("scroll", handlePageScroll));
+  useEffect(() => {
+    window.addEventListener("scroll", handlePageScroll);
+    !changeBgOnScroll && setHeaderIsActive(true);
+  }, [changeBgOnScroll]);
 
   return (
     <HeaderContainer isActive={headerIsActive}>
