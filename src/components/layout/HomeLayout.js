@@ -16,8 +16,7 @@ const Container = styled.div`
 
 const { home } = header;
 
-function HomeLayout(props) {
-  const { theme, onChangeTheme } = props;
+function HomeLayout({ theme, onChangeTheme, dynamicHeader }) {
   return (
     <Container>
       <Header
@@ -27,6 +26,7 @@ function HomeLayout(props) {
         theme={theme}
         onChangeTheme={onChangeTheme}
         slideOutMenuContent={slideOutMenu.content}
+        changeBgOnScroll={dynamicHeader}
       />
       <Outlet />
       <Footer textContent={footer.text} />

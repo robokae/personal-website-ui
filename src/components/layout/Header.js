@@ -15,6 +15,7 @@ import Icon from "../icon/Icon";
 import { Link } from "../Link";
 import SlideOutMenu from "../menu/SlideOutMenu";
 import { getLinkFromObject } from "../../util/LinkUtil";
+import { DYNAMIC_HEADER_SCROLL_AMOUNT } from "../../constants/AppConstants";
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -79,19 +80,21 @@ function Header({
   links,
   theme,
   onChangeTheme,
-  changeBgOnScroll = true,
+  changeBgOnScroll,
   slideOutMenuContent,
 }) {
   const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
   const [headerIsActive, setHeaderIsActive] = useState(false);
 
   const handlePageScroll = () => {
-    window.scrollY > 20 ? setHeaderIsActive(true) : setHeaderIsActive(false);
+    window.scrollY > DYNAMIC_HEADER_SCROLL_AMOUNT
+      ? setHeaderIsActive(true)
+      : setHeaderIsActive(false);
   };
 
   useEffect(() => {
+    !changeBgOnScroll ? setHeaderIsActive(true) : setHeaderIsActive(false);
     window.addEventListener("scroll", handlePageScroll);
-    !changeBgOnScroll && setHeaderIsActive(true);
   }, [changeBgOnScroll]);
 
   return (

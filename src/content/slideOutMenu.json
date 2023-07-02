@@ -1,7 +1,7 @@
 {
     "name": "slideOutMenu",
     "content": {
-        "heading": "Welcome",
+        "heading": "Menu",
         "links": [
             {
                 "id": 0,
@@ -15,7 +15,7 @@
                 "type": "text",
                 "name": "Blog",
                 "to": "/blog",
-                "icon": "newspaper"
+                "icon": "book"
             },
             {
                 "id": 2,
@@ -25,6 +25,43 @@
                 "icon": "envelope"
             }
         ],
-        "additionalItems": ["socialLinks","themeSwitcher"]
+        "additionalItems": {
+            "socialLinks": [
+                {
+                    "id": 0,
+                    "type": "text",
+                    "name": "GitHub",
+                    "icon": {
+                        "name": "GITHUB_ICON",
+                        "isBrandIcon": true
+                    },
+                    "to": "https://github.com/robokae"
+                },
+                {
+                    "id": 1,
+                    "type": "text",
+                    "name": "LinkedIn",
+                    "icon": {
+                        "name": "LINKEDIN_ICON",
+                        "isBrandIcon": true
+                    },
+                    "to": "https://www.linkedin.com/in/alexander-hom-94811b188/"
+                }
+            ],
+            "themeSwitcher": {
+                "label": "Theme:",
+                "options": {
+                    "dark": {
+                        "text": "Dark",
+                        "icon": "moon"
+                    },
+                    "light": {
+                        "text": "Light",
+                        "icon": "sun"
+                    }
+                }
+            }
+        },
+        "closeText": "Close"
     }
 }

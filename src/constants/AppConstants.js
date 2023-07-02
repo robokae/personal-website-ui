@@ -8,6 +8,7 @@ export const FAB = "fab";
 export const CURRENT = "current";
 export const PAST = "past";
 
+export const DYNAMIC_HEADER_SCROLL_AMOUNT = 20;
 export const THEME_SWITCHER = "themeSwitcher";
 
 export const ICON = "icon";

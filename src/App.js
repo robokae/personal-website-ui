@@ -29,6 +29,7 @@ import HomeLayout from "./components/layout/HomeLayout";
 import useTheme from "./hooks/useTheme";
 import { LIGHT } from "./constants/AppConstants";
 import Error from "./pages/Error";
+// import About from "./pages/about/About";
 
 library.add(fab, fas);
 
@@ -58,11 +59,28 @@ function App() {
       <>
         <Route
           path="/"
-          element={<HomeLayout theme={theme} onChangeTheme={changeTheme} />}
+          element={
+            <HomeLayout
+              theme={theme}
+              onChangeTheme={changeTheme}
+              dynamicHeader={true}
+            />
+          }
         >
           <Route index element={<Home />} />
+        </Route>
+        <Route
+          element={
+            <HomeLayout
+              theme={theme}
+              onChangeTheme={changeTheme}
+              dynamicHeader={false}
+            />
+          }
+        >
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resume" element={<Resume />} />
+          {/* <Route path="/about" element={<About />} /> */}
         </Route>
         <Route path="/blog" element={<Blog />} />
         <Route path="/post/:postTitle" element={<Post />} />

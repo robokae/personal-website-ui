@@ -9,6 +9,7 @@ export const Link = styled(NavLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
+  font-size: inherit;
 `;
 
 export const LinkButton = styled(Link)`
@@ -25,6 +26,20 @@ export const LinkButton = styled(Link)`
       rgba(0, 0, 0, 0.1) 0%,
       rgba(0, 0, 0, 0.1) 100%
     );
+  }
+`;
+
+export const BorderedIconLinkButton = styled(Link)`
+  width: 100%;
+  background-color: ${({ theme }) => theme.secondaryBgCol};
+  padding: 0.5rem 2rem;
+  color: ${({ theme }) => theme.primaryFontCol};
+  border: 1px solid ${({ theme }) => theme.lineCol};
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  svg {
+    font-size: 1.25rem;
   }
 `;
 

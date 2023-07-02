@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MEDIA_QUERY_BREAKPOINT_SM } from "../constants/StyleConstants";
+import { MEDIA_QUERY_BREAKPOINT_MED } from "../constants/StyleConstants";
 import { BaseLayout, ContentLayout } from "./layout/Layout";
 
 const JumbotronLayout = styled(BaseLayout)`
@@ -11,7 +11,7 @@ const JumbotronLayout = styled(BaseLayout)`
 const StyledText = styled.p`
   font-size: 2.5rem;
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
     font-size: 1.5rem;
   }
 `;
