@@ -14,7 +14,7 @@ import ThemeSwitcher from "../themeSwitcher/ThemeSwitcher";
 import Icon from "../icon/Icon";
 import { Link } from "../Link";
 import SlideOutMenu from "../menu/SlideOutMenu";
-import { getLinkFromObject } from "../../util/LinkUtil";
+import { getLinkFromJson } from "../../util/LinkUtil";
 import { DYNAMIC_HEADER_SCROLL_AMOUNT } from "../../constants/AppConstants";
 
 const HeaderContainer = styled.header`
@@ -50,6 +50,7 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled(Link)`
+  color: ${(props) => props.$color};
   font-family: ${LOGO_FONT};
   text-transform: uppercase;
 `;
@@ -92,6 +93,11 @@ function Header({
       : setHeaderIsActive(false);
   };
 
+  const getLinkColor = () =>
+    headerIsActive
+      ? ({ theme }) => theme.primaryFontCol
+      : ({ theme }) => theme.headerInitialFontCol;
+
   useEffect(() => {
     !changeBgOnScroll ? setHeaderIsActive(true) : setHeaderIsActive(false);
     window.addEventListener("scroll", handlePageScroll);
@@ -100,28 +106,27 @@ function Header({
   return (
     <HeaderContainer isActive={headerIsActive}>
       <Nav>
-        <Logo to={logo.to} $isActive={headerIsActive}>
+        <Logo to={logo.to} $color={getLinkColor()}>
           {logo.name}
         </Logo>
+
         <LinkContainer>
           {links.length > 0 &&
-            links.map((link) => getLinkFromObject(link, headerIsActive, true))}
+            links.map((link) => getLinkFromJson(link, getLinkColor(), true))}
           <ThemeSwitcher
             onChangeTheme={onChangeTheme}
             theme={theme}
             headerIsActive={headerIsActive}
           />
         </LinkContainer>
+
         <MenuIcon
           icon={HAMBURGER_MENU_ICON}
-          $color={
-            headerIsActive
-              ? ({ theme }) => theme.primaryFontCol
-              : ({ theme }) => theme.headerInitialFontCol
-          }
+          $color={getLinkColor()}
           onClick={() => setDisplaySlideOutMenu(true)}
         />
       </Nav>
+
       <SlideOutMenu
         display={displaySlideOutMenu}
         setDisplay={setDisplaySlideOutMenu}

@@ -9,36 +9,56 @@ const IconTextLink = styled(Link)`
   gap: 1.5rem;
 `;
 
-export const getLinkFromObject = (linkObj, headerState, displayTooltip) => {
-  const linkType = linkObj.type.toLowerCase();
-  switch (linkType) {
+/**
+ * Converts a JSON to a React Router Link object
+ * @example
+ * "link": {
+ *   "id": "id",
+ *   "type": "text"|"icon"|"icontext",
+ *   "name": "linkTitle",
+ *   "to": "linkUrl",
+ *   "icon": {
+ *      "name": "iconName",
+ *      "isBrandIcon": "isFontAwesomeBrandIcon"
+ *   }
+ * }
+ * @param linkJson link in JSON format
+ * @param linkColor custom text color for Link
+ * @param isDisplayTooltip display tooltip when the link is hovered
+ */
+export const getLinkFromJson = (linkJson, linkColor, isDisplayTooltip) => {
+  const linkType = linkJson.type;
+  if (linkType === null) {
+    return null;
+  }
+  switch (linkType.toLowerCase()) {
     case ICON:
       return (
         <Link
-          key={linkObj.id}
-          id={linkObj.tooltip.anchorId}
-          to={linkObj.to}
-          $isActive={headerState}
+          key={linkJson.id}
+          id={linkJson.tooltip.anchorId}
+          to={linkJson.to}
+          $textColor={linkColor}
         >
-          {displayTooltip && (
+          {isDisplayTooltip && (
             <IconWithTooltip
-              iconDetails={linkObj.icon}
-              tooltipDetails={linkObj.tooltip}
+              iconDetails={linkJson.icon}
+              tooltipDetails={linkJson.tooltip}
             />
           )}
         </Link>
       );
     case TEXT:
       return (
-        <Link key={linkObj.id} to={linkObj.to} $isActive={headerState}>
-          {linkObj.name}
+        <Link key={linkJson.id} to={linkJson.to} $textColor={linkColor}>
+          {linkJson.name}
         </Link>
       );
     case ICONTEXT:
       return (
-        <IconTextLink key={linkObj.id} to={linkObj.to} $isActive={headerState}>
-          <FontAwesomeIcon icon={linkObj.icon} />
-          {linkObj.name}
+        <IconTextLink key={linkJson.id} to={linkJson.to} $textColor={linkColor}>
+          <FontAwesomeIcon icon={linkJson.icon} />
+          {linkJson.name}
         </IconTextLink>
       );
     default:

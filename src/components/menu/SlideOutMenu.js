@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { getLinkFromObject } from "../../util/LinkUtil";
+import { getLinkFromJson } from "../../util/LinkUtil";
 import { MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
 import MobileThemeSwitcher from "../themeSwitcher/MobileThemeSwitcher";
 
@@ -26,7 +26,7 @@ const Content = styled.section`
   left: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 3rem;
   background-color: ${({ theme }) => theme.secondaryBgCol};
   transform: ${(props) =>
@@ -38,16 +38,6 @@ const Content = styled.section`
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
     min-width: 80%;
   }
-`;
-
-const Header = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  text-align: left;
-  padding: 1rem 2.5rem;
-  border-bottom: 1px solid ${({ theme }) => theme.lineCol};
 `;
 
 const MenuOptionsContainer = styled.ul`
@@ -66,6 +56,15 @@ const MenuOption = styled.li`
   }
 `;
 
+const ThemeSwitcherContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  text-align: left;
+  padding: 1rem 2.5rem;
+`;
+
 const CloseButton = styled.button`
   width: 100%;
   position: fixed;
@@ -81,40 +80,41 @@ const CloseButton = styled.button`
   cursor: pointer;
 `;
 
-const SocialLinkContainer = styled.div`
-  width: 100%;
-`;
-
 function SlideOutMenu({ display, setDisplay, theme, onChangeTheme, content }) {
   return (
     <Container $display={display}>
       <Overlay onClick={() => setDisplay(false)} />
       <Content $display={display}>
-        <Header>
-          {/* {content.heading} */}
-          <MobileThemeSwitcher
-            content={content.additionalItems.themeSwitcher}
-            theme={theme}
-            onChangeTheme={onChangeTheme}
-          />
-        </Header>
         <MenuOptionsContainer>
           <>
             {content.links &&
               content.links.map((link) => (
                 <MenuOption key={link.id}>
-                  {getLinkFromObject(link, true, false)}
+                  {getLinkFromJson(
+                    link,
+                    ({ theme }) => theme.primaryFontCol,
+                    false
+                  )}
                 </MenuOption>
               ))}
-          </>
-          <SocialLinkContainer>
             {content.additionalItems.socialLinks.map((socialLink) => (
               <MenuOption key={socialLink.id}>
-                {getLinkFromObject(socialLink, true, false)}
+                {getLinkFromJson(
+                  socialLink,
+                  ({ theme }) => theme.primaryFontCol,
+                  false
+                )}
               </MenuOption>
             ))}
-          </SocialLinkContainer>
+          </>
         </MenuOptionsContainer>
+        <ThemeSwitcherContainer>
+          <MobileThemeSwitcher
+            content={content.additionalItems.themeSwitcher}
+            theme={theme}
+            onChangeTheme={onChangeTheme}
+          />
+        </ThemeSwitcherContainer>
         <CloseButton onClick={() => setDisplay(false)}>
           {content.closeText}
         </CloseButton>
