@@ -1,4 +1,4 @@
-import ItemDetailCard from "../../components/card/ItemDetailCard";
+import CallToActionCard from "../../components/card/CallToActionCard";
 import styled from "styled-components";
 import { GAP, MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
@@ -57,9 +57,9 @@ function Projects({ heading, content }) {
                 (projectCategory) => projectCategory.id === projectCategoryId
               )
               .projects.map((project) => (
-                <ItemDetailCard
+                <CallToActionCard
                   key={project.id}
-                  name={project.name}
+                  heading={project.name}
                   tags={project.stack}
                   description={project.description}
                   links={project.links}

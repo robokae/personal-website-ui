@@ -66,12 +66,19 @@ const AnimatedIcon = styled(FontAwesomeIcon)`
   }
 `;
 
-function ItemDetailCard({ name, tags, description, links }) {
+/**
+ * Text card with optional tags and up to two CTA links
+ * @param heading the heading displayed on the card
+ * @param tags array of tags
+ * @param description text displayed under the heading and tags
+ * @param CTA links
+ */
+function CallToActionCard({ heading, tags, description, links }) {
   const [animateIcon, setAnimateIcon] = useState({});
   return (
     <Container>
       <Content>
-        <h4>{name}</h4>
+        <h4>{heading}</h4>
         <TagContainer>
           {tags.map((e, index) => (
             <Tag key={index}>{e}</Tag>
@@ -103,4 +110,4 @@ function ItemDetailCard({ name, tags, description, links }) {
   );
 }
 
-export default ItemDetailCard;
+export default CallToActionCard;
