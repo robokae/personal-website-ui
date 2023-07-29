@@ -10,6 +10,7 @@ const Container = styled.div`
   top: 0;
   visibility: ${(props) => (props.$display ? "" : "hidden")};
   z-index: 2;
+  box-sizing: border-box;
 `;
 
 const Overlay = styled.div`
@@ -27,6 +28,7 @@ const Content = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 3rem;
   background-color: ${({ theme }) => theme.secondaryBgCol};
   transform: ${(props) =>
@@ -51,9 +53,7 @@ const MenuOption = styled.li`
   display: flex;
   justify-content: center;
   font-size: 1.5rem;
-  &:hover {
-    background-color: ${({ theme }) => theme.primaryBgCol};
-  }
+  transition: font-size 0.2s ease-in-out;
 `;
 
 const ThemeSwitcherContainer = styled.div`
@@ -69,13 +69,14 @@ const CloseButton = styled.button`
   width: 100%;
   position: fixed;
   bottom: 0;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  background-color: ${({ theme }) => theme.accentCol};
-  color: ${({ theme }) => theme.primaryBgCol};
-  border: 1px solid ${({ theme }) => theme.accentCol};
+  background-color: transparent;
+  color: ${({ theme }) => theme.primaryFontCol};
+  border: transparent;
+  border-top: 1px solid ${({ theme }) => theme.lineCol};
   outline: none;
   cursor: pointer;
 `;
