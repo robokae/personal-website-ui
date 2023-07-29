@@ -14,7 +14,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-function ThemeSwitcher({ onChangeTheme, theme, headerIsActive }) {
+function ThemeSwitcher({ onChangeTheme, theme, isBgTransparent }) {
   const iconDetails = {
     name: theme === LIGHT ? MOON_ICON : SUN_ICON,
     brandIcon: false,
@@ -32,9 +32,9 @@ function ThemeSwitcher({ onChangeTheme, theme, headerIsActive }) {
         iconDetails={iconDetails}
         tooltipDetails={tooltipDetails}
         color={
-          headerIsActive
-            ? ({ theme }) => theme.primaryFontCol
-            : ({ theme }) => theme.headerInitialFontCol
+          isBgTransparent
+            ? ({ theme }) => theme.headerInitialFontCol
+            : ({ theme }) => theme.primaryFontCol
         }
       />
     </Button>

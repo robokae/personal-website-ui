@@ -49,3 +49,5 @@ export const GRADIENT_DIRECTIONS = {
   TO_BOTTOM_LEFT: "to bottom left",
   TO_BOTTOM_RIGHT: "to bottom right",
 };
+
+export const TRANSPARENT = "transparent";

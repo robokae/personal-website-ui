@@ -8,7 +8,7 @@ import {
   LOGO_FONT,
   MEDIA_QUERY_BREAKPOINT_MED,
   MEDIA_QUERY_BREAKPOINT_XL,
-  TRANSITION_DURATION,
+  TRANSPARENT,
 } from "../../constants/StyleConstants";
 import ThemeSwitcher from "../themeSwitcher/ThemeSwitcher";
 import Icon from "../icon/Icon";
@@ -27,13 +27,11 @@ const HeaderContainer = styled.header`
   justify-content: center;
   align-items: center;
   background-color: ${(props) =>
-    props.isActive ? ({ theme }) => theme.primaryBgCol : "transparent"};
+    props.isBgTransparent ? TRANSPARENT : ({ theme }) => theme.primaryBgCol};
   border-bottom: 1px solid
     ${(props) =>
-      props.isActive ? ({ theme }) => theme.lineCol : "transparent"};
+      props.isBgTransparent ? TRANSPARENT : ({ theme }) => theme.lineCol};
   z-index: 5;
-  /* transition: background-color ${TRANSITION_DURATION} ease-in,
-    border-bottom ${TRANSITION_DURATION} ease-in; */
 `;
 
 const Nav = styled.nav`
@@ -45,7 +43,7 @@ const Nav = styled.nav`
   align-items: center;
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_XL}) {
-    width: 95%;
+    width: 90%;
   }
 `;
 
@@ -68,6 +66,7 @@ const LinkContainer = styled.section`
 
 const MenuIcon = styled(Icon)`
   display: none;
+  color: ${(props) => props.$iconColor};
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
     display: inline-block;
@@ -85,26 +84,35 @@ function Header({
   slideOutMenuContent,
 }) {
   const [displaySlideOutMenu, setDisplaySlideOutMenu] = useState(false);
-  const [headerIsActive, setHeaderIsActive] = useState(false);
-
-  const handlePageScroll = () => {
-    window.scrollY > DYNAMIC_HEADER_SCROLL_AMOUNT
-      ? setHeaderIsActive(true)
-      : setHeaderIsActive(false);
-  };
+  const [isHeaderBgTransparent, setIsHeaderBgTransparent] = useState(true);
 
   const getLinkColor = () =>
-    headerIsActive
-      ? ({ theme }) => theme.primaryFontCol
-      : ({ theme }) => theme.headerInitialFontCol;
+    isHeaderBgTransparent
+      ? ({ theme }) => theme.headerInitialFontCol
+      : ({ theme }) => theme.primaryFontCol;
 
   useEffect(() => {
-    !changeBgOnScroll ? setHeaderIsActive(true) : setHeaderIsActive(false);
-    window.addEventListener("scroll", handlePageScroll);
+    changeBgOnScroll
+      ? setIsHeaderBgTransparent(true)
+      : setIsHeaderBgTransparent(false);
   }, [changeBgOnScroll]);
 
+  const handleScroll = () => {
+    if (changeBgOnScroll) {
+      if (window.scrollY <= DYNAMIC_HEADER_SCROLL_AMOUNT) {
+        setIsHeaderBgTransparent(true);
+      } else {
+        setIsHeaderBgTransparent(false);
+      }
+    } else {
+      setIsHeaderBgTransparent(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
-    <HeaderContainer isActive={headerIsActive}>
+    <HeaderContainer isBgTransparent={isHeaderBgTransparent}>
       <Nav>
         <Logo to={logo.to} $color={getLinkColor()}>
           {logo.name}
@@ -116,13 +124,13 @@ function Header({
           <ThemeSwitcher
             onChangeTheme={onChangeTheme}
             theme={theme}
-            headerIsActive={headerIsActive}
+            isBgTransparent={isHeaderBgTransparent}
           />
         </LinkContainer>
 
         <MenuIcon
           icon={HAMBURGER_MENU_ICON}
-          $color={getLinkColor()}
+          $iconColor={getLinkColor()}
           onClick={() => setDisplaySlideOutMenu(true)}
         />
       </Nav>
