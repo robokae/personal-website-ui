@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {
   CONTENT_MAX_WIDTH,
+  FOOTER_HEIGHT,
   HEADER_HEIGHT,
   MEDIA_QUERY_BREAKPOINT_XL,
   SECTION_PADDING,
@@ -13,6 +14,11 @@ export const BaseLayout = styled.div`
   align-items: center;
 `;
 
+export const PageContentLayout = styled(BaseLayout)`
+  margin-top: ${HEADER_HEIGHT};
+  margin-bottom: ${FOOTER_HEIGHT};
+`;
+
 export const ContentLayout = styled(BaseLayout)`
   max-width: ${CONTENT_MAX_WIDTH};
   gap: 3.5rem;
@@ -22,7 +28,9 @@ export const ContentLayout = styled(BaseLayout)`
 `;
 
 export const LandingLayout = styled(BaseLayout)`
-  padding-top: ${HEADER_HEIGHT};
+  margin-top: -${HEADER_HEIGHT};
+  padding: ${SECTION_PADDING};
+  padding-bottom: 0;
   background: ${({ theme }) => theme.primaryGradient};
 `;
 
@@ -32,4 +40,11 @@ export const SectionLayout = styled.section`
   flex-direction: column;
   align-items: center;
   padding: ${SECTION_PADDING};
+`;
+
+export const TwoPaneLayout = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  /* gap: 2rem; */
 `;

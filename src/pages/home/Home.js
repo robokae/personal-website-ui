@@ -6,7 +6,6 @@ import About from "./About";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Contact from "./contact/Contact";
-import styled from "styled-components";
 
 import landing from "../../content/home/landing.json";
 import about from "../../content/home/about.json";
@@ -15,11 +14,7 @@ import experience from "../../content/home/experience.json";
 import projects from "../../content/home/projects.json";
 import Reflection from "../../components/home/Reflection";
 import contact from "../../content/home/contact.json";
-
-const Container = styled.main`
-  display: flex;
-  flex-direction: column;
-`;
+import { PageContentLayout } from "../../components/layout/Layout";
 
 function Home() {
   const location = useLocation();
@@ -38,14 +33,14 @@ function Home() {
   }, [location]);
 
   return (
-    <Container>
+    <PageContentLayout>
       <Landing content={landing.content} />
       <About content={about.content} />
       <Reflection content={reflection.content} />
       <Experience heading={experience.heading} content={experience.content} />
       <Projects heading={projects.heading} content={projects.content} />
       <Contact content={contact.content} />
-    </Container>
+    </PageContentLayout>
   );
 }
 
