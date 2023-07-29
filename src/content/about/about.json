@@ -1,0 +1,79 @@
+{
+    "name": "about",
+    "page": "about",
+    "content": {
+        "toc": {
+            "title": "Sections",
+            "items": [
+                {
+                    "name": "Who am I",
+                    "sectionId": "introduction"
+                },
+                {
+                    "name": "My Interests",
+                    "sectionId": "interests"
+                },
+                {
+                    "name": "My Journey in Software Engineering",
+                    "sectionId": "journey"
+                },
+                {
+                    "name": "My Reading List/Favorite Books",
+                    "sectionId": "books"
+                },
+                {
+                    "name": "A Few More Things About Me",
+                    "sectionId": "other"
+                }
+            ]
+        },
+        "data": {
+            "introduction": {
+                "heading": "About Me",
+                "text": "I am a software developer from San Francisco."
+            },
+            "interests": {
+                "heading":"My Interests",
+                "data": [
+                    "Full-stack web development",
+                    "Cloud computing",
+                    "Relational and NoSQL databases",
+                    "Computer networks",
+                    "Distributed systems",
+                    "Linux",
+                    "Game development",
+                    "Mathematics"
+                ]
+            },
+            "journey": {},
+            "books": {
+                "currentlyReading": [
+                    {
+                        "title": "Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems",
+                        "author": "Martin Kleppmann"
+                    },
+                    {
+                        "title": "Distributed Systems",
+                        "author": "Andrew S. Tanenbaum and Maarten van Steen"
+                    },
+                    {
+                        "title": "Modern Java in Action: Lambdas, streams, functional and reactive programming",
+                        "author": "Raoul-Gabriel Urma, Mario Fusco, and Alan Mycroft"
+                    }
+                ],
+                "recommendations": [
+                    {
+                        "title": "Computer Networks: A Systems Approach",
+                        "author": "Bruce S. Davie and Larry L. Peterson"
+                    },
+                    {
+                        "title": "Code Complete 2",
+                        "author": "Steve McConnell"
+                    }
+
+                ]
+            },
+            "other": {}
+        }
+    }
+}
