@@ -1,19 +1,14 @@
-import styled from "styled-components";
 import PhotoCard from "../../components/card/photoCard/PhotoCard";
 import Grid from "../../components/layout/Grid";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 import { getIcon } from "../../util/IconUtil";
-
-const Heading = styled.h2`
-  width: 100%;
-  text-align: center;
-`;
+import { SectionHeading } from "../../components/typography/Heading";
 
 function Experience({ heading, content }) {
   return (
     <SectionLayout>
       <ContentLayout>
-        <Heading>{heading}</Heading>
+        <SectionHeading>{heading}</SectionHeading>
         <Grid size={content.length}>
           {content.map((experience, index) => (
             <PhotoCard

@@ -4,14 +4,9 @@ import { GAP, MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 import { useState } from "react";
 import HorizontalCategoryPanel from "../../components/menu/HorizontalCategoryPanel";
-import Card from "../../components/card/Card";
+import { SectionHeading } from "../../components/typography/Heading";
 
 const StyledSection = styled(SectionLayout)``;
-
-const Heading = styled.h2`
-  width: 100%;
-  text-align: center;
-`;
 
 const MainContent = styled.div`
   width: 100%;
@@ -45,7 +40,7 @@ function Projects({ heading, content }) {
   return (
     <StyledSection>
       <ContentLayout>
-        <Heading>{heading}</Heading>
+        <SectionHeading>{heading}</SectionHeading>
         <MainContent>
           <HorizontalCategoryPanel
             content={projectCategories}

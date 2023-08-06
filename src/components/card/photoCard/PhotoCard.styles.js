@@ -53,14 +53,6 @@ export const TextContent = styled.div`
   padding-top: 1rem;
 `;
 
-export const Heading = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  text-align: center;
-  padding: 0.25rem 0;
-`;
-
 export const List = styled.ul`
   margin-left: 0.5rem;
   padding-left: 1rem;

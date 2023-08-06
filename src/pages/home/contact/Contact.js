@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import Icon from "../../../components/icon/Icon";
 import { MEDIA_QUERY_BREAKPOINT_SM } from "../../../constants/StyleConstants";
 import { getIcon } from "../../../util/IconUtil";
+import { SectionHeading } from "../../../components/typography/Heading";
 
 const DetailsContainer = styled.div`
   display: flex;
@@ -45,7 +46,7 @@ function Contact({ content }) {
   return (
     <SectionLayout id="contact">
       <ContentLayout>
-        <h2>{content.heading}</h2>
+        <SectionHeading>{content.heading}</SectionHeading>
         <DetailsContainer>
           <p>{content.detailsText}</p>
           <ContactInfoContainer>

@@ -1,11 +1,11 @@
 import { GRADIENT_DIRECTIONS } from "../../../constants/StyleConstants";
 import { gradientPalette } from "../../../global/colors";
 import getRandomGradient from "../../../util/GradientGenerator";
+import { CardHeading } from "../../typography/Heading";
 import {
   Container,
   Content,
   GradientContainer,
-  Heading,
   List,
   ListItem,
   PhotoContainer,
@@ -25,9 +25,7 @@ function PhotoCard({ content, photo, gradient }) {
               $gradientDirection={GRADIENT_DIRECTIONS.TO_RIGHT}
             >
               {photo}
-              <Heading>
-                <h4>{content.heading}</h4>
-              </Heading>
+              <CardHeading>{content.heading}</CardHeading>
             </GradientContainer>
           ) : (
             <PhotoContainer>{photo}</PhotoContainer>

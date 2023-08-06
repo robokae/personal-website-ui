@@ -9,6 +9,7 @@ import {
   Tag,
   TagContainer,
 } from "./CallToActionCard.styles";
+import { CardHeading } from "../../typography/Heading";
 
 /**
  * Text card with optional tags and up to two CTA links
@@ -22,7 +23,7 @@ function CallToActionCard({ heading, tags, description, links }) {
   return (
     <Container>
       <Content>
-        <h4>{heading}</h4>
+        <CardHeading>{heading}</CardHeading>
         <TagContainer>
           {tags.map((e, index) => (
             <Tag key={index}>{e}</Tag>
