@@ -1,22 +1,25 @@
 {
-    "type": "fontawesome",
-    "iconMap": {
-        "SCHOOL_ICON": "school",
-        "HEART_ICON": "heart",
-        "CODE_ICON": "code",
-        "BOOK_ICON": "book",
-        "SUN_ICON": "sun",
-        "MOON_ICON": "moon",
-        "HAMBURGER_MENU_ICON": "bars",
-        "LINKEDIN_ICON": "linkedin",
-        "GITHUB_ICON": "github",
-        "RIGHT_ARROW_ICON": "arrow-right",
-        "RIGHT_CHEVRON_ICON": "chevron-right",
-        "REACT_ICON": "react",
-        "SERVER_ICON": "server",
-        "CLOUD_ICON": "cloud",
-        "HOME_ICON": "home",
-        "BLOG_ICON": "newspaper",
-        "ENVELOPE_ICON": "envelope"
+    "fontawesome": {
+        "fas": {
+            "SCHOOL_ICON": "school",
+            "HEART_ICON": "heart",
+            "CODE_ICON": "code",
+            "BOOK_ICON": "book",
+            "SUN_ICON": "sun",
+            "MOON_ICON": "moon",
+            "HAMBURGER_MENU_ICON": "bars",
+            "RIGHT_ARROW_ICON": "arrow-right",
+            "RIGHT_CHEVRON_ICON": "chevron-right",
+            "REACT_ICON": "react",
+            "SERVER_ICON": "server",
+            "CLOUD_ICON": "cloud",
+            "HOME_ICON": "home",
+            "BLOG_ICON": "newspaper",
+            "ENVELOPE_ICON": "envelope"
+        },
+        "fab": {
+            "LINKEDIN_ICON": "linkedin",
+            "GITHUB_ICON": "github"
+        }
     }
 }

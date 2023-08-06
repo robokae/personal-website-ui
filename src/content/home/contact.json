@@ -9,30 +9,21 @@
             {
                 "id": 0,
                 "text": "GitHub",
-                "icon": {
-                    "name": "github",
-                    "isBrandIcon": true
-                },
+                "icon": "GITHUB_ICON",
                 "isLink": true,
                 "link": "https://github.com/robokae"
             },
             {
                 "id": 1,
                 "text": "alexanderhom19@gmail.com",
-                "icon": {
-                    "name": "envelope",
-                    "isBrandIcon": false
-                },
+                "icon": "ENVELOPE_ICON",
                 "isLink": false,
                 "link": ""
             },
             {
                 "id": 2,
                 "text": "LinkedIn",
-                "icon": {
-                    "name": "linkedin",
-                    "isBrandIcon": true
-                },
+                "icon": "LINKEDIN_ICON",
                 "isLink": true,
                 "link": "https://www.linkedin.com/in/alexander-hom-94811b188/"
             }

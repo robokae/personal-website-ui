@@ -1,9 +1,10 @@
-import CallToActionCard from "../../components/card/CallToActionCard";
+import CallToActionCard from "../../components/card/callToActionCard/CallToActionCard";
 import styled from "styled-components";
 import { GAP, MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 import { useState } from "react";
 import HorizontalCategoryPanel from "../../components/menu/HorizontalCategoryPanel";
+import Card from "../../components/card/Card";
 
 const StyledSection = styled(SectionLayout)``;
 

@@ -5,8 +5,8 @@ import {
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Icon from "../../../components/icon/Icon";
-import { FAB } from "../../../constants/AppConstants";
 import { MEDIA_QUERY_BREAKPOINT_SM } from "../../../constants/StyleConstants";
+import { getIcon } from "../../../util/IconUtil";
 
 const DetailsContainer = styled.div`
   display: flex;
@@ -51,13 +51,7 @@ function Contact({ content }) {
           <ContactInfoContainer>
             {content.contactInfoList.map((contactInfo, index) => (
               <ContactInfo key={index}>
-                <Icon
-                  icon={
-                    contactInfo.icon.isBrandIcon
-                      ? [FAB, contactInfo.icon.name]
-                      : contactInfo.icon.name
-                  }
-                />
+                <Icon icon={getIcon(contactInfo.icon)} />
                 {contactInfo.isLink ? (
                   <StyledLink to={contactInfo.link}>
                     {contactInfo.text}

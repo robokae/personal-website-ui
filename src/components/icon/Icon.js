@@ -1,11 +1,22 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { ICON_SIZE } from "../../constants/StyleConstants";
 
-const Icon = styled(FontAwesomeIcon)`
-  font-size: ${ICON_SIZE};
-  color: ${(props) => (props.$color ? props.$color : "")};
-  cursor: ${(props) => (props.$isClickable ? "pointer" : "")};
+const IconContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: ${(props) => props.$size ?? ICON_SIZE};
+  color: ${(props) =>
+    props.$color ? props.$color : ({ theme }) => theme.primaryFontCol};
+  cursor: ${(props) => props.$isClickable && "pointer"};
 `;
+
+const Icon = ({ icon, color, size, isClickable }) => {
+  return (
+    <IconContainer $color={color} $size={size} $isClickable={isClickable}>
+      {icon}
+    </IconContainer>
+  );
+};
 
 export default Icon;

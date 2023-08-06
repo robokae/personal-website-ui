@@ -3,7 +3,6 @@ import "react-tooltip/dist/react-tooltip.css";
 import styled from "styled-components";
 import {
   CONTENT_MAX_WIDTH,
-  HAMBURGER_MENU_ICON,
   HEADER_HEIGHT,
   LOGO_FONT,
   MEDIA_QUERY_BREAKPOINT_MED,
@@ -11,11 +10,12 @@ import {
   TRANSPARENT,
 } from "../../constants/StyleConstants";
 import ThemeSwitcher from "../themeSwitcher/ThemeSwitcher";
-import Icon from "../icon/Icon";
 import { Link } from "../Link";
 import SlideOutMenu from "../menu/SlideOutMenu";
 import { getLinkFromJson } from "../../util/LinkUtil";
 import { DYNAMIC_HEADER_SCROLL_AMOUNT } from "../../constants/AppConstants";
+import Icon from "../icon/Icon";
+import { getIcon } from "../../util/IconUtil";
 
 const HeaderContainer = styled.header`
   width: 100%;
@@ -64,14 +64,12 @@ const LinkContainer = styled.section`
   }
 `;
 
-const MenuIcon = styled(Icon)`
+const MenuIcon = styled.div`
   display: none;
-  color: ${(props) => props.$iconColor};
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
     display: inline-block;
     justify-self: flex-end;
-    cursor: pointer;
   }
 `;
 
@@ -128,11 +126,13 @@ function Header({
           />
         </LinkContainer>
 
-        <MenuIcon
-          icon={HAMBURGER_MENU_ICON}
-          $iconColor={getLinkColor()}
-          onClick={() => setDisplaySlideOutMenu(true)}
-        />
+        <MenuIcon onClick={() => setDisplaySlideOutMenu(true)}>
+          <Icon
+            icon={getIcon("HAMBURGER_MENU_ICON")}
+            color={getLinkColor()}
+            isClickable={true}
+          />
+        </MenuIcon>
       </Nav>
 
       <SlideOutMenu

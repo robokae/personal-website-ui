@@ -1,10 +1,6 @@
 import styled from "styled-components";
 import { DARK_THEME, LIGHT, LIGHT_THEME } from "../../constants/AppConstants";
-import {
-  BORDER_RADIUS,
-  MOON_ICON,
-  SUN_ICON,
-} from "../../constants/StyleConstants";
+import { BORDER_RADIUS } from "../../constants/StyleConstants";
 import IconWithTooltip from "../icon/IconWithTooltip";
 
 const Button = styled.button`
@@ -15,10 +11,7 @@ const Button = styled.button`
 `;
 
 function ThemeSwitcher({ onChangeTheme, theme, isBgTransparent }) {
-  const iconDetails = {
-    name: theme === LIGHT ? MOON_ICON : SUN_ICON,
-    brandIcon: false,
-  };
+  const iconName = theme === LIGHT ? "MOON_ICON" : "SUN_ICON";
 
   const tooltipDetails = {
     anchorId: "theme-switcher",
@@ -29,7 +22,7 @@ function ThemeSwitcher({ onChangeTheme, theme, isBgTransparent }) {
   return (
     <Button id="theme-switcher" onClick={onChangeTheme}>
       <IconWithTooltip
-        iconDetails={iconDetails}
+        icon={iconName}
         tooltipDetails={tooltipDetails}
         color={
           isBgTransparent

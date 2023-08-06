@@ -9,6 +9,8 @@ export const MEDIA_QUERY_BREAKPOINT_MED = "768px";
 export const MEDIA_QUERY_BREAKPOINT_SM = "600px";
 
 export const ICON_SIZE = "1.25rem";
+export const MED_ICON_SIZE = "2rem";
+export const LARGE_ICON_SIZE = "3rem";
 export const SCHOOL_ICON = "school";
 export const HEART_ICON = "heart";
 export const CODE_ICON = "code";
@@ -19,6 +21,11 @@ export const HAMBURGER_MENU_ICON = "bars";
 export const RIGHT_ARROW_ICON = "arrow-right";
 export const RIGHT_CHEVRON_ICON = "chevron-right";
 
+export const ICON_TYPES = {
+  FONT_AWESOME: "fontawesome",
+  DEFAULT: "fontawesome",
+};
+
 export const BORDER_RADIUS = ".5rem";
 
 export const MAX_GRID_ELEMENTS_PER_ROW = 4;
@@ -28,6 +35,8 @@ export const GAP = "1.75rem";
 export const LARGE_GAP = "3rem";
 
 export const LARGE_PADDING = "3rem";
+export const MED_PADDING = "2rem";
+export const SMALL_PADDING = "1rem";
 
 export const SECTION_PADDING = "3.5rem 0";
 export const CARD_PADDING = "1.5rem";
@@ -51,3 +60,13 @@ export const GRADIENT_DIRECTIONS = {
 };
 
 export const TRANSPARENT = "transparent";
+
+export const SHADOW = "shadow";
+export const OUTLINE = "outline";
+export const LEFT = "left";
+export const CENTER = "center";
+export const RIGHT = "right";
+export const TOP = "top";
+export const BOTTOM = "bottom";
+export const FLEX_START = "flex-start";
+export const FLEX_END = "flex-end";

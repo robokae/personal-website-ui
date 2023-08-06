@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import PhotoCard from "../../components/card/PhotoCard";
+import PhotoCard from "../../components/card/photoCard/PhotoCard";
 import Grid from "../../components/layout/Grid";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
-import { getFontAwesomeIcon } from "../../util/IconUtil";
+import { getIcon } from "../../util/IconUtil";
 
 const Heading = styled.h2`
   width: 100%;
@@ -19,7 +19,7 @@ function Experience({ heading, content }) {
             <PhotoCard
               key={index}
               content={experience}
-              photo={getFontAwesomeIcon(experience.icon)}
+              photo={getIcon(experience.icon)}
               gradient={true}
             />
           ))}

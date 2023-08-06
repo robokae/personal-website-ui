@@ -1,6 +1,6 @@
 import Grid from "../../components/layout/Grid";
-import { getFontAwesomeIcon } from "../../util/IconUtil";
-import IconTextCard from "../../components/card/IconTextCard";
+import { getIcon } from "../../util/IconUtil";
+import IconTextCard from "../../components/card/iconTextCard/IconTextCard";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 
 function About({ content }) {
@@ -11,7 +11,7 @@ function About({ content }) {
           {content.map((aboutItem) => (
             <IconTextCard
               key={aboutItem.id}
-              icon={getFontAwesomeIcon(aboutItem.icon)}
+              icon={getIcon(aboutItem.icon)}
               iconCol={({ theme }) => theme.accentCol}
               text={aboutItem.description}
             />

@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { FOOTER_HEIGHT } from "../../constants/StyleConstants";
-import header from "../../content/header.json";
-import footer from "../../content/footer.json";
+import header from "../../content/layout/header.json";
+import footer from "../../content/layout/footer.json";
 import slideOutMenu from "../../content/slideOutMenu.json";
 import Header from "./Header";
 import Footer from "./Footer";

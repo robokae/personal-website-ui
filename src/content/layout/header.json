@@ -41,10 +41,7 @@
         "name": "LinkedIn",
         "isLogo": false,
         "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
-        "icon": {
-          "name": "linkedin",
-          "isBrandIcon": true
-        },
+        "icon": "LINKEDIN_ICON",
         "tooltip": {
           "anchorId": "linkedin",
           "content": "LinkedIn",
@@ -57,16 +54,16 @@
         "name": "GitHub",
         "isLogo": false,
         "to": "https://github.com/robokae",
-        "icon": {
-          "name": "github",
-          "isBrandIcon": true
-        },
+        "icon": "GITHUB_ICON",
         "tooltip": {
           "anchorId": "github",
           "content": "GitHub",
           "place": "bottom"
         }
       }
-    ]
+    ],
+    "hamburgerMenu": {
+      "icon": "HAMBURGER_MENU_ICON"
+    }
   }
 }

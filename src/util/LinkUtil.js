@@ -42,8 +42,9 @@ export const getLinkFromJson = (linkJson, linkColor, isDisplayTooltip) => {
         >
           {isDisplayTooltip && (
             <IconWithTooltip
-              iconDetails={linkJson.icon}
+              icon={linkJson.icon}
               tooltipDetails={linkJson.tooltip}
+              color={linkColor}
             />
           )}
         </Link>
