@@ -8,9 +8,7 @@ import {
   FLEX_START,
   GAP,
   LEFT,
-  OUTLINE,
   RIGHT,
-  SHADOW,
   TOP,
 } from "../../constants/StyleConstants";
 
@@ -18,15 +16,13 @@ export const CardContainer = styled.div`
   width: 100%;
   height: 100%;
   ${(props) =>
-    props.variation === SHADOW &&
-    css`
-      box-shadow: ${({ theme }) => theme.boxShadow};
-    `}
-  ${(props) =>
-    props.variation === OUTLINE &&
-    css`
-      border: 1px solid ${({ theme }) => theme.lineCol};
-    `};
+    props.outline
+      ? css`
+          border: 1px solid ${({ theme }) => theme.lineCol};
+        `
+      : css`
+          box-shadow: ${({ theme }) => theme.boxShadow};
+        `};
   border-radius: ${BORDER_RADIUS};
   background-color: ${({ theme }) => theme.secondaryBgCol};
   padding: ${CARD_PADDING};
@@ -45,4 +41,5 @@ export const CardContainer = styled.div`
       ? FLEX_END
       : CENTER};
   gap: ${GAP};
+  ${(props) => props.additionalStyles && props.additionalStyles}
 `;

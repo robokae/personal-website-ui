@@ -2,20 +2,25 @@ import {
   BOTTOM,
   CENTER,
   LEFT,
-  OUTLINE,
   RIGHT,
-  SHADOW,
   TOP,
 } from "../../constants/StyleConstants";
 import { CardContainer } from "./Card.styles";
 import PropTypes from "prop-types";
 
-const Card = ({ variation, horizontalAlign, verticalAlign, children }) => {
+const Card = ({
+  outline,
+  horizontalAlign,
+  verticalAlign,
+  additionalStyles,
+  children,
+}) => {
   return (
     <CardContainer
-      variation={variation}
+      outline={outline}
       horizontalAlign={horizontalAlign}
       verticalAlign={verticalAlign}
+      additionalStyles={additionalStyles}
     >
       {children}
     </CardContainer>
@@ -23,13 +28,11 @@ const Card = ({ variation, horizontalAlign, verticalAlign, children }) => {
 };
 
 Card.propTypes = {
-  variation: PropTypes.oneOf([OUTLINE, SHADOW]),
   horizontalAlign: PropTypes.oneOf([LEFT, CENTER, RIGHT]),
   verticalAlign: PropTypes.oneOf([TOP, CENTER, BOTTOM]),
 };
 
 Card.defaultProps = {
-  variation: SHADOW,
   horizontalAlign: LEFT,
   verticalAlign: TOP,
 };
