@@ -12,6 +12,11 @@ const Card = ({
   outline,
   horizontalAlign,
   verticalAlign,
+  borderRadius,
+  backgroundColor,
+  textColor,
+  gradientBackground,
+  gradientDirection,
   additionalStyles,
   children,
 }) => {
@@ -20,6 +25,11 @@ const Card = ({
       outline={outline}
       horizontalAlign={horizontalAlign}
       verticalAlign={verticalAlign}
+      borderRadius={borderRadius}
+      backgroundColor={backgroundColor}
+      textColor={textColor}
+      gradientBackground={gradientBackground}
+      gradientDirection={gradientDirection}
       additionalStyles={additionalStyles}
     >
       {children}

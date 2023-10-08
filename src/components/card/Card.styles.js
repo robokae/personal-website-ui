@@ -16,13 +16,10 @@ export const CardContainer = styled.div`
   width: 100%;
   height: 100%;
   ${(props) =>
-    props.outline
-      ? css`
-          border: 1px solid ${({ theme }) => theme.lineCol};
-        `
-      : css`
-          box-shadow: ${({ theme }) => theme.boxShadow};
-        `};
+    props.outline &&
+    css`
+      border: 1px solid ${({ theme }) => theme.lineCol};
+    `};
   border-radius: ${BORDER_RADIUS};
   background-color: ${({ theme }) => theme.secondaryBgCol};
   padding: ${CARD_PADDING};
