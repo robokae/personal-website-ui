@@ -13,9 +13,9 @@
             {
                 "id": 1,
                 "type": "text",
-                "name": "Blog",
-                "to": "/blog",
-                "icon": "book"
+                "name": "About",
+                "to": "/about",
+                "icon": ""
             },
             {
                 "id": 2,
