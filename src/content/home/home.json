@@ -1,0 +1,230 @@
+{
+    "pageName": "home",
+    "pageTemplate": "home",
+    "pageSections": [
+        {
+            "name": "hero",
+            "multiLineHeading": ["Hello there", "my name is Alexander Hom"],
+            "subHeading": "I am a full-stack web developer from San Francisco"
+        },
+        {
+            "name": "overview",
+            "content": [
+                {
+                    "name": "cards",
+                    "data": [
+                        {
+                            "text": {
+                                "body": "B.S. in Computer Science from the University of California, Merced"
+                            },
+                            "visuals": {
+                                "icons": [
+                                    {
+                                        "type": "fontawesome",
+                                        "name": "school"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text": {
+                                "body": "Passionate about UI/UX and full-stack software development"
+                            },
+                            "visuals": {
+                                "icons": [
+                                    {
+                                        "type": "fontawesome",
+                                        "name": "heart"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text": {
+                                "body": "Skilled in React, Spring Boot, SQL databases, and cloud technologies"
+                            },
+                            "visuals": {
+                                "icons": [
+                                    {
+                                        "type": "fontawesome",
+                                        "name": "code"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text": {
+                                "body": "Love learning about technology, designing application UIs, and programming"
+                            },
+                            "visuals": {
+                                "icons": [
+                                    {
+                                        "type": "fontawesome",
+                                        "name": "book"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "reflection",
+            "content": [
+                {
+                    "name": "description",
+                    "data": [
+                        {
+                            "text": {
+                                "body": "Growing up, I was fascinated with computers. At the same time, I also enjoyed making art and building stuff out of Legos and paper. Software development combines my love of computers, art, and building things, providing me with a canvas to design and create applications with elegant user interfaces."
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "experience",
+            "heading": "My Experience",
+            "content": [
+                {
+                    "name": "cards",
+                    "data": [
+                        {
+                            "text": {
+                                "title": "3 Years",
+                                "body": "of frontend development experience with HTML, CSS, Sass, JavaScript, and React"
+                            },
+                            "visuals": {
+                                "backgrounds": [
+                                    {
+                                        "type": "gradient",
+                                        "value": "linear-gradient(90deg, #2566A3 0%, #942FE4 100%)"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "text": {
+                                "title": "2 Years",
+                                "body": "of backend development experience with Java (Spring), Python (Flask), relational databases, MongoDB, and Google Cloud"
+                            },
+                            "visuals": {
+                                "backgrounds": [
+                                    {
+                                        "type": "gradient",
+                                        "value": "linear-gradient(90deg, #327DAE 0%, #2B8373 100%)"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "projects",
+            "heading": "Current Projects",
+            "content": [
+                {
+                    "name": "cards",
+                    "data": [
+                        {
+                            "text": {
+                                "title": "Minimal Todo List",
+                                "body": "Web-based todo list with a simple user interface. Features include creating, removing, and searching todos.",
+                                "links": [
+                                    {
+                                        "name": "GitHub",
+                                        "destination": "https://github.com/robokae/Minimal-React-Todo-List"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "contact",
+            "heading": "Let’s Connect",
+            "content": [
+                {
+                    "name": "description",
+                    "data": [
+                        {
+                            "text": {
+                                "body": "Have any questions or just want to have a conversation? Feel free to send me an email and connect with me through LinkedIn. You can also check out my GitHub, where you can find the latest projects I'm working on."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "gitHubLink",
+                    "data": [
+                        {
+                            "text": {
+                                "links": [
+                                    {
+                                        "name": "GitHub",
+                                        "destination": "https://github.com/robokae"
+                                    }
+                                ]
+                            },
+                            "visuals": {
+                                "icons": [
+                                    {
+                                        "type": "fontawesomebrand",
+                                        "name": "github"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "linkedInLink",
+                    "data": [
+                        {
+                            "text": {
+                                "links": [
+                                    {
+                                        "name": "LinkedIn",
+                                        "destination": "https://www.linkedin.com/in/alexander-hom-94811b188/"
+                                    }
+                                ]
+                            },
+                            "visuals": {
+                                "icons": [
+                                    {
+                                        "type": "fontawesomebrand",
+                                        "name": "linkedin"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "email",
+                    "data": [
+                        {
+                            "text": {
+                                "body": "alexanderhom19@gmail.com"
+                            },
+                            "visuals": {
+                                "icons": [
+                                    {
+                                        "type": "fontawesome",
+                                        "name": "envelope"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
