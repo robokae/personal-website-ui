@@ -126,7 +126,7 @@ function Header({
               .filter(
                 (link) => !ENABLE_BLOG && link.name.toLowerCase() !== "blog"
               )
-              .map((link) => getLinkFromJson(link, getLinkColor(), true))}
+              .map((link) => getLinkFromJson(link, getLinkColor()))}
           {ENABLE_THEME_SWITCHER && (
             <ThemeSwitcher
               onChangeTheme={onChangeTheme}
