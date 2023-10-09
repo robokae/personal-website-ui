@@ -13,7 +13,11 @@ import ThemeSwitcher from "../themeSwitcher/ThemeSwitcher";
 import { Link } from "../Link";
 import SlideOutMenu from "../menu/SlideOutMenu";
 import { getLinkFromJson } from "../../util/LinkUtil";
-import { DYNAMIC_HEADER_SCROLL_AMOUNT } from "../../constants/AppConstants";
+import {
+  DYNAMIC_HEADER_SCROLL_AMOUNT,
+  ENABLE_BLOG,
+  ENABLE_THEME_SWITCHER,
+} from "../../constants/AppConstants";
 import Icon from "../icon/Icon";
 import { getIcon } from "../../util/IconUtil";
 
@@ -118,12 +122,18 @@ function Header({
 
         <LinkContainer>
           {links.length > 0 &&
-            links.map((link) => getLinkFromJson(link, getLinkColor(), true))}
-          <ThemeSwitcher
-            onChangeTheme={onChangeTheme}
-            theme={theme}
-            isBgTransparent={isHeaderBgTransparent}
-          />
+            links
+              .filter(
+                (link) => !ENABLE_BLOG && link.name.toLowerCase() !== "blog"
+              )
+              .map((link) => getLinkFromJson(link, getLinkColor(), true))}
+          {ENABLE_THEME_SWITCHER && (
+            <ThemeSwitcher
+              onChangeTheme={onChangeTheme}
+              theme={theme}
+              isBgTransparent={isHeaderBgTransparent}
+            />
+          )}
         </LinkContainer>
 
         <MenuIcon onClick={() => setDisplaySlideOutMenu(true)}>

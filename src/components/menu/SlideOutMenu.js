@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { getLinkFromJson } from "../../util/LinkUtil";
 import { MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
 import MobileThemeSwitcher from "../themeSwitcher/MobileThemeSwitcher";
+import { ENABLE_THEME_SWITCHER } from "../../constants/AppConstants";
 
 const Container = styled.div`
   width: 100vw;
@@ -109,13 +110,15 @@ function SlideOutMenu({ display, setDisplay, theme, onChangeTheme, content }) {
             ))}
           </>
         </MenuOptionsContainer>
-        <ThemeSwitcherContainer>
-          <MobileThemeSwitcher
-            content={content.additionalItems.themeSwitcher}
-            theme={theme}
-            onChangeTheme={onChangeTheme}
-          />
-        </ThemeSwitcherContainer>
+        {ENABLE_THEME_SWITCHER && (
+          <ThemeSwitcherContainer>
+            <MobileThemeSwitcher
+              content={content.additionalItems.themeSwitcher}
+              theme={theme}
+              onChangeTheme={onChangeTheme}
+            />
+          </ThemeSwitcherContainer>
+        )}
         <CloseButton onClick={() => setDisplay(false)}>
           {content.closeText}
         </CloseButton>

@@ -16,3 +16,6 @@ export const TEXT = "text";
 export const ICONTEXT = "icontext";
 
 export const EMAIL = "alexanderhom19@gmail.com";
+
+export const ENABLE_BLOG = false;
+export const ENABLE_THEME_SWITCHER = false;
