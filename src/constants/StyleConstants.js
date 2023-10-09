@@ -8,6 +8,9 @@ export const MEDIA_QUERY_BREAKPOINT_LG = "992px";
 export const MEDIA_QUERY_BREAKPOINT_MED = "768px";
 export const MEDIA_QUERY_BREAKPOINT_SM = "600px";
 
+// Icons
+export const FONT_AWESOME = "fontawesome";
+export const DEFAULT_ICON_TYPE = "fontawesome";
 export const ICON_SIZE = "1.25rem";
 export const MED_ICON_SIZE = "2rem";
 export const LARGE_ICON_SIZE = "3rem";
@@ -20,11 +23,6 @@ export const MOON_ICON = "moon";
 export const HAMBURGER_MENU_ICON = "bars";
 export const RIGHT_ARROW_ICON = "arrow-right";
 export const RIGHT_CHEVRON_ICON = "chevron-right";
-
-export const ICON_TYPES = {
-  FONT_AWESOME: "fontawesome",
-  DEFAULT: "fontawesome",
-};
 
 export const BORDER_RADIUS = ".5rem";
 
@@ -70,3 +68,9 @@ export const TOP = "top";
 export const BOTTOM = "bottom";
 export const FLEX_START = "flex-start";
 export const FLEX_END = "flex-end";
+
+export const X_SMALL = "x-small";
+export const SMALL = "small";
+export const MEDIUM = "medium";
+export const LARGE = "large";
+export const X_LARGE = "x-large";

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ICON_TYPES } from "../constants/StyleConstants";
+import { DEFAULT_ICON_TYPE, FONT_AWESOME } from "../constants/StyleConstants";
 import icon from "../content/icon.json";
 
 /**
@@ -10,7 +10,7 @@ import icon from "../content/icon.json";
  */
 export const getIcon = (name, type) => {
   // If no icon type is provided in the arguments, use the default type
-  const iconType = type ?? ICON_TYPES.DEFAULT;
+  const iconType = type ?? DEFAULT_ICON_TYPE;
 
   // Check if the icon type (e.g., Font Awesome) is in the map
   if (icon[iconType] === null) {
@@ -54,7 +54,7 @@ const getIconFamily = (iconDetails, name) => {
 
 const getIconFromType = (iconDetails) => {
   switch (iconDetails.type) {
-    case ICON_TYPES.FONT_AWESOME:
+    case FONT_AWESOME:
       return <FontAwesomeIcon icon={[iconDetails.family, iconDetails.name]} />;
     default:
       return null;
