@@ -4,7 +4,7 @@
     "pageSections": [
         {
             "name": "hero",
-            "multiLineHeading": ["Hello there", "my name is Alexander Hom"],
+            "multiLineHeading": ["Hello there,", "my name is Alexander Hom"],
             "subHeading": "I am a full-stack web developer from San Francisco"
         },
         {

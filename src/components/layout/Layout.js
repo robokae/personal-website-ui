@@ -27,11 +27,10 @@ export const ContentLayout = styled(BaseLayout)`
   }
 `;
 
-export const LandingLayout = styled(BaseLayout)`
+export const HeroLayout = styled(BaseLayout)`
   margin-top: -${HEADER_HEIGHT};
   padding: ${SECTION_PADDING};
   padding-bottom: 0;
-  background: ${({ theme }) => theme.primaryGradient};
 `;
 
 export const SectionLayout = styled.section`

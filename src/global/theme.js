@@ -16,6 +16,8 @@ const lightTheme = {
   warningCol: "#CC5E57",
   tooltipBgCol: "#22272A",
   tooltipFontCol: "#F8F8F8",
+  homePageHeroGradient:
+    "linear-gradient(90deg, #113960 0%, #3B2459 50.39%, #122140 100%)",
 };
 
 const darkTheme = {
@@ -36,6 +38,8 @@ const darkTheme = {
   warningCol: "#CC5E57",
   tooltipBgCol: "#1F2A32",
   tooltipFontCol: "#F8F8F8",
+  homePageHeroGradient:
+    "linear-gradient(90deg, #113960 0%, #3B2459 50.39%, #122140 100%)",
 };
 
 export { lightTheme, darkTheme };

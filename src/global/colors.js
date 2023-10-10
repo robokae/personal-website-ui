@@ -1,5 +1,19 @@
 export const gradientPalette = ["#3491e3", "#51adef", "#3d8eb7", "#5597dd"];
 
+export const purpleBlueGradient =
+  "linear-gradient(90deg, #113960 0%, #3B2459 50.39%, #122140 100%)";
+export const lightBlueGradient =
+  "linear-gradient(180deg, #97DBFB 0%, #1A97D1 100%)";
+export const purpleGradient =
+  "linear-gradient(99deg, #2566A3 0%, #942FE4 100%)";
+export const tealGradient = "linear-gradient(90deg, #327DAE 0%, #2B8373 100%)";
+export const lightGreyGradient =
+  "linear-gradient(180deg, #C3D5E2 0%, #778A8F 100%)";
+export const darkGreyGradient =
+  "linear-gradient(180deg, #213038 0%, #161E24 100%)";
+
+export const heroHeadingColor = "#97DBFB";
+
 export const terminalColors = {
   titleBarBgCol: "#263137",
   titleBarCloseBtnCol: "#DA5656",

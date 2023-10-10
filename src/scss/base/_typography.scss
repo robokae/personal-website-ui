@@ -9,6 +9,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
+    width: 100%;
     font-weight: bold;
     // line-height: 1.3;
 }
@@ -86,7 +87,7 @@ input, textarea, button {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     /* Major Second type scale */
     html {
         font-size: 87.5%; /* 14px */

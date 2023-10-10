@@ -32,6 +32,7 @@ export const SMALL_GAP = ".5rem";
 export const GAP = "1.75rem";
 export const LARGE_GAP = "3rem";
 
+export const X_LARGE_PADDING = "5rem";
 export const LARGE_PADDING = "3rem";
 export const MED_PADDING = "2rem";
 export const SMALL_PADDING = "1rem";
