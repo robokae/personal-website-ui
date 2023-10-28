@@ -40,7 +40,7 @@ export const SMALL_PADDING = "1rem";
 export const SECTION_PADDING = "3.5rem 0";
 export const CARD_PADDING = "1.5rem";
 
-export const HEADER_HEIGHT = "3.5rem";
+export const HEADER_HEIGHT = "3.75rem";
 export const FOOTER_HEIGHT = "5rem";
 
 export const CONTENT_MAX_WIDTH = "1200px";

@@ -19,19 +19,24 @@ import {
 import styled from "styled-components";
 import {
   LARGE_GAP,
-  MEDIA_QUERY_BREAKPOINT_MED,
-  X_LARGE_PADDING,
+  MEDIA_QUERY_BREAKPOINT_SM,
 } from "../../constants/StyleConstants";
 import { PageHeading, SubHeading } from "../../components/typography/Heading";
 import { heroHeadingColor } from "../../global/colors";
 
 const Hero = styled(HeroLayout)`
   background: ${({ theme }) => theme.homePageHeroGradient};
+  min-height: 50vh;
+  display: flex;
+  place-content: center;
+
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    min-height: 40vh;
+  }
 `;
 
 const Content = styled(ContentLayout)`
   height: max-content;
-  padding: ${X_LARGE_PADDING} 0;
   justify-content: center;
   gap: ${LARGE_GAP};
 `;
@@ -42,16 +47,6 @@ const MultiLineHeading = styled.div`
 
 const HeroHeading = styled(PageHeading)`
   text-shadow: 0.25rem 0.25rem 2rem rgba(0, 0, 0, 0.3);
-
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
-    text-align: left;
-  }
-`;
-
-const HeroSubHeading = styled(SubHeading)`
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
-    text-align: left;
-  }
 `;
 
 function Home() {
@@ -100,9 +95,7 @@ function Home() {
               </HeroHeading>
             ))}
           </MultiLineHeading>
-          <HeroSubHeading $align="center">
-            {heroSection.subHeading}
-          </HeroSubHeading>
+          <SubHeading $align="center">{heroSection.subHeading}</SubHeading>
         </Content>
       </Hero>
       <About content={about.content} />
