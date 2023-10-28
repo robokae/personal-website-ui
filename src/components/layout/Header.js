@@ -31,10 +31,12 @@ const HeaderContainer = styled.header`
   justify-content: center;
   align-items: center;
   background-color: ${(props) =>
-    props.isBgTransparent ? TRANSPARENT : ({ theme }) => theme.primaryBgCol};
+    props.isBgTransparent ? TRANSPARENT : ({ theme }) => theme.headerCol};
   border-bottom: 1px solid
     ${(props) =>
       props.isBgTransparent ? TRANSPARENT : ({ theme }) => theme.lineCol};
+  transition: all 0.35s ease-in-out;
+  backdrop-filter: blur(2rem);
   z-index: 5;
 `;
 
