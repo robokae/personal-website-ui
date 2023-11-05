@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { GAP } from "../../constants/StyleConstants";
+import { MED_GAP } from "../../constants/StyleConstants";
 
 export const PageHeading = styled.h1`
   color: ${(props) =>
@@ -21,7 +21,7 @@ export const CardHeading = styled.h4`
   padding-bottom: 0.5rem;
   display: flex;
   place-items: center;
-  gap: ${GAP};
+  gap: ${MED_GAP};
   color: ${(props) =>
     props.$color ? props.$color : ({ theme }) => theme.primaryFontCol};
   ${(props) =>
@@ -38,4 +38,8 @@ export const SubHeading = styled.h5`
     css`
       text-align: ${(props) => props.$align};
     `};
+`;
+
+export const LargeText = styled.h4`
+  font-weight: normal;
 `;

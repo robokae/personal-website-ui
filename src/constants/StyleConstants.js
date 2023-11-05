@@ -11,6 +11,7 @@ export const MEDIA_QUERY_BREAKPOINT_SM = "600px";
 // Icons
 export const FONT_AWESOME = "fontawesome";
 export const DEFAULT_ICON_TYPE = "fontawesome";
+export const DEFAULT_ICON_STYLE = "fas";
 export const ICON_SIZE = "1.25rem";
 export const MED_ICON_SIZE = "2rem";
 export const LARGE_ICON_SIZE = "3rem";
@@ -29,7 +30,7 @@ export const BORDER_RADIUS = ".5rem";
 export const MAX_GRID_ELEMENTS_PER_ROW = 4;
 
 export const SMALL_GAP = ".5rem";
-export const GAP = "1.75rem";
+export const MED_GAP = "1.75rem";
 export const LARGE_GAP = "3rem";
 
 export const X_LARGE_PADDING = "5rem";

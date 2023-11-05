@@ -6,15 +6,16 @@ import { toHaveClass } from "@testing-library/jest-dom";
 import IconTextCard from "../../components/card/iconTextCard/IconTextCard";
 
 describe("IconTextCard", () => {
-  let icon, text;
+  let icons, text;
 
   beforeEach(() => {
-    icon = <FontAwesomeIcon icon={faHeart} />;
+    icons = [];
+    icons.push(<FontAwesomeIcon icon={faHeart} />);
     text = "sample text";
   });
 
   it("returns a card element with an icon and text", () => {
-    render(<IconTextCard icon={icon} text={text} />);
+    render(<IconTextCard icons={icons} text={text} />);
 
     const renderedIcon = screen.getByRole("img", { hidden: true });
     const renderedText = screen.queryByText("sample text");

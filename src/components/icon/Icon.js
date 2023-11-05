@@ -11,9 +11,14 @@ const IconContainer = styled.div`
   cursor: ${(props) => props.$isClickable && "pointer"};
 `;
 
-const Icon = ({ icon, color, size, isClickable }) => {
+const Icon = ({ icon, color, background, size, isClickable }) => {
   return (
-    <IconContainer $color={color} $size={size} $isClickable={isClickable}>
+    <IconContainer
+      $color={color}
+      $background={background}
+      $size={size}
+      $isClickable={isClickable}
+    >
       {icon}
     </IconContainer>
   );

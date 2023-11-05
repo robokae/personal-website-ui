@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import {
-  GAP,
   MAX_GRID_ELEMENTS_PER_ROW,
   MEDIA_QUERY_BREAKPOINT_LG,
   MEDIA_QUERY_BREAKPOINT_SM,
+  MED_GAP,
 } from "../../constants/StyleConstants";
 
 const Grid = styled.div`
@@ -16,7 +16,7 @@ const Grid = styled.div`
         : props.size},
     1fr
   );
-  gap: ${GAP};
+  gap: ${MED_GAP};
   grid-auto-rows: 1fr;
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {

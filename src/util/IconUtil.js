@@ -12,22 +12,22 @@ export const getIcon = (name, type) => {
   // If no icon type is provided in the arguments, use the default type
   const iconType = type ?? DEFAULT_ICON_TYPE;
 
-  // Check if the icon type (e.g., Font Awesome) is in the map
-  if (icon[iconType] === null) {
+  // Check if the icon type (e.g., Font Awesome) is in the icon map
+  if (!icon[iconType]) {
     throw new Error("Icon type is not supported");
   }
 
-  // Get the icon families (e.g., fas, fab for Font Awesome) for the icon type
-  const iconFamilies = Object.keys(icon[iconType]);
+  // Get the icon styles (e.g., fas, fab for Font Awesome) for the icon type
+  const iconStyles = Object.keys(icon[iconType]);
 
   const iconDetails = {};
   iconDetails.type = iconType;
-  iconDetails.families = iconFamilies;
+  iconDetails.styles = iconStyles;
 
   // Get the icon name from the map
   let iconName =
-    iconFamilies.length > 1
-      ? icon[iconType][getIconFamily(iconDetails, name)][name]
+    iconStyles.length > 1
+      ? icon[iconType][getIconStyle(iconDetails, name)][name]
       : icon[iconType][name];
 
   if (!iconName) {
@@ -39,14 +39,14 @@ export const getIcon = (name, type) => {
   return getIconFromType(iconDetails);
 };
 
-const getIconFamily = (iconDetails, name) => {
-  let family = iconDetails.families.find(
-    (family) => icon[iconDetails.type][family][name]
+const getIconStyle = (iconDetails, name) => {
+  let style = iconDetails.styles.find(
+    (style) => icon[iconDetails.type][style][name]
   );
 
-  if (family) {
-    iconDetails.family = family;
-    return family;
+  if (style) {
+    iconDetails.style = style;
+    return style;
   } else {
     throw new Error(`Icon not found: ${name}`);
   }
@@ -55,7 +55,7 @@ const getIconFamily = (iconDetails, name) => {
 const getIconFromType = (iconDetails) => {
   switch (iconDetails.type) {
     case FONT_AWESOME:
-      return <FontAwesomeIcon icon={[iconDetails.family, iconDetails.name]} />;
+      return <FontAwesomeIcon icon={[iconDetails.style, iconDetails.name]} />;
     default:
       return null;
   }

@@ -1,7 +1,7 @@
 import { GRADIENT_DIRECTIONS } from "../../../constants/StyleConstants";
 import { gradientPalette } from "../../../global/colors";
 import getRandomGradient from "../../../util/GradientGenerator";
-import { CardHeading } from "../../typography/Heading";
+import { CardHeading } from "../../typography/Typography";
 import {
   Container,
   Content,

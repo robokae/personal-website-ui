@@ -15,7 +15,18 @@
             "CLOUD_ICON": "cloud",
             "HOME_ICON": "home",
             "BLOG_ICON": "newspaper",
-            "ENVELOPE_ICON": "envelope"
+            "ENVELOPE_ICON": "envelope",
+            "ONE_ICON": "1",
+            "TWO_ICON": "2",
+            "THREE_ICON": "3",
+            "FOUR_ICON": "4",
+            "FIVE_ICON": "5",
+            "SIX_ICON": "6",
+            "SEVEN_ICON": "7",
+            "EIGHT_ICON": "8",
+            "NINE_ICON": "9",
+            "ZERO_ICON": "0",
+            "PLUS_ICON": "plus"
         },
         "fab": {
             "LINKEDIN_ICON": "linkedin",

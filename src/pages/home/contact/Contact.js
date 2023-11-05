@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import Icon from "../../../components/icon/Icon";
 import { MEDIA_QUERY_BREAKPOINT_SM } from "../../../constants/StyleConstants";
 import { getIcon } from "../../../util/IconUtil";
-import { SectionHeading } from "../../../components/typography/Heading";
+import { SectionHeading } from "../../../components/typography/Typography";
 
 const DetailsContainer = styled.div`
   display: flex;

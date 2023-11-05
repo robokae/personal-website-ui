@@ -3,7 +3,7 @@
     "page": "home",
     "heading": "",
     "content": {
-        "heading": ["Hello there!", "My name is Alexander Hom."],
+        "heading": ["Hello there,", "my name is Alexander Hom"],
         "terminal": {
             "titleBar": {
                 "name": "alexhom ~"

@@ -9,7 +9,7 @@ import {
   Tag,
   TagContainer,
 } from "./CallToActionCard.styles";
-import { CardHeading } from "../../typography/Heading";
+import { CardHeading } from "../../typography/Typography";
 
 /**
  * Text card with optional tags and up to two CTA links

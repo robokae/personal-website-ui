@@ -6,8 +6,10 @@ import {
   CENTER,
   FLEX_END,
   FLEX_START,
-  GAP,
   LEFT,
+  MEDIA_QUERY_BREAKPOINT_MED,
+  MED_GAP,
+  MED_PADDING,
   RIGHT,
   TOP,
 } from "../../constants/StyleConstants";
@@ -22,7 +24,8 @@ export const CardContainer = styled.div`
     `};
   border-radius: ${BORDER_RADIUS};
   background-color: ${({ theme }) => theme.secondaryBgCol};
-  padding: ${CARD_PADDING};
+  padding: ${(props) => (props.padding ? props.padding : CARD_PADDING)};
+  font-size: ${(props) => props.textSize && props.textSize};
   display: flex;
   flex-direction: column;
   align-items: ${(props) =>
@@ -37,6 +40,10 @@ export const CardContainer = styled.div`
       : props.verticalAlign === BOTTOM
       ? FLEX_END
       : CENTER};
-  gap: ${GAP};
+  gap: ${MED_GAP};
   ${(props) => props.additionalStyles && props.additionalStyles}
+
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
+    padding: ${MED_PADDING};
+  }
 `;

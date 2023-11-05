@@ -15,13 +15,23 @@
                     "data": [
                         {
                             "text": {
-                                "body": "B.S. in Computer Science from the University of California, Merced"
+                                "body": "years of software engineering experience"
                             },
                             "visuals": {
                                 "icons": [
                                     {
-                                        "type": "fontawesome",
-                                        "name": "school"
+                                        "name": "FIVE_ICON",
+                                        "details": {
+                                            "type": "fontawesome",
+                                            "style": "fas"
+                                        }
+                                    },
+                                    {
+                                        "name": "PLUS_ICON",
+                                        "details": {
+                                            "type": "fontawesome",
+                                            "style": "fas"
+                                        }
                                     }
                                 ]
                             }
@@ -33,8 +43,11 @@
                             "visuals": {
                                 "icons": [
                                     {
-                                        "type": "fontawesome",
-                                        "name": "heart"
+                                        "name": "HEART_ICON",
+                                        "details": {
+                                            "type": "fontawesome",
+                                            "style": "fas"
+                                        }
                                     }
                                 ]
                             }
@@ -46,8 +59,11 @@
                             "visuals": {
                                 "icons": [
                                     {
-                                        "type": "fontawesome",
-                                        "name": "code"
+                                        "name": "CODE_ICON",
+                                        "details": {
+                                            "type": "fontawesome",
+                                            "style": "fas"
+                                        }
                                     }
                                 ]
                             }
@@ -59,8 +75,11 @@
                             "visuals": {
                                 "icons": [
                                     {
-                                        "type": "fontawesome",
-                                        "name": "book"
+                                        "name": "BOOK_ICON",
+                                        "details": {
+                                            "type": "fontawesome",
+                                            "style": "fas"
+                                        }
                                     }
                                 ]
                             }
@@ -175,8 +194,11 @@
                             "visuals": {
                                 "icons": [
                                     {
-                                        "type": "fontawesomebrand",
-                                        "name": "github"
+                                        "name": "GITHUB_ICON",
+                                        "details": {
+                                            "style": "fontawesome",
+                                            "type": "fab"
+                                        }
                                     }
                                 ]
                             }
@@ -198,8 +220,11 @@
                             "visuals": {
                                 "icons": [
                                     {
-                                        "type": "fontawesomebrand",
-                                        "name": "linkedin"
+                                        "name": "LINKEDIN_ICON",
+                                        "details": {
+                                            "style": "fontawesome",
+                                            "type": "fab"
+                                        }
                                     }
                                 ]
                             }
@@ -216,8 +241,11 @@
                             "visuals": {
                                 "icons": [
                                     {
-                                        "type": "fontawesome",
-                                        "name": "envelope"
+                                        "name": "ENVELOPE_ICON",
+                                        "details": {
+                                            "style": "fontawesome",
+                                            "type": "fas"
+                                        }
                                     }
                                 ]
                             }

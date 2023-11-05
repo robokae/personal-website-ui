@@ -1,10 +1,13 @@
 import CallToActionCard from "../../components/card/callToActionCard/CallToActionCard";
 import styled from "styled-components";
-import { GAP, MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
+import {
+  MEDIA_QUERY_BREAKPOINT_SM,
+  MED_GAP,
+} from "../../constants/StyleConstants";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 import { useState } from "react";
 import HorizontalCategoryPanel from "../../components/menu/HorizontalCategoryPanel";
-import { SectionHeading } from "../../components/typography/Heading";
+import { SectionHeading } from "../../components/typography/Typography";
 
 const StyledSection = styled(SectionLayout)``;
 
@@ -12,14 +15,14 @@ const MainContent = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: calc(${GAP} * 1.5);
+  gap: calc(${MED_GAP} * 1.5);
 `;
 
 const CardLayout = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: ${GAP};
+  gap: ${MED_GAP};
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
     gap: 1rem;
