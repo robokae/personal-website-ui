@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { render, screen } from "@testing-library/react";
 import { toHaveClass } from "@testing-library/jest-dom";
 import IconTextCard from "../../components/card/iconTextCard/IconTextCard";
@@ -17,10 +17,24 @@ describe("IconTextCard", () => {
   it("returns a card element with an icon and text", () => {
     render(<IconTextCard icons={icons} text={text} />);
 
-    const renderedIcon = screen.getByRole("img", { hidden: true });
+    const renderedIcons = screen.getAllByRole("img", { hidden: true });
     const renderedText = screen.queryByText("sample text");
 
-    expect(renderedIcon).toHaveClass("fa-heart");
+    expect(renderedIcons.length).toBe(1);
+    expect(renderedIcons[0]).toHaveClass("fa-heart");
+    expect(renderedText).toHaveTextContent("sample text");
+  });
+
+  it("returns a card element with two icons and text", () => {
+    icons.push(<FontAwesomeIcon icon={faCode} />);
+    render(<IconTextCard icons={icons} text={text} />);
+
+    const renderedIcons = screen.getAllByRole("img", { hidden: true });
+    const renderedText = screen.queryByText("sample text");
+
+    expect(renderedIcons.length).toBe(2);
+    expect(renderedIcons[0]).toHaveClass("fa-heart");
+    expect(renderedIcons[1]).toHaveClass("fa-code");
     expect(renderedText).toHaveTextContent("sample text");
   });
 });
