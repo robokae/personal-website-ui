@@ -13,11 +13,10 @@ const Card = ({
   horizontalAlign,
   verticalAlign,
   borderRadius,
+  background,
   backgroundColor,
   textColor,
   textSize,
-  gradientBackground,
-  gradientDirection,
   padding,
   additionalStyles,
   children,
@@ -28,11 +27,10 @@ const Card = ({
       horizontalAlign={horizontalAlign}
       verticalAlign={verticalAlign}
       borderRadius={borderRadius}
+      background={background}
       backgroundColor={backgroundColor}
       textColor={textColor}
       textSize={textSize}
-      gradientBackground={gradientBackground}
-      gradientDirection={gradientDirection}
       padding={padding}
       additionalStyles={additionalStyles}
     >

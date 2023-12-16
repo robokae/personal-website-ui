@@ -1,45 +1,39 @@
 import styled, { css } from "styled-components";
-import { MED_GAP } from "../../constants/StyleConstants";
 
-export const PageHeading = styled.h1`
+const baseStyles = css`
+  width: 100%;
   color: ${(props) =>
-    props.$color ? props.$color : ({ theme }) => theme.primaryFontCol};
+    props.color ? props.color : ({ theme }) => theme.primaryFontCol};
   ${(props) =>
-    props.$align &&
+    props.align &&
     css`
-      text-align: ${(props) => props.$align};
+      text-align: ${(props) => props.align};
     `};
 `;
 
-export const SectionHeading = styled.h2`
-  color: ${(props) =>
-    props.$color ? props.$color : ({ theme }) => theme.primaryFontCol};
+export const PageHeading = styled.h1`
+  ${baseStyles}
 `;
 
-export const CardHeading = styled.h4`
-  width: 100%;
-  padding-bottom: 0.5rem;
-  display: flex;
-  place-items: center;
-  gap: ${MED_GAP};
-  color: ${(props) =>
-    props.$color ? props.$color : ({ theme }) => theme.primaryFontCol};
+export const SectionHeading = styled.h2`
+  ${baseStyles}
+`;
+
+export const CardHeading = styled.h3`
+  ${baseStyles}
   ${(props) =>
-    props.$border &&
+    props.border &&
     css`
       border-bottom: 1px solid ${({ theme }) => theme.lineCol};
     `};
 `;
 
 export const SubHeading = styled.h5`
+  ${baseStyles}
   font-weight: normal;
-  ${(props) =>
-    props.$align &&
-    css`
-      text-align: ${(props) => props.$align};
-    `};
 `;
 
-export const LargeText = styled.h4`
+export const LargeText = styled.h3`
+  ${baseStyles}
   font-weight: normal;
 `;

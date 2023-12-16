@@ -3,10 +3,26 @@ import Icon from "../../icon/Icon";
 import Card from "../Card";
 import { Content, IconContainer } from "./IconTextCard.styles";
 
-function IconTextCard({ icons, iconCol, iconBackground, text, outline }) {
+function IconTextCard({
+  horizontalAlign,
+  verticalAlign,
+  icons,
+  iconCol,
+  iconBackground,
+  text,
+  outline,
+  backgroundColor,
+  padding,
+}) {
   return (
-    <Card horizontalAlign="center" verticalAlign="center" outline={outline}>
-      <Content>
+    <Card
+      horizontalAlign={horizontalAlign}
+      verticalAlign={verticalAlign}
+      outline={outline}
+      backgroundColor={backgroundColor}
+      padding={padding}
+    >
+      <Content horizontalAlign={horizontalAlign} verticalAlign={verticalAlign}>
         {icons && (
           <IconContainer>
             {icons.map((icon, index) => (

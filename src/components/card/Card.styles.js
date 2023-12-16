@@ -23,7 +23,11 @@ export const CardContainer = styled.div`
       border: 1px solid ${({ theme }) => theme.lineCol};
     `};
   border-radius: ${BORDER_RADIUS};
-  background-color: ${({ theme }) => theme.secondaryBgCol};
+  background-color: ${(props) =>
+    props.backgroundColor
+      ? props.backgroundColor
+      : ({ theme }) => theme.secondaryBgCol};
+  background: ${(props) => props.background && props.background};
   padding: ${(props) => (props.padding ? props.padding : CARD_PADDING)};
   font-size: ${(props) => props.textSize && props.textSize};
   display: flex;
