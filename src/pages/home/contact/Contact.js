@@ -46,7 +46,7 @@ function Contact({ content }) {
   return (
     <SectionLayout id="contact">
       <ContentLayout>
-        <SectionHeading>{content.heading}</SectionHeading>
+        <SectionHeading align="center">{content.heading}</SectionHeading>
         <DetailsContainer>
           <p>{content.detailsText}</p>
           <ContactInfoContainer>

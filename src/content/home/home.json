@@ -96,6 +96,7 @@
                     "data": [
                         {
                             "text": {
+                                "title": "Love for Design and Technology",
                                 "body": "Growing up, I was fascinated with computers. At the same time, I also enjoyed making art and building stuff out of Legos and paper. Software development combines my love of computers, art, and building things, providing me with a canvas to design and create applications with elegant user interfaces."
                             }
                         }
@@ -112,28 +113,28 @@
                     "data": [
                         {
                             "text": {
-                                "title": "3 Years",
-                                "body": "of frontend development experience with HTML, CSS, Sass, JavaScript, and React"
+                                "title": "Frontend",
+                                "body": "3 years of frontend development experience with HTML, CSS, Sass, JavaScript, and React"
                             },
                             "visuals": {
                                 "backgrounds": [
                                     {
                                         "type": "gradient",
-                                        "value": "linear-gradient(90deg, #2566A3 0%, #942FE4 100%)"
+                                        "value": "linear-gradient(90deg, #2566A3 0%, #942FE4 100%)"
                                     }
                                 ]
                             }
                         },
                         {
                             "text": {
-                                "title": "2 Years",
-                                "body": "of backend development experience with Java (Spring), Python (Flask), relational databases, MongoDB, and Google Cloud"
+                                "title": "Backend",
+                                "body": "2 years of backend development experience with Java (Spring), Python (Flask), relational databases, MongoDB, and Google Cloud"
                             },
                             "visuals": {
                                 "backgrounds": [
                                     {
                                         "type": "gradient",
-                                        "value": "linear-gradient(90deg, #327DAE 0%, #2B8373 100%)"
+                                        "value": "linear-gradient(90deg, #327DAE 0%, #2B8373 100%)"
                                     }
                                 ]
                             }

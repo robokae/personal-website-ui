@@ -1,9 +1,7 @@
-import Experience from "./Experience";
 import Projects from "./Projects";
 import Contact from "./contact/Contact";
 
 import home from "../../content/home/home.json";
-import experience from "../../content/home/experience.json";
 import projects from "../../content/home/projects.json";
 import contact from "../../content/home/contact.json";
 import {
@@ -11,14 +9,26 @@ import {
   PageContentLayout,
   SectionLayout,
 } from "../../components/layout/Layout";
-import { LargeText, SubHeading } from "../../components/typography/Typography";
+import {
+  CardHeading,
+  SectionHeading,
+  SubHeading,
+} from "../../components/typography/Typography";
 import { heroHeadingColor } from "../../global/colors";
 import Grid from "../../components/layout/Grid";
 import IconTextCard from "../../components/card/iconTextCard/IconTextCard";
 import { getIcon } from "../../util/IconUtil";
-import { Content, Hero, HeroHeading, MultiLineHeading } from "./Home.styles";
+import {
+  Content,
+  DescriptionOverlay,
+  Hero,
+  HeroHeading,
+  MultiLineHeading,
+  ReflectionContentLayout,
+} from "./Home.styles";
 import Card from "../../components/card/Card";
 import { LARGE_PADDING } from "../../constants/StyleConstants";
+import Computer from "../../components/illustrations/ComputerIllustration";
 
 const HeroSection = ({ data }) => {
   return (
@@ -26,12 +36,12 @@ const HeroSection = ({ data }) => {
       <Content>
         <MultiLineHeading>
           {data.multiLineHeading.map((line, index) => (
-            <HeroHeading $color={heroHeadingColor} $align="center" key={index}>
+            <HeroHeading align="center" color={heroHeadingColor} key={index}>
               {line}
             </HeroHeading>
           ))}
         </MultiLineHeading>
-        <SubHeading $align="center">{data.subHeading}</SubHeading>
+        <SubHeading align="center">{data.subHeading}</SubHeading>
       </Content>
     </Hero>
   );
@@ -70,21 +80,55 @@ const OverviewSection = ({ data }) => {
 
 const ReflectionSection = ({ data }) => {
   const description = data.content.find((item) => item.name === "description")
-    .data[0].text.body;
+    .data[0].text;
+  return (
+    <SectionLayout>
+      <ReflectionContentLayout>
+        <DescriptionOverlay>
+          <h3>{description.title}</h3>
+          <p>{description.body}</p>
+        </DescriptionOverlay>
+        <Computer />
+      </ReflectionContentLayout>
+    </SectionLayout>
+  );
+};
+
+const ExperienceSection = ({ data }) => {
+  const cards = data.content.find((item) => item.name === "cards").data;
+  let textData;
   return (
     <SectionLayout>
       <ContentLayout>
-        <Card padding={LARGE_PADDING}>
-          <LargeText>{description}</LargeText>
-        </Card>
+        <SectionHeading align="center">{data.heading}</SectionHeading>
+        <Grid size={cards.length}>
+          {cards.map((card, index) => {
+            textData = card.text;
+            let backgroundData = card.visuals.backgrounds[0];
+            return (
+              <Card
+                key={index}
+                padding={LARGE_PADDING}
+                background={backgroundData.value}
+              >
+                <CardHeading align="center">{textData.title}</CardHeading>
+                <SubHeading align="center">{textData.body}</SubHeading>
+              </Card>
+            );
+          })}
+        </Grid>
       </ContentLayout>
     </SectionLayout>
   );
 };
 
-const ExperienceSection = ({ content }) => {};
-
-const ProjectsSection = ({ content }) => {};
+const ProjectsSection = ({ content }) => {
+  return (
+    <SectionLayout>
+      <ContentLayout></ContentLayout>
+    </SectionLayout>
+  );
+};
 
 const ContactSection = ({ content }) => {};
 
@@ -106,7 +150,7 @@ function Home() {
       <HeroSection data={heroSectionData} />
       <OverviewSection data={overviewSectionData} />
       <ReflectionSection data={reflectionSectionData} />
-      <Experience heading={experience.heading} content={experience.content} />
+      <ExperienceSection data={experienceSectionData} />
       <Projects heading={projects.heading} content={projects.content} />
       <Contact content={contact.content} />
     </PageContentLayout>

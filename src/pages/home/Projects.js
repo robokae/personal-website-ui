@@ -43,7 +43,7 @@ function Projects({ heading, content }) {
   return (
     <StyledSection>
       <ContentLayout>
-        <SectionHeading>{heading}</SectionHeading>
+        <SectionHeading align="center">{heading}</SectionHeading>
         <MainContent>
           <HorizontalCategoryPanel
             content={projectCategories}

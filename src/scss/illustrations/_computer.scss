@@ -1,0 +1,294 @@
+$border-width: 1.5px;
+$border-radius: .5rem;
+
+$border-color: #121B20;
+$bg-color: #8BB5C7;
+
+$desk-bg-color: #A18D76;
+$code-editor-bg-color: #2D404E;
+$code-editor-top-bg-color: #2D404E;
+$code-editor-top-fg-color: #87ACBD;
+$code-editor-bottom-bg-color: #344551;
+$code-editor-bottom-fg-color: #6A808B;
+$web-browser-bg-color: #9BAEB3;
+$web-page-component-bg-color: #A7BBC5;
+$web-page-placeholder-content-bg-color: #6A808B;
+$computer-stand-top-bg-color: #4F5B63;
+$computer-stand-bottom-bg-color: #2D343A;
+
+$media-query-breakpoint-lg: 992px;
+$media-query-breakpoint-med: 768px;
+$media-query-breakpoint-sm: 600px;
+
+.computer-illustration {
+    height: 36rem;
+    width: 100%;
+    background-color: $bg-color;
+    border-radius: $border-radius;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: $media-query-breakpoint-med) {
+        height: 30rem; 
+    }
+
+    &__top, &__bottom {
+        width: 100%;
+    }
+
+    &__top {
+        height: 80%;
+        padding: 0 2rem 0 2rem;
+        position: relative;
+        display: flex;
+        justify-content: right;
+
+        @media screen and (max-width: $media-query-breakpoint-med) { 
+            justify-content: center;
+        }
+    }
+
+    &__bottom {
+        height: 20%;
+        background-color: $desk-bg-color;
+        border-top: $border-width solid $border-color;
+        border-radius: 0 0 $border-radius $border-radius;
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+.computer {
+    height: 75%;
+    width: 45%;
+    position: absolute;
+    bottom: 0;
+
+    @media screen and (max-width: $media-query-breakpoint-lg) {
+        height: 60%;
+    }
+
+    @media screen and (max-width: $media-query-breakpoint-med) {
+        height: 75%;
+        width: 65%;
+    }
+
+    @media screen and (max-width: $media-query-breakpoint-sm)  {
+        width: 85%; 
+    }
+}
+
+.computer-screen {
+    height: 80%;
+    width: 100%;
+    border: .35rem solid $border-color;
+    border-radius: $border-radius;
+    background-color: #76919C;
+    padding: .35rem;
+    display: flex;
+    gap: .35rem;
+}
+
+.code-editor, .web-browser {
+    height: 100%;
+    border: $border-width solid $border-color;
+}
+
+.code-editor {
+    width: 33%;
+    background-color: $code-editor-bg-color;
+
+    &__top, &__bottom {
+        padding: .5rem .25rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    &__top {
+        height: 75%;
+        background-color: $code-editor-top-bg-color;
+
+        &__line-of-code {
+            background-color: $code-editor-top-fg-color;
+            height: $border-width;
+
+            &--1, &--4, &--8 {
+                width: 45%;
+            }
+
+            &--2 {
+                width: 65%;
+            }
+
+            &--3, &--6, &--9 {
+                width: 50%;
+            }
+
+            &--5 {
+                width: 70%;
+            }
+
+            &--7 {
+                width: 35%;
+            }
+
+            &--10 {
+                width: 60%;
+            }
+        }
+    }
+
+    &__bottom {
+        height: 25%;
+        border-top: $border-width solid $border-color;
+        background-color: $code-editor-bottom-bg-color;
+
+        &__line-of-code {
+            background-color: $code-editor-bottom-fg-color;
+            height: $border-width;
+
+            &--1 {
+                width: 45%;
+            }
+
+            &--2 {
+                width: 65%;
+            }
+
+            &--3 {
+                width: 50%;
+            }
+        }
+    }
+}
+
+.web-browser {
+    width: 67%;
+    background-color: $web-browser-bg-color;
+
+    &__status-bar {
+        height: 5%;
+        border-bottom: $border-width solid $border-color;
+        background-color: #6A808B;
+    }
+
+    &__webpage {
+        height: 100%;
+        padding: .5rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        &__hero {
+            border: $border-width solid $border-color;
+            background-color: $web-page-component-bg-color;
+            height: 55%;
+            padding: .5rem;
+            display: flex;
+            flex-direction: row;
+            gap: .5rem;
+
+            &__left {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                &__text-placeholder {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    &__heading {
+                        background-color: $web-page-placeholder-content-bg-color;
+                        height: calc(5 * $border-width);
+                        width: 85%;
+                    }
+
+                    &__description {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5rem;
+
+                        &__text {
+                            background-color: $web-page-placeholder-content-bg-color;
+                            height: calc(2 * $border-width);
+                            width: 60%;
+                        }
+                    }
+                }
+            }
+
+            &__right {
+                width: 50%;
+                height: 100%;
+                background-color: $web-page-placeholder-content-bg-color;
+                border-radius: .2rem;
+            }
+        }
+
+        &__grid {
+            height: 35%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: .5rem;
+        }
+    }
+}
+
+.featured-tile {
+    height: 100%;
+    border: $border-width solid $border-color;
+    background-color: $web-page-component-bg-color;
+    padding: .25rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    &__image-placeholder {
+        background-color: $web-page-placeholder-content-bg-color;
+        height: 60%;
+        border-radius: .1rem;
+    }
+
+    &__text-placeholder {
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+
+        &__text {
+            background-color: $web-page-placeholder-content-bg-color;
+            height: calc(2 * $border-width);
+        }
+    }
+}
+
+.computer-stand {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+
+    &__top, &__bottom {
+        border: $border-width solid $border-color;
+        border-bottom: 0;
+    }
+
+    &__top {
+        height: 85%;
+        width: 12%;
+        border-top: 0;
+        background-color: $computer-stand-top-bg-color;
+    }
+
+    &__bottom {
+        height: 15%;
+        width: 25%;
+        background-color: $computer-stand-bottom-bg-color;
+    }
+}
