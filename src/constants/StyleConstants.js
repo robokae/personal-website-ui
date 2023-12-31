@@ -1,6 +1,11 @@
-export const FONT_FAMILIES = ["IBM Plex Sans:400,500,700", "IBM Plex Mono"];
-export const LOGO_FONT = "IBM Plex Mono";
-export const REGULAR_FONT = "IBM Plex Sans";
+export const FONT_FAMILIES = [
+  // "IBM Plex Sans:400,500,700",
+  "IBM Plex Mono",
+  "Inter",
+  "DM Sans:700",
+];
+export const LOGO_FONT = "DM Sans";
+export const REGULAR_FONT = "Inter";
 export const MONOSPACE_FONT = "IBM Plex Mono";
 
 export const MEDIA_QUERY_BREAKPOINT_XL = "1200px";

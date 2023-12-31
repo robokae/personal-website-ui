@@ -4,8 +4,13 @@ html {
 }
 
 body {
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
     line-height: 1.75;
+}
+
+h1, h2, h3 {
+    font-family: "DM Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 
 h1, h2, h3, h4, h5 {
@@ -43,7 +48,7 @@ li, a {
 }
 
 input, textarea, button {
-    font-family: "IBM Plex Sans", Arial, Helvetica, sans-serif;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
     font-size: 1rem;
 }
 
