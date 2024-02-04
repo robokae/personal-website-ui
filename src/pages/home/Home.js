@@ -14,38 +14,18 @@ import {
   SectionHeading,
   SubHeading,
 } from "../../components/typography/Typography";
-import { heroHeadingColor } from "../../global/colors";
 import Grid from "../../components/layout/Grid";
 import IconTextCard from "../../components/card/iconTextCard/IconTextCard";
 import { getIcon } from "../../util/IconUtil";
 import {
-  Content,
-  DescriptionOverlay,
-  Hero,
-  HeroHeading,
-  MultiLineHeading,
+  Description,
   ReflectionContentLayout,
+  ReflectionSectionLayout,
 } from "./Home.styles";
 import Card from "../../components/card/Card";
 import { LARGE_PADDING } from "../../constants/StyleConstants";
 import Computer from "../../components/illustrations/ComputerIllustration";
-
-const HeroSection = ({ data }) => {
-  return (
-    <Hero>
-      <Content>
-        <MultiLineHeading>
-          {data.multiLineHeading.map((line, index) => (
-            <HeroHeading align="center" color={heroHeadingColor} key={index}>
-              {line}
-            </HeroHeading>
-          ))}
-        </MultiLineHeading>
-        <SubHeading align="center">{data.subHeading}</SubHeading>
-      </Content>
-    </Hero>
-  );
-};
+import Hero from "./sections/Hero";
 
 const OverviewSection = ({ data }) => {
   const cards = data.content.find((item) => item.name === "cards").data;
@@ -82,15 +62,15 @@ const ReflectionSection = ({ data }) => {
   const description = data.content.find((item) => item.name === "description")
     .data[0].text;
   return (
-    <SectionLayout>
+    <ReflectionSectionLayout>
       <ReflectionContentLayout>
-        <DescriptionOverlay>
+        <Description>
           <h3>{description.title}</h3>
           <p>{description.body}</p>
-        </DescriptionOverlay>
+        </Description>
         <Computer />
       </ReflectionContentLayout>
-    </SectionLayout>
+    </ReflectionSectionLayout>
   );
 };
 
@@ -147,7 +127,7 @@ function Home() {
 
   return (
     <PageContentLayout>
-      <HeroSection data={heroSectionData} />
+      <Hero data={heroSectionData} />
       <OverviewSection data={overviewSectionData} />
       <ReflectionSection data={reflectionSectionData} />
       <ExperienceSection data={experienceSectionData} />

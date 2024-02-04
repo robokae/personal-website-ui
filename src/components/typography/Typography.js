@@ -19,6 +19,10 @@ export const SectionHeading = styled.h2`
   ${baseStyles}
 `;
 
+export const MultiLineHeading = styled.div`
+  width: 100%;
+`;
+
 export const CardHeading = styled.h3`
   ${baseStyles}
   ${(props) =>
