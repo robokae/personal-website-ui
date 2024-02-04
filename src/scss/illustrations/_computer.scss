@@ -2,9 +2,9 @@ $border-width: 1.5px;
 $border-radius: .5rem;
 
 $border-color: #121B20;
-$bg-color: #8BB5C7;
+$bg-color: #45626E;
 
-$desk-bg-color: #A18D76;
+$desk-bg-color: #625445;
 $code-editor-bg-color: #2D404E;
 $code-editor-top-bg-color: #2D404E;
 $code-editor-top-fg-color: #87ACBD;
@@ -24,7 +24,6 @@ $media-query-breakpoint-sm: 600px;
     height: 36rem;
     width: 100%;
     background-color: $bg-color;
-    border-radius: $border-radius;
     position: relative;
     z-index: 0;
     display: flex;
@@ -39,11 +38,11 @@ $media-query-breakpoint-sm: 600px;
     }
 
     &__top {
-        height: 80%;
+        height: 85%;
         padding: 0 2rem 0 2rem;
         position: relative;
         display: flex;
-        justify-content: right;
+        justify-content: center;
 
         @media screen and (max-width: $media-query-breakpoint-med) { 
             justify-content: center;
@@ -51,27 +50,26 @@ $media-query-breakpoint-sm: 600px;
     }
 
     &__bottom {
-        height: 20%;
+        height: 15%;
         background-color: $desk-bg-color;
         border-top: $border-width solid $border-color;
-        border-radius: 0 0 $border-radius $border-radius;
         position: absolute;
         bottom: 0;
     }
 }
 
 .computer {
-    height: 75%;
-    width: 45%;
+    height: 80%;
+    width: calc(0.9 * $media-query-breakpoint-med);
     position: absolute;
     bottom: 0;
 
     @media screen and (max-width: $media-query-breakpoint-lg) {
-        height: 60%;
+        // height: 60%;
     }
 
     @media screen and (max-width: $media-query-breakpoint-med) {
-        height: 75%;
+        // height: 75%;
         width: 65%;
     }
 
