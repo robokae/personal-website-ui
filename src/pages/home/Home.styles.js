@@ -10,7 +10,6 @@ import {
   MEDIA_QUERY_BREAKPOINT_MED,
   MEDIA_QUERY_BREAKPOINT_SM,
 } from "../../constants/StyleConstants";
-import { PageHeading } from "../../components/typography/Typography";
 
 export const ReflectionSectionLayout = styled(SectionLayout)`
   background-color: #45626e;

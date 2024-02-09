@@ -3,11 +3,12 @@ import styled from "styled-components";
 import {
   MEDIA_QUERY_BREAKPOINT_SM,
   MED_GAP,
+  SECTION_TITLE_HTML_TAG,
 } from "../../constants/StyleConstants";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 import { useState } from "react";
 import HorizontalCategoryPanel from "../../components/menu/HorizontalCategoryPanel";
-import { SectionHeading } from "../../components/typography/Typography";
+import Typography from "../../components/typography/Typography";
 
 const StyledSection = styled(SectionLayout)``;
 
@@ -43,7 +44,9 @@ function Projects({ heading, content }) {
   return (
     <StyledSection>
       <ContentLayout>
-        <SectionHeading align="center">{heading}</SectionHeading>
+        <Typography tag={SECTION_TITLE_HTML_TAG} textAlign="center">
+          {heading}
+        </Typography>
         <MainContent>
           <HorizontalCategoryPanel
             content={projectCategories}

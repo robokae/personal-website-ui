@@ -1,7 +1,10 @@
-import { GRADIENT_DIRECTIONS } from "../../../constants/StyleConstants";
+import {
+  CARD_TITLE_HTML_TAG,
+  GRADIENT_DIRECTIONS,
+} from "../../../constants/StyleConstants";
 import { gradientPalette } from "../../../global/colors";
 import getRandomGradient from "../../../util/GradientGenerator";
-import { CardHeading } from "../../typography/Typography";
+import Typography from "../../typography/Typography";
 import {
   Container,
   Content,
@@ -25,7 +28,9 @@ function PhotoCard({ content, photo, gradient }) {
               $gradientDirection={GRADIENT_DIRECTIONS.TO_RIGHT}
             >
               {photo}
-              <CardHeading>{content.heading}</CardHeading>
+              <Typography tag={CARD_TITLE_HTML_TAG}>
+                {content.heading}
+              </Typography>
             </GradientContainer>
           ) : (
             <PhotoContainer>{photo}</PhotoContainer>

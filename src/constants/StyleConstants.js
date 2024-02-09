@@ -81,3 +81,7 @@ export const SMALL = "small";
 export const MEDIUM = "medium";
 export const LARGE = "large";
 export const X_LARGE = "x-large";
+
+export const SECTION_TITLE_HTML_TAG = "h2";
+export const CARD_TITLE_HTML_TAG = "h4";
+export const SUBHEADING_HTML_TAG = "h5";

@@ -5,9 +5,12 @@ import {
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Icon from "../../../components/icon/Icon";
-import { MEDIA_QUERY_BREAKPOINT_SM } from "../../../constants/StyleConstants";
+import {
+  MEDIA_QUERY_BREAKPOINT_SM,
+  SECTION_TITLE_HTML_TAG,
+} from "../../../constants/StyleConstants";
 import { getIcon } from "../../../util/IconUtil";
-import { SectionHeading } from "../../../components/typography/Typography";
+import Typography from "../../../components/typography/Typography";
 
 const DetailsContainer = styled.div`
   display: flex;
@@ -46,7 +49,9 @@ function Contact({ content }) {
   return (
     <SectionLayout id="contact">
       <ContentLayout>
-        <SectionHeading align="center">{content.heading}</SectionHeading>
+        <Typography tag={SECTION_TITLE_HTML_TAG} textAlign="center">
+          {content.heading}
+        </Typography>
         <DetailsContainer>
           <p>{content.detailsText}</p>
           <ContactInfoContainer>

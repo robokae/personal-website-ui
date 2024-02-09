@@ -9,11 +9,7 @@ import {
   PageContentLayout,
   SectionLayout,
 } from "../../components/layout/Layout";
-import {
-  CardHeading,
-  SectionHeading,
-  SubHeading,
-} from "../../components/typography/Typography";
+import Typography from "../../components/typography/Typography";
 import Grid from "../../components/layout/Grid";
 import IconTextCard from "../../components/card/iconTextCard/IconTextCard";
 import { getIcon } from "../../util/IconUtil";
@@ -23,7 +19,11 @@ import {
   ReflectionSectionLayout,
 } from "./Home.styles";
 import Card from "../../components/card/Card";
-import { LARGE_PADDING } from "../../constants/StyleConstants";
+import {
+  CARD_TITLE_HTML_TAG,
+  LARGE_PADDING,
+  SECTION_TITLE_HTML_TAG,
+} from "../../constants/StyleConstants";
 import Computer from "../../components/illustrations/ComputerIllustration";
 import Hero from "./sections/Hero";
 
@@ -80,7 +80,9 @@ const ExperienceSection = ({ data }) => {
   return (
     <SectionLayout>
       <ContentLayout>
-        <SectionHeading align="center">{data.heading}</SectionHeading>
+        <Typography tag={SECTION_TITLE_HTML_TAG} textAlign="center">
+          {data.heading}
+        </Typography>
         <Grid size={cards.length}>
           {cards.map((card, index) => {
             textData = card.text;
@@ -91,8 +93,10 @@ const ExperienceSection = ({ data }) => {
                 padding={LARGE_PADDING}
                 background={backgroundData.value}
               >
-                <CardHeading align="center">{textData.title}</CardHeading>
-                <SubHeading align="center">{textData.body}</SubHeading>
+                <Typography tag={CARD_TITLE_HTML_TAG}>
+                  {textData.title}
+                </Typography>
+                <Typography>{textData.body}</Typography>
               </Card>
             );
           })}
