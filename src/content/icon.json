@@ -26,7 +26,8 @@
             "EIGHT_ICON": "8",
             "NINE_ICON": "9",
             "ZERO_ICON": "0",
-            "PLUS_ICON": "plus"
+            "PLUS_ICON": "plus",
+            "TERMINAL_ICON": "terminal"
         },
         "fab": {
             "LINKEDIN_ICON": "linkedin",

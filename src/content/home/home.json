@@ -5,7 +5,24 @@
         {
             "name": "hero",
             "multiLineHeading": ["Hello there,", "my name is Alexander Hom"],
-            "subHeading": "I am a full-stack web developer from San Francisco"
+            "subHeading": "I am a full-stack web developer from San Francisco",
+            "content": [
+                {
+                    "name": "background-image",
+                    "data": [
+                        {
+                            "visuals": {
+                                "backgrounds": [
+                                    {
+                                        "type": "solid",
+                                        "value": "#527C85"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
             "name": "overview",
@@ -15,19 +32,12 @@
                     "data": [
                         {
                             "text": {
-                                "body": "years of software engineering experience"
+                                "body": "Over 6 years of software engineering experience from university and work"
                             },
                             "visuals": {
                                 "icons": [
                                     {
-                                        "name": "FIVE_ICON",
-                                        "details": {
-                                            "type": "fontawesome",
-                                            "style": "fas"
-                                        }
-                                    },
-                                    {
-                                        "name": "PLUS_ICON",
+                                        "name": "CODE_ICON",
                                         "details": {
                                             "type": "fontawesome",
                                             "style": "fas"
@@ -54,12 +64,12 @@
                         },
                         {
                             "text": {
-                                "body": "Skilled in React, Spring Boot, SQL databases, and cloud technologies"
+                                "body": "Skilled in React, Spring Boot, relational and non-relational databases, and cloud technologies"
                             },
                             "visuals": {
                                 "icons": [
                                     {
-                                        "name": "CODE_ICON",
+                                        "name": "TERMINAL_ICON",
                                         "details": {
                                             "type": "fontawesome",
                                             "style": "fas"
