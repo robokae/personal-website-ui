@@ -40,7 +40,7 @@ const Hero = ({ data }) => {
           {data.multiLineHeading.map((line, index) => (
             <Typography
               tag="h1"
-              textAlign="left"
+              textAlign="center"
               color={heroHeadingColor}
               textShadow={HEADING_TEXT_SHADOW}
               key={index}
@@ -49,7 +49,7 @@ const Hero = ({ data }) => {
             </Typography>
           ))}
         </MultiLineHeading>
-        <Typography tag={SUBHEADING_HTML_TAG} textAlign={LEFT}>
+        <Typography tag={SUBHEADING_HTML_TAG} textAlign="center">
           {data.subHeading}
         </Typography>
       </Content>

@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import PropTypes, { oneOf } from "prop-types";
+import { oneOf } from "prop-types";
 
-const baseStyles = css`
+const styles = css`
   width: 100%;
   color: ${(props) =>
     props.color ? props.color : ({ theme }) => theme.primaryFontCol};
@@ -14,7 +14,7 @@ const TAG_VARIANTS = ["h1", "h2", "h3", "h4", "h5", "h6", "p", "span"];
 const DynamicTypography = styled(({ tag, children, ...props }) =>
   React.createElement(tag, props, children)
 )`
-  ${baseStyles}
+  ${styles}
 `;
 
 export default function Typography({ tag, children, ...props }) {
