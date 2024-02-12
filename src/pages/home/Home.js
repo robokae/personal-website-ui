@@ -44,12 +44,9 @@ const OverviewSection = ({ data }) => {
               icons.push(getIcon(name, type));
             });
             return (
-              <IconTextCard
-                key={index}
-                icons={icons}
-                iconCol={({ theme }) => theme.accentCol}
-                text={cardItem.text.body}
-              />
+              <Card backgroundColor="transparent" key={index}>
+                <Typography>{cardItem.text.body}</Typography>
+              </Card>
             );
           })}
         </Grid>
@@ -65,8 +62,10 @@ const ReflectionSection = ({ data }) => {
     <ReflectionSectionLayout>
       <ReflectionContentLayout>
         <Description>
-          <h3>{description.title}</h3>
-          <p>{description.body}</p>
+          <Typography tag={SECTION_TITLE_HTML_TAG}>
+            {description.title}
+          </Typography>
+          <Typography>{description.body}</Typography>
         </Description>
         <Computer />
       </ReflectionContentLayout>

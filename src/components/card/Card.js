@@ -1,52 +1,36 @@
+import styled, { css } from "styled-components";
 import {
-  BOTTOM,
-  CENTER,
-  LEFT,
-  RIGHT,
-  TOP,
+  BORDER_RADIUS,
+  CARD_PADDING,
+  MEDIA_QUERY_BREAKPOINT_MED,
+  MED_GAP,
+  MED_PADDING,
 } from "../../constants/StyleConstants";
-import { CardContainer } from "./Card.styles";
-import PropTypes from "prop-types";
+import React from "react";
 
-const Card = ({
-  outline,
-  horizontalAlign,
-  verticalAlign,
-  borderRadius,
-  background,
-  backgroundColor,
-  textColor,
-  textSize,
-  padding,
-  additionalStyles,
-  children,
-}) => {
-  return (
-    <CardContainer
-      outline={outline}
-      horizontalAlign={horizontalAlign}
-      verticalAlign={verticalAlign}
-      borderRadius={borderRadius}
-      background={background}
-      backgroundColor={backgroundColor}
-      textColor={textColor}
-      textSize={textSize}
-      padding={padding}
-      additionalStyles={additionalStyles}
-    >
-      {children}
-    </CardContainer>
-  );
-};
+const styles = css`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: ${CARD_PADDING};
+  border-radius: ${BORDER_RADIUS};
+  background-color: ${({ theme }) => theme.secondaryBgCol};
+  gap: ${MED_GAP};
 
-Card.propTypes = {
-  horizontalAlign: PropTypes.oneOf([LEFT, CENTER, RIGHT]),
-  verticalAlign: PropTypes.oneOf([TOP, CENTER, BOTTOM]),
-};
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
+    padding: ${MED_PADDING};
+  }
+`;
 
-Card.defaultProps = {
-  horizontalAlign: LEFT,
-  verticalAlign: TOP,
+const CardComponent = styled(({ children, ...props }) =>
+  React.createElement("div", props, children)
+)`
+  ${styles}
+`;
+
+const Card = ({ children, ...props }) => {
+  return <CardComponent style={{ ...props }}>{children}</CardComponent>;
 };
 
 export default Card;
