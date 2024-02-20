@@ -11,8 +11,6 @@ import {
 } from "../../components/layout/Layout";
 import Typography from "../../components/typography/Typography";
 import Grid from "../../components/layout/Grid";
-import IconTextCard from "../../components/card/iconTextCard/IconTextCard";
-import { getIcon } from "../../util/IconUtil";
 import {
   Description,
   ReflectionContentLayout,
@@ -26,34 +24,7 @@ import {
 } from "../../constants/StyleConstants";
 import Computer from "../../components/illustrations/ComputerIllustration";
 import Hero from "./sections/Hero";
-
-const OverviewSection = ({ data }) => {
-  const cards = data.content.find((item) => item.name === "cards").data;
-  let icons;
-  return (
-    <SectionLayout>
-      <ContentLayout>
-        <Grid size={cards.length}>
-          {cards.map((cardItem, index) => {
-            icons = [];
-            cardItem.visuals.icons.forEach((icon) => {
-              const {
-                name,
-                details: { type },
-              } = icon;
-              icons.push(getIcon(name, type));
-            });
-            return (
-              <Card backgroundColor="transparent" key={index}>
-                <Typography>{cardItem.text.body}</Typography>
-              </Card>
-            );
-          })}
-        </Grid>
-      </ContentLayout>
-    </SectionLayout>
-  );
-};
+import Overview from "./sections/Overview";
 
 const ReflectionSection = ({ data }) => {
   const description = data.content.find((item) => item.name === "description")
@@ -131,7 +102,7 @@ function Home() {
   return (
     <PageContentLayout>
       <Hero data={heroSectionData} />
-      <OverviewSection data={overviewSectionData} />
+      <Overview data={overviewSectionData} />
       <ReflectionSection data={reflectionSectionData} />
       <ExperienceSection data={experienceSectionData} />
       <Projects heading={projects.heading} content={projects.content} />

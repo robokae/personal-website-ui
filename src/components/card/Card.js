@@ -3,12 +3,13 @@ import {
   BORDER_RADIUS,
   CARD_PADDING,
   MEDIA_QUERY_BREAKPOINT_MED,
+  MEDIA_QUERY_BREAKPOINT_SM,
   MED_GAP,
   MED_PADDING,
 } from "../../constants/StyleConstants";
 import React from "react";
 
-const styles = css`
+const defaultStyles = css`
   width: 100%;
   height: 100%;
   display: flex;
@@ -21,12 +22,18 @@ const styles = css`
   @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
     padding: ${MED_PADDING};
   }
+
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 const CardComponent = styled(({ children, ...props }) =>
   React.createElement("div", props, children)
 )`
-  ${styles}
+  ${defaultStyles}
 `;
 
 const Card = ({ children, ...props }) => {

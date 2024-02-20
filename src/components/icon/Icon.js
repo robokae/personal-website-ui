@@ -1,24 +1,30 @@
-import styled from "styled-components";
-import { ICON_SIZE } from "../../constants/StyleConstants";
+import styled, { css } from "styled-components";
+import { BORDER_RADIUS, ICON_SIZE } from "../../constants/StyleConstants";
+import React from "react";
 
-const IconContainer = styled.div`
+const defaultStyles = css`
+  width: max-content;
+  height: max-content;
+  background: ${({ theme }) => theme.secondaryBgCol};
+  border-radius: ${BORDER_RADIUS};
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${(props) => props.$size ?? ICON_SIZE};
-  color: ${(props) =>
-    props.$color ? props.$color : ({ theme }) => theme.primaryFontCol};
-  cursor: ${(props) => props.$isClickable && "pointer"};
+  font-size: ${ICON_SIZE};
+  color: ${({ theme }) => theme.primaryFontCol};
+  cursor: ${(props) => props.clickable && "pointer"};
+  box-sizing: border-box;
 `;
 
-const Icon = ({ icon, color, background, size, isClickable }) => {
+const IconContainer = styled(({ children, ...props }) =>
+  React.createElement("div", props, children)
+)`
+  ${defaultStyles};
+`;
+
+const Icon = ({ icon, clickable = false, ...props }) => {
   return (
-    <IconContainer
-      $color={color}
-      $background={background}
-      $size={size}
-      $isClickable={isClickable}
-    >
+    <IconContainer clickable={clickable} style={{ ...props }}>
       {icon}
     </IconContainer>
   );

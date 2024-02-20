@@ -12,7 +12,7 @@ import {
 } from "../../constants/StyleConstants";
 
 export const ReflectionSectionLayout = styled(SectionLayout)`
-  background-color: #45626e;
+  /* background-color: #45626e; */
 `;
 
 export const ReflectionContentLayout = styled(ContentLayout)`
