@@ -18,8 +18,8 @@ export const FONT_AWESOME = "fontawesome";
 export const DEFAULT_ICON_TYPE = "fontawesome";
 export const DEFAULT_ICON_STYLE = "fas";
 export const ICON_SIZE = "1.25rem";
-export const MED_ICON_SIZE = "2rem";
-export const LARGE_ICON_SIZE = "3rem";
+export const MED_ICON_SIZE = "1.5rem";
+export const LARGE_ICON_SIZE = "2rem";
 export const SCHOOL_ICON = "school";
 export const HEART_ICON = "heart";
 export const CODE_ICON = "code";
@@ -46,7 +46,7 @@ export const SMALL_PADDING = "1rem";
 export const SECTION_PADDING = "3.75rem 0";
 export const CARD_PADDING = "1.5rem";
 
-export const HEADER_HEIGHT = "3.75rem";
+export const HEADER_HEIGHT = "4.5rem";
 export const FOOTER_HEIGHT = "5rem";
 
 export const CONTENT_MAX_WIDTH = "1200px";

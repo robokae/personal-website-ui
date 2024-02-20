@@ -13,6 +13,7 @@ export const darkGreyGradient =
   "linear-gradient(180deg, #213038 0%, #161E24 100%)";
 
 export const heroHeadingColor = "#97DBFB";
+export const accentColor = "#97DBFB";
 
 export const terminalColors = {
   titleBarBgCol: "#263137",
