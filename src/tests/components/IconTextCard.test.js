@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { render, screen } from "@testing-library/react";
-import { toHaveClass } from "@testing-library/jest-dom";
+import "@testing-library/jest-dom";
 import IconTextCard from "../../components/card/iconTextCard/IconTextCard";
 
 describe("IconTextCard", () => {

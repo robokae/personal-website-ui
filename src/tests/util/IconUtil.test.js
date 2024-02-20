@@ -10,18 +10,18 @@ describe("IconUtil", () => {
   });
 
   it("returns the correct icon object given the name and type", () => {
-    let expectedIcon = <FontAwesomeIcon icon={["fas", "code"]} />;
+    let expectedIcon = <FontAwesomeIcon icon={["fas", "code"]} fixedWidth />;
     let actualIcon = getIcon(name, type);
     expect(actualIcon).toStrictEqual(expectedIcon);
 
     name = "GITHUB_ICON";
-    expectedIcon = <FontAwesomeIcon icon={["fab", "github"]} />;
+    expectedIcon = <FontAwesomeIcon icon={["fab", "github"]} fixedWidth />;
     actualIcon = getIcon(name, type);
     expect(actualIcon).toStrictEqual(expectedIcon);
   });
 
   it("returns the icon object with the default type when no type is specified", () => {
-    const expectedIcon = <FontAwesomeIcon icon={["fas", "code"]} />;
+    const expectedIcon = <FontAwesomeIcon icon={["fas", "code"]} fixedWidth />;
     const actualIcon = getIcon(name);
     expect(actualIcon).toStrictEqual(expectedIcon);
   });

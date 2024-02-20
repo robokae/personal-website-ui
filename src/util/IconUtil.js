@@ -55,7 +55,12 @@ const getIconStyle = (iconDetails, name) => {
 const getIconFromType = (iconDetails) => {
   switch (iconDetails.type) {
     case FONT_AWESOME:
-      return <FontAwesomeIcon icon={[iconDetails.style, iconDetails.name]} />;
+      return (
+        <FontAwesomeIcon
+          icon={[iconDetails.style, iconDetails.name]}
+          fixedWidth
+        />
+      );
     default:
       return null;
   }
