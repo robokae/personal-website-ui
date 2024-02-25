@@ -16,21 +16,23 @@ $web-page-placeholder-content-bg-color: #6A808B;
 $computer-stand-top-bg-color: #4F5B63;
 $computer-stand-bottom-bg-color: #2D343A;
 
+$media-query-breakpoint-xl: 1200px;
 $media-query-breakpoint-lg: 992px;
 $media-query-breakpoint-med: 768px;
 $media-query-breakpoint-sm: 600px;
 
 .computer-illustration {
-    height: 36rem;
+    height: 25rem;
     width: 100%;
     background-color: $bg-color;
     position: relative;
     z-index: 0;
     display: flex;
     flex-direction: column;
+    border-radius: $border-radius;
 
-    @media screen and (max-width: $media-query-breakpoint-med) {
-        height: 30rem; 
+    @media screen and (max-width: $media-query-breakpoint-lg) {
+        height: 28rem; 
     }
 
     &__top, &__bottom {
@@ -53,6 +55,7 @@ $media-query-breakpoint-sm: 600px;
         height: 15%;
         background-color: $desk-bg-color;
         border-top: $border-width solid $border-color;
+        border-radius: 0 0 $border-radius $border-radius;
         position: absolute;
         bottom: 0;
     }
@@ -60,21 +63,21 @@ $media-query-breakpoint-sm: 600px;
 
 .computer {
     height: 80%;
-    width: calc(0.9 * $media-query-breakpoint-med);
+    width: 85%;
     position: absolute;
     bottom: 0;
 
     @media screen and (max-width: $media-query-breakpoint-lg) {
-        // height: 60%;
+        width: 75%;
     }
 
     @media screen and (max-width: $media-query-breakpoint-med) {
-        // height: 75%;
-        width: 65%;
+        // width: 65%;
     }
 
     @media screen and (max-width: $media-query-breakpoint-sm)  {
         width: 85%; 
+        height: 70%;
     }
 }
 
