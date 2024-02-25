@@ -7,7 +7,7 @@ import {
 } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
 import { CARD_PADDING, MED_ICON_SIZE } from "../../../constants/StyleConstants";
-import { accentColor } from "../../../global/colors";
+import { accentColor, primaryForegroundColor } from "../../../global/colors";
 import { getIcon } from "../../../util/IconUtil";
 
 const Overview = ({ data }) => {
@@ -27,12 +27,9 @@ const Overview = ({ data }) => {
               icons.push(getIcon(name, type));
             });
             return (
-              <Card
-                padding={`${CARD_PADDING} 0`}
-                backgroundColor="transparent"
-                key={index}
-              >
+              <Card padding={CARD_PADDING} key={index}>
                 <Icon
+                  backgroundColor={primaryForegroundColor}
                   color={accentColor}
                   padding="1rem"
                   fontSize={MED_ICON_SIZE}

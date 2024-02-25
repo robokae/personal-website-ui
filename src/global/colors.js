@@ -14,6 +14,7 @@ export const darkGreyGradient =
 
 export const heroHeadingColor = "#97DBFB";
 export const accentColor = "#97DBFB";
+export const primaryForegroundColor = "#1C272D";
 
 export const terminalColors = {
   titleBarBgCol: "#263137",
