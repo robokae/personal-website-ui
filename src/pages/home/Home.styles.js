@@ -1,32 +1,41 @@
 import styled from "styled-components";
+import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
 import {
-  ContentLayout,
-  HeroLayout,
-  SectionLayout,
-} from "../../components/layout/Layout";
-import {
-  LARGE_GAP,
   MEDIA_QUERY_BREAKPOINT_LG,
   MEDIA_QUERY_BREAKPOINT_MED,
-  MEDIA_QUERY_BREAKPOINT_SM,
 } from "../../constants/StyleConstants";
 
 export const ReflectionSectionLayout = styled(SectionLayout)`
-  /* background-color: #45626e; */
+  background-color: ${({ theme }) => theme.secondaryBgCol};
 `;
 
 export const ReflectionContentLayout = styled(ContentLayout)`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  justify-content: left;
+  align-items: start;
   position: relative;
-  max-width: 100vw;
+
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const ResponsiveTypography = styled.div`
+  text-align: left;
+
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
+    text-align: center;
+  }
 `;
 
 export const Description = styled(ContentLayout)`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
   text-align: center;
   z-index: 1;
 

@@ -15,6 +15,7 @@ import {
   Description,
   ReflectionContentLayout,
   ReflectionSectionLayout,
+  ResponsiveTypography,
 } from "./Home.styles";
 import Card from "../../components/card/Card";
 import {
@@ -33,10 +34,12 @@ const ReflectionSection = ({ data }) => {
     <ReflectionSectionLayout>
       <ReflectionContentLayout>
         <Description>
-          <Typography tag={SECTION_TITLE_HTML_TAG}>
-            {description.title}
-          </Typography>
-          <Typography>{description.body}</Typography>
+          <ResponsiveTypography>
+            <Typography textAlign="left" tag={SECTION_TITLE_HTML_TAG}>
+              {description.title}
+            </Typography>
+          </ResponsiveTypography>
+          <Typography textAlign="left">{description.body}</Typography>
         </Description>
         <Computer />
       </ReflectionContentLayout>

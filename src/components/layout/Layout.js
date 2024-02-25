@@ -39,7 +39,6 @@ export const SectionLayout = styled.section`
   flex-direction: column;
   align-items: center;
   padding: ${SECTION_PADDING};
-  padding-bottom: 0;
 `;
 
 export const TwoPaneLayout = styled.div`
