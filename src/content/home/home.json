@@ -1,269 +1,139 @@
 {
     "pageName": "home",
-    "pageTemplate": "home",
-    "pageSections": [
+    "sections": [
         {
-            "name": "hero",
-            "multiLineHeading": ["Hello there,", "my name is Alexander Hom"],
-            "subHeading": "I am a full-stack web developer from San Francisco",
-            "content": [
-                {
-                    "name": "background-image",
-                    "data": [
-                        {
-                            "visuals": {
-                                "backgrounds": [
-                                    {
-                                        "type": "solid",
-                                        "value": "#527C85"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            ]
+            "title": "hero",
+            "content": {
+                "headings": ["Hello there, ", "my name is Alexander Hom"],
+                "subHeadings": ["I am a full-stack web developer from San Francisco"],
+                "text": [],
+                "images": [],
+                "icons": [],
+                "buttons": [],
+                "listContent": []
+            }
         },
         {
-            "name": "overview",
-            "content": [
-                {
-                    "name": "cards",
-                    "data": [
-                        {
-                            "text": {
-                                "body": "Over 6 years of software engineering experience from university and work"
-                            },
-                            "visuals": {
-                                "icons": [
-                                    {
-                                        "name": "CODE_ICON",
-                                        "details": {
-                                            "type": "fontawesome",
-                                            "style": "fas"
-                                        }
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "text": {
-                                "body": "Passionate about UI/UX and full-stack software development"
-                            },
-                            "visuals": {
-                                "icons": [
-                                    {
-                                        "name": "HEART_ICON",
-                                        "details": {
-                                            "type": "fontawesome",
-                                            "style": "fas"
-                                        }
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "text": {
-                                "body": "Skilled in React, Spring Boot, relational and non-relational databases, and cloud technologies"
-                            },
-                            "visuals": {
-                                "icons": [
-                                    {
-                                        "name": "TERMINAL_ICON",
-                                        "details": {
-                                            "type": "fontawesome",
-                                            "style": "fas"
-                                        }
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "text": {
-                                "body": "Love learning about technology, UI design, and programming"
-                            },
-                            "visuals": {
-                                "icons": [
-                                    {
-                                        "name": "BOOK_ICON",
-                                        "details": {
-                                            "type": "fontawesome",
-                                            "style": "fas"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            ]
+            "title": "overview",
+            "content": {
+                "headings": [],
+                "subHeadings": [],
+                "text": ["Over 6 years of software engineering experience from university and work", "Skilled in React, Spring Boot, relational and non-relational databases, and cloud technologies", "Passionate about UI/UX and full-stack software development", "Love learning about technology, designing UIs, and programming"],
+                "images": [],
+                "icons": [
+                    {
+                        "type": "fontawesome",
+                        "family": "fas",
+                        "name": "terminal"
+                    },
+                    {
+                        "type": "fontawesome",
+                        "family": "fas",
+                        "name": "code"
+                    },
+                    {
+                        "type": "fontawesome",
+                        "family": "fas",
+                        "name": "heart"
+                    },
+                    {
+                        "type": "fontawesome",
+                        "family": "fas",
+                        "name": "book"
+                    }
+                ],
+                "buttons": [],
+                "listContent": []
+            }
         },
         {
-            "name": "reflection",
-            "content": [
-                {
-                    "name": "description",
-                    "data": [
-                        {
-                            "text": {
-                                "title": "Love for Design and Technology",
-                                "body": "Growing up, I was fascinated with computers. At the same time, I also enjoyed making art and building stuff out of Legos and paper. Software development combines my love of computers, art, and building things, providing me with a canvas to design and create applications with elegant user interfaces."
-                            }
-                        }
-                    ]
-                }
-            ]
+            "title": "reflection",
+            "content": {
+                "headings": ["Love for Design and Technology"],
+                "subHeadings": [],
+                "text": ["Growing up, I was fascinated with computers. At the same time, I also enjoyed making art and building stuff out of Legos and paper. Software development combines my love of computers, art, and building things, providing me with a canvas to design and create applications with elegant user interfaces."],
+                "images": [],
+                "icons": [],
+                "buttons": [],
+                "listContent": []
+            }
         },
         {
-            "name": "experience",
-            "heading": "My Experience",
-            "content": [
-                {
-                    "name": "cards",
-                    "data": [
-                        {
-                            "text": {
-                                "title": "Frontend",
-                                "body": "3 years of frontend development experience with HTML, CSS, Sass, JavaScript, and React"
-                            },
-                            "visuals": {
-                                "backgrounds": [
-                                    {
-                                        "type": "gradient",
-                                        "value": "linear-gradient(90deg, #2566A3 0%, #942FE4 100%)"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "text": {
-                                "title": "Backend",
-                                "body": "2 years of backend development experience with Java (Spring), Python (Flask), relational databases, MongoDB, and Google Cloud"
-                            },
-                            "visuals": {
-                                "backgrounds": [
-                                    {
-                                        "type": "gradient",
-                                        "value": "linear-gradient(90deg, #327DAE 0%, #2B8373 100%)"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            ]
+            "title": "experience",
+            "content": {
+                "headings": ["My Experience"],
+                "subHeadings": ["Frontend", "Backend", "Cloud"],
+                "text": ["3 years of frontend development experience working with:", "2 years of backend development experience working with:", "1 year of cloud development experience working with:"],
+                "images": [],
+                "icons": [],
+                "buttons": [],
+                "listContent": [
+                    ["HTML and CSS", "JavaScript", "React and Redux"], 
+                    ["Java and Spring Boot", "Python and Flask", "SQL", "MongoDB"],
+                    ["Google Cloud", "Kubernetes"]
+                ]
+            }
         },
         {
-            "name": "projects",
-            "heading": "Current Projects",
-            "content": [
-                {
-                    "name": "cards",
-                    "data": [
-                        {
-                            "text": {
-                                "title": "Minimal Todo List",
-                                "body": "Web-based todo list with a simple user interface. Features include creating, removing, and searching todos.",
-                                "links": [
-                                    {
-                                        "name": "GitHub",
-                                        "destination": "https://github.com/robokae/Minimal-React-Todo-List"
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            ]
+            "title": "projects",
+            "content": {
+                "headings": ["Projects I've Worked On"],
+                "subHeadings": ["Minimal Todo List", "Encapsulate", "Nocturnal"],
+                "text": ["Web-based todo list with a simple user interface. Features include creating, removing, and searching todos.", "Technology and software engineering blog.", "Minimalistic social networking Android application. Users can view and create posts, which are saved to a Parse database."],
+                "images": [],
+                "icons": [],
+                "buttons": [
+                    {
+                        "label": "GitHub",
+                        "url": "https://github.com/robokae/Minimal-React-Todo-List"
+                    },
+                    {
+                        "label": "GitHub",
+                        "url": "https://github.com/EncapsulateSocial/Encapsulate"
+                    },
+                    {
+                        "label": "GitHub",
+                        "url": "https://github.com/UCM-CodePath-Social-Media/Nocturnal"
+                    }
+                ],
+                "listContent": [
+                    ["React", "Sass"],
+                    ["React", "Sass", "Spring Boot"],
+                    ["Java", "Parse"]
+                ]
+            }
         },
         {
-            "name": "contact",
-            "heading": "Let’s Connect",
-            "content": [
-                {
-                    "name": "description",
-                    "data": [
-                        {
-                            "text": {
-                                "body": "Have any questions or just want to have a conversation? Feel free to send me an email and connect with me through LinkedIn. You can also check out my GitHub, where you can find the latest projects I'm working on."
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "gitHubLink",
-                    "data": [
-                        {
-                            "text": {
-                                "links": [
-                                    {
-                                        "name": "GitHub",
-                                        "destination": "https://github.com/robokae"
-                                    }
-                                ]
-                            },
-                            "visuals": {
-                                "icons": [
-                                    {
-                                        "name": "GITHUB_ICON",
-                                        "details": {
-                                            "style": "fontawesome",
-                                            "type": "fab"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "linkedInLink",
-                    "data": [
-                        {
-                            "text": {
-                                "links": [
-                                    {
-                                        "name": "LinkedIn",
-                                        "destination": "https://www.linkedin.com/in/alexander-hom-94811b188/"
-                                    }
-                                ]
-                            },
-                            "visuals": {
-                                "icons": [
-                                    {
-                                        "name": "LINKEDIN_ICON",
-                                        "details": {
-                                            "style": "fontawesome",
-                                            "type": "fab"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "email",
-                    "data": [
-                        {
-                            "text": {
-                                "body": "alexanderhom19@gmail.com"
-                            },
-                            "visuals": {
-                                "icons": [
-                                    {
-                                        "name": "ENVELOPE_ICON",
-                                        "details": {
-                                            "style": "fontawesome",
-                                            "type": "fas"
-                                        }
-                                    }
-                                ]
-                            }
-                        }
-                    ]
-                }
-            ]
+            "title": "contact",
+            "content": {
+                "headings": ["Let’s Connect"],
+                "subHeadings": [],
+                "text": ["Have any questions or just want to have a conversation? Feel free to send me an email and connect with me through LinkedIn. You can also check out my GitHub, where you can find the latest projects I'm working on."],
+                "images": [],
+                "icons": [
+                    {
+                        "type": "fontawesome",
+                        "family": "fab",
+                        "name": "github"
+                    },
+                    {
+                        "type": "fontawesome",
+                        "family": "fab",
+                        "name": "linkedin"
+                    }
+                ],
+                "buttons": [
+                    {
+                        "label": "GitHub",
+                        "url": "https://github.com/robokae"
+                    },
+                    {
+                        "label": "LinkedIn",
+                        "url": "https://www.linkedin.com/in/alexander-hom-94811b188/"
+                    }
+                ],
+                "listContent": []
+            }
         }
     ]
 }

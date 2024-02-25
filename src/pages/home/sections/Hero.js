@@ -3,7 +3,6 @@ import { ContentLayout, HeroLayout } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
 import {
   LARGE_GAP,
-  LEFT,
   MEDIA_QUERY_BREAKPOINT_SM,
   SUBHEADING_HTML_TAG,
 } from "../../../constants/StyleConstants";
@@ -37,7 +36,7 @@ const Hero = ({ data }) => {
     <HeroContainer>
       <Content>
         <MultiLineHeading>
-          {data.multiLineHeading.map((line, index) => (
+          {data.headings.map((line, index) => (
             <Typography
               tag="h1"
               textAlign="center"
@@ -49,9 +48,11 @@ const Hero = ({ data }) => {
             </Typography>
           ))}
         </MultiLineHeading>
-        <Typography tag={SUBHEADING_HTML_TAG} textAlign="center">
-          {data.subHeading}
-        </Typography>
+        {data.subHeadings.map((line, index) => (
+          <Typography key={index} tag={SUBHEADING_HTML_TAG} textAlign="center">
+            {line}
+          </Typography>
+        ))}
       </Content>
     </HeroContainer>
   );

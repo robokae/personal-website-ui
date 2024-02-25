@@ -140,9 +140,9 @@ function Header({
 
         <MenuIcon onClick={() => setDisplaySlideOutMenu(true)}>
           <Icon
-            icon={getIcon("HAMBURGER_MENU_ICON")}
+            icon={getIcon("hamburgerMenu")}
             color={getLinkColor()}
-            isClickable={true}
+            clickable
           />
         </MenuIcon>
       </Nav>

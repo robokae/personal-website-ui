@@ -5,7 +5,7 @@ describe("IconUtil", () => {
   let name, type;
 
   beforeEach(() => {
-    name = "CODE_ICON";
+    name = "code";
     type = "fontawesome";
   });
 
@@ -14,7 +14,7 @@ describe("IconUtil", () => {
     let actualIcon = getIcon(name, type);
     expect(actualIcon).toStrictEqual(expectedIcon);
 
-    name = "GITHUB_ICON";
+    name = "github";
     expectedIcon = <FontAwesomeIcon icon={["fab", "github"]} fixedWidth />;
     actualIcon = getIcon(name, type);
     expect(actualIcon).toStrictEqual(expectedIcon);

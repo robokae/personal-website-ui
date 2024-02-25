@@ -11,21 +11,12 @@ import { accentColor, primaryForegroundColor } from "../../../global/colors";
 import { getIcon } from "../../../util/IconUtil";
 
 const Overview = ({ data }) => {
-  const cards = data.content.find((item) => item.name === "cards").data;
-  let icons;
+  const { text, icons } = data;
   return (
     <SectionLayout>
       <ContentLayout>
-        <Grid size={cards.length}>
-          {cards.map((cardItem, index) => {
-            icons = [];
-            cardItem.visuals.icons.forEach((icon) => {
-              const {
-                name,
-                details: { type },
-              } = icon;
-              icons.push(getIcon(name, type));
-            });
+        <Grid size={text.length}>
+          {text.map((cardText, index) => {
             return (
               <Card padding={CARD_PADDING} key={index}>
                 <Icon
@@ -33,9 +24,9 @@ const Overview = ({ data }) => {
                   color={accentColor}
                   padding="1rem"
                   fontSize={MED_ICON_SIZE}
-                  icon={icons[0]}
+                  icon={getIcon(icons[index].name)}
                 />
-                <Typography>{cardItem.text.body}</Typography>
+                <Typography>{cardText}</Typography>
               </Card>
             );
           })}
