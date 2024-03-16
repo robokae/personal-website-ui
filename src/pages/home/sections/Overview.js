@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import Card from "../../../components/card/Card";
 import Icon from "../../../components/icon/Icon";
 import Grid from "../../../components/layout/Grid";
@@ -6,9 +7,24 @@ import {
   SectionLayout,
 } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
-import { CARD_PADDING, MED_ICON_SIZE } from "../../../constants/StyleConstants";
+import {
+  CARD_PADDING,
+  MEDIA_QUERY_BREAKPOINT_SM,
+  MED_ICON_SIZE,
+} from "../../../constants/StyleConstants";
 import { accentColor, primaryForegroundColor } from "../../../global/colors";
 import { getIcon } from "../../../util/IconUtil";
+
+const ResponsiveCardContainer = styled.div`
+  & > * {
+    @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+`;
 
 const Overview = ({ data }) => {
   const { text, icons } = data;
@@ -18,16 +34,18 @@ const Overview = ({ data }) => {
         <Grid size={text.length}>
           {text.map((cardText, index) => {
             return (
-              <Card padding={CARD_PADDING} key={index}>
-                <Icon
-                  backgroundColor={primaryForegroundColor}
-                  color={accentColor}
-                  padding="1rem"
-                  fontSize={MED_ICON_SIZE}
-                  icon={getIcon(icons[index].name)}
-                />
-                <Typography>{cardText}</Typography>
-              </Card>
+              <ResponsiveCardContainer key={index}>
+                <Card padding={CARD_PADDING}>
+                  <Icon
+                    backgroundColor={primaryForegroundColor}
+                    color={accentColor}
+                    padding="1rem"
+                    fontSize={MED_ICON_SIZE}
+                    icon={getIcon(icons[index].name)}
+                  />
+                  <Typography>{cardText}</Typography>
+                </Card>
+              </ResponsiveCardContainer>
             );
           })}
         </Grid>
