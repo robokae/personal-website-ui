@@ -63,13 +63,13 @@
             "content": {
                 "headings": ["My Experience"],
                 "subHeadings": ["Frontend", "Backend", "Cloud"],
-                "text": ["3 years of frontend development experience working with:", "2 years of backend development experience working with:", "1 year of cloud development experience working with:"],
+                "text": ["3 years of frontend development experience working with", "2 years of backend development experience working with", "1 year of cloud development experience working with"],
                 "images": [],
                 "icons": [],
                 "buttons": [],
                 "listContent": [
-                    ["HTML and CSS", "JavaScript", "React and Redux"], 
-                    ["Java and Spring Boot", "Python and Flask", "SQL", "MongoDB"],
+                    ["HTML/CSS", "JavaScript", "React"], 
+                    ["Java/Spring Boot", "Python/Flask", "SQL", "MongoDB"],
                     ["Google Cloud", "Kubernetes"]
                 ]
             }

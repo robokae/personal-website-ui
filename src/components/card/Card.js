@@ -3,7 +3,6 @@ import {
   BORDER_RADIUS,
   CARD_PADDING,
   MEDIA_QUERY_BREAKPOINT_MED,
-  MEDIA_QUERY_BREAKPOINT_SM,
   MED_GAP,
   MED_PADDING,
 } from "../../constants/StyleConstants";
@@ -21,12 +20,6 @@ const defaultStyles = css`
 
   @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
     padding: ${MED_PADDING};
-  }
-
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
   }
 `;
 

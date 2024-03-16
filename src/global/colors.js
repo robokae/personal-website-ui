@@ -16,6 +16,10 @@ export const heroHeadingColor = "#97DBFB";
 export const accentColor = "#97DBFB";
 export const primaryForegroundColor = "#1C272D";
 
+export const turquoise = "#379390";
+export const purple = "#6E42AD";
+export const lightBlue = "#4B98B9";
+
 export const terminalColors = {
   titleBarBgCol: "#263137",
   titleBarCloseBtnCol: "#DA5656",
