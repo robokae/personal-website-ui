@@ -14,21 +14,20 @@ import {
   SECTION_TITLE_HTML_TAG,
 } from "../../../constants/StyleConstants";
 import { lightBlue, purple, turquoise } from "../../../global/colors";
+import { useState } from "react";
+import { useEffect } from "react";
+import Carousel from "../../../components/Carousel";
 
 const CardLayout = styled.div`
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
+  /* justify-content: center; */
   gap: ${MED_GAP};
 
   & > * {
     height: auto;
-  }
-
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
-    display: grid;
-    grid-template-rows: repeat(${(props) => props.size}, 1fr);
-    width: 100%;
   }
 `;
 
@@ -69,8 +68,47 @@ const ListItem = styled.li`
 `;
 
 const Experience = ({ data }) => {
+  const testLargeWindowSize = () => {
+    return window.innerWidth <= 992;
+  };
+  const [displayCarousel, setDisplayCarousel] = useState(testLargeWindowSize);
   const { headings, subHeadings, text, listContent } = data;
   const cardHeadingColors = [turquoise, purple, lightBlue];
+
+  useEffect(() => {
+    const handleResize = () => {
+      setDisplayCarousel(testLargeWindowSize());
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const getCards = () => {
+    return subHeadings.map((subHeading, index) => {
+      return (
+        <Card key={index} padding={0} gap={0}>
+          <CardHeader backgroundColor={cardHeadingColors[index]}>
+            <Typography textAlign="center" tag={CARD_TITLE_HTML_TAG}>
+              {subHeading}
+            </Typography>
+          </CardHeader>
+          <CardContent>
+            <Typography>{text[index]}</Typography>
+            <ul>
+              {listContent[index].map((listItem, index) => (
+                <ListItem key={index}>{listItem}</ListItem>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      );
+    });
+  };
+
   return (
     <SectionLayout>
       <ContentLayout>
@@ -84,25 +122,7 @@ const Experience = ({ data }) => {
           </Typography>
         ))}
         <CardLayout size={subHeadings.length}>
-          {subHeadings.map((subHeading, index) => {
-            return (
-              <Card key={index} padding={0} gap={0}>
-                <CardHeader backgroundColor={cardHeadingColors[index]}>
-                  <Typography textAlign="center" tag={CARD_TITLE_HTML_TAG}>
-                    {subHeading}
-                  </Typography>
-                </CardHeader>
-                <CardContent>
-                  <Typography>{text[index]}</Typography>
-                  <ul>
-                    {listContent[index].map((listItem, index) => (
-                      <ListItem key={index}>{listItem}</ListItem>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            );
-          })}
+          {displayCarousel ? <Carousel>{getCards()}</Carousel> : getCards()}
         </CardLayout>
       </ContentLayout>
     </SectionLayout>
