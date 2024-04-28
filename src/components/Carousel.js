@@ -1,11 +1,11 @@
 import {
-  faChevronLeft,
-  faChevronRight,
+  faArrowLeft,
+  faArrowRight,
   faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
-import styled from "styled-components";
+import React, { useRef, useState } from "react";
+import styled, { css } from "styled-components";
 
 const CarouselContainer = styled.div`
   width: 100%;
@@ -21,15 +21,17 @@ const CarouselTop = styled.div`
   gap: 1rem;
 `;
 
-const ItemContainer = styled.div`
+const SlideContainer = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: row;
   overflow-x: hidden;
+  scrollbar-width: none;
+  gap: 1rem;
 `;
 
-const Item = styled.div`
+const Slide = styled.div`
   width: 100%;
-  opacity: ${(props) => (props.active ? 1 : 0)};
   flex-shrink: 0;
 `;
 
@@ -37,87 +39,105 @@ const CarouselBottom = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 `;
 
 const ActionButton = styled.button`
   font-size: 1.25rem;
   background-color: transparent;
-  color: ${({ theme }) => theme.primaryFontCol};
   outline: none;
+  color: ${({ theme }) => theme.secondaryFontCol};
   border: transparent;
-  padding: 0.5rem;
   border-radius: 50%;
-  cursor: pointer;
-
-  &:hover {
-    color: ${({ theme }) => theme.accentCol};
-    background-color: ${({ theme }) => theme.secondaryBgCol};
-  }
+  ${(props) =>
+    props.active &&
+    css`
+      cursor: pointer;
+    `};
 `;
 
-const ItemIndicatorContainer = styled.div`
+const SlideIndicatorContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
 `;
 
-const ItemIndicator = styled(FontAwesomeIcon)`
+const SlideIndicator = styled(FontAwesomeIcon)`
   font-size: 0.5rem;
   color: ${(props) =>
     props.active
       ? ({ theme }) => theme.accentCol
       : ({ theme }) => theme.lineCol};
+  cursor: pointer;
 `;
 
 const Carousel = ({ children }) => {
-  const numItems = children.length;
-  const [items, setItems] = useState(children);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const slides = children;
+  const [slideIndex, setSlideIndex] = useState(0);
+  const refs = useRef(slides.map(React.createRef));
 
   const handleLeftArrowClick = () => {
-    setCurrentIndex((previousIndex) =>
-      previousIndex === 0 ? numItems - 1 : --previousIndex
-    );
-    items.unshift(items.pop());
-    setItems(items);
+    if (slideIndex === 0) {
+      return;
+    }
+    const nextSlideIndex = slideIndex - 1;
+    scrollToSlide(nextSlideIndex);
   };
 
   const handleRightArrowClick = () => {
-    setCurrentIndex((previousIndex) =>
-      previousIndex === numItems - 1 ? 0 : ++previousIndex
-    );
-    items.push(items.shift());
-    setItems(items);
+    if (slideIndex === slides.length - 1) {
+      return;
+    }
+    const nextSlideIndex =
+      slideIndex === slides.length - 1 ? 0 : slideIndex + 1;
+    scrollToSlide(nextSlideIndex);
+  };
+
+  const scrollToSlide = (slideIndex) => {
+    setSlideIndex(slideIndex);
+    refs.current[slideIndex].current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleSlideIndicatorClick = (index) => {
+    scrollToSlide(index);
   };
 
   return (
     <CarouselContainer>
       <CarouselTop>
-        <ActionButton onClick={handleLeftArrowClick}>
-          <FontAwesomeIcon fixedWidth icon={faChevronLeft} />
-        </ActionButton>
-        <ItemContainer>
-          {items.map((item, index) => (
-            <Item key={index} active={item === items[0]}>
+        <SlideContainer>
+          {slides.map((item, index) => (
+            <Slide key={index} ref={refs.current[index]}>
               {item}
-            </Item>
+            </Slide>
           ))}
-        </ItemContainer>
-        <ActionButton onClick={handleRightArrowClick}>
-          <FontAwesomeIcon fixedWidth icon={faChevronRight} />
-        </ActionButton>
+        </SlideContainer>
       </CarouselTop>
       <CarouselBottom>
-        <ItemIndicatorContainer>
+        <ActionButton
+          active={slideIndex === 0 ? false : true}
+          onClick={handleLeftArrowClick}
+        >
+          <FontAwesomeIcon fixedWidth icon={faArrowLeft} />
+        </ActionButton>
+        <SlideIndicatorContainer>
           {children.map((_, index) => (
-            <ItemIndicator
+            <SlideIndicator
               key={index}
               fixedWidth
               icon={faCircle}
-              active={index === currentIndex}
+              active={index === slideIndex}
+              onClick={() => handleSlideIndicatorClick(index)}
             />
           ))}
-        </ItemIndicatorContainer>
+        </SlideIndicatorContainer>
+        <ActionButton
+          active={slideIndex === slides.length - 1 ? false : true}
+          onClick={handleRightArrowClick}
+        >
+          <FontAwesomeIcon fixedWidth icon={faArrowRight} />
+        </ActionButton>
       </CarouselBottom>
     </CarouselContainer>
   );
