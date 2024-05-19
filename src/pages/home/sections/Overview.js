@@ -12,7 +12,10 @@ import {
   MEDIA_QUERY_BREAKPOINT_SM,
   MED_ICON_SIZE,
 } from "../../../constants/StyleConstants";
-import { accentColor, primaryForegroundColor } from "../../../global/colors";
+import {
+  ACCENT_COLOR,
+  PRIMARY_FOREGROUND_COLOR,
+} from "../../../constants/ColorConstants";
 import { getIcon } from "../../../util/IconUtil";
 
 const ResponsiveCardContainer = styled.div`
@@ -37,8 +40,8 @@ const Overview = ({ data }) => {
               <ResponsiveCardContainer key={index}>
                 <Card padding={CARD_PADDING}>
                   <Icon
-                    backgroundColor={primaryForegroundColor}
-                    color={accentColor}
+                    backgroundColor={PRIMARY_FOREGROUND_COLOR}
+                    color={ACCENT_COLOR}
                     padding="1rem"
                     fontSize={MED_ICON_SIZE}
                     icon={getIcon(icons[index].name)}

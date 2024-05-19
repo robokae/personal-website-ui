@@ -6,7 +6,7 @@ import {
   MEDIA_QUERY_BREAKPOINT_SM,
   SUBHEADING_HTML_TAG,
 } from "../../../constants/StyleConstants";
-import { heroHeadingColor } from "../../../global/colors";
+import { HERO_HEADING_COLOR } from "../../../constants/ColorConstants";
 
 const HeroContainer = styled(HeroLayout)`
   background: ${({ theme }) => theme.homePageHeroGradient};
@@ -40,7 +40,7 @@ const Hero = ({ data }) => {
             <Typography
               tag="h1"
               textAlign="center"
-              color={heroHeadingColor}
+              color={HERO_HEADING_COLOR}
               textShadow={HEADING_TEXT_SHADOW}
               key={index}
             >

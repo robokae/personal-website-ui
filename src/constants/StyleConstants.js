@@ -1,9 +1,4 @@
-export const FONT_FAMILIES = [
-  // "IBM Plex Sans:400,500,700",
-  "IBM Plex Mono",
-  "Inter",
-  "DM Sans:400,700",
-];
+export const FONT_FAMILIES = ["IBM Plex Mono", "Inter", "DM Sans:400,700"];
 export const LOGO_FONT = "DM Sans";
 export const REGULAR_FONT = "Inter";
 export const MONOSPACE_FONT = "IBM Plex Mono";

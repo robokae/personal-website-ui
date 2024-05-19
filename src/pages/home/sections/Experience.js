@@ -13,7 +13,11 @@ import {
   MED_GAP,
   SECTION_TITLE_HTML_TAG,
 } from "../../../constants/StyleConstants";
-import { lightBlue, purple, turquoise } from "../../../global/colors";
+import {
+  LIGHT_BLUE,
+  PURPLE,
+  TURQUOISE,
+} from "../../../constants/ColorConstants";
 import { useState } from "react";
 import { useEffect } from "react";
 import Carousel from "../../../components/carousel/Carousel";
@@ -73,7 +77,7 @@ const Experience = ({ data }) => {
   };
   const [displayCarousel, setDisplayCarousel] = useState(testLargeWindowSize);
   const { headings, subHeadings, text, listContent } = data;
-  const cardHeadingColors = [turquoise, purple, lightBlue];
+  const cardHeadingColors = [TURQUOISE, PURPLE, LIGHT_BLUE];
 
   useEffect(() => {
     const handleResize = () => {
