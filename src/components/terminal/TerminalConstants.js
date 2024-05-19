@@ -1,0 +1,11 @@
+export const TITLE_BAR_BACKGROUND_COLOR = "#263137";
+export const TITLE_BAR_CLOSE_BUTTON_COLOR = "#DA5656";
+export const TITLE_BAR_MINIMIZE_BUTTON_COLOR = "#E0C146";
+export const TITLE_BAR_MAXIMIZE_BUTTON_COLOR = "#42BC55";
+export const TITLE_BAR_FONT_COLOR = "#F8F8F8";
+export const BORDER_COLOR = "#20202E";
+export const BACKGROUND_GRADIENT_LEFT_COLOR = "rgba(39, 54, 68, 0.8)";
+export const BACKGROUND_GRADIENT_RIGHT_COLOR = "rgba(19, 31, 42, 0.8)";
+export const BOX_SHADOW_COLOR = "rgba(65, 79, 109, 0.2)";
+export const COMMAND_COLOR = "#C3EAFA";
+export const COMMAND_OUTPUT_COLOR = "#F8F8F8";

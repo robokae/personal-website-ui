@@ -1,15 +1,27 @@
 import styled from "styled-components";
-import { terminalColors } from "../global/colors";
-import { MONOSPACE_FONT, REGULAR_FONT } from "../constants/StyleConstants";
+import { MONOSPACE_FONT, REGULAR_FONT } from "../../constants/StyleConstants";
+import {
+  BACKGROUND_GRADIENT_LEFT_COLOR,
+  BACKGROUND_GRADIENT_RIGHT_COLOR,
+  BORDER_COLOR,
+  BOX_SHADOW_COLOR,
+  COMMAND_COLOR,
+  COMMAND_OUTPUT_COLOR,
+  TITLE_BAR_BACKGROUND_COLOR,
+  TITLE_BAR_CLOSE_BUTTON_COLOR,
+  TITLE_BAR_FONT_COLOR,
+  TITLE_BAR_MAXIMIZE_BUTTON_COLOR,
+  TITLE_BAR_MINIMIZE_BUTTON_COLOR,
+} from "./TerminalConstants";
 
 const Container = styled.div`
   background: linear-gradient(
     to right bottom,
-    ${terminalColors.bgGradientLeftCol},
-    ${terminalColors.bgGradientRightCol}
+    ${BACKGROUND_GRADIENT_LEFT_COLOR},
+    ${BACKGROUND_GRADIENT_RIGHT_COLOR}
   );
-  box-shadow: 0.25rem 0.25rem 2rem ${terminalColors.boxShadowCol};
-  border: 1px solid ${terminalColors.borderCol};
+  box-shadow: 0.25rem 0.25rem 2rem ${BOX_SHADOW_COLOR};
+  border: 1px solid ${BORDER_COLOR};
   border-radius: 0.5rem 0.5rem 0 0;
   border-bottom: none;
   font-family: ${MONOSPACE_FONT}, monospace;
@@ -22,7 +34,7 @@ const TitleBar = styled.div`
   display: flex;
   align-items: center;
   position: relative;
-  background-color: ${terminalColors.titleBarBgCol};
+  background-color: ${TITLE_BAR_BACKGROUND_COLOR};
   border-radius: 0.5rem 0.5rem 0 0;
 `;
 
@@ -45,7 +57,7 @@ const TitleBarName = styled.p`
   top: 50%;
   transform: translate(-50%, -50%);
   font-family: ${REGULAR_FONT};
-  color: ${terminalColors.titleBarFontCol};
+  color: ${TITLE_BAR_FONT_COLOR};
 `;
 
 const CommandContainer = styled.div`
@@ -59,7 +71,7 @@ const Command = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  color: ${terminalColors.commandCol};
+  color: ${COMMAND_COLOR};
 `;
 
 const Output = styled.div`
@@ -68,7 +80,7 @@ const Output = styled.div`
   flex-wrap: wrap;
   row-gap: 0.25rem;
   column-gap: 1.5rem;
-  color: ${terminalColors.commandOutputCol};
+  color: ${COMMAND_OUTPUT_COLOR};
 `;
 
 function Terminal({ details, width }) {
@@ -76,9 +88,9 @@ function Terminal({ details, width }) {
     <Container width={width}>
       <TitleBar>
         <TitleBarButtonContainer>
-          <TitleBarButton color={terminalColors.titleBarCloseBtnCol} />
-          <TitleBarButton color={terminalColors.titleBarMinimizeBtnCol} />
-          <TitleBarButton color={terminalColors.titleBarMaximizeBtnCol} />
+          <TitleBarButton color={TITLE_BAR_CLOSE_BUTTON_COLOR} />
+          <TitleBarButton color={TITLE_BAR_MINIMIZE_BUTTON_COLOR} />
+          <TitleBarButton color={TITLE_BAR_MAXIMIZE_BUTTON_COLOR} />
         </TitleBarButtonContainer>
         <TitleBarName>{details.titleBar.name}</TitleBarName>
       </TitleBar>
