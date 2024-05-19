@@ -43,7 +43,7 @@ export const LARGE_PADDING = "3rem";
 export const MED_PADDING = "2rem";
 export const SMALL_PADDING = "1rem";
 
-export const SECTION_PADDING = "3.75rem 0";
+export const SECTION_PADDING = "3.75rem";
 export const CARD_PADDING = "1.5rem";
 
 export const HEADER_HEIGHT = "4.5rem";

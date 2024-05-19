@@ -16,15 +16,15 @@ import {
 import { lightBlue, purple, turquoise } from "../../../global/colors";
 import { useState } from "react";
 import { useEffect } from "react";
-import Carousel from "../../../components/Carousel";
+import Carousel from "../../../components/carousel/Carousel";
 
 const CardLayout = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  /* justify-content: center; */
   gap: ${MED_GAP};
+  position: relative;
 
   & > * {
     height: auto;
@@ -109,22 +109,22 @@ const Experience = ({ data }) => {
     });
   };
 
+  const heading = headings.map((line, index) => (
+    <Typography key={index} tag={SECTION_TITLE_HTML_TAG} textAlign="center">
+      {line}
+    </Typography>
+  ));
+
   return (
     <SectionLayout>
-      <ContentLayout>
-        {headings.map((line, index) => (
-          <Typography
-            key={index}
-            tag={SECTION_TITLE_HTML_TAG}
-            textAlign="center"
-          >
-            {line}
-          </Typography>
-        ))}
-        <CardLayout size={subHeadings.length}>
-          {displayCarousel ? <Carousel>{getCards()}</Carousel> : getCards()}
-        </CardLayout>
-      </ContentLayout>
+      {heading}
+      {displayCarousel ? (
+        <Carousel paddingX="6rem">{getCards()}</Carousel>
+      ) : (
+        <ContentLayout>
+          <CardLayout size={subHeadings.length}>{getCards()}</CardLayout>
+        </ContentLayout>
+      )}
     </SectionLayout>
   );
 };
