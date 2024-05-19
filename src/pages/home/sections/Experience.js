@@ -7,10 +7,7 @@ import {
 import Typography from "../../../components/typography/Typography";
 import {
   BORDER_RADIUS,
-  CARD_PADDING,
   CARD_TITLE_HTML_TAG,
-  MEDIA_QUERY_BREAKPOINT_LG,
-  MED_GAP,
   SECTION_TITLE_HTML_TAG,
 } from "../../../constants/StyleConstants";
 import {
@@ -21,13 +18,18 @@ import {
 import { useState } from "react";
 import { useEffect } from "react";
 import Carousel from "../../../components/carousel/Carousel";
+import {
+  CARD_PADDING,
+  MEDIA_QUERY_BREAKPOINT_LG,
+  MEDIUM_GAP,
+} from "../../../constants/LayoutConstants";
 
 const CardLayout = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  gap: ${MED_GAP};
+  gap: ${MEDIUM_GAP};
   position: relative;
 
   & > * {
@@ -59,7 +61,7 @@ const CardContent = styled.div`
   display: flex;
   flex-direction: column;
   padding: ${CARD_PADDING};
-  gap: ${MED_GAP};
+  gap: ${MEDIUM_GAP};
 `;
 
 const ListItem = styled.li`

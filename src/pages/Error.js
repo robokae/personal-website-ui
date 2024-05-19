@@ -6,7 +6,7 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import error from "../content/error/error.json";
 import { LinkButton } from "../components/Link";
-import { HEADER_HEIGHT } from "../constants/StyleConstants";
+import { HEADER_HEIGHT } from "../constants/LayoutConstants";
 
 const Container = styled.main`
   display: flex;

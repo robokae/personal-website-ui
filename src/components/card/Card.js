@@ -1,12 +1,12 @@
 import styled, { css } from "styled-components";
+import { BORDER_RADIUS } from "../../constants/StyleConstants";
+import React from "react";
 import {
-  BORDER_RADIUS,
   CARD_PADDING,
   MEDIA_QUERY_BREAKPOINT_MED,
-  MED_GAP,
-  MED_PADDING,
-} from "../../constants/StyleConstants";
-import React from "react";
+  MEDIUM_GAP,
+  MEDIUM_PADDING,
+} from "../../constants/LayoutConstants";
 
 const defaultStyles = css`
   width: 100%;
@@ -16,10 +16,10 @@ const defaultStyles = css`
   padding: ${CARD_PADDING};
   border-radius: ${BORDER_RADIUS};
   background-color: ${({ theme }) => theme.secondaryBgCol};
-  gap: ${MED_GAP};
+  gap: ${MEDIUM_GAP};
 
   @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
-    padding: ${MED_PADDING};
+    padding: ${MEDIUM_PADDING};
   }
 `;
 

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
+import { SECTION_TITLE_HTML_TAG } from "../../constants/StyleConstants";
+import Typography from "../../components/typography/Typography";
+import ComputerIllustration from "../../components/illustrations/ComputerIllustration";
 import {
   MEDIA_QUERY_BREAKPOINT_LG,
   MEDIA_QUERY_BREAKPOINT_MED,
-  SECTION_TITLE_HTML_TAG,
-} from "../../constants/StyleConstants";
-import Typography from "../../components/typography/Typography";
-import ComputerIllustration from "../../components/illustrations/ComputerIllustration";
+} from "../../constants/LayoutConstants";
 
 const ReflectionSectionLayout = styled(SectionLayout)`
   background-color: ${({ theme }) => theme.secondaryBgCol};

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { getLinkFromJson } from "../../util/LinkUtil";
-import { MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/StyleConstants";
 import MobileThemeSwitcher from "../themeSwitcher/MobileThemeSwitcher";
 import { ENABLE_THEME_SWITCHER } from "../../constants/AppConstants";
+import { MEDIA_QUERY_BREAKPOINT_SM } from "../../constants/LayoutConstants";
 
 const Container = styled.div`
   width: 100vw;

@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react";
 import "react-tooltip/dist/react-tooltip.css";
 import styled from "styled-components";
-import {
-  CONTENT_MAX_WIDTH,
-  HEADER_HEIGHT,
-  LOGO_FONT,
-  MEDIA_QUERY_BREAKPOINT_MED,
-  MEDIA_QUERY_BREAKPOINT_XL,
-  TRANSPARENT,
-} from "../../constants/StyleConstants";
 import ThemeSwitcher from "../themeSwitcher/ThemeSwitcher";
 import { Link } from "../Link";
 import SlideOutMenu from "../menu/SlideOutMenu";
@@ -20,6 +12,13 @@ import {
 } from "../../constants/AppConstants";
 import Icon from "../icon/Icon";
 import { getIcon } from "../../util/IconUtil";
+import {
+  CONTENT_MAX_WIDTH,
+  HEADER_HEIGHT,
+  MEDIA_QUERY_BREAKPOINT_MED,
+  MEDIA_QUERY_BREAKPOINT_XL,
+} from "../../constants/LayoutConstants";
+import { LOGO_FONT, TRANSPARENT } from "../../constants/StyleConstants";
 
 const HeaderContainer = styled.header`
   width: 100%;

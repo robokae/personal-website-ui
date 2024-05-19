@@ -5,7 +5,7 @@ import {
   HEADER_HEIGHT,
   MEDIA_QUERY_BREAKPOINT_XL,
   SECTION_PADDING,
-} from "../../constants/StyleConstants";
+} from "../../constants/LayoutConstants";
 
 export const BaseLayout = styled.div`
   width: 100%;

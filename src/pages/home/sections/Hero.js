@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { ContentLayout, HeroLayout } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
+import { SUBHEADING_HTML_TAG } from "../../../constants/StyleConstants";
+import { HERO_HEADING_COLOR } from "../../../constants/ColorConstants";
 import {
   LARGE_GAP,
   MEDIA_QUERY_BREAKPOINT_SM,
-  SUBHEADING_HTML_TAG,
-} from "../../../constants/StyleConstants";
-import { HERO_HEADING_COLOR } from "../../../constants/ColorConstants";
+} from "../../../constants/LayoutConstants";
 
 const HeroContainer = styled(HeroLayout)`
   background: ${({ theme }) => theme.homePageHeroGradient};

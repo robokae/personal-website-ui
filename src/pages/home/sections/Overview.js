@@ -7,16 +7,16 @@ import {
   SectionLayout,
 } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
-import {
-  CARD_PADDING,
-  MEDIA_QUERY_BREAKPOINT_SM,
-  MED_ICON_SIZE,
-} from "../../../constants/StyleConstants";
+import { MED_ICON_SIZE } from "../../../constants/StyleConstants";
 import {
   ACCENT_COLOR,
   PRIMARY_FOREGROUND_COLOR,
 } from "../../../constants/ColorConstants";
 import { getIcon } from "../../../util/IconUtil";
+import {
+  CARD_PADDING,
+  MEDIA_QUERY_BREAKPOINT_SM,
+} from "../../../constants/LayoutConstants";
 
 const ResponsiveCardContainer = styled.div`
   & > * {
