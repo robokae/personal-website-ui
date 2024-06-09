@@ -4,7 +4,7 @@ import header from "../../content/layout/header.json";
 import footer from "../../content/layout/footer.json";
 import slideOutMenu from "../../content/slideOutMenu.json";
 import Header from "./Header";
-import Footer from "./Footer";
+import Footer from "../footer/Footer";
 import { FOOTER_HEIGHT } from "../../constants/LayoutConstants";
 
 const Container = styled.div`

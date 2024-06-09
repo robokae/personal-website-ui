@@ -23,8 +23,8 @@ export const SMALL_PADDING = "1rem";
 // Specific padding
 export const SECTION_PADDING = "3.75rem";
 export const CARD_PADDING = "1.5rem";
-export const CAROUSEL_PADDING = "6rem";
+export const CAROUSEL_PADDING = "3.5rem";
 
 // Height
 export const HEADER_HEIGHT = "4.5rem";
-export const FOOTER_HEIGHT = "5rem";
+export const FOOTER_HEIGHT = "8rem";

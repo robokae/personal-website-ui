@@ -3,7 +3,7 @@ import header from "../content/layout/header.json";
 import footer from "../content/layout/footer.json";
 import slideOutMenu from "../content/slideOutMenu.json";
 import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
+import Footer from "../components/footer/Footer";
 import error from "../content/error/error.json";
 import { LinkButton } from "../components/Link";
 import { HEADER_HEIGHT } from "../constants/LayoutConstants";
