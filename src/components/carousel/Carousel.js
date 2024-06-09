@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import styles from "./Carousel.module.scss";
+import { scrollConfig } from "../../config/ScrollConfig";
 
 const ActionButton = styled.button`
   color: ${({ theme }) => theme.secondaryFontCol};
@@ -30,6 +31,12 @@ const SlideContainer = styled.div`
         padding-right: ${props.paddingX};
       }
     `};
+  ${(props) =>
+    props.enableScroll &&
+    css`
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+    `};
 `;
 
 const SlideIndicator = styled(FontAwesomeIcon)`
@@ -43,12 +50,6 @@ const Carousel = (props) => {
   const slides = props.children;
   const [slideIndex, setSlideIndex] = useState(0);
   const refs = useRef(slides.map(React.createRef));
-
-  const scrollConfig = {
-    behavior: "smooth",
-    block: "nearest",
-    inline: "center",
-  };
 
   const handleLeftArrowClick = () => scrollLeft();
 
@@ -97,8 +98,9 @@ const Carousel = (props) => {
       <div className={styles.top}>
         <SlideContainer
           paddingX={props.paddingX}
+          enableScroll={props.enableScroll}
           className={styles.slideContainer}
-          onWheel={handleScroll}
+          onWheel={props.enableScroll && handleScroll}
         >
           {slides.map((item, index) => (
             <div className={styles.slide} key={index} ref={refs.current[index]}>

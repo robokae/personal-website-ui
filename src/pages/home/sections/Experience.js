@@ -20,6 +20,7 @@ import { useEffect } from "react";
 import Carousel from "../../../components/carousel/Carousel";
 import {
   CARD_PADDING,
+  CAROUSEL_PADDING,
   MEDIA_QUERY_BREAKPOINT_LG,
   MEDIUM_GAP,
 } from "../../../constants/LayoutConstants";
@@ -74,12 +75,11 @@ const ListItem = styled.li`
 `;
 
 const Experience = ({ data }) => {
-  const testLargeWindowSize = () => {
-    return window.innerWidth <= 992;
-  };
-  const [displayCarousel, setDisplayCarousel] = useState(testLargeWindowSize);
+  const testLargeWindowSize = () => window.innerWidth <= 992;
   const { headings, subHeadings, text, listContent } = data;
   const cardHeadingColors = [TURQUOISE, PURPLE, LIGHT_BLUE];
+
+  const [displayCarousel, setDisplayCarousel] = useState(testLargeWindowSize);
 
   useEffect(() => {
     const handleResize = () => {
@@ -125,7 +125,9 @@ const Experience = ({ data }) => {
     <SectionLayout>
       {heading}
       {displayCarousel ? (
-        <Carousel paddingX="6rem">{getCards()}</Carousel>
+        <Carousel displayArrows paddingX={CAROUSEL_PADDING}>
+          {getCards()}
+        </Carousel>
       ) : (
         <ContentLayout>
           <CardLayout size={subHeadings.length}>{getCards()}</CardLayout>
