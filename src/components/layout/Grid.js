@@ -6,7 +6,7 @@ import {
   MEDIUM_GAP,
 } from "../../constants/LayoutConstants";
 
-const Grid = styled.div`
+const StyledGrid = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(
@@ -16,7 +16,7 @@ const Grid = styled.div`
         : props.size},
     1fr
   );
-  gap: ${MEDIUM_GAP};
+  gap: ${(props) => (props.gap ? props.gap : MEDIUM_GAP)};
   grid-auto-rows: 1fr;
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
@@ -25,8 +25,15 @@ const Grid = styled.div`
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 `;
+
+const Grid = ({ size, gap, children }) => {
+  return (
+    <StyledGrid size={size} gap={gap}>
+      {children}
+    </StyledGrid>
+  );
+};
 
 export default Grid;

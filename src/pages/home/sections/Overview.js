@@ -7,14 +7,17 @@ import {
   SectionLayout,
 } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
-import { MED_ICON_SIZE } from "../../../constants/StyleConstants";
+import { ICON_SIZE } from "../../../constants/StyleConstants";
 import {
-  ACCENT_COLOR,
-  PRIMARY_FOREGROUND_COLOR,
+  LIGHT_BLUE,
+  LIGHT_GREEN,
+  LIGHT_PURPLE,
+  NAVY_BLUE,
+  TURQUOISE,
 } from "../../../constants/ColorConstants";
 import { getIcon } from "../../../util/IconUtil";
 import {
-  CARD_PADDING,
+  LARGE_GAP,
   MEDIA_QUERY_BREAKPOINT_SM,
 } from "../../../constants/LayoutConstants";
 
@@ -31,22 +34,30 @@ const ResponsiveCardContainer = styled.div`
 
 const Overview = ({ data }) => {
   const { text, icons } = data;
+  const ICON_COLOR = NAVY_BLUE;
+  const ICON_BACKGROUND_COLORS = [
+    LIGHT_PURPLE,
+    TURQUOISE,
+    LIGHT_BLUE,
+    LIGHT_GREEN,
+  ];
+
   return (
     <SectionLayout>
       <ContentLayout>
-        <Grid size={text.length}>
+        <Grid gap={LARGE_GAP} size={text.length}>
           {text.map((cardText, index) => {
             return (
               <ResponsiveCardContainer key={index}>
-                <Card padding={CARD_PADDING}>
+                <Card backgroundColor="transparent" padding="0">
                   <Icon
-                    backgroundColor={PRIMARY_FOREGROUND_COLOR}
-                    color={ACCENT_COLOR}
+                    backgroundColor={ICON_BACKGROUND_COLORS[index]}
+                    color={ICON_COLOR}
                     padding="1rem"
-                    fontSize={MED_ICON_SIZE}
+                    fontSize={ICON_SIZE}
                     icon={getIcon(icons[index].name)}
                   />
-                  <Typography>{cardText}</Typography>
+                  <Typography width="85%">{cardText}</Typography>
                 </Card>
               </ResponsiveCardContainer>
             );
