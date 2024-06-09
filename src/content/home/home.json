@@ -4,7 +4,7 @@
         {
             "title": "hero",
             "content": {
-                "headings": ["Hello there, ", "my name is Alexander Hom"],
+                "headings": ["Hi there, ", "my name is Alexander Hom"],
                 "subHeadings": ["I am a full-stack web developer from San Francisco"],
                 "text": [],
                 "images": [],

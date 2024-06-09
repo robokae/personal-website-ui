@@ -5,7 +5,6 @@ import React from "react";
 const defaultStyles = css`
   width: max-content;
   height: max-content;
-  background: ${({ theme }) => theme.secondaryBgCol};
   border-radius: ${BORDER_RADIUS};
   display: flex;
   justify-content: center;

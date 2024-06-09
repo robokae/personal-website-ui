@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ContentLayout, HeroLayout } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
 import { SUBHEADING_HTML_TAG } from "../../../constants/StyleConstants";
-import { HERO_HEADING_COLOR } from "../../../constants/ColorConstants";
+import { HERO_TEXT_COLOR } from "../../../constants/ColorConstants";
 import {
   LARGE_GAP,
   MEDIA_QUERY_BREAKPOINT_SM,
@@ -10,7 +10,7 @@ import {
 
 const HeroContainer = styled(HeroLayout)`
   background: ${({ theme }) => theme.homePageHeroGradient};
-  min-height: 50vh;
+  min-height: 60vh;
   display: flex;
   justify-content: center;
   align-items: left;
@@ -24,7 +24,7 @@ const MultiLineHeading = styled.div`
   width: 100%;
 `;
 
-const HEADING_TEXT_SHADOW = "0.25rem 0.25rem 2rem rgba(0, 0, 0, 0.3)";
+const TEXT_SHADOW = "0.25rem 0.25rem 2rem rgba(0, 0, 0, 0.3)";
 
 const Content = styled(ContentLayout)`
   height: max-content;
@@ -40,8 +40,8 @@ const Hero = ({ data }) => {
             <Typography
               tag="h1"
               textAlign="center"
-              color={HERO_HEADING_COLOR}
-              textShadow={HEADING_TEXT_SHADOW}
+              color={HERO_TEXT_COLOR}
+              textShadow={TEXT_SHADOW}
               key={index}
             >
               {line}
@@ -49,7 +49,13 @@ const Hero = ({ data }) => {
           ))}
         </MultiLineHeading>
         {data.subHeadings.map((line, index) => (
-          <Typography key={index} tag={SUBHEADING_HTML_TAG} textAlign="center">
+          <Typography
+            key={index}
+            color={HERO_TEXT_COLOR}
+            tag={SUBHEADING_HTML_TAG}
+            textShadow={TEXT_SHADOW}
+            textAlign="center"
+          >
             {line}
           </Typography>
         ))}
