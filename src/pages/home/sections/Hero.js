@@ -1,64 +1,83 @@
 import styled from "styled-components";
-import { ContentLayout, HeroLayout } from "../../../components/layout/Layout";
+import { HeroLayout } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
-import { SUBHEADING_HTML_TAG } from "../../../constants/StyleConstants";
-import { HERO_TEXT_COLOR } from "../../../constants/ColorConstants";
 import {
-  LARGE_GAP,
+  SUBHEADING_HTML_TAG,
+  TEXT_SHADOW,
+} from "../../../constants/StyleConstants";
+import {
+  HEADER_HEIGHT,
   MEDIA_QUERY_BREAKPOINT_SM,
+  MEDIUM_GAP,
 } from "../../../constants/LayoutConstants";
+import DeveloperSetup from "../../../components/illustrations/DeveloperSetup.svg";
 
 const HeroContainer = styled(HeroLayout)`
-  background: ${({ theme }) => theme.homePageHeroGradient};
-  min-height: 60vh;
+  background: #588686;
+  height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: left;
 
   @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
-    min-height: 40vh;
+    height: 60vh;
   }
 `;
 
-const MultiLineHeading = styled.div`
-  width: 100%;
+const HeadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: ${MEDIUM_GAP};
 `;
 
-const TEXT_SHADOW = "0.25rem 0.25rem 2rem rgba(0, 0, 0, 0.3)";
+const Content = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+`;
 
-const Content = styled(ContentLayout)`
-  height: max-content;
-  gap: ${LARGE_GAP};
+const Image = styled.img`
+  height: calc((80vh - ${HEADER_HEIGHT}) / 2);
+
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    height: calc((60vh - ${HEADER_HEIGHT}) / 2);
+  }
 `;
 
 const Hero = ({ data }) => {
   return (
     <HeroContainer>
       <Content>
-        <MultiLineHeading>
-          {data.headings.map((line, index) => (
+        <HeadingContainer>
+          <>
+            {data.headings.map((line, index) => (
+              <Typography
+                tag="h1"
+                textAlign="center"
+                textShadow={TEXT_SHADOW}
+                key={index}
+              >
+                {line}
+              </Typography>
+            ))}
+          </>
+          {data.subHeadings.map((line, index) => (
             <Typography
-              tag="h1"
-              textAlign="center"
-              color={HERO_TEXT_COLOR}
-              textShadow={TEXT_SHADOW}
               key={index}
+              tag={SUBHEADING_HTML_TAG}
+              textShadow={TEXT_SHADOW}
+              textAlign="center"
             >
               {line}
             </Typography>
           ))}
-        </MultiLineHeading>
-        {data.subHeadings.map((line, index) => (
-          <Typography
-            key={index}
-            color={HERO_TEXT_COLOR}
-            tag={SUBHEADING_HTML_TAG}
-            textShadow={TEXT_SHADOW}
-            textAlign="center"
-          >
-            {line}
-          </Typography>
-        ))}
+        </HeadingContainer>
+        <Image
+          src={DeveloperSetup}
+          alt="Desk with chair and computer monitor"
+        />
       </Content>
     </HeroContainer>
   );
