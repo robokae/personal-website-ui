@@ -1,8 +1,8 @@
 // Breakpoints
-export const MEDIA_QUERY_BREAKPOINT_XL = "1200px";
+export const MEDIA_QUERY_BREAKPOINT_XL = "1280px";
 export const MEDIA_QUERY_BREAKPOINT_LG = "992px";
 export const MEDIA_QUERY_BREAKPOINT_MED = "768px";
-export const MEDIA_QUERY_BREAKPOINT_SM = "600px";
+export const MEDIA_QUERY_BREAKPOINT_SM = "576px";
 
 export const CONTENT_MAX_WIDTH = "1200px";
 
