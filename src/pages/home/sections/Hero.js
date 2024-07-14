@@ -1,19 +1,17 @@
 import styled from "styled-components";
 import { HeroLayout } from "../../../components/layout/Layout";
 import Typography from "../../../components/typography/Typography";
-import {
-  SUBHEADING_HTML_TAG,
-  TEXT_SHADOW,
-} from "../../../constants/StyleConstants";
+import { SUBHEADING_HTML_TAG } from "../../../constants/StyleConstants";
 import {
   HEADER_HEIGHT,
   MEDIA_QUERY_BREAKPOINT_SM,
   MEDIUM_GAP,
 } from "../../../constants/LayoutConstants";
 import DeveloperSetup from "../../../components/illustrations/DeveloperSetup.svg";
+import { TEXT_SHADOW } from "../../../constants/TypographyConstants";
 
 const HeroContainer = styled(HeroLayout)`
-  background: #588686;
+  background: #527c85;
   height: 80vh;
   display: flex;
   justify-content: center;

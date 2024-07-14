@@ -21,7 +21,7 @@ import Login from "./pages/Login";
 import Admin from "./pages/admin/Admin";
 import CreatePost from "./pages/admin/CreatePost";
 import EditPost from "./pages/admin/EditPost";
-import { FONT_FAMILIES } from "./constants/StyleConstants";
+import { FONT_FAMILIES } from "./constants/TypographyConstants";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -29,6 +29,7 @@ import HomeLayout from "./components/layout/HomeLayout";
 import useTheme from "./hooks/useTheme";
 import { LIGHT } from "./constants/AppConstants";
 import Error from "./pages/Error";
+// import About from "./pages/about/About";
 // import About from "./pages/about/About";
 
 library.add(fab, fas);

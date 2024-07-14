@@ -1,10 +1,3 @@
-// Typography
-export const FONT_FAMILIES = ["IBM Plex Mono", "Inter", "DM Sans:400,700"];
-export const LOGO_FONT = "DM Sans";
-export const REGULAR_FONT = "Inter";
-export const MONOSPACE_FONT = "IBM Plex Mono";
-export const TEXT_SHADOW = "0.25rem 0.25rem 2rem rgba(0, 0, 0, 0.3)";
-
 // Icons
 export const FONT_AWESOME = "fontawesome";
 export const DEFAULT_ICON_TYPE = "fontawesome";
