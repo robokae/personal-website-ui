@@ -5,7 +5,7 @@
             "title": "hero",
             "content": {
                 "headings": ["Hi, my name is Alexander Hom"],
-                "subHeadings": ["I am a full-stack web developer from San Francisco"],
+                "subHeadings": ["I am a software engineer from San Francisco"],
                 "text": [],
                 "images": [],
                 "icons": [],
@@ -18,7 +18,12 @@
             "content": {
                 "headings": [],
                 "subHeadings": [],
-                "text": ["Over 6 years of software engineering experience from university and work", "Skilled in React, Spring Boot, relational and non-relational databases, and cloud technologies", "Passionate about UI/UX and full-stack software development", "Love learning about technology, designing UIs, and programming"],
+                "text": [
+                    "2+ years of professional software engineering experience, with a specialization in developing APIs for distributed systems", 
+                    "Skilled in developing web applications using JavaScript, Java, Python, SQL, MongoDB, Google Cloud, etc.", 
+                    "Team player with a passion for collaboration and experience working in agile environments, as well as leading teams", 
+                    "Enjoys learning the latest technologies, taking part in technology events, and applying new knowledge to enhance workflows"
+                ],
                 "images": [],
                 "icons": [
                     {
@@ -63,7 +68,11 @@
             "content": {
                 "headings": ["My Experience"],
                 "subHeadings": ["Frontend", "Backend", "Cloud"],
-                "text": ["3 years of frontend development experience working with", "2 years of backend development experience working with", "1 year of cloud development experience working with"],
+                "text": [
+                    "3 years of frontend development experience working with", 
+                    "2 years of backend development experience working with", 
+                    "1 year of cloud development experience working with"
+                ],
                 "images": [],
                 "icons": [],
                 "buttons": [],
@@ -79,7 +88,11 @@
             "content": {
                 "headings": ["Projects I've Worked On"],
                 "subHeadings": ["Minimal Todo List", "Encapsulate", "Nocturnal"],
-                "text": ["Web-based todo list with a simple user interface. Features include creating, removing, and searching todos.", "Technology and software engineering blog.", "Minimalistic social networking Android application. Users can view and create posts, which are saved to a Parse database."],
+                "text": [
+                    "Web-based todo list with a simple user interface. Features include creating, removing, and searching todos.", 
+                    "Technology and software engineering blog.", 
+                    "Minimalistic social networking Android application. Users can view and create posts, which are saved to a Parse database."
+                ],
                 "images": [],
                 "icons": [],
                 "buttons": [
