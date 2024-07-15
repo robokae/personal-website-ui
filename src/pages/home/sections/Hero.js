@@ -8,7 +8,12 @@ import {
   MEDIUM_GAP,
 } from "../../../constants/LayoutConstants";
 import DeveloperSetup from "../../../components/illustrations/DeveloperSetup.svg";
-import { TEXT_SHADOW } from "../../../constants/TypographyConstants";
+import {
+  CENTER,
+  H1,
+  NORMAL,
+  TEXT_SHADOW,
+} from "../../../constants/TypographyConstants";
 
 const HeroContainer = styled(HeroLayout)`
   background: #527c85;
@@ -52,8 +57,8 @@ const Hero = ({ data }) => {
           <>
             {data.headings.map((line, index) => (
               <Typography
-                tag="h1"
-                textAlign="center"
+                tag={H1}
+                textAlign={CENTER}
                 textShadow={TEXT_SHADOW}
                 key={index}
               >
@@ -66,7 +71,8 @@ const Hero = ({ data }) => {
               key={index}
               tag={SUBHEADING_HTML_TAG}
               textShadow={TEXT_SHADOW}
-              textAlign="center"
+              textAlign={CENTER}
+              fontWeight={NORMAL}
             >
               {line}
             </Typography>

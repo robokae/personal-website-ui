@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { MONOSPACE_FONT, REGULAR_FONT } from "../../constants/StyleConstants";
+import {
+  MONOSPACE_FONT,
+  REGULAR_FONT,
+} from "../../constants/TypographyConstants";
 import {
   BACKGROUND_GRADIENT_LEFT_COLOR,
   BACKGROUND_GRADIENT_RIGHT_COLOR,
