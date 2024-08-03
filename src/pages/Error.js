@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import header from "../content/layout/header.json";
 import footer from "../content/layout/footer.json";
-import slideOutMenu from "../content/slideOutMenu.json";
-import Header from "../components/layout/Header";
+import hamburgerMenu from "../content/hamburgerMenu.json";
+import Header from "../components/layout/header/Header";
 import Footer from "../components/footer/Footer";
 import error from "../content/error/error.json";
 import { LinkButton } from "../components/Link";
 import { HEADER_HEIGHT } from "../constants/LayoutConstants";
+import HamburgerMenu from "../components/menu/hamburgerMenu/HamburgerMenu";
 
 const Container = styled.main`
   display: flex;
@@ -38,8 +39,12 @@ function Error({ theme, onChangeTheme }) {
         isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
-        slideOutMenuContent={slideOutMenu.content}
         changeBgOnScroll={false}
+      />
+      <HamburgerMenu
+        theme={theme}
+        onChangeTheme={onChangeTheme}
+        content={hamburgerMenu.content}
       />
       <ContentContainer>
         <h2>{content.heading}</h2>

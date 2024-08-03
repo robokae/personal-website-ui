@@ -27,7 +27,8 @@
             "nine": "9",
             "zero": "0",
             "plus": "plus",
-            "terminal": "terminal"
+            "terminal": "terminal",
+            "times": "times"
         },
         "fab": {
             "linkedin": "linkedin",

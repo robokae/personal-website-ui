@@ -17,7 +17,8 @@ export const RIGHT_CHEVRON_ICON = "chevron-right";
 
 export const BORDER_RADIUS = ".5rem";
 
-export const TRANSITION_DURATION = ".25s";
+export const TRANSITION_DURATION = ".35s";
+export const TRANSITION_DURATION_MS = 350;
 
 export const TO_LEFT = "to left";
 export const TO_RIGHT = "to right";

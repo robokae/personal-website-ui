@@ -9,7 +9,7 @@ export const CURRENT = "current";
 export const PAST = "past";
 
 export const DYNAMIC_HEADER_SCROLL_AMOUNT = 20;
-export const THEME_SWITCHER = "themeSwitcher";
+export const THEME_TOGGLE = "themeToggle";
 
 export const ICON = "icon";
 export const TEXT = "text";
@@ -18,4 +18,4 @@ export const ICONTEXT = "icontext";
 export const EMAIL = "alexanderhom19@gmail.com";
 
 export const ENABLE_BLOG = false;
-export const ENABLE_THEME_SWITCHER = false;
+export const ENABLE_THEME = false;

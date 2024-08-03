@@ -1,6 +1,6 @@
 const lightTheme = {
   primaryBgCol: "#F0F1F2",
-  headerCol: "rgba(240, 241, 242, .8)",
+  headerCol: "#f0f1f2",
   headerInitialFontCol: "#DFEBF5",
   secondaryBgCol: "#F8F8F8",
   overlayCol: "rgba(18, 28, 32, 0.85)",
@@ -23,12 +23,12 @@ const lightTheme = {
 
 const darkTheme = {
   primaryBgCol: "#121B20",
-  headerCol: "rgba(18, 27, 32, .8)",
+  headerCol: "#121b20",
   headerInitialFontCol: "#DFEBF5",
   secondaryBgCol: "#171F25",
-  overlayCol: "rgba(15, 20, 22, 0.85)",
+  overlayCol: "rgba(20, 29, 31, 0.85)",
   primaryGradient: "linear-gradient(to right, #226ebf, #7923c4)",
-  primaryFontCol: "#C6DBFC",
+  primaryFontCol: "#DFEDEE",
   secondaryFontCol: "#848990",
   jumbotronBgCol: "#182128",
   boxShadow: "0.25rem 0.25rem 1rem rgba(2, 10, 18, 0.2)",

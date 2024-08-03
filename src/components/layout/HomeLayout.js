@@ -2,10 +2,11 @@ import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import header from "../../content/layout/header.json";
 import footer from "../../content/layout/footer.json";
-import slideOutMenu from "../../content/slideOutMenu.json";
-import Header from "./Header";
+import hamburgerMenu from "../../content/hamburgerMenu.json";
+import Header from "./header/Header";
 import Footer from "../footer/Footer";
 import { FOOTER_HEIGHT } from "../../constants/LayoutConstants";
+import HamburgerMenu from "../menu/hamburgerMenu/HamburgerMenu";
 
 const Container = styled.div`
   margin-bottom: ${FOOTER_HEIGHT};
@@ -25,8 +26,12 @@ function HomeLayout({ theme, onChangeTheme, dynamicHeader }) {
         isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
-        slideOutMenuContent={slideOutMenu.content}
         changeBgOnScroll={dynamicHeader}
+      />
+      <HamburgerMenu
+        theme={theme}
+        onChangeTheme={onChangeTheme}
+        content={hamburgerMenu.content}
       />
       <Outlet />
       <Footer textContent={footer.text} />
