@@ -17,11 +17,14 @@ import {
 } from "../../../constants/ColorConstants";
 import { getIcon } from "../../../util/IconUtil";
 import {
-  LARGE_GAP,
+  CARD_PADDING,
   MEDIA_QUERY_BREAKPOINT_SM,
+  MEDIUM_GAP,
 } from "../../../constants/LayoutConstants";
 
-const ResponsiveCardContainer = styled.div`
+const ResponsiveCard = styled.div.attrs({
+  className: "Overview__responsiveCard ",
+})`
   & > * {
     @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
       display: flex;
@@ -45,11 +48,11 @@ const Overview = ({ data }) => {
   return (
     <SectionLayout>
       <ContentLayout>
-        <Grid gap={LARGE_GAP} size={text.length}>
+        <Grid gap={MEDIUM_GAP} size={text.length}>
           {text.map((cardText, index) => {
             return (
-              <ResponsiveCardContainer key={index}>
-                <Card backgroundColor="transparent" padding="0">
+              <ResponsiveCard key={index}>
+                <Card padding={CARD_PADDING}>
                   <Icon
                     backgroundColor={ICON_BACKGROUND_COLORS[index]}
                     color={ICON_COLOR}
@@ -59,7 +62,7 @@ const Overview = ({ data }) => {
                   />
                   <Typography width="85%">{cardText}</Typography>
                 </Card>
-              </ResponsiveCardContainer>
+              </ResponsiveCard>
             );
           })}
         </Grid>

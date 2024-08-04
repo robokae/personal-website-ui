@@ -25,7 +25,7 @@ const darkTheme = {
   primaryBgCol: "#121B20",
   headerCol: "#121b20",
   headerInitialFontCol: "#DFEBF5",
-  secondaryBgCol: "#171F25",
+  secondaryBgCol: "#182128",
   overlayCol: "rgba(20, 29, 31, 0.85)",
   primaryGradient: "linear-gradient(to right, #226ebf, #7923c4)",
   primaryFontCol: "#DFEDEE",

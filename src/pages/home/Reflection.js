@@ -1,24 +1,35 @@
 import styled from "styled-components";
-import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
+import { ContentLayout } from "../../components/layout/Layout";
 import { SECTION_TITLE_HTML_TAG } from "../../constants/StyleConstants";
 import Typography from "../../components/typography/Typography";
-import ComputerIllustration from "../../components/illustrations/ComputerIllustration";
 import {
+  LARGE_GAP,
+  LARGE_PADDING,
   MEDIA_QUERY_BREAKPOINT_LG,
   MEDIA_QUERY_BREAKPOINT_MED,
+  MEDIUM_PADDING,
+  X_LARGE_PADDING,
 } from "../../constants/LayoutConstants";
+import { H4, H5, NORMAL } from "../../constants/TypographyConstants";
 
-const ReflectionSectionLayout = styled(SectionLayout)`
-  background-color: ${({ theme }) => theme.secondaryBgCol};
+const Container = styled.div`
+  width: 100vw;
+  height: max-content;
+  background-color: #212d38;
+  display: flex;
+  justify-content: center;
+  padding: ${X_LARGE_PADDING} 0;
+
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
+    padding: ${MEDIUM_PADDING} 0;
+  }
 `;
 
-const ReflectionContentLayout = styled(ContentLayout)`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  justify-content: left;
-  align-items: start;
+const Content = styled(ContentLayout)`
   position: relative;
+  height: 100%;
+  display: flex;
+  padding: ${LARGE_PADDING} 0;
 
   @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
     display: flex;
@@ -27,61 +38,50 @@ const ReflectionContentLayout = styled(ContentLayout)`
 `;
 
 const ResponsiveTypography = styled.div`
-  text-align: left;
+  width: 100%;
+  text-align: center;
 
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
-    text-align: center;
+  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
+    text-align: left;
   }
 `;
 
 const Description = styled(ContentLayout)`
-  width: 100%;
+  width: 85%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  text-align: center;
-  z-index: 1;
+  gap: ${LARGE_GAP};
+  z-index: 2;
 
   @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
-    top: 10%;
-  }
-
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
     width: 100%;
     position: relative;
     padding-left: 0rem;
-
-    & > * {
-      color: ${({ theme }) => theme.primaryFontCol};
-    }
   }
 `;
 
 const Reflection = ({ data }) => {
   return (
-    <ReflectionSectionLayout>
-      <ReflectionContentLayout>
+    <Container>
+      <Content>
         <Description>
           <ResponsiveTypography>
             {data.headings.map((line, index) => (
-              <Typography
-                tag={SECTION_TITLE_HTML_TAG}
-                key={index}
-                textAlign="left"
-              >
+              <Typography tag={SECTION_TITLE_HTML_TAG} key={index}>
                 {line}
               </Typography>
             ))}
           </ResponsiveTypography>
-          {data.text.map((line, index) => (
-            <Typography key={index} textAlign="left">
-              {line}
-            </Typography>
-          ))}
+          <ResponsiveTypography>
+            {data.text.map((line, index) => (
+              <Typography tag={H5} fontWeight={NORMAL} key={index}>
+                {line}
+              </Typography>
+            ))}
+          </ResponsiveTypography>
         </Description>
-        <ComputerIllustration />
-      </ReflectionContentLayout>
-    </ReflectionSectionLayout>
+      </Content>
+    </Container>
   );
 };
 

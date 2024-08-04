@@ -4,9 +4,13 @@ export const ACCENT_COLOR = "#97DBFB";
 export const PRIMARY_FOREGROUND_COLOR = "#1C272D";
 
 // Light
-export const LIGHT_PURPLE = "#9967E0";
+export const LIGHT_PURPLE = "#7E56B8";
 export const LIGHT_BLUE = "#4B98B9";
 export const LIGHT_GREEN = "#468A69";
+export const LIGHT_TURQUOISE = "#497E81";
+export const LIGHT_NAVY_BLUE = "#48657B";
+
+export const MEDIUM_BLUE = "#3D6D82";
 
 // Normal
 export const TURQUOISE = "#379390";

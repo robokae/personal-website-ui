@@ -12,6 +12,9 @@ import {
 } from "../../../constants/StyleConstants";
 import {
   LIGHT_BLUE,
+  LIGHT_NAVY_BLUE,
+  LIGHT_TURQUOISE,
+  MEDIUM_BLUE,
   PURPLE,
   TURQUOISE,
 } from "../../../constants/ColorConstants";
@@ -77,7 +80,7 @@ const ListItem = styled.li`
 const Experience = ({ data }) => {
   const testLargeWindowSize = () => window.innerWidth <= 992;
   const { headings, subHeadings, text, listContent } = data;
-  const cardHeadingColors = [TURQUOISE, PURPLE, LIGHT_BLUE];
+  const cardHeadingColors = [LIGHT_TURQUOISE, LIGHT_NAVY_BLUE, MEDIUM_BLUE];
 
   const [displayCarousel, setDisplayCarousel] = useState(testLargeWindowSize);
 

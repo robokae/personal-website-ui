@@ -4,7 +4,7 @@ export const MEDIA_QUERY_BREAKPOINT_LG = "992px";
 export const MEDIA_QUERY_BREAKPOINT_MED = "768px";
 export const MEDIA_QUERY_BREAKPOINT_SM = "576px";
 
-export const CONTENT_MAX_WIDTH = "1200px";
+export const CONTENT_MAX_WIDTH = "1280px";
 
 // Grid
 export const MAX_GRID_ELEMENTS_PER_ROW = 4;
@@ -13,6 +13,7 @@ export const MAX_GRID_ELEMENTS_PER_ROW = 4;
 export const SMALL_GAP = ".5rem";
 export const MEDIUM_GAP = "1.75rem";
 export const LARGE_GAP = "3rem";
+export const X_LARGE_GAP = "5rem";
 
 // Padding
 export const X_LARGE_PADDING = "5rem";

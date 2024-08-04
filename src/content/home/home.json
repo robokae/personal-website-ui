@@ -54,7 +54,7 @@
         {
             "title": "reflection",
             "content": {
-                "headings": ["Love for Design and Technology"],
+                "headings": ["A Tale of Two Passions, Design and Technology"],
                 "subHeadings": [],
                 "text": ["Growing up, I was fascinated with computers. At the same time, I also enjoyed making art and building stuff out of Legos and paper. Software development combines my love of computers, art, and building things, providing me with a canvas to design and create applications with elegant user interfaces."],
                 "images": [],
@@ -66,7 +66,7 @@
         {
             "title": "experience",
             "content": {
-                "headings": ["My Experience"],
+                "headings": ["2+ Years of Experience Developing Enterprise Applications"],
                 "subHeadings": ["Frontend", "Backend", "Cloud"],
                 "text": [
                     "3 years of frontend development experience working with", 
