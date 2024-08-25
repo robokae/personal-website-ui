@@ -5,46 +5,17 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useState } from "react";
-import styled, { css } from "styled-components";
-import styles from "./Carousel.module.scss";
 import { scrollConfig } from "../../config/ScrollConfig";
-
-const ActionButton = styled.button`
-  color: ${({ theme }) => theme.secondaryFontCol};
-  ${(props) =>
-    props.active &&
-    css`
-      cursor: pointer;
-      opacity: 1;
-    `};
-`;
-
-const SlideContainer = styled.div`
-  ${(props) =>
-    props.paddingX &&
-    css`
-      &:first-child {
-        padding-left: ${props.paddingX};
-      }
-
-      &:last-child {
-        padding-right: ${props.paddingX};
-      }
-    `};
-  ${(props) =>
-    props.enableScroll &&
-    css`
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-    `};
-`;
-
-const SlideIndicator = styled(FontAwesomeIcon)`
-  color: ${(props) =>
-    props.active
-      ? ({ theme }) => theme.accentCol
-      : ({ theme }) => theme.lineCol};
-`;
+import {
+  ActionButton,
+  Bottom,
+  Container,
+  Slide,
+  SlideContainer,
+  SlideIndicator,
+  SlideIndicatorContainer,
+  Top,
+} from "./Carousel.styles";
 
 const Carousel = (props) => {
   const slides = props.children;
@@ -79,10 +50,9 @@ const Carousel = (props) => {
   };
 
   const getSlideIndicator = () => (
-    <div className={styles.slideIndicatorContainer}>
+    <SlideIndicatorContainer>
       {props.children.map((_, index) => (
         <SlideIndicator
-          className={styles.slideIndicator}
           key={index}
           fixedWidth
           icon={faCircle}
@@ -90,31 +60,29 @@ const Carousel = (props) => {
           onClick={() => handleSlideIndicatorClick(index)}
         />
       ))}
-    </div>
+    </SlideIndicatorContainer>
   );
 
   return (
-    <div className={styles.container}>
-      <div className={styles.top}>
+    <Container>
+      <Top>
         <SlideContainer
           paddingX={props.paddingX}
           enableScroll={props.enableScroll}
-          className={styles.slideContainer}
           onWheel={props.enableScroll && handleScroll}
         >
           {slides.map((item, index) => (
-            <div className={styles.slide} key={index} ref={refs.current[index]}>
+            <Slide key={index} ref={refs.current[index]}>
               {item}
-            </div>
+            </Slide>
           ))}
         </SlideContainer>
-      </div>
+      </Top>
 
-      <div className={styles.bottom}>
+      <Bottom>
         {props.displayArrows ? (
           <>
             <ActionButton
-              className={styles.actionButton}
               active={slideIndex !== 0}
               onClick={handleLeftArrowClick}
             >
@@ -122,7 +90,6 @@ const Carousel = (props) => {
             </ActionButton>
             {getSlideIndicator()}
             <ActionButton
-              className={styles.actionButton}
               active={slideIndex !== slides.length - 1}
               onClick={handleRightArrowClick}
             >
@@ -132,8 +99,8 @@ const Carousel = (props) => {
         ) : (
           getSlideIndicator()
         )}
-      </div>
-    </div>
+      </Bottom>
+    </Container>
   );
 };
 
