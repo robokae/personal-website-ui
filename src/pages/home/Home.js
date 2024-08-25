@@ -3,7 +3,7 @@ import { PageContentLayout } from "../../components/layout/Layout";
 import Hero from "./sections/Hero";
 import Overview from "./sections/Overview";
 import Reflection from "./Reflection";
-import Experience from "./sections/Experience";
+import Experience from "./sections/experience/Experience";
 
 const getSectionData = (sections, sectionName) => {
   return sections.find((section) => section.title === sectionName)?.content;

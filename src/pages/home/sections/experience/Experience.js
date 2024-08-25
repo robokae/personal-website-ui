@@ -1,81 +1,29 @@
-import styled from "styled-components";
-import Card from "../../../components/card/Card";
+import Card from "../../../../components/card/Card";
 import {
   ContentLayout,
   SectionLayout,
-} from "../../../components/layout/Layout";
-import Typography from "../../../components/typography/Typography";
+} from "../../../../components/layout/Layout";
+import Typography from "../../../../components/typography/Typography";
 import {
-  BORDER_RADIUS,
   CARD_TITLE_HTML_TAG,
   SECTION_TITLE_HTML_TAG,
-} from "../../../constants/StyleConstants";
+} from "../../../../constants/StyleConstants";
 import {
-  LIGHT_BLUE,
   LIGHT_NAVY_BLUE,
   LIGHT_TURQUOISE,
   MEDIUM_BLUE,
-  PURPLE,
-  TURQUOISE,
-} from "../../../constants/ColorConstants";
+} from "../../../../constants/ColorConstants";
 import { useState } from "react";
 import { useEffect } from "react";
-import Carousel from "../../../components/carousel/Carousel";
+import Carousel from "../../../../components/carousel/Carousel";
+import { CAROUSEL_PADDING } from "../../../../constants/LayoutConstants";
 import {
-  CARD_PADDING,
-  CAROUSEL_PADDING,
-  MEDIA_QUERY_BREAKPOINT_LG,
-  MEDIUM_GAP,
-} from "../../../constants/LayoutConstants";
-
-const CardLayout = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  gap: ${MEDIUM_GAP};
-  position: relative;
-
-  & > * {
-    height: auto;
-  }
-`;
-
-const CardHeader = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: ${CARD_PADDING};
-  background-color: ${(props) => props.backgroundColor};
-  border-radius: ${BORDER_RADIUS} ${BORDER_RADIUS} 0 0;
-
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
-    padding: 0.5rem 0;
-    flex-direction: column;
-    align-items: flex-start;
-
-    & > ${CARD_TITLE_HTML_TAG} {
-      font-size: 1.25rem;
-    }
-  }
-`;
-
-const CardContent = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: ${CARD_PADDING};
-  gap: ${MEDIUM_GAP};
-`;
-
-const ListItem = styled.li`
-  list-style: none;
-  padding: 1rem;
-
-  :not(:last-child) {
-    border-bottom: 1px solid ${({ theme }) => theme.lineCol};
-  }
-`;
+  CardContent,
+  CardHeader,
+  CardLayout,
+  List,
+  ListItem,
+} from "./Experience.styles";
 
 const Experience = ({ data }) => {
   const testLargeWindowSize = () => window.innerWidth <= 992;
@@ -107,11 +55,11 @@ const Experience = ({ data }) => {
           </CardHeader>
           <CardContent>
             <Typography>{text[index]}</Typography>
-            <ul>
+            <List>
               {listContent[index].map((listItem, index) => (
                 <ListItem key={index}>{listItem}</ListItem>
               ))}
-            </ul>
+            </List>
           </CardContent>
         </Card>
       );
