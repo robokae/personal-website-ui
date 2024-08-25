@@ -7,7 +7,6 @@ import {
   ENABLE_THEME,
 } from "../../../constants/AppConstants";
 import Icon from "../../icon/Icon";
-import { getIcon } from "../../../util/IconUtil";
 import { useDispatch, useSelector } from "react-redux";
 import {
   disableTransparentHeader,
@@ -18,6 +17,8 @@ import {
 import { toggle } from "../../../features/hamburgerMenuSlice";
 import { Container, LinkContainer, Logo, MenuIcon, Nav } from "./Header.styles";
 import { TRANSITION_DURATION_MS } from "../../../constants/StyleConstants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function Header({ logo, links, theme, onChangeTheme, changeBgOnScroll }) {
   const displayHamburgerMenu = useSelector(
@@ -88,7 +89,11 @@ function Header({ logo, links, theme, onChangeTheme, changeBgOnScroll }) {
         <MenuIcon onClick={handleMenuClick}>
           <Icon
             icon={
-              displayHamburgerMenu ? getIcon("times") : getIcon("hamburgerMenu")
+              displayHamburgerMenu ? (
+                <FontAwesomeIcon icon={faTimes} fixedWidth />
+              ) : (
+                <FontAwesomeIcon icon={faBars} fixedWidth />
+              )
             }
             color={({ theme }) => theme.primaryFontCol}
             clickable

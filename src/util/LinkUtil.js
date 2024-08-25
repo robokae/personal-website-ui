@@ -1,9 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import { Link } from "../components/Link";
-import { ICON, ICONTEXT, TEXT } from "../constants/AppConstants";
-import Icon from "../components/icon/Icon";
-import { getIcon } from "./IconUtil";
+import { ICONTEXT, TEXT } from "../constants/AppConstants";
 
 const IconTextLink = styled(Link)`
   display: flex;
@@ -32,17 +30,6 @@ export const getLinkFromJson = (linkJson, linkColor) => {
     return null;
   }
   switch (linkType.toLowerCase()) {
-    case ICON:
-      return (
-        <Link
-          key={linkJson.id}
-          id={linkJson.tooltip.anchorId}
-          to={linkJson.to}
-          $textColor={linkColor}
-        >
-          <Icon icon={getIcon(linkJson.icon)} color={linkColor} />
-        </Link>
-      );
     case TEXT:
       return (
         <Link key={linkJson.id} to={linkJson.to} $textColor={linkColor}>

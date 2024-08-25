@@ -15,12 +15,12 @@ import {
   NAVY_BLUE,
   TURQUOISE,
 } from "../../../constants/ColorConstants";
-import { getIcon } from "../../../util/IconUtil";
 import {
   CARD_PADDING,
   MEDIA_QUERY_BREAKPOINT_SM,
   MEDIUM_GAP,
 } from "../../../constants/LayoutConstants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ResponsiveCard = styled.div.attrs({
   className: "Overview__responsiveCard ",
@@ -58,7 +58,12 @@ const Overview = ({ data }) => {
                     color={ICON_COLOR}
                     padding="1rem"
                     fontSize={ICON_SIZE}
-                    icon={getIcon(icons[index].name)}
+                    icon={
+                      <FontAwesomeIcon
+                        icon={[icons[index].style, icons[index].name]}
+                        fixedWidth
+                      />
+                    }
                   />
                   <Typography width="85%">{cardText}</Typography>
                 </Card>

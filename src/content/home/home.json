@@ -28,22 +28,22 @@
                 "icons": [
                     {
                         "type": "fontawesome",
-                        "family": "fas",
+                        "style": "fas",
                         "name": "terminal"
                     },
                     {
                         "type": "fontawesome",
-                        "family": "fas",
+                        "style": "fas",
                         "name": "code"
                     },
                     {
                         "type": "fontawesome",
-                        "family": "fas",
+                        "style": "fas",
                         "name": "heart"
                     },
                     {
                         "type": "fontawesome",
-                        "family": "fas",
+                        "style": "fas",
                         "name": "book"
                     }
                 ],
