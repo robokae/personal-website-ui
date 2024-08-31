@@ -1,10 +1,7 @@
+import { Breakpoint, Layout } from "constants/layout";
 import styled from "styled-components";
-import {
-  MAX_GRID_ELEMENTS_PER_ROW,
-  MEDIA_QUERY_BREAKPOINT_SM,
-  MEDIA_QUERY_BREAKPOINT_XL,
-  MEDIUM_GAP,
-} from "../../constants/LayoutConstants";
+
+const MAX_GRID_ELEMENTS_PER_ROW = 4;
 
 const StyledGrid = styled.div`
   width: 100%;
@@ -16,14 +13,14 @@ const StyledGrid = styled.div`
         : props.size},
     1fr
   );
-  gap: ${(props) => (props.gap ? props.gap : MEDIUM_GAP)};
+  gap: ${(props) => (props.gap ? props.gap : Layout.GAP_MD)};
   grid-auto-rows: 1fr;
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_XL}) {
+  @media ${Breakpoint.LAPTOP_LG} {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+  @media ${Breakpoint.MOBILE_LG} {
     grid-template-columns: 1fr;
   }
 `;

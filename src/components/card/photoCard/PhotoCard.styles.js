@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { BORDER_RADIUS, CARD_PADDING } from "../../../constants/StyleConstants";
+import { Style } from "constants/style";
+import { Layout } from "constants/layout";
 
 export const Container = styled.div`
   display: flex;
@@ -7,7 +8,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.secondaryBgCol};
-  border-radius: ${BORDER_RADIUS};
+  border-radius: ${Style.BORDER_RADIUS};
   box-shadow: ${({ theme }) => theme.boxShadow};
 `;
 
@@ -23,7 +24,7 @@ export const GraphicsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: ${BORDER_RADIUS};
+  border-radius: ${Style.BORDER_RADIUS};
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 `;
@@ -49,7 +50,7 @@ export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: ${CARD_PADDING};
+  padding: ${Layout.CARD_PADDING};
   padding-top: 1rem;
 `;
 

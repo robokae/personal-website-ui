@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { LIGHT } from "../../constants/AppConstants";
-import { BORDER_RADIUS } from "../../constants/StyleConstants";
+import { BORDER_RADIUS } from "constants/style";
 import Icon from "../icon/Icon";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 const Button = styled.button`
   background-color: transparent;
@@ -11,7 +11,7 @@ const Button = styled.button`
 `;
 
 function ThemeSwitcher({ onChangeTheme, theme, isBgTransparent }) {
-  const iconName = theme === LIGHT ? "MOON_ICON" : "SUN_ICON";
+  const iconName = theme === "light" ? faMoon : faSun;
 
   return (
     <Button id="theme-switcher" onClick={onChangeTheme}>

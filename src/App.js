@@ -21,14 +21,13 @@ import Login from "./pages/Login";
 import Admin from "./pages/admin/Admin";
 import CreatePost from "./pages/admin/CreatePost";
 import EditPost from "./pages/admin/EditPost";
-import { FONT_FAMILIES } from "./constants/TypographyConstants";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import HomeLayout from "./components/layout/HomeLayout";
 import useTheme from "./hooks/useTheme";
-import { LIGHT } from "./constants/AppConstants";
 import Error from "./pages/Error";
+import { Typography } from "constants/typography";
 // import About from "./pages/about/About";
 // import About from "./pages/about/About";
 
@@ -38,7 +37,7 @@ function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: FONT_FAMILIES,
+        families: Typography.FONT_FAMILIES,
       },
     });
   }, []);
@@ -98,7 +97,7 @@ function App() {
   );
 
   return (
-    <ThemeProvider theme={theme === LIGHT ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <RouterProvider router={router} />
       <GlobalStyles />
     </ThemeProvider>

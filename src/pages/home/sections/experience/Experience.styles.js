@@ -1,20 +1,14 @@
 import styled from "styled-components";
-import {
-  CARD_PADDING,
-  MEDIA_QUERY_BREAKPOINT_LG,
-  MEDIUM_GAP,
-} from "../../../../constants/LayoutConstants";
-import {
-  BORDER_RADIUS,
-  CARD_TITLE_HTML_TAG,
-} from "../../../../constants/StyleConstants";
+import { Breakpoint, Layout } from "constants/layout";
+import { Style } from "constants/style";
+import { Typography } from "constants/typography";
 
 export const CardLayout = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
-  gap: ${MEDIUM_GAP};
+  gap: ${Layout.GAP_MD};
   position: relative;
 
   & > * {
@@ -26,16 +20,16 @@ export const CardHeader = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: ${CARD_PADDING};
+  padding: ${Layout.CARD_PADDING};
   background-color: ${(props) => props.backgroundColor};
-  border-radius: ${BORDER_RADIUS} ${BORDER_RADIUS} 0 0;
+  border-radius: ${Style.BORDER_RADIUS} ${Style.BORDER_RADIUS} 0 0;
 
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_LG}) {
+  @media ${Breakpoint.LAPTOP} {
     padding: 0.5rem 0;
     flex-direction: column;
     align-items: flex-start;
 
-    & > ${CARD_TITLE_HTML_TAG} {
+    & > ${Typography.CARD_TITLE_TAG} {
       font-size: 1.25rem;
     }
   }
@@ -45,8 +39,8 @@ export const CardContent = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: ${CARD_PADDING};
-  gap: ${MEDIUM_GAP};
+  padding: ${Layout.CARD_PADDING};
+  gap: ${Layout.GAP_MD};
 `;
 
 export const List = styled.ul`

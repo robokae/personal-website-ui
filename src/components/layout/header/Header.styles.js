@@ -1,16 +1,11 @@
 import styled, { css } from "styled-components";
-import {
-  CONTENT_MAX_WIDTH,
-  HEADER_HEIGHT,
-  MEDIA_QUERY_BREAKPOINT_MED,
-  MEDIA_QUERY_BREAKPOINT_XL,
-} from "constants/LayoutConstants";
-import { TRANSITION_DURATION } from "constants/StyleConstants";
 import { Link } from "components/Link";
+import { Breakpoint, Layout } from "constants/layout";
+import { Style } from "constants/style";
 
 export const Container = styled.header`
   width: 100%;
-  height: ${HEADER_HEIGHT};
+  height: ${Layout.HEADER_HEIGHT};
   position: fixed;
   top: 0;
   display: flex;
@@ -31,19 +26,19 @@ export const Container = styled.header`
   ${(props) =>
     props.transition &&
     css`
-      transition: all ${TRANSITION_DURATION} ease-in-out;
+      transition: all ${Style.TRANSITION_DURATION} ease-in-out;
     `};
 `;
 
 export const Nav = styled.nav`
-  width: ${CONTENT_MAX_WIDTH};
+  width: ${Layout.CONTENT_MAX_WIDTH};
   height: max-content;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_XL}) {
+  @media ${Breakpoint.LAPTOP_LG} {
     width: 90%;
   }
 `;
@@ -56,7 +51,7 @@ export const LinkContainer = styled.section`
 `;
 
 export const DynamicLink = styled(Link)`
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
+  @media ${Breakpoint.TABLET} {
     display: ${(props) => (props.$display ? "inline-block" : "none")};
   }
 `;
@@ -64,7 +59,7 @@ export const DynamicLink = styled(Link)`
 export const HamburgerMenuButton = styled.div`
   display: none;
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
+  @media ${Breakpoint.TABLET} {
     display: inline-block;
     justify-self: flex-end;
   }

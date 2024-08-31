@@ -1,14 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { CARD_PADDING, BORDER_RADIUS } from "../../../constants/StyleConstants";
+import { Style } from "constants/style";
+import { Layout } from "constants/layout";
 
 export const Container = styled.div`
   height: 100%;
-  padding: ${CARD_PADDING};
+  padding: ${Layout.CARD_PADDING};
   background-color: ${({ theme }) => theme.secondaryBgCol};
   box-shadow: ${({ theme }) => theme.boxShadow};
-  border-radius: ${BORDER_RADIUS};
+  border-radius: ${Style.BORDER_RADIUS};
 `;
 
 export const Content = styled.div`

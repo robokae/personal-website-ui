@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { MEDIA_QUERY_BREAKPOINT_MED } from "../constants/StyleConstants";
 import { BaseLayout, ContentLayout } from "./layout/Layout";
+import { Breakpoint } from "constants/layout";
 
 const JumbotronLayout = styled(BaseLayout)`
   padding: 5rem 0;
@@ -11,12 +11,12 @@ const JumbotronLayout = styled(BaseLayout)`
 const StyledText = styled.p`
   font-size: 2.5rem;
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
+  @media ${Breakpoint.TABLET} {
     font-size: 1.5rem;
   }
 `;
 
-function Jumbotron({ heading, text, callToAction, bgCol }) {
+function Jumbotron({ heading, text, callToAction }) {
   return (
     <JumbotronLayout>
       <ContentLayout>

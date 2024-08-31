@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import header from "../content/layout/header.json";
-import footer from "../content/layout/footer.json";
-import hamburgerMenu from "../content/hamburgerMenu.json";
-import Header from "../components/layout/header/Header";
-import Footer from "../components/footer/Footer";
-import error from "../content/error/error.json";
-import { LinkButton } from "../components/Link";
-import { HEADER_HEIGHT } from "../constants/LayoutConstants";
-import HamburgerMenu from "../components/menu/hamburgerMenu/HamburgerMenu";
+import header from "content/layout/header.json";
+import footer from "content/layout/footer.json";
+import hamburgerMenu from "content/hamburgerMenu.json";
+import Header from "components/layout/header/Header";
+import Footer from "components/footer/Footer";
+import error from "content/error/error.json";
+import { LinkButton } from "components/Link";
+import { Layout } from "constants/layout";
+import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 
 const Container = styled.main`
   display: flex;
@@ -18,7 +18,7 @@ const Container = styled.main`
 
 const ContentContainer = styled.section`
   width: 100%;
-  top: ${HEADER_HEIGHT};
+  top: ${Layout.HEADER_HEIGHT};
   padding-top: 3rem;
   position: absolute;
   display: flex;

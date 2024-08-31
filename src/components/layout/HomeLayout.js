@@ -3,13 +3,13 @@ import styled from "styled-components";
 import header from "content/layout/header.json";
 import footer from "content/layout/footer.json";
 import hamburgerMenu from "content/hamburgerMenu.json";
-import { FOOTER_HEIGHT } from "constants/LayoutConstants";
 import Footer from "components/footer/Footer";
 import Header from "./header/Header";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
+import { Layout } from "constants/layout";
 
 const Container = styled.div`
-  margin-bottom: ${FOOTER_HEIGHT};
+  margin-bottom: ${Layout.FOOTER_HEIGHT};
   width: 100%;
   display: flex;
   flex-direction: column;

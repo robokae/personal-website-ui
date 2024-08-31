@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { DYNAMIC_HEADER_SCROLL_AMOUNT } from "constants/AppConstants";
 import { useDispatch, useSelector } from "react-redux";
 import {
   disableTransparentHeader,
@@ -15,7 +14,6 @@ import {
   LinkContainer,
   Nav,
 } from "./Header.styles";
-import { TRANSITION_DURATION_MS } from "constants/StyleConstants";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/icon/Icon";
 
@@ -26,11 +24,13 @@ function Header({ links, changeBgOnScroll }) {
   const isTransparent = useSelector((state) => state.header.isTransparent);
   const transition = useSelector((state) => state.header.transition);
   const dispatch = useDispatch();
+  const SCROLL_THRESHOLD = 20;
+  const TRANSITION_DURATION_MS = 350;
 
   useEffect(() => {
     if (
       displayHamburgerMenu ||
-      (!displayHamburgerMenu && window.scrollY >= DYNAMIC_HEADER_SCROLL_AMOUNT)
+      (!displayHamburgerMenu && window.scrollY >= SCROLL_THRESHOLD)
     ) {
       dispatch(disableTransparentHeader());
       dispatch(setTransition(false));
@@ -42,7 +42,7 @@ function Header({ links, changeBgOnScroll }) {
 
   const handleScroll = () => {
     if (changeBgOnScroll && !displayHamburgerMenu) {
-      window.scrollY <= DYNAMIC_HEADER_SCROLL_AMOUNT
+      window.scrollY <= SCROLL_THRESHOLD
         ? dispatch(enableTransparentHeader())
         : dispatch(disableTransparentHeader());
     } else {

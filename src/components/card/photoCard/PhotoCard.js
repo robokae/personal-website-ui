@@ -1,10 +1,6 @@
-import {
-  CARD_TITLE_HTML_TAG,
-  GRADIENT_DIRECTIONS,
-} from "../../../constants/StyleConstants";
-import { gradientPalette } from "../../../global/colors";
-import getRandomGradient from "../../../util/GradientGenerator";
-import Typography from "../../typography/Typography";
+import { gradientPalette } from "global/colors";
+import getRandomGradient from "util/GradientGenerator";
+import Typography from "typography/Typography";
 import {
   Container,
   Content,
@@ -14,6 +10,7 @@ import {
   PhotoContainer,
   TextContent,
 } from "./PhotoCard.styles";
+import { Typography as TypographyConstants } from "constants/typography";
 
 function PhotoCard({ content, photo, gradient }) {
   let gradientColors = gradient ? getRandomGradient(gradientPalette) : null;
@@ -25,10 +22,10 @@ function PhotoCard({ content, photo, gradient }) {
             <GradientContainer
               $gradientLeft={gradientColors.colorLeft}
               $gradientRight={gradientColors.colorRight}
-              $gradientDirection={GRADIENT_DIRECTIONS.TO_RIGHT}
+              $gradientDirection="to right"
             >
               {photo}
-              <Typography tag={CARD_TITLE_HTML_TAG}>
+              <Typography tag={TypographyConstants.CARD_TITLE_TAG}>
                 {content.heading}
               </Typography>
             </GradientContainer>

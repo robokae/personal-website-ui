@@ -1,16 +1,11 @@
-import {
-  ContentLayout,
-  SectionLayout,
-} from "../../../components/layout/Layout";
+import { ContentLayout, SectionLayout } from "components/layout/Layout";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Icon from "../../../components/icon/Icon";
-import {
-  MEDIA_QUERY_BREAKPOINT_SM,
-  SECTION_TITLE_HTML_TAG,
-} from "../../../constants/StyleConstants";
-import { getIcon } from "../../../util/IconUtil";
-import Typography from "../../../components/typography/Typography";
+import Icon from "components/icon/Icon";
+import { Breakpoint } from "constants/layout";
+import { getIcon } from "util/IconUtil";
+import Typography from "components/typography/Typography";
+import { Typography as TypographyConstants } from "constants/typography";
 
 const DetailsContainer = styled.div`
   display: flex;
@@ -38,7 +33,7 @@ const ContactInfoContainer = styled.div`
   justify-content: center;
   gap: 3rem;
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+  @media ${Breakpoint.MOBILE_LG} {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
@@ -49,7 +44,10 @@ function Contact({ content }) {
   return (
     <SectionLayout id="contact">
       <ContentLayout>
-        <Typography tag={SECTION_TITLE_HTML_TAG} textAlign="center">
+        <Typography
+          tag={TypographyConstants.SECTION_TITLE_TAG}
+          textAlign="center"
+        >
           {content.heading}
         </Typography>
         <DetailsContainer>

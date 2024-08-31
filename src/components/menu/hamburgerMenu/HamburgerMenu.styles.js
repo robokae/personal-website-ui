@@ -1,9 +1,9 @@
+import { Layout } from "constants/layout";
 import styled from "styled-components";
-import { HEADER_HEIGHT } from "constants/LayoutConstants";
 
 export const Container = styled.div`
-  height: calc(100vh - ${HEADER_HEIGHT});
-  top: ${HEADER_HEIGHT};
+  height: calc(100vh - ${Layout.HEADER_HEIGHT});
+  top: ${Layout.HEADER_HEIGHT};
   display: ${(props) => (props.display ? "block" : "none")};
   width: 100vw;
   position: fixed;

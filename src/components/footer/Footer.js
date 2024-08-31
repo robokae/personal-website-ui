@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { getYear } from "../../util/DateUtil";
-import { FOOTER_HEIGHT } from "../../constants/LayoutConstants";
 import styles from "./Footer.module.scss";
+import { Layout } from "constants/layout";
 
 const Container = styled.div`
-  height: ${FOOTER_HEIGHT};
+  height: ${Layout.FOOTER_HEIGHT};
   border-top: 1px solid ${({ theme }) => theme.lineCol};
 `;
 

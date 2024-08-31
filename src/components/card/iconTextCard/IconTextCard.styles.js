@@ -1,9 +1,5 @@
+import { Breakpoint, Layout } from "constants/layout";
 import styled, { css } from "styled-components";
-import {
-  MEDIA_QUERY_BREAKPOINT_SM,
-  MED_GAP,
-  SMALL_GAP,
-} from "../../../constants/StyleConstants";
 
 const baseStyles = css`
   display: flex;
@@ -17,16 +13,16 @@ const baseStyles = css`
 export const IconContainer = styled.div`
   ${baseStyles}
   flex-direction: row;
-  gap: ${SMALL_GAP};
+  gap: ${Layout.GAP_SM};
 `;
 
 export const Content = styled.div`
   ${baseStyles}
   width: 100%;
   height: 100%;
-  gap: ${MED_GAP};
+  gap: ${Layout.GAP_MD};
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+  @media ${Breakpoint.MOBILE_LG} {
     display: grid;
     grid-template-columns: 1fr 5fr;
     text-align: left;

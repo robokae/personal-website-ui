@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { Link } from "../components/Link";
-import { ICONTEXT, TEXT } from "../constants/AppConstants";
+import { Link } from "components/Link";
+import { ICONTEXT, TEXT } from "constants/icon";
 
 const IconTextLink = styled(Link)`
   display: flex;

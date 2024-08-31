@@ -1,7 +1,7 @@
-import { MED_ICON_SIZE } from "../../../constants/StyleConstants";
-import Icon from "../../icon/Icon";
-import Card from "../Card";
+import { IconSize } from "constants/style";
 import { Content, IconContainer } from "./IconTextCard.styles";
+import Card from "../Card";
+import Icon from "components/icon/Icon";
 
 function IconTextCard({
   horizontalAlign,
@@ -31,7 +31,7 @@ function IconTextCard({
                 icon={icon}
                 color={iconCol}
                 background={iconBackground}
-                size={MED_ICON_SIZE}
+                size={IconSize.SIZE_MD}
               />
             ))}
           </IconContainer>

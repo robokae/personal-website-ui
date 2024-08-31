@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { DARK, LIGHT, THEME } from "../constants/AppConstants";
+
+const THEME = "theme";
+const DARK = "dark";
+const LIGHT = "light";
 
 const useTheme = () => {
   const [theme, setTheme] = useState(DARK);

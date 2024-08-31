@@ -1,8 +1,5 @@
 import styled from "styled-components";
-import {
-  MONOSPACE_FONT,
-  REGULAR_FONT,
-} from "../../constants/TypographyConstants";
+import { Typography } from "constants/typography";
 import {
   BACKGROUND_GRADIENT_LEFT_COLOR,
   BACKGROUND_GRADIENT_RIGHT_COLOR,
@@ -27,7 +24,7 @@ const Container = styled.div`
   border: 1px solid ${BORDER_COLOR};
   border-radius: 0.5rem 0.5rem 0 0;
   border-bottom: none;
-  font-family: ${MONOSPACE_FONT}, monospace;
+  font-family: ${Typography.MONOSPACE_FONT}, monospace;
   display: flex;
   flex-direction: column;
 `;
@@ -59,7 +56,7 @@ const TitleBarName = styled.p`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-family: ${REGULAR_FONT};
+  font-family: ${Typography.DEFAULT_FONT};
   color: ${TITLE_BAR_FONT_COLOR};
 `;
 

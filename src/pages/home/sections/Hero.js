@@ -1,19 +1,9 @@
 import styled from "styled-components";
-import { HeroLayout } from "../../../components/layout/Layout";
-import Typography from "../../../components/typography/Typography";
-import { SUBHEADING_HTML_TAG } from "../../../constants/StyleConstants";
-import {
-  HEADER_HEIGHT,
-  MEDIA_QUERY_BREAKPOINT_SM,
-  MEDIUM_GAP,
-} from "../../../constants/LayoutConstants";
-import DeveloperSetup from "../../../components/illustrations/DeveloperSetup.svg";
-import {
-  CENTER,
-  H1,
-  NORMAL,
-  TEXT_SHADOW,
-} from "../../../constants/TypographyConstants";
+import { HeroLayout } from "components/layout/Layout";
+import Typography from "components/typography/Typography";
+import { Breakpoint, Layout } from "constants/layout";
+import DeveloperSetup from "components/illustrations/DeveloperSetup.svg";
+import { Typography as TypographyConstants } from "constants/typography";
 
 const HeroContainer = styled(HeroLayout)`
   background: #527c85;
@@ -21,7 +11,7 @@ const HeroContainer = styled(HeroLayout)`
   display: flex;
   justify-content: center;
 
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+  @media ${Breakpoint.MOBILE_LG} {
     height: 60vh;
   }
 `;
@@ -30,7 +20,7 @@ const HeadingContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto;
-  gap: ${MEDIUM_GAP};
+  gap: ${Layout.GAP_MD};
 `;
 
 const Content = styled.div`
@@ -42,10 +32,10 @@ const Content = styled.div`
 `;
 
 const Image = styled.img`
-  height: calc((80vh - ${HEADER_HEIGHT}) / 2);
+  height: calc((80vh - ${Layout.HEADER_HEIGHT}) / 2);
 
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
-    height: calc((60vh - ${HEADER_HEIGHT}) / 2);
+  @media ${Breakpoint.MOBILE_LG} {
+    height: calc((60vh - ${Layout.HEADER_HEIGHT}) / 2);
   }
 `;
 
@@ -57,9 +47,9 @@ const Hero = ({ data }) => {
           <>
             {data.headings.map((line, index) => (
               <Typography
-                tag={H1}
-                textAlign={CENTER}
-                textShadow={TEXT_SHADOW}
+                tag={TypographyConstants.H1}
+                textAlign="center"
+                textShadow={TypographyConstants.TEXT_SHADOW}
                 key={index}
               >
                 {line}
@@ -69,10 +59,10 @@ const Hero = ({ data }) => {
           {data.subHeadings.map((line, index) => (
             <Typography
               key={index}
-              tag={SUBHEADING_HTML_TAG}
-              textShadow={TEXT_SHADOW}
-              textAlign={CENTER}
-              fontWeight={NORMAL}
+              tag={TypographyConstants.SUBHEADING_TAG}
+              textShadow={TypographyConstants.TEXT_SHADOW}
+              textAlign="center"
+              fontWeight="normal"
             >
               {line}
             </Typography>

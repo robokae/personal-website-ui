@@ -8,12 +8,12 @@ import {
   Overlay,
 } from "./HamburgerMenu.styles";
 import { setTransition } from "features/headerSlice";
-import { TRANSITION_DURATION_MS } from "constants/StyleConstants";
 import { Link } from "components/Link";
 
 function HamburgerMenu({ links }) {
   const display = useSelector((state) => state.hamburgerMenu.display);
   const dispatch = useDispatch();
+  const TRANSITION_DURATION_MS = 350;
 
   const closeMenu = () => {
     // Disable transition effect when closing menu

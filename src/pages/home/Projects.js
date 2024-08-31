@@ -1,14 +1,11 @@
-import CallToActionCard from "../../components/card/callToActionCard/CallToActionCard";
+import CallToActionCard from "components/card/callToActionCard/CallToActionCard";
 import styled from "styled-components";
-import {
-  MEDIA_QUERY_BREAKPOINT_SM,
-  MED_GAP,
-  SECTION_TITLE_HTML_TAG,
-} from "../../constants/StyleConstants";
-import { ContentLayout, SectionLayout } from "../../components/layout/Layout";
+import { ContentLayout, SectionLayout } from "components/layout/Layout";
 import { useState } from "react";
-import HorizontalCategoryPanel from "../../components/menu/HorizontalCategoryPanel";
-import Typography from "../../components/typography/Typography";
+import HorizontalCategoryPanel from "components/menu/HorizontalCategoryPanel";
+import Typography from "components/typography/Typography";
+import { Breakpoint, Layout } from "constants/layout";
+import { Typography as TypographyConstants } from "constants/typography";
 
 const StyledSection = styled(SectionLayout)``;
 
@@ -16,16 +13,16 @@ const MainContent = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: calc(${MED_GAP} * 1.5);
+  gap: calc(${Layout.GAP_MD} * 1.5);
 `;
 
 const CardLayout = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: ${MED_GAP};
+  gap: ${Layout.GAP_MD};
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+  @media ${Breakpoint.MOBILE_LG} {
     gap: 1rem;
   }
 `;
@@ -44,7 +41,10 @@ function Projects({ heading, content }) {
   return (
     <StyledSection>
       <ContentLayout>
-        <Typography tag={SECTION_TITLE_HTML_TAG} textAlign="center">
+        <Typography
+          tag={TypographyConstants.SECTION_TITLE_TAG}
+          textAlign="center"
+        >
           {heading}
         </Typography>
         <MainContent>

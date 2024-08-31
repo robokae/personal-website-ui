@@ -1,11 +1,5 @@
+import { Breakpoint, Layout } from "constants/layout";
 import styled from "styled-components";
-import {
-  CONTENT_MAX_WIDTH,
-  FOOTER_HEIGHT,
-  HEADER_HEIGHT,
-  MEDIA_QUERY_BREAKPOINT_XL,
-  SECTION_PADDING,
-} from "../../constants/LayoutConstants";
 
 export const BaseLayout = styled.div`
   width: 100%;
@@ -15,22 +9,22 @@ export const BaseLayout = styled.div`
 `;
 
 export const PageContentLayout = styled(BaseLayout)`
-  margin-top: ${HEADER_HEIGHT};
-  margin-bottom: ${FOOTER_HEIGHT};
+  margin-top: ${Layout.HEADER_HEIGHT};
+  margin-bottom: ${Layout.FOOTER_HEIGHT};
 `;
 
 export const ContentLayout = styled(BaseLayout)`
   width: 100%;
-  max-width: ${CONTENT_MAX_WIDTH};
+  max-width: ${Layout.CONTENT_MAX_WIDTH};
 
-  @media (max-width: ${MEDIA_QUERY_BREAKPOINT_XL}) {
+  @media ${Breakpoint.LAPTOP_LG} {
     width: 90%;
   }
 `;
 
 export const HeroLayout = styled(BaseLayout)`
-  margin-top: -${HEADER_HEIGHT};
-  padding: ${SECTION_PADDING} 0;
+  margin-top: -${Layout.HEADER_HEIGHT};
+  padding: ${Layout.SECTION_PADDING} 0;
   padding-bottom: 0;
 `;
 
@@ -39,7 +33,7 @@ export const SectionLayout = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${SECTION_PADDING} 0;
+  padding: ${Layout.SECTION_PADDING} 0;
   gap: 3.5rem;
   position: relative;
 `;

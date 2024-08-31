@@ -4,23 +4,12 @@ import Icon from "components/icon/Icon";
 import Grid from "components/layout/Grid";
 import { ContentLayout, SectionLayout } from "components/layout/Layout";
 import Typography from "components/typography/Typography";
-import { ICON_SIZE } from "constants/StyleConstants";
-import {
-  LIGHT_BLUE,
-  LIGHT_GREEN,
-  LIGHT_PURPLE,
-  NAVY_BLUE,
-  TURQUOISE,
-} from "constants/ColorConstants";
-import {
-  CARD_PADDING,
-  MEDIA_QUERY_BREAKPOINT_SM,
-  MEDIUM_GAP,
-} from "constants/LayoutConstants";
+import { Color } from "constants/color";
+import { Breakpoint, Layout } from "constants/layout";
 
 const ResponsiveCard = styled.div`
   & > * {
-    @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
+    @media ${Breakpoint.MOBILE_LG} {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -31,22 +20,22 @@ const ResponsiveCard = styled.div`
 
 const Overview = ({ data }) => {
   const { text, icons } = data;
-  const ICON_COLOR = NAVY_BLUE;
+  const ICON_COLOR = Color.NAVY_BLUE;
   const ICON_BACKGROUND_COLORS = [
-    LIGHT_PURPLE,
-    TURQUOISE,
-    LIGHT_BLUE,
-    LIGHT_GREEN,
+    Color.LIGHT_PURPLE,
+    Color.TURQUOISE,
+    Color.LIGHT_BLUE,
+    Color.LIGHT_GREEN,
   ];
 
   return (
     <SectionLayout>
       <ContentLayout>
-        <Grid gap={MEDIUM_GAP} size={text.length}>
+        <Grid gap={Layout.MEDIUM_GAP} size={text.length}>
           {text.map((cardText, index) => {
             return (
               <ResponsiveCard key={index}>
-                <Card padding={CARD_PADDING}>
+                <Card padding={Layout.CARD_PADDING}>
                   <Icon
                     name={icons[index]}
                     backgroundColor={ICON_BACKGROUND_COLORS[index]}

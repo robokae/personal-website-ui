@@ -1,22 +1,12 @@
-import Card from "../../../../components/card/Card";
-import {
-  ContentLayout,
-  SectionLayout,
-} from "../../../../components/layout/Layout";
-import Typography from "../../../../components/typography/Typography";
-import {
-  CARD_TITLE_HTML_TAG,
-  SECTION_TITLE_HTML_TAG,
-} from "../../../../constants/StyleConstants";
-import {
-  LIGHT_NAVY_BLUE,
-  LIGHT_TURQUOISE,
-  MEDIUM_BLUE,
-} from "../../../../constants/ColorConstants";
+import Card from "components/card/Card";
+import { ContentLayout, SectionLayout } from "components/layout/Layout";
+import Typography from "components/typography/Typography";
+import { Color } from "constants/color";
 import { useState } from "react";
 import { useEffect } from "react";
-import Carousel from "../../../../components/carousel/Carousel";
-import { CAROUSEL_PADDING } from "../../../../constants/LayoutConstants";
+import Carousel from "components/carousel/Carousel";
+import { Layout } from "constants/layout";
+import { Typography as TypographyConstants } from "constants/typography";
 import {
   CardContent,
   CardHeader,
@@ -28,7 +18,11 @@ import {
 const Experience = ({ data }) => {
   const testLargeWindowSize = () => window.innerWidth <= 992;
   const { headings, subHeadings, text, listContent } = data;
-  const cardHeadingColors = [LIGHT_TURQUOISE, LIGHT_NAVY_BLUE, MEDIUM_BLUE];
+  const cardHeadingColors = [
+    Color.LIGHT_TURQUOISE,
+    Color.LIGHT_NAVY_BLUE,
+    Color.MEDIUM_BLUE,
+  ];
 
   const [displayCarousel, setDisplayCarousel] = useState(testLargeWindowSize);
 
@@ -49,7 +43,10 @@ const Experience = ({ data }) => {
       return (
         <Card key={index} padding={0} gap={0}>
           <CardHeader backgroundColor={cardHeadingColors[index]}>
-            <Typography textAlign="center" tag={CARD_TITLE_HTML_TAG}>
+            <Typography
+              textAlign="center"
+              tag={TypographyConstants.CARD_TITLE_TAG}
+            >
               {subHeading}
             </Typography>
           </CardHeader>
@@ -67,7 +64,11 @@ const Experience = ({ data }) => {
   };
 
   const heading = headings.map((line, index) => (
-    <Typography key={index} tag={SECTION_TITLE_HTML_TAG} textAlign="center">
+    <Typography
+      key={index}
+      tag={TypographyConstants.SECTION_TITLE_TAG}
+      textAlign="center"
+    >
       {line}
     </Typography>
   ));
@@ -76,7 +77,7 @@ const Experience = ({ data }) => {
     <SectionLayout>
       {heading}
       {displayCarousel ? (
-        <Carousel displayArrows paddingX={CAROUSEL_PADDING}>
+        <Carousel displayArrows paddingX={Layout.CAROUSEL_PADDING}>
           {getCards()}
         </Carousel>
       ) : (

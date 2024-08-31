@@ -1,8 +1,5 @@
 import { useState } from "react";
-import {
-  CARD_TITLE_HTML_TAG,
-  RIGHT_CHEVRON_ICON,
-} from "../../../constants/StyleConstants";
+import { Typography as TypographyConstants } from "constants/typography";
 import {
   AnimatedIcon,
   Container,
@@ -12,7 +9,8 @@ import {
   Tag,
   TagContainer,
 } from "./CallToActionCard.styles";
-import Typography from "../../typography/Typography";
+import Typography from "typography/Typography";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 /**
  * Text card with optional tags and up to two CTA links
@@ -26,7 +24,9 @@ function CallToActionCard({ heading, tags, description, links }) {
   return (
     <Container>
       <Content>
-        <Typography tag={CARD_TITLE_HTML_TAG}>{heading}</Typography>
+        <Typography tag={TypographyConstants.CARD_TITLE_TAG}>
+          {heading}
+        </Typography>
         <TagContainer>
           {tags.map((e, index) => (
             <Tag key={index}>{e}</Tag>
@@ -48,7 +48,7 @@ function CallToActionCard({ heading, tags, description, links }) {
               <p>{link.title}</p>
               <AnimatedIcon
                 $animate={animateIcon.linkId === index && animateIcon.animate}
-                icon={RIGHT_CHEVRON_ICON}
+                icon={faChevronRight}
               />
             </Link>
           ))}

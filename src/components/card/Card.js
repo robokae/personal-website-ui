@@ -1,25 +1,20 @@
 import styled, { css } from "styled-components";
-import { BORDER_RADIUS } from "../../constants/StyleConstants";
 import React from "react";
-import {
-  CARD_PADDING,
-  MEDIA_QUERY_BREAKPOINT_MED,
-  MEDIUM_GAP,
-  MEDIUM_PADDING,
-} from "../../constants/LayoutConstants";
+import { Style } from "constants/style";
+import { Layout, Breakpoint } from "constants/layout";
 
 const defaultStyles = css`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: ${CARD_PADDING};
-  border-radius: ${BORDER_RADIUS};
+  padding: ${Layout.CARD_PADDING};
+  border-radius: ${Style.BORDER_RADIUS};
   background-color: ${({ theme }) => theme.secondaryBgCol};
-  gap: ${MEDIUM_GAP};
+  gap: ${Layout.GAP_MD};
 
-  @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
-    padding: ${MEDIUM_PADDING};
+  @media ${Breakpoint.TABLET} {
+    padding: ${Layout.PADDING_MD};
   }
 `;
 

@@ -1,16 +1,16 @@
 import styled, { css } from "styled-components";
-import { BORDER_RADIUS, ICON_SIZE } from "constants/StyleConstants";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Style, IconSize } from "constants/style";
 
 const defaultStyles = css`
   width: max-content;
   height: max-content;
-  border-radius: ${BORDER_RADIUS};
+  border-radius: ${Style.BORDER_RADIUS};
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${ICON_SIZE};
+  font-size: ${IconSize.SIZE_SM};
   color: ${({ theme }) => theme.primaryFontCol};
   box-sizing: border-box;
   ${(props) =>
