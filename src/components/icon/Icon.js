@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
-import { BORDER_RADIUS, ICON_SIZE } from "../../constants/StyleConstants";
+import { BORDER_RADIUS, ICON_SIZE } from "constants/StyleConstants";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const defaultStyles = css`
   width: max-content;
@@ -11,8 +12,12 @@ const defaultStyles = css`
   align-items: center;
   font-size: ${ICON_SIZE};
   color: ${({ theme }) => theme.primaryFontCol};
-  cursor: ${(props) => props.clickable && "pointer"};
   box-sizing: border-box;
+  ${(props) =>
+    props.$clickable &&
+    css`
+      cursor: pointer;
+    `}
 `;
 
 const IconContainer = styled(({ children, ...props }) =>
@@ -21,10 +26,10 @@ const IconContainer = styled(({ children, ...props }) =>
   ${defaultStyles};
 `;
 
-const Icon = ({ icon, clickable = false, ...props }) => {
+const Icon = ({ name, clickable, children, ...props }) => {
   return (
-    <IconContainer clickable={clickable} style={{ ...props }}>
-      {icon}
+    <IconContainer $clickable={clickable} style={{ ...props }}>
+      <FontAwesomeIcon icon={name} fixedWidth />
     </IconContainer>
   );
 };

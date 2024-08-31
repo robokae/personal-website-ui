@@ -27,24 +27,22 @@ const ContentContainer = styled.section`
   gap: 2.5rem;
 `;
 
-const { home } = header;
 const { content } = error;
 
 function Error({ theme, onChangeTheme }) {
   return (
     <Container>
       <Header
-        logo={home.logo}
-        links={home.links}
+        links={header.links}
         isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
         changeBgOnScroll={false}
       />
       <HamburgerMenu
+        links={hamburgerMenu.links}
         theme={theme}
         onChangeTheme={onChangeTheme}
-        content={hamburgerMenu.content}
       />
       <ContentContainer>
         <h2>{content.heading}</h2>

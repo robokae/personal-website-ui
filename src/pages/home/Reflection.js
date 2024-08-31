@@ -6,14 +6,13 @@ import {
   LARGE_GAP,
   LARGE_PADDING,
   MEDIA_QUERY_BREAKPOINT_LG,
-  MEDIA_QUERY_BREAKPOINT_MED,
   MEDIUM_PADDING,
   X_LARGE_PADDING,
 } from "../../constants/LayoutConstants";
-import { H4, H5, NORMAL } from "../../constants/TypographyConstants";
+import { H5, NORMAL } from "../../constants/TypographyConstants";
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: max-content;
   background-color: #212d38;
   display: flex;

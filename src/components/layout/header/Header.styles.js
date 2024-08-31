@@ -4,14 +4,11 @@ import {
   HEADER_HEIGHT,
   MEDIA_QUERY_BREAKPOINT_MED,
   MEDIA_QUERY_BREAKPOINT_XL,
-} from "../../../constants/LayoutConstants";
-import { Link } from "../../Link";
-import { LOGO_FONT } from "../../../constants/TypographyConstants";
-import { TRANSITION_DURATION } from "../../../constants/StyleConstants";
+} from "constants/LayoutConstants";
+import { TRANSITION_DURATION } from "constants/StyleConstants";
+import { Link } from "components/Link";
 
-export const Container = styled.header.attrs({
-  className: "Header__container",
-})`
+export const Container = styled.header`
   width: 100%;
   height: ${HEADER_HEIGHT};
   position: fixed;
@@ -24,6 +21,7 @@ export const Container = styled.header.attrs({
   z-index: 5;
   background-color: ${({ theme }) => theme.headerCol};
   border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+  box-sizing: border-box;
   ${(props) =>
     props.transparent &&
     css`
@@ -37,7 +35,7 @@ export const Container = styled.header.attrs({
     `};
 `;
 
-export const Nav = styled.nav.attrs({ className: "Header__nav" })`
+export const Nav = styled.nav`
   width: ${CONTENT_MAX_WIDTH};
   height: max-content;
   display: flex;
@@ -50,26 +48,20 @@ export const Nav = styled.nav.attrs({ className: "Header__nav" })`
   }
 `;
 
-export const Logo = styled(Link).attrs({ className: "Header__logo" })`
-  color: ${(props) => props.$color};
-  font-family: ${LOGO_FONT};
-  text-transform: uppercase;
-`;
-
-export const LinkContainer = styled.section.attrs({
-  className: "Header__linkContainer",
-})`
+export const LinkContainer = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
+`;
 
+export const DynamicLink = styled(Link)`
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {
-    display: none;
+    display: ${(props) => (props.$display ? "inline-block" : "none")};
   }
 `;
 
-export const MenuIcon = styled.div.attrs({ className: "Header__menuIcon" })`
+export const HamburgerMenuButton = styled.div`
   display: none;
 
   @media (max-width: ${MEDIA_QUERY_BREAKPOINT_MED}) {

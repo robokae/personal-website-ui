@@ -25,28 +25,7 @@
                     "Enjoys learning the latest technologies, taking part in technology events, and applying new knowledge to enhance workflows"
                 ],
                 "images": [],
-                "icons": [
-                    {
-                        "type": "fontawesome",
-                        "style": "fas",
-                        "name": "terminal"
-                    },
-                    {
-                        "type": "fontawesome",
-                        "style": "fas",
-                        "name": "code"
-                    },
-                    {
-                        "type": "fontawesome",
-                        "style": "fas",
-                        "name": "heart"
-                    },
-                    {
-                        "type": "fontawesome",
-                        "style": "fas",
-                        "name": "book"
-                    }
-                ],
+                "icons": ["terminal", "code", "heart", "book"],
                 "buttons": [],
                 "listContent": []
             }
@@ -123,18 +102,7 @@
                 "subHeadings": [],
                 "text": ["Have any questions or just want to have a conversation? Feel free to send me an email and connect with me through LinkedIn. You can also check out my GitHub, where you can find the latest projects I'm working on."],
                 "images": [],
-                "icons": [
-                    {
-                        "type": "fontawesome",
-                        "family": "fab",
-                        "name": "github"
-                    },
-                    {
-                        "type": "fontawesome",
-                        "family": "fab",
-                        "name": "linkedin"
-                    }
-                ],
+                "icons": [["fab", "github"], ["fab", "linkedin"]],
                 "buttons": [
                     {
                         "label": "GitHub",

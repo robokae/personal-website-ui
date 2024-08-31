@@ -1,69 +1,34 @@
 {
-  "home": {
-    "logo": {
-      "name": "Alexander Hom",
-      "isLogo": true,
+  "links": [
+    {
+      "label": "ALEXANDER HOM",
       "to": "/",
-      "icon": {},
-      "tooltip": {}
+      "position": "left",
+      "displayOnMobile": true
     },
-    "links": [
-      {
-        "id": 0,
-        "type": "text",
-        "name": "About",
-        "isLogo": false,
-        "to": "/about",
-        "icon": {},
-        "tooltip": {}
-      },
-      {
-        "id": 1,
-        "type": "text",
-        "name": "Blog",
-        "isLogo": false,
-        "to": "/blog",
-        "icon": {},
-        "tooltip": {}
-      },
-      {
-        "id": 2,
-        "type": "text",
-        "name": "Contact",
-        "isLogo": false,
-        "to": "/#contact",
-        "icon": {},
-        "tooltip": {}
-      },
-      {
-        "id": 3,
-        "type": "icon",
-        "name": "LinkedIn",
-        "isLogo": false,
-        "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
-        "icon": "linkedin",
-        "tooltip": {
-          "anchorId": "linkedin",
-          "content": "LinkedIn",
-          "place": "bottom"
-        }
-      },
-      {
-        "id": 4,
-        "type": "icon",
-        "name": "GitHub",
-        "isLogo": false,
-        "to": "https://github.com/robokae",
-        "icon": "github",
-        "tooltip": {
-          "anchorId": "github",
-          "content": "GitHub",
-          "place": "bottom"
-        }
-      }
-    ],
-    "hamburgerMenu": {
-      "icon": "hamburgerMenu"
+    {
+      "label": "About",
+      "to": "/about",
+      "position": "right",
+      "displayOnMobile": false
+    },
+    {
+      "label": "Contact",
+      "to": "/#contact",
+      "position": "right",
+      "displayOnMobile": false
+    },
+    {
+      "to": "https://github.com/robokae",
+      "position": "right",
+      "displayOnMobile": false,
+      "icon": ["fab", "github"]
+    },
+    {
+      "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
+      "position": "right",
+      "displayOnMobile": false,
+      "icon": ["fab", "linkedin"]
     }
-  }
+  ]
 }

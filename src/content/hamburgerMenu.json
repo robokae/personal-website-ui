@@ -1,38 +1,34 @@
 {
-    "name": "hamburgerMenu",
-    "content": {
-        "heading": "Menu",
-        "links": [
-            {
-                "id": 0,
-                "type": "text",
-                "name": "Home",
-                "to": "/"
-            },
-            {
-                "id": 1,
-                "type": "text",
-                "name": "About",
-                "to": "/about"
-            },
-            {
-                "id": 2,
-                "type": "text",
-                "name": "Contact",
-                "to": "/#contact"
-            },
-            {
-                "id": 3,
-                "type": "text",
-                "name": "GitHub",
-                "to": "https://github.com/robokae"
-            },
-            {
-                "id": 4,
-                "type": "text",
-                "name": "LinkedIn",
-                "to": "https://www.linkedin.com/in/alexander-hom-94811b188/"
-            }
-        ]
-    }
+    "links": [
+        {
+            "id": 0,
+            "type": "text",
+            "label": "Home",
+            "to": "/"
+        },
+        {
+            "id": 1,
+            "type": "text",
+            "label": "About",
+            "to": "/about"
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "label": "Contact",
+            "to": "/#contact"
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "label": "GitHub",
+            "to": "https://github.com/robokae"
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "label": "LinkedIn",
+            "to": "https://www.linkedin.com/in/alexander-hom-94811b188/"
+        }
+    ]
 }

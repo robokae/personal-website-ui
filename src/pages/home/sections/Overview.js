@@ -1,30 +1,24 @@
 import styled from "styled-components";
-import Card from "../../../components/card/Card";
-import Icon from "../../../components/icon/Icon";
-import Grid from "../../../components/layout/Grid";
-import {
-  ContentLayout,
-  SectionLayout,
-} from "../../../components/layout/Layout";
-import Typography from "../../../components/typography/Typography";
-import { ICON_SIZE } from "../../../constants/StyleConstants";
+import Card from "components/card/Card";
+import Icon from "components/icon/Icon";
+import Grid from "components/layout/Grid";
+import { ContentLayout, SectionLayout } from "components/layout/Layout";
+import Typography from "components/typography/Typography";
+import { ICON_SIZE } from "constants/StyleConstants";
 import {
   LIGHT_BLUE,
   LIGHT_GREEN,
   LIGHT_PURPLE,
   NAVY_BLUE,
   TURQUOISE,
-} from "../../../constants/ColorConstants";
+} from "constants/ColorConstants";
 import {
   CARD_PADDING,
   MEDIA_QUERY_BREAKPOINT_SM,
   MEDIUM_GAP,
-} from "../../../constants/LayoutConstants";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+} from "constants/LayoutConstants";
 
-const ResponsiveCard = styled.div.attrs({
-  className: "Overview__responsiveCard ",
-})`
+const ResponsiveCard = styled.div`
   & > * {
     @media screen and (max-width: ${MEDIA_QUERY_BREAKPOINT_SM}) {
       display: flex;
@@ -54,17 +48,11 @@ const Overview = ({ data }) => {
               <ResponsiveCard key={index}>
                 <Card padding={CARD_PADDING}>
                   <Icon
+                    name={icons[index]}
                     backgroundColor={ICON_BACKGROUND_COLORS[index]}
                     color={ICON_COLOR}
                     padding="1rem"
-                    fontSize={ICON_SIZE}
-                    icon={
-                      <FontAwesomeIcon
-                        icon={[icons[index].style, icons[index].name]}
-                        fixedWidth
-                      />
-                    }
-                  />
+                  ></Icon>
                   <Typography width="85%">{cardText}</Typography>
                 </Card>
               </ResponsiveCard>

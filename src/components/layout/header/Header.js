@@ -1,26 +1,25 @@
 import { useEffect } from "react";
-import ThemeSwitcher from "../../themeSwitcher/ThemeSwitcher";
-import { getLinkFromJson } from "../../../util/LinkUtil";
-import {
-  DYNAMIC_HEADER_SCROLL_AMOUNT,
-  ENABLE_BLOG,
-  ENABLE_THEME,
-} from "../../../constants/AppConstants";
-import Icon from "../../icon/Icon";
+import { DYNAMIC_HEADER_SCROLL_AMOUNT } from "constants/AppConstants";
 import { useDispatch, useSelector } from "react-redux";
 import {
   disableTransparentHeader,
   enableTransparentHeader,
   setTransition,
   setTransparentHeader,
-} from "../../../features/headerSlice";
-import { toggle } from "../../../features/hamburgerMenuSlice";
-import { Container, LinkContainer, Logo, MenuIcon, Nav } from "./Header.styles";
-import { TRANSITION_DURATION_MS } from "../../../constants/StyleConstants";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+} from "features/headerSlice";
+import { toggle } from "features/hamburgerMenuSlice";
+import {
+  Container,
+  DynamicLink,
+  HamburgerMenuButton,
+  LinkContainer,
+  Nav,
+} from "./Header.styles";
+import { TRANSITION_DURATION_MS } from "constants/StyleConstants";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import Icon from "components/icon/Icon";
 
-function Header({ logo, links, theme, onChangeTheme, changeBgOnScroll }) {
+function Header({ links, changeBgOnScroll }) {
   const displayHamburgerMenu = useSelector(
     (state) => state.hamburgerMenu.display
   );
@@ -43,11 +42,9 @@ function Header({ logo, links, theme, onChangeTheme, changeBgOnScroll }) {
 
   const handleScroll = () => {
     if (changeBgOnScroll && !displayHamburgerMenu) {
-      if (window.scrollY <= DYNAMIC_HEADER_SCROLL_AMOUNT) {
-        dispatch(enableTransparentHeader());
-      } else {
-        dispatch(disableTransparentHeader());
-      }
+      window.scrollY <= DYNAMIC_HEADER_SCROLL_AMOUNT
+        ? dispatch(enableTransparentHeader())
+        : dispatch(disableTransparentHeader());
     } else {
       dispatch(disableTransparentHeader());
     }
@@ -65,40 +62,28 @@ function Header({ logo, links, theme, onChangeTheme, changeBgOnScroll }) {
     setTimeout(() => dispatch(setTransition(true)), TRANSITION_DURATION_MS);
   };
 
+  const leftLinks = links.filter((link) => link.position === "left");
+  const rightLinks = links.filter((link) => link.position === "right");
+
   return (
     <Container transition={transition} transparent={isTransparent}>
       <Nav>
-        <Logo to={logo.to} $color={({ theme }) => theme.primaryFontCol}>
-          {logo.name}
-        </Logo>
-
-        <LinkContainer>
-          {links.length > 0 &&
-            links
-              .filter(
-                (link) => !ENABLE_BLOG && link.name.toLowerCase() !== "blog"
-              )
-              .map((link) =>
-                getLinkFromJson(link, ({ theme }) => theme.primaryFontCol)
-              )}
-          {ENABLE_THEME && (
-            <ThemeSwitcher onChangeTheme={onChangeTheme} theme={theme} />
-          )}
-        </LinkContainer>
-
-        <MenuIcon onClick={handleMenuClick}>
-          <Icon
-            icon={
-              displayHamburgerMenu ? (
-                <FontAwesomeIcon icon={faTimes} fixedWidth />
-              ) : (
-                <FontAwesomeIcon icon={faBars} fixedWidth />
-              )
-            }
-            color={({ theme }) => theme.primaryFontCol}
-            clickable
-          />
-        </MenuIcon>
+        {[leftLinks, rightLinks].map((links, index) => (
+          <LinkContainer key={index}>
+            {links.map((link, index) => (
+              <DynamicLink
+                key={index}
+                to={link.to}
+                $display={link.displayOnMobile}
+              >
+                {link.label ?? <Icon name={link.icon} />}
+              </DynamicLink>
+            ))}
+          </LinkContainer>
+        ))}
+        <HamburgerMenuButton onClick={handleMenuClick}>
+          <Icon clickable name={displayHamburgerMenu ? faTimes : faBars} />
+        </HamburgerMenuButton>
       </Nav>
     </Container>
   );

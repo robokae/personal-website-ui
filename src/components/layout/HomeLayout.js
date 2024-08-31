@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
 import styled from "styled-components";
-import header from "../../content/layout/header.json";
-import footer from "../../content/layout/footer.json";
-import hamburgerMenu from "../../content/hamburgerMenu.json";
+import header from "content/layout/header.json";
+import footer from "content/layout/footer.json";
+import hamburgerMenu from "content/hamburgerMenu.json";
+import { FOOTER_HEIGHT } from "constants/LayoutConstants";
+import Footer from "components/footer/Footer";
 import Header from "./header/Header";
-import Footer from "../footer/Footer";
-import { FOOTER_HEIGHT } from "../../constants/LayoutConstants";
-import HamburgerMenu from "../menu/hamburgerMenu/HamburgerMenu";
+import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 
 const Container = styled.div`
   margin-bottom: ${FOOTER_HEIGHT};
@@ -15,14 +15,11 @@ const Container = styled.div`
   flex-direction: column;
 `;
 
-const { home } = header;
-
 function HomeLayout({ theme, onChangeTheme, dynamicHeader }) {
   return (
     <Container>
       <Header
-        logo={home.logo}
-        links={home.links}
+        links={header.links}
         isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
@@ -31,7 +28,7 @@ function HomeLayout({ theme, onChangeTheme, dynamicHeader }) {
       <HamburgerMenu
         theme={theme}
         onChangeTheme={onChangeTheme}
-        content={hamburgerMenu.content}
+        links={hamburgerMenu.links}
       />
       <Outlet />
       <Footer textContent={footer.text} />

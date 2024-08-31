@@ -24,7 +24,7 @@ const IconTextLink = styled(Link)`
  * @param linkJson link in JSON format
  * @param linkColor custom text color for Link
  */
-export const getLinkFromJson = (linkJson, linkColor) => {
+export const getLinkFromJson = (linkJson) => {
   const linkType = linkJson.type;
   if (linkType === null) {
     return null;
@@ -32,13 +32,13 @@ export const getLinkFromJson = (linkJson, linkColor) => {
   switch (linkType.toLowerCase()) {
     case TEXT:
       return (
-        <Link key={linkJson.id} to={linkJson.to} $textColor={linkColor}>
+        <Link key={linkJson.id} to={linkJson.to}>
           {linkJson.name}
         </Link>
       );
     case ICONTEXT:
       return (
-        <IconTextLink key={linkJson.id} to={linkJson.to} $textColor={linkColor}>
+        <IconTextLink key={linkJson.id} to={linkJson.to}>
           <FontAwesomeIcon icon={linkJson.icon} />
           {linkJson.name}
         </IconTextLink>

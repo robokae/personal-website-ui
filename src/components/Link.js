@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Link = styled(NavLink)`
-  color: ${(props) => props.$textColor};
+  color: ${({ theme }) => theme.primaryFontCol};
   display: flex;
   align-items: center;
   text-decoration: none;

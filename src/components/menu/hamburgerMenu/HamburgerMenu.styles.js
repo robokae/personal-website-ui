@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { HEADER_HEIGHT } from "../../../constants/LayoutConstants";
+import { HEADER_HEIGHT } from "constants/LayoutConstants";
 
-export const Container = styled.div.attrs({
-  className: "HamburgerMenu__container",
-})`
+export const Container = styled.div`
   height: calc(100vh - ${HEADER_HEIGHT});
   top: ${HEADER_HEIGHT};
   display: ${(props) => (props.display ? "block" : "none")};
@@ -14,17 +12,13 @@ export const Container = styled.div.attrs({
   z-index: 5;
 `;
 
-export const Overlay = styled.div.attrs({
-  className: "HamburgerMenu__overlay",
-})`
+export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.overlayCol};
 `;
 
-export const Content = styled.section.attrs({
-  className: "HamburgerMenu__content",
-})`
+export const Content = styled.section`
   width: 100%;
   height: max-content;
   top: 0;
@@ -37,9 +31,7 @@ export const Content = styled.section.attrs({
   background-color: ${({ theme }) => theme.primaryBgCol};
 `;
 
-export const MenuOptionsContainer = styled.ul.attrs({
-  className: "HamburgerMenu__menuOptionsContainer",
-})`
+export const MenuOptionsContainer = styled.ul`
   width: 100%;
   height: 100%;
   display: flex;
@@ -47,9 +39,7 @@ export const MenuOptionsContainer = styled.ul.attrs({
   list-style: none;
 `;
 
-export const MenuOption = styled.li.attrs({
-  className: "HamburgerMenu__menuOption",
-})`
+export const MenuOption = styled.li`
   & > a {
     font-size: 1.25rem;
     padding: 1rem 5%;
