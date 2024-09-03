@@ -1,4 +1,4 @@
-import { Breakpoint, Layout } from "constants/layout";
+import { Layout } from "constants/layout";
 import styled from "styled-components";
 
 export const BaseLayout = styled.div`
@@ -16,10 +16,7 @@ export const PageContentLayout = styled(BaseLayout)`
 export const ContentLayout = styled(BaseLayout)`
   width: 100%;
   max-width: ${Layout.CONTENT_MAX_WIDTH};
-
-  @media ${Breakpoint.LAPTOP_LG} {
-    width: 90%;
-  }
+  gap: ${Layout.GAP_LG};
 `;
 
 export const HeroLayout = styled(BaseLayout)`
@@ -33,8 +30,8 @@ export const SectionLayout = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: ${Layout.SECTION_PADDING} 0;
-  gap: 3.5rem;
+  padding: ${Layout.SECTION_PADDING};
+  gap: ${Layout.GAP_LG};
   position: relative;
 `;
 

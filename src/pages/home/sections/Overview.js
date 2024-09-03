@@ -1,22 +1,10 @@
-import styled from "styled-components";
 import Card from "components/card/Card";
 import Icon from "components/icon/Icon";
 import Grid from "components/layout/Grid";
 import { ContentLayout, SectionLayout } from "components/layout/Layout";
 import Typography from "components/typography/Typography";
 import { Color } from "constants/color";
-import { Breakpoint, Layout } from "constants/layout";
-
-const ResponsiveCard = styled.div`
-  & > * {
-    @media ${Breakpoint.MOBILE_LG} {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-`;
+import { Layout } from "constants/layout";
 
 const Overview = ({ data }) => {
   const { text, icons } = data;
@@ -34,17 +22,15 @@ const Overview = ({ data }) => {
         <Grid gap={Layout.MEDIUM_GAP} size={text.length}>
           {text.map((cardText, index) => {
             return (
-              <ResponsiveCard key={index}>
-                <Card padding={Layout.CARD_PADDING}>
-                  <Icon
-                    name={icons[index]}
-                    backgroundColor={ICON_BACKGROUND_COLORS[index]}
-                    color={ICON_COLOR}
-                    padding="1rem"
-                  ></Icon>
-                  <Typography width="85%">{cardText}</Typography>
-                </Card>
-              </ResponsiveCard>
+              <Card key={index} padding={Layout.CARD_PADDING}>
+                <Icon
+                  name={icons[index]}
+                  backgroundColor={ICON_BACKGROUND_COLORS[index]}
+                  color={ICON_COLOR}
+                  padding="1rem"
+                ></Icon>
+                <Typography>{cardText}</Typography>
+              </Card>
             );
           })}
         </Grid>

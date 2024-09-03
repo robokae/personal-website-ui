@@ -1,20 +1,15 @@
 import styled from "styled-components";
-import { ContentLayout } from "components/layout/Layout";
+import { ContentLayout, SectionLayout } from "components/layout/Layout";
 import Typography from "components/typography/Typography";
 import { Breakpoint, Layout } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";
 
-const Container = styled.div`
+const Section = styled(SectionLayout)`
   width: 100%;
   height: max-content;
   background-color: #212d38;
   display: flex;
   justify-content: center;
-  padding: ${Layout.PADDING_XL} 0;
-
-  @media ${Breakpoint.LAPTOP} {
-    padding: ${Layout.PADDING_MD} 0;
-  }
 `;
 
 const Content = styled(ContentLayout)`
@@ -39,7 +34,7 @@ const ResponsiveTypography = styled.div`
 `;
 
 const Description = styled(ContentLayout)`
-  width: 85%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: ${Layout.GAP_LG};
@@ -54,7 +49,7 @@ const Description = styled(ContentLayout)`
 
 const Reflection = ({ data }) => {
   return (
-    <Container>
+    <Section>
       <Content>
         <Description>
           <ResponsiveTypography>
@@ -80,7 +75,7 @@ const Reflection = ({ data }) => {
           </ResponsiveTypography>
         </Description>
       </Content>
-    </Container>
+    </Section>
   );
 };
 

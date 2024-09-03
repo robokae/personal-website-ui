@@ -20,7 +20,7 @@ const StyledGrid = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media ${Breakpoint.MOBILE_LG} {
+  @media ${Breakpoint.TABLET} {
     grid-template-columns: 1fr;
   }
 `;

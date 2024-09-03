@@ -6,6 +6,7 @@ import { Style } from "constants/style";
 export const Container = styled.header`
   width: 100%;
   height: ${Layout.HEADER_HEIGHT};
+  padding: 0 ${Layout.SECTION_PADDING};
   position: fixed;
   top: 0;
   display: flex;
@@ -37,10 +38,6 @@ export const Nav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  @media ${Breakpoint.LAPTOP_LG} {
-    width: 90%;
-  }
 `;
 
 export const LinkContainer = styled.section`

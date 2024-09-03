@@ -2,6 +2,22 @@ import styled from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
 import { Style } from "constants/style";
 import { Typography } from "constants/typography";
+import { ContentLayout, SectionLayout } from "components/layout/Layout";
+
+export const Section = styled(SectionLayout)`
+  @media ${Breakpoint.TABLET} {
+    padding-left: 0;
+    padding-right: 0;
+  }
+`;
+
+export const Content = styled(ContentLayout)`
+  @media ${Breakpoint.TABLET} {
+    ${Typography.SECTION_TITLE_TAG} {
+      padding: 0 ${Layout.SECTION_PADDING};
+    }
+  }
+`;
 
 export const CardLayout = styled.div`
   width: 100%;
@@ -36,7 +52,6 @@ export const CardHeader = styled.div`
 `;
 
 export const CardContent = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   padding: ${Layout.CARD_PADDING};

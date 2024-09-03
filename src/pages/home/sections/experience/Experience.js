@@ -2,21 +2,22 @@ import Card from "components/card/Card";
 import { ContentLayout, SectionLayout } from "components/layout/Layout";
 import Typography from "components/typography/Typography";
 import { Color } from "constants/color";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "components/carousel/Carousel";
-import { Layout } from "constants/layout";
+import { DeviceSize, Layout } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";
 import {
   CardContent,
   CardHeader,
   CardLayout,
+  Content,
   List,
   ListItem,
+  Section,
 } from "./Experience.styles";
 
 const Experience = ({ data }) => {
-  const testLargeWindowSize = () => window.innerWidth <= 992;
+  const testLargeWindowSize = () => window.innerWidth <= DeviceSize.TABLET;
   const { headings, subHeadings, text, listContent } = data;
   const cardHeadingColors = [
     Color.LIGHT_TURQUOISE,
@@ -65,27 +66,27 @@ const Experience = ({ data }) => {
 
   const heading = headings.map((line, index) => (
     <Typography
+      textAlign="center"
       key={index}
       tag={TypographyConstants.SECTION_TITLE_TAG}
-      textAlign="center"
     >
       {line}
     </Typography>
   ));
 
   return (
-    <SectionLayout>
-      {heading}
-      {displayCarousel ? (
-        <Carousel displayArrows paddingX={Layout.CAROUSEL_PADDING}>
-          {getCards()}
-        </Carousel>
-      ) : (
-        <ContentLayout>
+    <Section>
+      <Content>
+        {heading}
+        {displayCarousel ? (
+          <Carousel displayArrows paddingX={Layout.SECTION_PADDING}>
+            {getCards()}
+          </Carousel>
+        ) : (
           <CardLayout size={subHeadings.length}>{getCards()}</CardLayout>
-        </ContentLayout>
-      )}
-    </SectionLayout>
+        )}
+      </Content>
+    </Section>
   );
 };
 

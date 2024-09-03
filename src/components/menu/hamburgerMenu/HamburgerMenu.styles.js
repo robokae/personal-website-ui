@@ -42,7 +42,7 @@ export const MenuOptionsContainer = styled.ul`
 export const MenuOption = styled.li`
   & > a {
     font-size: 1.25rem;
-    padding: 1rem 5%;
+    padding: 1rem ${Layout.SECTION_PADDING};
     width: 100%;
     height: 100%;
 
