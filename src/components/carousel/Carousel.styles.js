@@ -23,17 +23,7 @@ export const SlideContainer = styled.div`
   overflow-x: hidden;
   scrollbar-width: none;
   gap: 1.5rem;
-  ${(props) =>
-    props.paddingX &&
-    css`
-      &:first-child {
-        padding-left: ${props.paddingX};
-      }
-
-      &:last-child {
-        padding-right: ${props.paddingX};
-      }
-    `};
+  padding: 0 ${(props) => props.paddingX ?? 0};
   ${(props) =>
     props.enableScroll &&
     css`
@@ -43,7 +33,7 @@ export const SlideContainer = styled.div`
 `;
 
 export const Slide = styled.div`
-  width: auto;
+  width: 100%;
   flex-shrink: 0;
   scroll-snap-align: center;
 `;
@@ -53,17 +43,18 @@ export const Bottom = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 5rem;
+  gap: 2rem;
   padding: 0 2rem;
 `;
 
 export const ActionButton = styled.button`
-  font-size: 1.25rem;
-  background-color: transparent;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: #283137;
   outline: none;
   border: transparent;
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 0.25;
   transition: opacity 0.2s ease-in-out;
   color: ${({ theme }) => theme.secondaryFontCol};
   ${(props) =>

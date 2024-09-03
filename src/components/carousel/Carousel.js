@@ -1,4 +1,6 @@
 import {
+  faArrowLeft,
+  faArrowRight,
   faChevronLeft,
   faChevronRight,
   faCircle,
@@ -49,17 +51,9 @@ const Carousel = (props) => {
     setSlideIndex(slideIndex);
   };
 
-  const getSlideIndicator = () => (
+  const SlideIndicator = () => (
     <SlideIndicatorContainer>
-      {props.children.map((_, index) => (
-        <SlideIndicator
-          key={index}
-          fixedWidth
-          icon={faCircle}
-          active={index === slideIndex}
-          onClick={() => handleSlideIndicatorClick(index)}
-        />
-      ))}
+      <p>{`${slideIndex + 1} / ${slides.length}`}</p>
     </SlideIndicatorContainer>
   );
 
@@ -86,18 +80,18 @@ const Carousel = (props) => {
               active={slideIndex !== 0}
               onClick={handleLeftArrowClick}
             >
-              <FontAwesomeIcon fixedWidth icon={faChevronLeft} />
+              <FontAwesomeIcon fixedWidth icon={faArrowLeft} />
             </ActionButton>
-            {getSlideIndicator()}
+            <SlideIndicator />
             <ActionButton
               active={slideIndex !== slides.length - 1}
               onClick={handleRightArrowClick}
             >
-              <FontAwesomeIcon fixedWidth icon={faChevronRight} />
+              <FontAwesomeIcon fixedWidth icon={faArrowRight} />
             </ActionButton>
           </>
         ) : (
-          getSlideIndicator()
+          <SlideIndicator />
         )}
       </Bottom>
     </Container>
