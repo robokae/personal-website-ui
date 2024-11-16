@@ -1,6 +1,6 @@
 /* Major Third type scale */
 html {
-    font-size: 100%; /* 18px */
+    font-size: 100%;
 }
 
 body {
@@ -52,7 +52,7 @@ input, textarea, button {
     line-height: normal;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     /* Minor Third type scale */
     html {
         font-size: 100%; /* 16px */
@@ -87,30 +87,30 @@ input, textarea, button {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     /* Major Second type scale */
-    html {
-        font-size: 87.5%; /* 14px */
-    }
+    // html {
+    //     font-size: 87.5%; /* 14px */
+    // }
 
     h1 {
-        font-size: 1.802rem;
+        font-size: 2.027rem;
     }
 
     h2 {
-        font-size: 1.602rem;
+        font-size: 1.802rem;
     }
 
     h3 {
-        font-size: 1.424rem;
+        font-size: 1.602rem;
     }
 
     h4 {
-        font-size: 1.266rem;
+        font-size: 1.424rem;
     }
 
     h5 {
-        font-size: 1.125rem;
+        font-size: 1.266rem;
     }
 
     a {

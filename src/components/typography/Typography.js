@@ -4,8 +4,7 @@ import { oneOf } from "prop-types";
 
 const defaultStyles = css`
   width: 100%;
-  color: ${(props) =>
-    props.color ? props.color : ({ theme }) => theme.primaryFontCol};
+  color: ${(props) => props.color ?? (({ theme }) => theme.primaryFontCol)};
 `;
 
 const DEFAULT_TAG = "p";
