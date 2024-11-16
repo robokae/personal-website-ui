@@ -1,7 +1,7 @@
 export const DeviceSize = {
   MOBILE_SM: "320",
   MOBILE_MD: "375",
-  MOBILE_LG: "425",
+  MOBILE_LG: "525",
   TABLET: "768",
   LAPTOP: "1024",
   LAPTOP_LG: "1440",
@@ -18,7 +18,7 @@ export const Breakpoint = Object.freeze({
 });
 
 export const Layout = Object.freeze({
-  CONTENT_MAX_WIDTH: `${DeviceSize.LAPTOP_LG}px`,
+  CONTENT_MAX_WIDTH: `${DeviceSize.LAPTOP}px`,
   GAP_SM: ".5rem",
   GAP_MD: "1.75rem",
   GAP_LG: "3rem",
