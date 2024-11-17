@@ -1,9 +1,9 @@
 import home from "content/home/home.json";
 import { PageContentLayout } from "components/layout/Layout";
-import Overview from "./sections/Overview";
-import Reflection from "./Reflection";
+import Reflection from "./sections/reflection/Reflection";
 import Experience from "./sections/experience/Experience";
-import Hero from "./sections/Hero";
+import Hero from "./sections/hero/Hero";
+import Overview from "./sections/overview/Overview";
 
 const getSectionData = (sections, sectionName) => {
   return sections.find((section) => section.title === sectionName)?.content;
