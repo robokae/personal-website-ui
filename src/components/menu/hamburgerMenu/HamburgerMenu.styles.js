@@ -1,11 +1,12 @@
 import { Layout } from "constants/layout";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
-  height: calc(100vh - ${Layout.HEADER_HEIGHT});
-  top: ${Layout.HEADER_HEIGHT};
-  display: ${(props) => (props.display ? "block" : "none")};
   width: 100vw;
+  height: 100vh;
+  top: 0;
+  display: ${(props) => (props.display ? "block" : "none")};
+  transition: 0.3s;
   position: fixed;
   box-sizing: border-box;
   backdrop-filter: blur(0.5rem);
@@ -21,14 +22,35 @@ export const Overlay = styled.div`
 export const Content = styled.section`
   width: 100%;
   height: max-content;
-  top: 0;
+  top: -${(props) => props.height}px;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 3rem;
   background-color: ${({ theme }) => theme.primaryBgCol};
+  border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+  padding-bottom: 1.5rem;
+  ${(props) =>
+    props.display &&
+    css`
+      transform: translateY(
+        calc(${(props) => props.height}px + ${Layout.HEADER_HEIGHT})
+      );
+      transition: transform 0.3s ease-out;
+    `}
+`;
+
+export const Header = styled.nav`
+  width: 100%;
+  height: ${Layout.HEADER_HEIGHT};
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 0 ${Layout.SECTION_PADDING};
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: ${({ theme }) => theme.primaryBgCol};
+  z-index: 6;
 `;
 
 export const MenuOptionsContainer = styled.ul`
@@ -40,14 +62,17 @@ export const MenuOptionsContainer = styled.ul`
 `;
 
 export const MenuOption = styled.li`
+  width: 100%;
+  height: 100%;
+
   & > a {
+    display: block;
+    text-align: center;
     font-size: 1.25rem;
     padding: 1rem ${Layout.SECTION_PADDING};
-    width: 100%;
-    height: 100%;
 
     &:hover {
-      background-color: ${({ theme }) => theme.secondaryBgCol};
+      text-decoration: underline;
     }
   }
 `;

@@ -13,9 +13,10 @@ export const Container = styled.header`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(2rem);
+  backdrop-filter: blur(3rem);
+  -webkit-backdrop-filter: blur(3rem);
   z-index: 5;
-  background-color: ${({ theme }) => theme.headerCol};
+  background-color: rgba(18, 27, 32, 0.8);
   border-bottom: 1px solid ${({ theme }) => theme.lineCol};
   box-sizing: border-box;
   ${(props) =>
