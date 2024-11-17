@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
@@ -38,24 +38,6 @@ export const Bottom = styled.div`
   align-items: center;
   gap: 2rem;
   padding: 0 2rem;
-`;
-
-export const ActionButton = styled.button`
-  font-size: 1rem;
-  padding: 0.5rem;
-  background-color: #283137;
-  outline: none;
-  border: transparent;
-  border-radius: 50%;
-  opacity: 0.25;
-  transition: opacity 0.2s ease-in-out;
-  color: ${({ theme }) => theme.secondaryFontCol};
-  ${(props) =>
-    props.active &&
-    css`
-      cursor: pointer;
-      opacity: 1;
-    `};
 `;
 
 export const SlideIndicatorContainer = styled.div`

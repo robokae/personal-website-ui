@@ -1,8 +1,5 @@
-import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect, useRef, useState } from "react";
 import {
-  ActionButton,
   Bottom,
   Container,
   Slide,
@@ -11,6 +8,7 @@ import {
   Top,
 } from "./Carousel.styles";
 import { useResize } from "hooks/useResize";
+import ArrowIndicator from "./ArrowIndicator";
 
 const Carousel = (props) => {
   const slides = props.children;
@@ -62,7 +60,7 @@ const Carousel = (props) => {
     }
   };
 
-  const SlideIndicator = () => (
+  const DefaultSlideIndicator = () => (
     <SlideIndicatorContainer>
       {`${currentSlide + 1} / ${slides.length}`}
     </SlideIndicatorContainer>
@@ -83,21 +81,16 @@ const Carousel = (props) => {
       </Top>
 
       <Bottom>
-        {props.displayArrows ? (
-          <>
-            <ActionButton active={currentSlide !== 0} onClick={scrollLeft}>
-              <FontAwesomeIcon fixedWidth icon={faArrowLeft} />
-            </ActionButton>
-            <SlideIndicator />
-            <ActionButton
-              active={currentSlide !== slides.length - 1}
-              onClick={scrollRight}
-            >
-              <FontAwesomeIcon fixedWidth icon={faArrowRight} />
-            </ActionButton>
-          </>
+        {props.arrows ? (
+          <ArrowIndicator
+            numbers
+            currentSlide={currentSlide}
+            numSlides={slides.length}
+            leftArrowClickHandler={scrollLeft}
+            rightArrowClickHandler={scrollRight}
+          />
         ) : (
-          <SlideIndicator />
+          <DefaultSlideIndicator />
         )}
       </Bottom>
     </Container>

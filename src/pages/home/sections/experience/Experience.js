@@ -1,18 +1,10 @@
 import Card from "components/card/Card";
-import { ContentLayout, SectionLayout } from "components/layout/Layout";
 import Typography from "components/typography/Typography";
-import { Color } from "constants/color";
 import React, { useEffect, useState } from "react";
 import Carousel from "components/carousel/Carousel";
 import { DeviceSize, Layout } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";
-import {
-  CardContent,
-  CardHeader,
-  CardLayout,
-  Content,
-  Section,
-} from "./Experience.styles";
+import { CardHeader, CardLayout, Content, Section } from "./Experience.styles";
 import { useResize } from "hooks/useResize";
 
 const Experience = ({ data }) => {
@@ -50,7 +42,7 @@ const Experience = ({ data }) => {
           </Typography>
         ))}
         {displayCarousel ? (
-          <Carousel displayArrows paddingX={Layout.SECTION_PADDING}>
+          <Carousel arrows paddingX={Layout.SECTION_PADDING}>
             {cards()}
           </Carousel>
         ) : (
