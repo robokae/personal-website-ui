@@ -2,7 +2,7 @@ import Card from "components/card/Card";
 import { ContentLayout, SectionLayout } from "components/layout/Layout";
 import Typography from "components/typography/Typography";
 import { Color } from "constants/color";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Carousel from "components/carousel/Carousel";
 import { DeviceSize, Layout } from "constants/layout";
 import { Typography as TypographyConstants } from "constants/typography";
@@ -11,79 +11,50 @@ import {
   CardHeader,
   CardLayout,
   Content,
-  List,
-  ListItem,
   Section,
 } from "./Experience.styles";
+import { useResize } from "hooks/useResize";
 
 const Experience = ({ data }) => {
-  const testLargeWindowSize = () => window.innerWidth <= DeviceSize.TABLET;
   const { headings, subHeadings, text, listContent } = data;
-  const cardHeadingColors = [
-    Color.LIGHT_TURQUOISE,
-    Color.LIGHT_NAVY_BLUE,
-    Color.MEDIUM_BLUE,
-  ];
 
-  const [displayCarousel, setDisplayCarousel] = useState(testLargeWindowSize);
+  const [displayCarousel, setDisplayCarousel] = useState();
+  const { width } = useResize();
 
   useEffect(() => {
-    const handleResize = () => {
-      setDisplayCarousel(testLargeWindowSize());
-    };
+    setDisplayCarousel(width <= DeviceSize.TABLET);
+  }, [width]);
 
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const getCards = () => {
-    return subHeadings.map((subHeading, index) => {
-      return (
-        <Card key={index} padding={0} gap={0}>
-          <CardHeader backgroundColor={cardHeadingColors[index]}>
-            <Typography
-              textAlign="center"
-              tag={TypographyConstants.CARD_TITLE_TAG}
-            >
-              {subHeading}
-            </Typography>
-          </CardHeader>
-          <CardContent>
-            <Typography>{text[index]}</Typography>
-            <List>
-              {listContent[index].map((listItem, index) => (
-                <ListItem key={index}>{listItem}</ListItem>
-              ))}
-            </List>
-          </CardContent>
-        </Card>
-      );
-    });
-  };
-
-  const heading = headings.map((line, index) => (
-    <Typography
-      textAlign="center"
-      key={index}
-      tag={TypographyConstants.SECTION_TITLE_TAG}
-    >
-      {line}
-    </Typography>
-  ));
+  const cards = () =>
+    subHeadings.map((subHeading, index) => (
+      <Card key={index}>
+        <CardHeader>
+          <Typography textAlign="left" tag={TypographyConstants.CARD_TITLE_TAG}>
+            {subHeading}
+          </Typography>
+        </CardHeader>
+        <Typography>{text[index]}</Typography>
+      </Card>
+    ));
 
   return (
     <Section>
       <Content>
-        {heading}
+        {headings.map((line, index) => (
+          <Typography
+            textAlign="left"
+            key={index}
+            tag={TypographyConstants.SECTION_TITLE_TAG}
+          >
+            {line}
+          </Typography>
+        ))}
         {displayCarousel ? (
           <Carousel displayArrows paddingX={Layout.SECTION_PADDING}>
-            {getCards()}
+            {cards()}
           </Carousel>
         ) : (
-          <CardLayout size={subHeadings.length}>{getCards()}</CardLayout>
+          <CardLayout size={subHeadings.length}>{cards()}</CardLayout>
         )}
       </Content>
     </Section>
