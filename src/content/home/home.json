@@ -4,8 +4,8 @@
         {
             "title": "hero",
             "content": {
-                "headings": ["Hi, my name is Alexander Hom"],
-                "subHeadings": ["I am a software engineer from San Francisco"],
+                "headings": ["Hi, my name is", "Alexander Hom"],
+                "subHeadings": ["I am a software engineer from", "San Francisco"],
                 "text": [],
                 "images": [],
                 "icons": [],
@@ -16,13 +16,13 @@
         {
             "title": "overview",
             "content": {
-                "headings": [],
+                "headings": ["A brief overview"],
                 "subHeadings": [],
                 "text": [
-                    "2+ years of professional software engineering experience, with a specialization in developing APIs for distributed systems", 
-                    "Skilled in developing web applications using JavaScript, Java, Python, SQL, MongoDB, Google Cloud, etc.", 
-                    "Team player with a passion for collaboration and experience working in agile environments, as well as leading teams", 
-                    "Enjoys learning the latest technologies, taking part in technology events, and applying new knowledge to enhance workflows"
+                    "I have over two years of professional software engineering experience developing client-side web applications as well as enterprise APIs", 
+                    "I am proficient in various programming languages and technologies, including Java, Python, JavaScript, relational and NoSQL databases, CI/CD pipelines, and Google Cloud", 
+                    "I enjoy tackling challenges, especially as part of a team where we collaborate to design and develop solutions to complex problems", 
+                    "I like learning about the latest technologies and applying the knowledge to my work to achieve greater performance and efficiency"
                 ],
                 "images": [],
                 "icons": ["terminal", "code", "heart", "book"],
@@ -33,9 +33,9 @@
         {
             "title": "reflection",
             "content": {
-                "headings": ["A Tale of Two Passions, Design and Technology"],
+                "headings": ["A tale of two passions: art and technology"],
                 "subHeadings": [],
-                "text": ["Growing up, I was fascinated with computers. At the same time, I also enjoyed making art and building stuff out of Legos and paper. Software development combines my love of computers, art, and building things, providing me with a canvas to design and create applications with elegant user interfaces."],
+                "text": ["Growing up, two of my interests were art and technology. I enjoyed creating objects with Lego, folding origami, and designing architectural structures. At the same time, I was fascinated with the inner workings of websites and was very enthusiastic about developing my own. Today, as a software engineer, I get to combine my two passions as part of the software development process — putting on my artist cap when designing user interfaces and applying my interest in technology while coding applications using the latest technologies."],
                 "images": [],
                 "icons": [],
                 "buttons": [],
@@ -45,21 +45,17 @@
         {
             "title": "experience",
             "content": {
-                "headings": ["2+ Years of Experience Developing Enterprise Applications"],
+                "headings": ["Full stack development expertise"],
                 "subHeadings": ["Frontend", "Backend", "Cloud"],
                 "text": [
-                    "3 years of frontend development experience working with", 
-                    "2 years of backend development experience working with", 
-                    "1 year of cloud development experience working with"
+                    "Design multi-page responsive web applications with Figma and develop them with modern JavaScript using React and its ecosystem of tools and packages, such as Redux", 
+                    "Develop scalable microservices using various technologies, including Spring Boot (Java) and Flask (Python), and test them using frameworks, such as JUnit and Karate", 
+                    "Develop and deploy cloud applications using the Google Cloud Platform and technologies, such as Kubernetes"
                 ],
                 "images": [],
                 "icons": [],
                 "buttons": [],
-                "listContent": [
-                    ["HTML/CSS", "JavaScript", "React"], 
-                    ["Java/Spring Boot", "Python/Flask", "SQL", "MongoDB"],
-                    ["Google Cloud", "Kubernetes"]
-                ]
+                "listContent": []
             }
         },
         {
