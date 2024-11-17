@@ -20,22 +20,15 @@ export const SlideContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
+  overflow-x: auto;
   scrollbar-width: none;
   gap: 1.5rem;
   padding: 0 ${(props) => props.paddingX ?? 0};
-  ${(props) =>
-    props.enableScroll &&
-    css`
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-    `};
 `;
 
 export const Slide = styled.div`
   width: 100%;
   flex-shrink: 0;
-  scroll-snap-align: center;
 `;
 
 export const Bottom = styled.div`
