@@ -17,6 +17,7 @@ const Carousel = (props) => {
   const carouselRef = useRef(null);
   const [slideProps, setSlideProps] = useState(0);
   const { width } = useResize();
+  const scrollThreshold = props.scrollThreshold ?? 128;
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -31,32 +32,54 @@ const Carousel = (props) => {
 
   useEffect(() => {
     if (carouselRef.current) {
+      const { left } = carouselRef.current.children[0].getBoundingClientRect();
       setSlideProps((current) => ({
         ...current,
-        gap: carouselRef.current.children[0].getBoundingClientRect().left / 2,
+        gap: left / 2,
+        initialPosition: left,
       }));
     }
   }, []);
 
-  const scrollLeft = () => {
+  const scrollLeft = (delta) => {
     if (currentSlide !== 0) {
+      const newPosition =
+        carouselRef.current.scrollLeft - (slideProps.width + slideProps.gap);
+
+      // Delta is used during onWheel when the slide has been partially scrolled
       carouselRef.current.scrollTo({
-        left:
-          carouselRef.current.scrollLeft - (slideProps.width + slideProps.gap),
+        left: delta > 0 ? newPosition + delta : newPosition,
         behavior: "smooth",
       });
+
       setCurrentSlide((current) => current - 1);
     }
   };
 
-  const scrollRight = () => {
+  const scrollRight = (delta) => {
     if (currentSlide !== slides.length - 1) {
+      const newPosition =
+        carouselRef.current.scrollLeft + (slideProps.width + slideProps.gap);
+
+      // Delta is used during onWheel when the slide has been partially scrolled
       carouselRef.current.scrollTo({
-        left:
-          carouselRef.current.scrollLeft + (slideProps.width + slideProps.gap),
+        left: delta > 0 ? newPosition - delta : newPosition,
         behavior: "smooth",
       });
+
       setCurrentSlide((current) => current + 1);
+    }
+  };
+
+  const handleWheel = (e) => {
+    const currentPosition =
+      slideRefs.current[currentSlide].current.getBoundingClientRect().x;
+    let delta = slideProps.initialPosition - currentPosition;
+
+    if (delta >= scrollThreshold && e.deltaX > 0) {
+      scrollRight(Math.abs(delta));
+    } else if (delta <= -1 * scrollThreshold && e.deltaX < 0) {
+      scrollLeft(Math.abs(delta));
     }
   };
 
@@ -69,7 +92,11 @@ const Carousel = (props) => {
   return (
     <Container>
       <Top>
-        <SlideContainer paddingX={props.paddingX} ref={carouselRef}>
+        <SlideContainer
+          paddingX={props.paddingX}
+          ref={carouselRef}
+          onWheel={handleWheel}
+        >
           {slides.map((item, index) => {
             return (
               <Slide key={index} ref={slideRefs.current[index]}>
