@@ -25,7 +25,7 @@ const Experience = ({ data }) => {
             {subHeading}
           </Typography>
         </CardHeader>
-        <Typography>{text[index]}</Typography>
+        <p>{text[index]}</p>
       </Card>
     ));
 

@@ -17,10 +17,10 @@
             "title": "details",
             "content": {
                 "headings": [],
-                "subHeadings": ["LinkedIn", "GitHub", "Email"],
+                "subHeadings": ["GitHub", "LinkedIn", "Email"],
                 "text": [
-                    "Connect with me on LinkedIn", 
                     "Check out my latest open-source projects", 
+                    "Connect with me on LinkedIn", 
                     "Want to chat? Feel free to send me an email at alexanderhom19@gmail.com"
                 ],
                 "images": [],

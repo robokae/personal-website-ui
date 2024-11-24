@@ -59,7 +59,9 @@ const DetailsSection = ({ content }) => {
         <Card>
           <CardHeader>
             <Icon name={icons[index]} />
-            <Typography tag={TypographyConstants.H5}>{subHeading}</Typography>
+            <Typography tag={TypographyConstants.CARD_TITLE_TAG}>
+              {subHeading}
+            </Typography>
           </CardHeader>
           <p>{text[index]}</p>
           {links[index] && (
