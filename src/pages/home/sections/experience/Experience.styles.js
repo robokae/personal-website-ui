@@ -20,7 +20,6 @@ export const Content = styled(ContentLayout)`
 
 export const CardLayout = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: row;
   gap: ${Layout.GAP_MD};

@@ -16,7 +16,7 @@
             "id": 2,
             "type": "text",
             "label": "Contact",
-            "to": "/#contact"
+            "to": "/contact"
         },
         {
             "id": 3,

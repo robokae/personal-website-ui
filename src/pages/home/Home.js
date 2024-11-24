@@ -1,4 +1,4 @@
-import home from "content/home/home.json";
+import content from "content/home.json";
 import { PageContentLayout } from "components/layout/Layout";
 import Reflection from "./sections/reflection/Reflection";
 import Experience from "./sections/experience/Experience";
@@ -10,7 +10,7 @@ const getSectionData = (sections, sectionName) => {
 };
 
 function Home() {
-  const sections = home.sections;
+  const sections = content.sections;
   const heroSectionData = getSectionData(sections, "hero");
   const overviewSectionData = getSectionData(sections, "overview");
   const reflectionSectionData = getSectionData(sections, "reflection");

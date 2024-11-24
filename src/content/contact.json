@@ -1,0 +1,42 @@
+{
+    "pageName": "contact",
+    "sections": [
+        {
+            "title": "overview",
+            "content": {
+                "headings": ["Let’s Connect"],
+                "subHeadings": ["Have any questions? Feel free to send me an email or connect with me through LinkedIn. You can also check out my GitHub where you can find the latest open-source projects I'm working on."],
+                "text": [],
+                "images": [],
+                "icons": [],
+                "buttons": [],
+                "listContent": []
+            }
+        },
+        {
+            "title": "details",
+            "content": {
+                "headings": [],
+                "subHeadings": ["LinkedIn", "GitHub", "Email"],
+                "text": [
+                    "Connect with me on LinkedIn", 
+                    "Check out my latest open-source projects", 
+                    "Want to chat? Feel free to send me an email at alexanderhom19@gmail.com"
+                ],
+                "images": [],
+                "icons": [["fab", "github"], ["fab", "linkedin"], ["fas", "envelope"]],
+                "links": [
+                    {
+                        "label": "GitHub",
+                        "url": "https://github.com/robokae"
+                    },
+                    {
+                        "label": "LinkedIn",
+                        "url": "https://www.linkedin.com/in/alexander-hom-94811b188/"
+                    }
+                ],
+                "listContent": []
+            }
+        }
+    ]
+}

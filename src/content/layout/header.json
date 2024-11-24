@@ -14,7 +14,7 @@
     },
     {
       "label": "Contact",
-      "to": "/#contact",
+      "to": "/contact",
       "position": "right",
       "displayOnMobile": false
     },

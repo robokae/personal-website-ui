@@ -28,6 +28,7 @@ import HomeLayout from "./components/layout/HomeLayout";
 import useTheme from "./hooks/useTheme";
 import Error from "./pages/Error";
 import { Typography } from "constants/typography";
+import Contact from "pages/contact/Contact";
 // import About from "./pages/about/About";
 // import About from "./pages/about/About";
 
@@ -80,6 +81,7 @@ function App() {
         >
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/contact" element={<Contact />} />
           {/* <Route path="/about" element={<About />} /> */}
         </Route>
         <Route path="/blog" element={<Blog />} />
