@@ -1,7 +1,21 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit;
+    }
+
     body {
+        width: 100%;
+        height: max-content;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        box-sizing: border-box;
+        overscroll-behavior-y: none;
         background-color: ${({ theme }) => theme.primaryBgCol};
         color: ${({ theme }) => theme.primaryFontCol};
         font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
