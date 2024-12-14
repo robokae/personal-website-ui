@@ -24,7 +24,7 @@ import EditPost from "./pages/admin/EditPost";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { fas } from "@fortawesome/free-solid-svg-icons";
-import HomeLayout from "./components/layout/HomeLayout";
+import MainLayout from "./components/layout/MainLayout";
 import useTheme from "./hooks/useTheme";
 import Error from "./pages/Error";
 import { Typography } from "constants/typography";
@@ -45,23 +45,13 @@ function App() {
 
   const [theme, changeTheme] = useTheme();
 
-  // const ScrollToTop = () => {
-  //   const { pathname } = useLocation();
-
-  //   useEffect(() => {
-  //     window.scrollTo(0, 0);
-  //   }, [pathname]);
-
-  //   return null;
-  // };
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
         <Route
           path="/"
           element={
-            <HomeLayout
+            <MainLayout
               theme={theme}
               onChangeTheme={changeTheme}
               dynamicHeader={true}
@@ -69,31 +59,17 @@ function App() {
           }
         >
           <Route index element={<Home />} />
-        </Route>
-        <Route
-          element={
-            <HomeLayout
-              theme={theme}
-              onChangeTheme={changeTheme}
-              dynamicHeader={false}
-            />
-          }
-        >
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/post/:postTitle" element={<Post />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/createPost" element={<CreatePost />} />
+          <Route path="/admin/editPost" element={<EditPost />} />
+          <Route path="/*" element={<Error />} />
         </Route>
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/post/:postTitle" element={<Post />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
-        <Route path="/admin/createPost" element={<CreatePost />} />
-        <Route path="/admin/editPost" element={<EditPost />} />
-        <Route
-          path="/*"
-          element={<Error theme={theme} onChangeTheme={changeTheme} />}
-        />
       </>
     )
   );

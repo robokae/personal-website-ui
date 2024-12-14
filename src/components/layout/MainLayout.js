@@ -6,16 +6,14 @@ import hamburgerMenu from "content/hamburgerMenu.json";
 import Footer from "components/footer/Footer";
 import Header from "./header/Header";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
-import { Layout } from "constants/layout";
 
 const Container = styled.div`
-  margin-bottom: ${Layout.FOOTER_HEIGHT};
   width: 100%;
   display: flex;
   flex-direction: column;
 `;
 
-function HomeLayout({ theme, onChangeTheme, dynamicHeader }) {
+function MainLayout({ theme, onChangeTheme, dynamicHeader }) {
   return (
     <Container>
       <Header
@@ -36,4 +34,4 @@ function HomeLayout({ theme, onChangeTheme, dynamicHeader }) {
   );
 }
 
-export default HomeLayout;
+export default MainLayout;
