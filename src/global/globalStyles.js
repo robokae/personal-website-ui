@@ -1,14 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-    /* General theme styling */
-    body, .navbar-container {
-        /* transition: all .25s ease-in-out; */
-    }
-
     body {
         background-color: ${({ theme }) => theme.primaryBgCol};
         color: ${({ theme }) => theme.primaryFontCol};
+        font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+        line-height: 1.75;
     }
 
     ::placeholder {
@@ -19,39 +16,121 @@ export const GlobalStyles = createGlobalStyle`
         background-color: ${({ theme }) => theme.primaryFontCol};
     }
 
-    /* Home page theme styling */
-    .contact-section {
-        &__contact-details-container {
-            /* border: 1px solid ${({ theme }) => theme.lineCol}; */
-            border-left: none;
-            border-right: none;
+    html {
+        font-size: 100%;
+    }
+
+    h1, h2, h3, h4, h5 {
+        width: 100%;
+        font-weight: bold;
+        // line-height: 1.3;
+    }
+
+    h1 {
+        font-size: 3.052rem;
+    }
+
+    h2 {
+        font-size: 2.441rem;
+    }
+
+    h3 {
+        font-size: 1.953rem;
+    }
+
+    h4 {
+        font-size: 1.563rem;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li, a {
+        font-size: 1rem;
+    }
+
+    input, textarea, button {
+        font-family: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+        font-size: 1rem;
+    }
+
+    .tooltip-container .custom-tooltip {
+        font-size: .8rem;
+        line-height: normal;
+    }
+
+    @media screen and (max-width: 1024px) {
+        /* Minor Third type scale */
+        html {
+            font-size: 100%; /* 16px */
         }
 
-        &__link {
-            color: ${({ theme }) => theme.primaryFontCol};
+        h1 {
+            font-size: 2.488rem;
         }
 
-        &__email-popup {
-            background-color: ${({ theme }) => theme.secondaryBgCol};
+        h2 {
+            font-size: 2.074rem;
+        }
+
+        h3 {
+            font-size: 1.728rem;
+        }
+
+        h4 {
+            font-size: 1.44rem;
+        }
+
+        h5 {
+            font-size: 1.2rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            font-size: 1rem;
         }
     }
 
-    .contact-form {
-        border: 1px solid ${({ theme }) => theme.lineCol};
-        background-color: ${({ theme }) => theme.secondaryBgCol};
+    @media screen and (max-width: 768px) {
+        /* Major Second type scale */
+        // html {
+        //     font-size: 87.5%; /* 14px */
+        // }
 
-        &__label {
-            color: ${({ theme }) => theme.secondaryFontCol};
+        h1 {
+            font-size: 2.027rem;
         }
 
-        &__input {
-            background-color: ${({ theme }) => theme.primaryBgCol};
-            color: ${({ theme }) => theme.primaryFontCol};
-            border: 1px solid ${({ theme }) => theme.lineCol};
+        h2 {
+            font-size: 1.802rem;
+        }
 
-            &:focus {
-                border-color: ${({ theme }) => theme.accentCol};
-            }
+        h3 {
+            font-size: 1.602rem;
+        }
+
+        h4 {
+            font-size: 1.424rem;
+        }
+
+        h5 {
+            font-size: 1.266rem;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            font-size: 1rem;
         }
     }
 
