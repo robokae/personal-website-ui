@@ -9,8 +9,8 @@ export const BaseLayout = styled.div`
 `;
 
 export const PageContentLayout = styled(BaseLayout)`
+  min-height: 100vh;
   margin-top: ${Layout.HEADER_HEIGHT};
-  margin-bottom: ${Layout.FOOTER_HEIGHT};
 `;
 
 export const ContentLayout = styled(BaseLayout)`

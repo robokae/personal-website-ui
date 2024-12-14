@@ -29,7 +29,7 @@ const darkTheme = {
   overlayCol: "rgba(20, 29, 31, 0.85)",
   primaryGradient: "linear-gradient(to right, #226ebf, #7923c4)",
   primaryFontCol: "#DFEDEE",
-  secondaryFontCol: "#848990",
+  secondaryFontCol: "#748d9e",
   jumbotronBgCol: "#182128",
   boxShadow: "0.25rem 0.25rem 1rem rgba(2, 10, 18, 0.2)",
   lineCol: "#2D343A",

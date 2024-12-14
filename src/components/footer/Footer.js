@@ -1,21 +1,25 @@
-import styled from "styled-components";
 import { getYear } from "../../util/DateUtil";
-import styles from "./Footer.module.scss";
-import { Layout } from "constants/layout";
-
-const Container = styled.div`
-  height: ${Layout.FOOTER_HEIGHT};
-  border-top: 1px solid ${({ theme }) => theme.lineCol};
-`;
+import { useResize } from "hooks/useResize";
+import { useEffect, useState } from "react";
+import { DeviceSize } from "constants/layout";
+import { Container, Content, Dot } from "./Footer.styles";
 
 function Footer({ textContent }) {
+  const { width } = useResize();
+  const [isCompactFooter, setIsCompactFooter] = useState(false);
+
+  useEffect(() => {
+    setIsCompactFooter(width >= DeviceSize.TABLET);
+  }, [width]);
+
   return (
-    <Container className={styles.container}>
-      <div className={styles.content}>
+    <Container>
+      <Content compact={isCompactFooter}>
         {textContent &&
           textContent.map((text, index) => <p key={index}>{text}</p>)}
-        <p>Alexander Hom {getYear()}</p>
-      </div>
+        {isCompactFooter && <p>&bull;</p>}
+        <p>{getYear()}</p>
+      </Content>
     </Container>
   );
 }

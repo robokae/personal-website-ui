@@ -9,10 +9,8 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         width: 100%;
-        height: max-content;
+        min-height: 100vh;
         position: relative;
-        display: flex;
-        flex-direction: column;
         overflow: auto;
         box-sizing: border-box;
         overscroll-behavior-y: none;
@@ -31,6 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     html {
+        height: 100%;
         font-size: 100%;
     }
 
