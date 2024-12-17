@@ -9,6 +9,12 @@ export const Link = styled(NavLink)`
   font-size: inherit;
 `;
 
+export const UnderlinedLink = styled(Link)`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 export const LinkButton = styled(Link)`
   background-color: ${({ theme }) => theme.accentCol};
   padding: 0.75rem 2rem;
@@ -39,5 +45,3 @@ export const BorderedIconLinkButton = styled(Link)`
     font-size: 1.25rem;
   }
 `;
-
-export const AnimatedLink = styled(NavLink)``;
