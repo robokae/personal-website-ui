@@ -1,27 +1,39 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import header from "content/layout/header.json";
-import footer from "content/layout/footer.json";
 import hamburgerMenu from "content/hamburgerMenu.json";
 import Footer from "components/footer/Footer";
 import Header from "./header/Header";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
+import { useLayoutEffect } from "react";
 
 const Container = styled.div`
   width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 `;
 
-function MainLayout({ theme, onChangeTheme, dynamicHeader }) {
+function MainLayout({ theme, onChangeTheme }) {
+  const ScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useLayoutEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  };
+
   return (
     <Container>
+      <ScrollToTop />
       <Header
         links={header.links}
         isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
-        changeBgOnScroll={dynamicHeader}
+        changeBgOnScroll={true}
       />
       <HamburgerMenu
         theme={theme}
@@ -29,7 +41,7 @@ function MainLayout({ theme, onChangeTheme, dynamicHeader }) {
         links={hamburgerMenu.links}
       />
       <Outlet />
-      <Footer textContent={footer.text} />
+      <Footer />
     </Container>
   );
 }
