@@ -1,10 +1,32 @@
 import styled, { css } from "styled-components";
-import { SectionLayout } from "components/layout/Layout";
-import { Breakpoint, DeviceSize, Layout } from "constants/layout";
+import { Breakpoint, Layout } from "constants/layout";
 import DeveloperSetup from "components/illustrations/DeveloperSetup.svg";
 import { Typography as TypographyConstants } from "constants/typography";
 import { Style } from "constants/style";
 import { useLayoutEffect, useRef, useState } from "react";
+import { HeroLayout } from "components/layout/Layout";
+
+const Container = styled(HeroLayout)`
+  width: 100%;
+  padding: 0 ${Layout.SECTION_PADDING};
+  background-color: #4e5c53;
+  padding-bottom: 0;
+`;
+
+const Content = styled.div`
+  width: 100%;
+  max-width: ${Layout.CONTENT_MAX_WIDTH};
+  margin-top: ${Layout.HEADER_HEIGHT};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: ${Layout.GAP_MD};
+  border-radius: ${Style.BORDER_RADIUS};
+
+  @media ${Breakpoint.MOBILE_LG} {
+    gap: ${Layout.GAP_LG};
+  }
+`;
 
 const HeadingContainer = styled.div`
   width: 100%;
@@ -12,6 +34,7 @@ const HeadingContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   gap: ${Layout.GAP_MD};
+  padding: ${Layout.PADDING_LG} 0;
 `;
 
 const headingStyle = css`
@@ -27,39 +50,23 @@ const Heading = styled.div`
 const SubHeading = styled.div`
   ${headingStyle}
   & > * {
-    color: #748d9e;
+    color: #a1b6c4;
     font-weight: normal;
   }
 `;
 
-const Content = styled.div`
-  width: 100%;
-  max-width: ${Layout.CONTENT_MAX_WIDTH};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: ${Layout.GAP_XL};
-
-  @media ${Breakpoint.MOBILE_LG} {
-    gap: ${Layout.GAP_LG};
-  }
-`;
-
 const ImageContainer = styled.div`
-  width: 100%;
-  padding-top: 3.75rem;
-  background: #293e47;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: ${Style.BORDER_RADIUS};
 `;
 
 const Image = styled.img`
   width: 45%;
 
   @media ${Breakpoint.TABLET} {
-    width: 65%;
+    width: 75%;
   }
 `;
 
@@ -93,7 +100,7 @@ function Hero({ data }) {
     : [data.subHeadings.join(" ")];
 
   return (
-    <SectionLayout ref={sectionRef}>
+    <Container ref={sectionRef}>
       <Content>
         <HeadingContainer>
           <Heading>
@@ -114,7 +121,7 @@ function Hero({ data }) {
           />
         </ImageContainer>
       </Content>
-    </SectionLayout>
+    </Container>
   );
 }
 
