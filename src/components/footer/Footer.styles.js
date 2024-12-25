@@ -15,6 +15,10 @@ export const Container = styled.footer`
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0;
   }
+
+  @media ${Breakpoint.MOBILE_MD} {
+    justify-content: left;
+  }
 `;
 
 export const Content = styled.div`
@@ -23,20 +27,27 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   border-top: 1px solid ${({ theme }) => theme.lineCol};
   padding: 1.5rem 0;
   font-size: 0.9rem;
+
+  @media ${Breakpoint.MOBILE_MD} {
+    gap: 1.5rem;
+  }
 `;
 
 export const LinkContainer = styled.div`
+  width: 100%;
   display: flex;
+  justify-content: center;
   flex-direction: row;
   gap: 1.5rem;
 
-  @media ${Breakpoint.MOBILE_LG} {
+  @media ${Breakpoint.MOBILE_MD} {
     padding: 0 ${Layout.SECION_PADDING_SM};
     display: grid;
+    justify-content: left;
     grid-template-columns: max-content max-content;
     grid-template-rows: 1fr 1fr;
     grid-row-gap: 0.5rem;
@@ -46,20 +57,17 @@ export const LinkContainer = styled.div`
 `;
 
 export const CaptionContainer = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 0.5rem;
   color: ${({ theme }) => theme.secondaryFontCol};
-  ${(props) =>
-    props.compact &&
-    css`
-      flex-direction: row;
-      justify-content: flex-start;
-    `}
 
-  @media ${Breakpoint.MOBILE_LG} {
+  @media ${Breakpoint.MOBILE_MD} {
     padding: 0 ${Layout.SECION_PADDING_SM};
+    align-items: flex-start;
   }
 `;
 
@@ -70,5 +78,6 @@ export const Caption = styled.p`
 
   @media ${Breakpoint.MOBILE_MD} {
     flex-direction: column;
+    gap: 0;
   }
 `;

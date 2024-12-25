@@ -37,7 +37,7 @@ function Footer() {
               </UnderlinedLink>
             ))}
         </LinkContainer>
-        <CaptionContainer compact={isCompactFooter}>
+        <CaptionContainer>
           {caption && (
             <Caption>
               <span>{caption}</span>
