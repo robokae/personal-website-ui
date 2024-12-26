@@ -11,6 +11,7 @@ export const Container = styled.footer`
   flex-direction: center;
   justify-content: center;
   margin-top: auto;
+  background-color: #192229;
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0;
@@ -28,7 +29,6 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  border-top: 1px solid ${({ theme }) => theme.lineCol};
   padding: 1.5rem 0;
   font-size: 0.9rem;
 
