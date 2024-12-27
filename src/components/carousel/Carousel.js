@@ -10,76 +10,54 @@ import {
 import { useResize } from "hooks/useResize";
 import ArrowIndicator from "./ArrowIndicator";
 
-const Carousel = (props) => {
-  const slides = props.children;
+const Carousel = ({ paddingX, arrows, children: slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRefs = useRef(slides.map(React.createRef));
   const carouselRef = useRef(null);
-  const [slideProps, setSlideProps] = useState(0);
+  const [slideInitialPosition, setSlideInitialPosition] = useState(null);
+  const [slideWidth, setSlideWidth] = useState(null);
   const { width } = useResize();
-  const scrollThreshold = props.scrollThreshold ?? 128;
+  const scrollConfig = { behavior: "smooth" };
 
   useEffect(() => {
     if (carouselRef.current) {
-      setSlideProps((current) => ({
-        ...current,
-        width:
-          carouselRef.current.children[currentSlide].getBoundingClientRect()
-            .width,
-      }));
+      const { left, width } =
+        carouselRef.current.children[currentSlide].getBoundingClientRect();
+      setSlideWidth(width);
+      setSlideInitialPosition(left);
     }
-  }, [currentSlide, width]);
+  }, [width]);
 
-  useEffect(() => {
-    if (carouselRef.current) {
-      const { left } = carouselRef.current.children[0].getBoundingClientRect();
-      setSlideProps((current) => ({
-        ...current,
-        gap: left / 2,
-        initialPosition: left,
-      }));
-    }
-  }, []);
+  const isNotFirstSlide = (slideIndex) => slideIndex !== 0;
+  const isNotLastSlide = (slideIndex) => slideIndex !== slides.length - 1;
 
-  const scrollLeft = (delta) => {
-    if (currentSlide !== 0) {
-      const newPosition =
-        carouselRef.current.scrollLeft - (slideProps.width + slideProps.gap);
-
-      // Delta is used during onWheel when the slide has been partially scrolled
-      carouselRef.current.scrollTo({
-        left: delta > 0 ? newPosition + delta : newPosition,
-        behavior: "smooth",
-      });
-
+  const scrollToPreviousSlide = () => {
+    if (isNotFirstSlide(currentSlide)) {
+      carouselRef.current.children[currentSlide - 1].scrollIntoView(
+        scrollConfig
+      );
       setCurrentSlide((current) => current - 1);
     }
   };
 
-  const scrollRight = (delta) => {
-    if (currentSlide !== slides.length - 1) {
-      const newPosition =
-        carouselRef.current.scrollLeft + (slideProps.width + slideProps.gap);
-
-      // Delta is used during onWheel when the slide has been partially scrolled
-      carouselRef.current.scrollTo({
-        left: delta > 0 ? newPosition - delta : newPosition,
-        behavior: "smooth",
-      });
-
+  const scrollToNextSlide = () => {
+    if (isNotLastSlide(currentSlide)) {
+      carouselRef.current.children[currentSlide + 1].scrollIntoView(
+        scrollConfig
+      );
       setCurrentSlide((current) => current + 1);
     }
   };
 
-  const handleWheel = (e) => {
-    const currentPosition =
-      slideRefs.current[currentSlide].current.getBoundingClientRect().x;
-    let delta = slideProps.initialPosition - currentPosition;
+  const handleWheel = () => {
+    const { x: scrollOffset } =
+      carouselRef.current.children[currentSlide].getBoundingClientRect();
+    const scrollDelta = scrollOffset - slideInitialPosition;
 
-    if (delta >= scrollThreshold && e.deltaX > 0) {
-      scrollRight(Math.abs(delta));
-    } else if (delta <= -1 * scrollThreshold && e.deltaX < 0) {
-      scrollLeft(Math.abs(delta));
+    if (scrollDelta < (-1 * slideWidth) / 2 && isNotLastSlide(currentSlide)) {
+      setCurrentSlide((prevSlide) => prevSlide + 1);
+    } else if (scrollDelta > slideWidth / 2 && isNotFirstSlide(currentSlide)) {
+      setCurrentSlide((prevSlide) => prevSlide - 1);
     }
   };
 
@@ -93,7 +71,7 @@ const Carousel = (props) => {
     <Container>
       <Top>
         <SlideContainer
-          paddingX={props.paddingX}
+          paddingX={paddingX}
           ref={carouselRef}
           onWheel={handleWheel}
         >
@@ -108,13 +86,13 @@ const Carousel = (props) => {
       </Top>
 
       <Bottom>
-        {props.arrows ? (
+        {arrows ? (
           <ArrowIndicator
             numbers
             currentSlide={currentSlide}
             numSlides={slides.length}
-            leftArrowClickHandler={scrollLeft}
-            rightArrowClickHandler={scrollRight}
+            leftArrowClickHandler={scrollToPreviousSlide}
+            rightArrowClickHandler={scrollToNextSlide}
           />
         ) : (
           <DefaultSlideIndicator />
