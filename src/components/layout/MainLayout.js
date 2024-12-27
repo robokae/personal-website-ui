@@ -28,7 +28,6 @@ function MainLayout({ theme, onChangeTheme }) {
       <ScrollToTop />
       <Header
         links={header.links}
-        isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
         transitionBackgroundOnScroll

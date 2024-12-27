@@ -36,7 +36,7 @@ export const Content = styled.section`
   flex-direction: column;
   background-color: ${({ theme }) => theme.primaryBgCol};
   background-color: #192229;
-  transition: all ${Style.TRANSITION_DURATION} ease-out;
+  transition: all 0.3s ease-out;
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0 ${Layout.SECION_PADDING_SM};
@@ -49,7 +49,6 @@ export const Content = styled.section`
   }
 
   &.content-exit-done {
-    opacity: 0;
     transform: translateY(0);
   }
 `;
@@ -66,7 +65,7 @@ export const MenuOptionsContainer = styled.ul`
 export const MenuOption = styled.li`
   width: 100%;
   height: 100%;
-  transition: opacity ${Style.TRANSITION_DURATION} ease-out;
+  transition: opacity 0.5s ease-out;
   opacity: 0;
 
   & > a {

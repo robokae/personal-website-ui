@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import content from "content/hamburgerMenu.json";
 import {
   Container,
@@ -11,9 +10,8 @@ import { Link } from "components/Link";
 import { useLayoutEffect, useRef, useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-function HamburgerMenu({ clickHandler }) {
+function HamburgerMenu({ display, clickHandler }) {
   const { links } = content;
-  const display = useSelector((state) => state.hamburgerMenu.display);
   const menuRef = useRef(null);
   const [height, setHeight] = useState(null);
 
@@ -29,17 +27,18 @@ function HamburgerMenu({ clickHandler }) {
         <CSSTransition in={display} classNames="overlay" timeout={0}>
           <Overlay onClick={clickHandler} />
         </CSSTransition>
-        <CSSTransition in={display} classNames="content" timeout={150}>
+        <CSSTransition in={display} classNames="content" timeout={100}>
           <Content ref={menuRef} height={height}>
             <MenuOptionsContainer>
-              {links.map((link) => (
+              {links.map((link, index) => (
                 <CSSTransition
+                  key={index}
                   in={display}
                   classNames="link"
-                  timeout={300}
+                  timeout={350}
                   unmountOnExit
                 >
-                  <MenuOption key={link.id}>
+                  <MenuOption>
                     {
                       <Link onClick={clickHandler} to={link.to}>
                         {link.label}
