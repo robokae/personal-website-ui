@@ -3,20 +3,17 @@
     {
       "label": "ALEXANDER HOM",
       "to": "/",
-      "position": "left",
-      "displayOnMobile": true
+      "position": "left"
     },
     {
       "label": "About",
       "to": "/about",
-      "position": "right",
-      "displayOnMobile": false
+      "position": "right"
     },
     {
       "label": "Contact",
       "to": "/contact",
-      "position": "right",
-      "displayOnMobile": false
+      "position": "right"
     }
   ]
 }
