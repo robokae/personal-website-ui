@@ -17,18 +17,6 @@
             "type": "text",
             "label": "Contact",
             "to": "/contact"
-        },
-        {
-            "id": 3,
-            "type": "text",
-            "label": "GitHub",
-            "to": "https://github.com/robokae"
-        },
-        {
-            "id": 4,
-            "type": "text",
-            "label": "LinkedIn",
-            "to": "https://www.linkedin.com/in/alexander-hom-94811b188/"
         }
     ]
 }

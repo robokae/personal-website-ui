@@ -26,10 +26,14 @@ const IconContainer = styled(({ children, ...props }) =>
   ${defaultStyles};
 `;
 
-const Icon = ({ name, clickable, clickHandler, children, ...props }) => {
+const Icon = ({ name, clickable, onClick, children, ...props }) => {
   return (
-    <IconContainer $clickable={clickable} style={{ ...props }}>
-      <FontAwesomeIcon icon={name} fixedWidth onClick={clickHandler} />
+    <IconContainer
+      onClick={onClick}
+      $clickable={clickable}
+      style={{ ...props }}
+    >
+      <FontAwesomeIcon icon={name} fixedWidth />
     </IconContainer>
   );
 };

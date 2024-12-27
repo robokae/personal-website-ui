@@ -9,7 +9,7 @@ import { HeroLayout } from "components/layout/Layout";
 const Container = styled(HeroLayout)`
   width: 100%;
   padding: 0 ${Layout.SECTION_PADDING};
-  background-color: #4e5c53;
+  background-color: #3b4c58;
   padding-bottom: 0;
 `;
 

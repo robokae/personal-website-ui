@@ -22,15 +22,15 @@ const lightTheme = {
 };
 
 const darkTheme = {
-  primaryBgCol: "#121B20",
-  headerCol: "#121b20",
+  primaryBgCol: "#11191F",
+  headerCol: "#11191F",
   headerInitialFontCol: "#DFEBF5",
   secondaryBgCol: "#182128",
-  overlayCol: "rgba(20, 29, 31, 0.85)",
+  overlayCol: "rgba(15, 22, 29, 0.85)",
   primaryGradient: "linear-gradient(to right, #226ebf, #7923c4)",
   primaryFontCol: "#DFEDEE",
   secondaryFontCol: "#748d9e",
-  jumbotronBgCol: "#182128",
+  jumbotronBgCol: "#12161a",
   boxShadow: "0.25rem 0.25rem 1rem rgba(2, 10, 18, 0.2)",
   lineCol: "#2D343A",
   tagCol: "#202a34",

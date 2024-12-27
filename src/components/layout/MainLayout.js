@@ -1,10 +1,8 @@
 import { Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import header from "content/layout/header.json";
-import hamburgerMenu from "content/hamburgerMenu.json";
 import Footer from "components/footer/Footer";
 import Header from "./header/Header";
-import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
 import { useLayoutEffect } from "react";
 
 const Container = styled.div`
@@ -33,12 +31,7 @@ function MainLayout({ theme, onChangeTheme }) {
         isActive={false}
         theme={theme}
         onChangeTheme={onChangeTheme}
-        changeBgOnScroll={true}
-      />
-      <HamburgerMenu
-        theme={theme}
-        onChangeTheme={onChangeTheme}
-        links={hamburgerMenu.links}
+        transitionBackgroundOnScroll
       />
       <Outlet />
       <Footer />

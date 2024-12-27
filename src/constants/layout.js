@@ -1,6 +1,6 @@
 export const DeviceSize = {
   MOBILE_SM: "320",
-  MOBILE_MD: "375",
+  MOBILE_MD: "425",
   MOBILE_LG: "525",
   TABLET: "768",
   LAPTOP: "1024",
@@ -28,6 +28,7 @@ export const Layout = Object.freeze({
   PADDING_LG: "3rem",
   PADDING_XL: "5rem",
   SECTION_PADDING: "3rem",
+  SECION_PADDING_SM: "2rem",
   CARD_PADDING: "1.5rem",
   HEADER_HEIGHT: "4.5rem",
   FOOTER_HEIGHT: "8rem",

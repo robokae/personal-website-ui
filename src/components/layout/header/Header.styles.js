@@ -5,36 +5,44 @@ import { Style } from "constants/style";
 
 export const Container = styled.header`
   width: 100%;
+  height: max-content;
+  position: relative;
+  z-index: 10;
+`;
+
+export const NavContainer = styled.div`
+  width: 100%;
   height: ${Layout.HEADER_HEIGHT};
-  padding: 0 ${Layout.SECTION_PADDING};
   position: fixed;
   top: 0;
+  left: 0;
+  padding: 0 ${Layout.SECTION_PADDING};
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(3rem);
-  -webkit-backdrop-filter: blur(3rem);
-  z-index: 5;
-  background-color: rgba(18, 27, 32, 0.8);
-  border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+  background-color: transparent;
+  border-color: transparent;
   box-sizing: border-box;
-  ${(props) =>
-    props.transparent &&
-    css`
-      background-color: transparent;
-      border-color: transparent;
-    `};
-  ${(props) =>
-    props.transition &&
-    css`
-      transition: all ${Style.TRANSITION_DURATION} ease-in-out;
-    `};
+  transition: all ${Style.TRANSITION_DURATION} ease-out;
+
+  @media ${Breakpoint.MOBILE_LG} {
+    padding: 0 ${Layout.SECION_PADDING_SM};
+  }
+
+  &.nav-container-enter-done {
+    background-color: #192229;
+    border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+  }
+
+  &.nav-container-exit-active {
+    background-color: #192229;
+    border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+  }
 `;
 
 export const Nav = styled.nav`
   width: ${Layout.CONTENT_MAX_WIDTH};
-  height: max-content;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -51,14 +59,5 @@ export const LinkContainer = styled.section`
 export const DynamicLink = styled(Link)`
   @media ${Breakpoint.TABLET} {
     display: ${(props) => (props.$display ? "inline-block" : "none")};
-  }
-`;
-
-export const HamburgerMenuButton = styled.div`
-  display: none;
-
-  @media ${Breakpoint.TABLET} {
-    display: inline-block;
-    justify-self: flex-end;
   }
 `;

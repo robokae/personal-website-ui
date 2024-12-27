@@ -1,90 +1,106 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   disableTransparentHeader,
   enableTransparentHeader,
-  setTransition,
   setTransparentHeader,
 } from "features/headerSlice";
 import { toggle } from "features/hamburgerMenuSlice";
 import {
   Container,
   DynamicLink,
-  HamburgerMenuButton,
   LinkContainer,
   Nav,
+  NavContainer,
 } from "./Header.styles";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/icon/Icon";
+import { useResize } from "hooks/useResize";
+import { DeviceSize } from "constants/layout";
+import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
+import { useNavigate } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 
-function Header({ links, changeBgOnScroll }) {
+function Header({ links, transitionBackgroundOnScroll }) {
   const displayHamburgerMenu = useSelector(
     (state) => state.hamburgerMenu.display
   );
-  const isTransparent = useSelector((state) => state.header.isTransparent);
-  const transition = useSelector((state) => state.header.transition);
+  const { isTransparent, transition } = useSelector((state) => state.header);
+  const { width } = useResize();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [enableTransition, setEnableTransition] = useState(true);
+  const leftLinks = links.filter((link) => link.position === "left");
+  const rightLinks = links.filter((link) => link.position === "right");
   const SCROLL_THRESHOLD = 20;
-  const TRANSITION_DURATION_MS = 350;
 
   useEffect(() => {
     if (
       displayHamburgerMenu ||
       (!displayHamburgerMenu && window.scrollY >= SCROLL_THRESHOLD)
     ) {
+      // Disable the transparent header when the hamburger menu is displayed or
+      // when a certain amount has been scrolled down
       dispatch(disableTransparentHeader());
-      dispatch(setTransition(false));
       return;
     }
 
-    dispatch(setTransparentHeader(changeBgOnScroll));
-  }, [displayHamburgerMenu, changeBgOnScroll, dispatch]);
+    dispatch(setTransparentHeader(transitionBackgroundOnScroll));
+  }, [displayHamburgerMenu, transitionBackgroundOnScroll, dispatch]);
+
+  useEffect(() => {
+    // Closes the menu after going to a new page (after link is clicked)
+    !enableTransition && setEnableTransition(true);
+  }, [enableTransition, navigate]);
 
   const handleScroll = () => {
-    if (changeBgOnScroll && !displayHamburgerMenu) {
+    if (transitionBackgroundOnScroll && !displayHamburgerMenu) {
       window.scrollY <= SCROLL_THRESHOLD
         ? dispatch(enableTransparentHeader())
         : dispatch(disableTransparentHeader());
-    } else {
-      dispatch(disableTransparentHeader());
+      return;
     }
+    dispatch(disableTransparentHeader());
   };
+
+  const toggleMenu = () => dispatch(toggle());
 
   window.addEventListener("scroll", handleScroll);
 
-  const handleMenuClick = () => {
-    // Disable transition effect when closing menu
-    displayHamburgerMenu && dispatch(setTransition(false));
-
-    dispatch(toggle());
-
-    // Enable transition effect after the menu has been closed
-    setTimeout(() => dispatch(setTransition(true)), TRANSITION_DURATION_MS);
-  };
-
-  const leftLinks = links.filter((link) => link.position === "left");
-  const rightLinks = links.filter((link) => link.position === "right");
-
   return (
-    <Container transition={transition} transparent={isTransparent}>
-      <Nav>
-        {[leftLinks, rightLinks].map((links, index) => (
-          <LinkContainer key={index}>
-            {links.map((link, index) => (
-              <DynamicLink
-                key={index}
-                to={link.to}
-                $display={link.displayOnMobile}
-              >
-                {link.label ?? <Icon name={link.icon} />}
-              </DynamicLink>
+    <Container>
+      <CSSTransition
+        in={!isTransparent}
+        classNames="nav-container"
+        timeout={{ exit: 10 }}
+      >
+        <NavContainer transition={transition}>
+          <Nav>
+            {[leftLinks, rightLinks].map((links, index) => (
+              <LinkContainer key={index}>
+                {links.map((link, index) => (
+                  <DynamicLink
+                    key={index}
+                    to={link.to}
+                    $display={link.displayOnMobile}
+                    onClick={displayHamburgerMenu && toggleMenu}
+                  >
+                    {link.label ?? <Icon name={link.icon} />}
+                  </DynamicLink>
+                ))}
+              </LinkContainer>
             ))}
-          </LinkContainer>
-        ))}
-        <HamburgerMenuButton onClick={handleMenuClick}>
-          <Icon clickable name={displayHamburgerMenu ? faTimes : faBars} />
-        </HamburgerMenuButton>
-      </Nav>
+            {width < DeviceSize.TABLET && (
+              <Icon
+                clickable
+                onClick={toggleMenu}
+                name={displayHamburgerMenu ? faTimes : faBars}
+              />
+            )}
+          </Nav>
+        </NavContainer>
+      </CSSTransition>
+      <HamburgerMenu clickHandler={toggleMenu} />
     </Container>
   );
 }

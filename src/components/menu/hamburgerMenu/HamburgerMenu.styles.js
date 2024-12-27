@@ -1,22 +1,30 @@
-import { Layout } from "constants/layout";
-import styled, { css } from "styled-components";
+import { Style } from "constants";
+import { Breakpoint, Layout } from "constants/layout";
+import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  display: ${(props) => (props.display ? "block" : "none")};
-  transition: 0.3s;
+  width: 100%;
+  height: max-content;
+  top: ${Layout.HEADER_HEIGHT};
   position: fixed;
   box-sizing: border-box;
-  backdrop-filter: blur(0.5rem);
-  z-index: 5;
+  z-index: -1;
+  // Set initial visibility to hidden, otherwise the overlay is going to be
+  // on top of the elements, causing the elements below to not be interactable
+  visibility: hidden;
 `;
 
 export const Overlay = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: ${({ theme }) => theme.overlayCol};
+  transition: all ${Style.TRANSITION_DURATION} ease-out;
+  opacity: 0;
+
+  &.overlay-enter-done {
+    opacity: 1;
+    visibility: visible;
+  }
 `;
 
 export const Content = styled.section`
@@ -27,30 +35,23 @@ export const Content = styled.section`
   display: flex;
   flex-direction: column;
   background-color: ${({ theme }) => theme.primaryBgCol};
-  border-bottom: 1px solid ${({ theme }) => theme.lineCol};
-  padding-bottom: 1.5rem;
-  ${(props) =>
-    props.display &&
-    css`
-      transform: translateY(
-        calc(${(props) => props.height}px + ${Layout.HEADER_HEIGHT})
-      );
-      transition: transform 0.3s ease-out;
-    `}
-`;
+  background-color: #192229;
+  transition: all ${Style.TRANSITION_DURATION} ease-out;
 
-export const Header = styled.nav`
-  width: 100%;
-  height: ${Layout.HEADER_HEIGHT};
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  padding: 0 ${Layout.SECTION_PADDING};
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: ${({ theme }) => theme.primaryBgCol};
-  z-index: 6;
+  @media ${Breakpoint.MOBILE_LG} {
+    padding: 0 ${Layout.SECION_PADDING_SM};
+  }
+
+  &.content-enter-done {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(${(props) => props.height}px);
+  }
+
+  &.content-exit-done {
+    opacity: 0;
+    transform: translateY(0);
+  }
 `;
 
 export const MenuOptionsContainer = styled.ul`
@@ -59,20 +60,31 @@ export const MenuOptionsContainer = styled.ul`
   display: flex;
   flex-direction: column;
   list-style: none;
+  padding: 2rem 0;
 `;
 
 export const MenuOption = styled.li`
   width: 100%;
   height: 100%;
+  transition: opacity ${Style.TRANSITION_DURATION} ease-out;
+  opacity: 0;
 
   & > a {
     display: block;
     text-align: center;
     font-size: 1.25rem;
-    padding: 1rem ${Layout.SECTION_PADDING};
+    padding: 1.25rem ${Layout.SECTION_PADDING};
 
     &:hover {
-      text-decoration: underline;
+      color: ${({ theme }) => theme.accentCol};
     }
+  }
+
+  &.link-enter-done {
+    opacity: 1;
+  }
+
+  &.link-exit-active {
+    visibility: hidden;
   }
 `;

@@ -1,6 +1,6 @@
 export const Style = Object.freeze({
   BORDER_RADIUS: ".5rem",
-  TRANSITION_DURATION: ".35s",
+  TRANSITION_DURATION: ".3s",
 });
 
 export const IconSize = Object.freeze({

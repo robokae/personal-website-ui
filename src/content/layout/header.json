@@ -17,18 +17,6 @@
       "to": "/contact",
       "position": "right",
       "displayOnMobile": false
-    },
-    {
-      "to": "https://github.com/robokae",
-      "position": "right",
-      "displayOnMobile": false,
-      "icon": ["fab", "github"]
-    },
-    {
-      "to": "https://www.linkedin.com/in/alexander-hom-94811b188/",
-      "position": "right",
-      "displayOnMobile": false,
-      "icon": ["fab", "linkedin"]
     }
   ]
 }
