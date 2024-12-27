@@ -35,6 +35,7 @@ export const NavContainer = styled.div`
   &.nav-container-exit-active {
     background-color: #192229;
     border-bottom: 1px solid ${({ theme }) => theme.lineCol};
+    transition-duration: 0.5s;
   }
 `;
 
