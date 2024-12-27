@@ -1,7 +1,5 @@
-import styled, { css } from "styled-components";
-import { Link } from "components/Link";
+import styled from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
-import { Style } from "constants/style";
 
 export const Container = styled.header`
   width: 100%;
@@ -23,7 +21,7 @@ export const NavContainer = styled.div`
   background-color: transparent;
   border-color: transparent;
   box-sizing: border-box;
-  transition: all ${Style.TRANSITION_DURATION} ease-out;
+  transition: all 0.3s ease-out;
 
   @media ${Breakpoint.MOBILE_LG} {
     padding: 0 ${Layout.SECION_PADDING_SM};
@@ -54,10 +52,4 @@ export const LinkContainer = styled.section`
   flex-direction: row;
   align-items: center;
   gap: 1.5rem;
-`;
-
-export const DynamicLink = styled(Link)`
-  @media ${Breakpoint.TABLET} {
-    display: ${(props) => (props.$display ? "inline-block" : "none")};
-  }
 `;
