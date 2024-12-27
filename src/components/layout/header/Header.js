@@ -1,106 +1,99 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  disableTransparentHeader,
-  enableTransparentHeader,
-  setTransparentHeader,
-} from "features/headerSlice";
-import { toggle } from "features/hamburgerMenuSlice";
-import {
-  Container,
-  DynamicLink,
-  LinkContainer,
-  Nav,
-  NavContainer,
-} from "./Header.styles";
+import { useCallback, useEffect, useState } from "react";
+import { Container, LinkContainer, Nav, NavContainer } from "./Header.styles";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/icon/Icon";
 import { useResize } from "hooks/useResize";
 import { DeviceSize } from "constants/layout";
 import HamburgerMenu from "components/menu/hamburgerMenu/HamburgerMenu";
-import { useNavigate } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
+import { Link } from "components/Link";
 
 function Header({ links, transitionBackgroundOnScroll }) {
-  const displayHamburgerMenu = useSelector(
-    (state) => state.hamburgerMenu.display
-  );
-  const { isTransparent, transition } = useSelector((state) => state.header);
+  const [showHamburgerMenu, setShowHamburgerMenu] = useState(false);
+  const [isBackgroundTransparent, setIsBackgroundTransparent] = useState(true);
+
   const { width } = useResize();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [enableTransition, setEnableTransition] = useState(true);
+
   const leftLinks = links.filter((link) => link.position === "left");
   const rightLinks = links.filter((link) => link.position === "right");
+
   const SCROLL_THRESHOLD = 20;
+  const SCROLL = "scroll";
+
+  const isMobileHeader = width < DeviceSize.TABLET;
+  const headerLinks = isMobileHeader ? [leftLinks] : [leftLinks, rightLinks];
+
+  const toggleMenu = () => setShowHamburgerMenu((prev) => !prev);
+
+  const handleScroll = useCallback(() => {
+    transitionBackgroundOnScroll
+      ? setIsBackgroundTransparent(window.scrollY <= SCROLL_THRESHOLD)
+      : setIsBackgroundTransparent(false);
+  }, [transitionBackgroundOnScroll]);
 
   useEffect(() => {
-    if (
-      displayHamburgerMenu ||
-      (!displayHamburgerMenu && window.scrollY >= SCROLL_THRESHOLD)
-    ) {
-      // Disable the transparent header when the hamburger menu is displayed or
-      // when a certain amount has been scrolled down
-      dispatch(disableTransparentHeader());
+    /**
+     * Disable the transparent header when the hamburger menu is displayed and
+     * temporarily remove the scroll event listener so that the header does not
+     * flicker during scroll
+     */
+    if (showHamburgerMenu) {
+      setIsBackgroundTransparent(false);
+      window.removeEventListener(SCROLL, handleScroll);
       return;
     }
 
-    dispatch(setTransparentHeader(transitionBackgroundOnScroll));
-  }, [displayHamburgerMenu, transitionBackgroundOnScroll, dispatch]);
+    // When the hamburger menu is not displayed, enable the scroll event handler
+    window.addEventListener(SCROLL, handleScroll);
+
+    setIsBackgroundTransparent(transitionBackgroundOnScroll);
+
+    return () => window.removeEventListener(SCROLL, handleScroll);
+  }, [showHamburgerMenu, transitionBackgroundOnScroll, handleScroll]);
 
   useEffect(() => {
-    // Closes the menu after going to a new page (after link is clicked)
-    !enableTransition && setEnableTransition(true);
-  }, [enableTransition, navigate]);
-
-  const handleScroll = () => {
-    if (transitionBackgroundOnScroll && !displayHamburgerMenu) {
-      window.scrollY <= SCROLL_THRESHOLD
-        ? dispatch(enableTransparentHeader())
-        : dispatch(disableTransparentHeader());
-      return;
-    }
-    dispatch(disableTransparentHeader());
-  };
-
-  const toggleMenu = () => dispatch(toggle());
-
-  window.addEventListener("scroll", handleScroll);
+    /**
+     * When the hamburger menu is closed and the scroll position is beyond that
+     * of the threshold (e.g., the page is scrolled to the center), the header
+     * will be transparent, so need to call the scroll handler to make the
+     * header non-transparent
+     */
+    window.scrollY > SCROLL_THRESHOLD && handleScroll();
+  }, [showHamburgerMenu, handleScroll]);
 
   return (
     <Container>
       <CSSTransition
-        in={!isTransparent}
+        in={!isBackgroundTransparent}
         classNames="nav-container"
-        timeout={{ exit: 10 }}
+        timeout={{ exit: 300 }}
       >
-        <NavContainer transition={transition}>
+        <NavContainer>
           <Nav>
-            {[leftLinks, rightLinks].map((links, index) => (
+            {headerLinks.map((links, index) => (
               <LinkContainer key={index}>
                 {links.map((link, index) => (
-                  <DynamicLink
+                  <Link
                     key={index}
                     to={link.to}
-                    $display={link.displayOnMobile}
-                    onClick={displayHamburgerMenu && toggleMenu}
+                    onClick={showHamburgerMenu && toggleMenu}
                   >
                     {link.label ?? <Icon name={link.icon} />}
-                  </DynamicLink>
+                  </Link>
                 ))}
               </LinkContainer>
             ))}
-            {width < DeviceSize.TABLET && (
+            {isMobileHeader && (
               <Icon
                 clickable
                 onClick={toggleMenu}
-                name={displayHamburgerMenu ? faTimes : faBars}
+                name={showHamburgerMenu ? faTimes : faBars}
               />
             )}
           </Nav>
         </NavContainer>
       </CSSTransition>
-      <HamburgerMenu clickHandler={toggleMenu} />
+      <HamburgerMenu display={showHamburgerMenu} clickHandler={toggleMenu} />
     </Container>
   );
 }
