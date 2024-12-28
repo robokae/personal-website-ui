@@ -19,10 +19,10 @@
                 "headings": ["A brief overview"],
                 "subHeadings": [],
                 "text": [
-                    "I have over two years of professional software engineering experience developing client-side web applications as well as enterprise APIs", 
+                    "I have three years of professional software engineering experience developing client-side web applications as well as enterprise APIs", 
                     "I am proficient in various programming languages and technologies, including Java, Python, JavaScript, relational and NoSQL databases, CI/CD pipelines, and Google Cloud", 
-                    "I enjoy tackling challenges, especially as part of a team where we collaborate to design and develop solutions to complex problems", 
-                    "I like learning about the latest technologies and applying the knowledge to my work to achieve greater performance and efficiency"
+                    "I enjoy tackling challenges and collaborating with people to design and develop solutions to complex problems", 
+                    "I like learning about the latest technologies and applying the knowledge to my work to improve application performance and efficiency"
                 ],
                 "images": [],
                 "icons": ["terminal", "code", "heart", "book"],
@@ -35,7 +35,7 @@
             "content": {
                 "headings": ["A tale of two passions: art and technology"],
                 "subHeadings": [],
-                "text": ["Growing up, two of my interests were art and technology. I enjoyed creating objects with Lego, folding origami, and designing architectural structures. At the same time, I was fascinated with the inner workings of websites and was very enthusiastic about developing my own. Today, as a software engineer, I get to combine my two passions as part of the software development process — putting on my artist cap when designing user interfaces and applying my interest in technology while coding applications using the latest technologies."],
+                "text": ["Growing up, two of my interests were art and technology. I enjoyed creating objects with Lego, folding origami, and designing architectural structures. At the same time, I was fascinated with the inner workings of websites and was very enthusiastic about developing my own. Today, as a software engineer, I get to combine my two passions as part of the software development process — putting on my artist cap when designing user interfaces and applying my interest in technology while programming applications using the latest technologies."],
                 "images": [],
                 "icons": [],
                 "buttons": [],
@@ -48,9 +48,9 @@
                 "headings": ["Full stack development expertise"],
                 "subHeadings": ["Frontend", "Backend", "Cloud"],
                 "text": [
-                    "Design multi-page responsive web applications with Figma and develop them with modern JavaScript using React and its ecosystem of tools and packages, such as Redux", 
-                    "Develop scalable microservices using various technologies, including Spring Boot (Java) and Flask (Python), and test them using frameworks, such as JUnit and Karate", 
-                    "Develop and deploy cloud applications using the Google Cloud Platform and technologies, such as Kubernetes"
+                    "Proficient in designing responsive web applications with Figma and developing them with modern JavaScript using React and its ecosystem of tools and packages, like Redux", 
+                    "Experienced in developing large-scale microservices using various backend frameworks and technologies, like Spring Boot and Flask, and testing APIs using frameworks, such as JUnit and Karate", 
+                    "Knowledgable in developing and deploying applications using Google Cloud Platform and cloud-native technologies, such as Kubernetes"
                 ],
                 "images": [],
                 "icons": [],
