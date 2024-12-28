@@ -1,5 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import { Container, LinkContainer, Nav, NavContainer } from "./Header.styles";
+import {
+  Container,
+  LinkContainer,
+  Nav,
+  NavContainer,
+  StyledIcon,
+} from "./Header.styles";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Icon from "components/icon/Icon";
 import { useResize } from "hooks/useResize";
@@ -84,10 +90,9 @@ function Header({ links, transitionBackgroundOnScroll }) {
               </LinkContainer>
             ))}
             {isMobileHeader && (
-              <Icon
-                clickable
+              <StyledIcon
                 onClick={toggleMenu}
-                name={showHamburgerMenu ? faTimes : faBars}
+                icon={showHamburgerMenu ? faTimes : faBars}
               />
             )}
           </Nav>

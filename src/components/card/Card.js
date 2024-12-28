@@ -1,9 +1,8 @@
 import styled, { css } from "styled-components";
-import React from "react";
 import { Style } from "constants/style";
 import { Layout, Breakpoint } from "constants/layout";
 
-const defaultStyles = css`
+export const Card = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -17,15 +16,5 @@ const defaultStyles = css`
     padding: ${Layout.PADDING_MD};
   }
 `;
-
-const CardComponent = styled(({ children, ...props }) =>
-  React.createElement("div", props, children)
-)`
-  ${defaultStyles}
-`;
-
-const Card = ({ children, ...props }) => {
-  return <CardComponent style={{ ...props }}>{children}</CardComponent>;
-};
 
 export default Card;

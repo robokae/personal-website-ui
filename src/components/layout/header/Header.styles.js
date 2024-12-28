@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
+import Icon from "components/icon/Icon";
 
 export const Container = styled.header`
   width: 100%;
@@ -46,6 +47,10 @@ export const Nav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const StyledIcon = styled(Icon)`
+  cursor: pointer;
 `;
 
 export const LinkContainer = styled.section`
