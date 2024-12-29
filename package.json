@@ -30,7 +30,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -60,10 +62,12 @@
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "@types/react-tooltip": "^4.2.4",
+    "gh-pages": "^6.2.0",
     "json-loader": "^0.5.7",
     "react-test-renderer": "^18.3.1"
   },
   "jest": {
     "testEnvironment": "jsdom"
-  }
+  },
+  "homepage": "http://robokae.github.io/personal-website-ui"
 }
