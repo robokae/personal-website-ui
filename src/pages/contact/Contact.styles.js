@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Breakpoint, Layout } from "constants/layout";
 import { Link } from "components/Link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Icon from "components/icon/Icon";
 
 export const SubHeading = styled.p`
   text-align: center;
@@ -31,7 +32,7 @@ export const CardHeader = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: ${Layout.GAP_SM};
+  gap: 1rem;
 `;
 
 export const StyledLink = styled(Link)`
@@ -45,4 +46,8 @@ export const StyledLink = styled(Link)`
 export const AnimatedIcon = styled(FontAwesomeIcon)`
   transition: all 0.2s ease-in-out;
   transform: translateX(${(props) => (props.isHovered ? "0.5rem" : "0")});
+`;
+
+export const StyledIcon = styled(Icon)`
+  font-size: 1.5rem;
 `;
