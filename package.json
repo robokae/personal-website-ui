@@ -68,5 +68,6 @@
   },
   "jest": {
     "testEnvironment": "jsdom"
-  }
+  },
+  "homepage": "http://robokae.github.io/personal-website-ui"
 }
