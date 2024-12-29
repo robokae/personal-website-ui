@@ -14,8 +14,8 @@ const Overview = ({ data }) => {
   const { text, icons } = data;
   const ICON_COLOR = Color.NAVY_BLUE;
   const ICON_BACKGROUND_COLORS = [
-    Color.LIGHT_GREEN,
     Color.LIGHT_BLUE,
+    Color.LIGHT_GREEN,
     Color.LIGHT_PURPLE,
     Color.TURQUOISE,
   ];

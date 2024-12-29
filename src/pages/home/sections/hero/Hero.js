@@ -104,13 +104,13 @@ function Hero({ data }) {
       <Content>
         <HeadingContainer>
           <Heading>
-            {headings.map((line) => (
-              <h1>{line}</h1>
+            {headings.map((line, index) => (
+              <h1 key={index}>{line}</h1>
             ))}
           </Heading>
           <SubHeading>
-            {subHeadings.map((line) => (
-              <h4>{line}</h4>
+            {subHeadings.map((line, index) => (
+              <h4 key={index}>{line}</h4>
             ))}
           </SubHeading>
         </HeadingContainer>

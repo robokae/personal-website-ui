@@ -1,0 +1,39 @@
+{
+    "pageName": "about",
+    "sections": [
+        {
+            "title": "overview",
+            "content": {
+                "headings": ["About me"],
+                "text": [
+                    "Hello! I am a software engineer from San Francisco, who graduated with a bachelor's degree in computer science from the University of California, Merced, and am currently pursuing a master's degree in cybersecurity.",
+                    "During my undergraduate studies, I gained a passion for web development in one of my computer science classes, where I was first exposed to the world of programming web applications. I remember my first time writing HTML back in 2019 — it was a special moment because of how simple it was to get a basic website up and running.",
+                    "Since then, I worked on a number of full-stack web development projects, in which I designed and programmed web applications using frontend frameworks like React, and implemented backend APIs with frameworks, such as Flask and Spring Boot. In addition to web development, I've also tinkered around with Android application development with Java, as well as some game development with Java and C#.",
+                    "Outside of software development, I enjoy learning about operating systems, machine learning, cybersecurity, and databases."
+                ]
+            }
+        },
+        {
+            "title": "interests",
+            "content": {
+                "headings": ["A few of my interests"],
+                "text": [
+                    "Web development",
+                    "Cloud-native application development",
+                    "Database technologies",
+                    "Cybersecurity",
+                    "Distributed systems",
+                    "Game development"
+                ],
+                "icons": [
+                    "code", 
+                    "cloud", 
+                    "database", 
+                    "shield", 
+                    "coins", 
+                    "gamepad"
+                ]
+            }
+        }
+    ]
+}
