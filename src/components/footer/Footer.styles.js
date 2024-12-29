@@ -1,5 +1,5 @@
 import { Breakpoint, Layout } from "constants/layout";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.footer`
   width: 100%;
@@ -8,7 +8,7 @@ export const Container = styled.footer`
   bottom: 0;
   padding: 0 ${Layout.SECTION_PADDING};
   display: flex;
-  flex-direction: center;
+  flex-direction: row;
   justify-content: center;
   margin-top: auto;
   background-color: #192229;
@@ -26,11 +26,16 @@ export const Content = styled.div`
   width: 100%;
   max-width: ${Layout.CONTENT_MAX_WIDTH};
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   gap: 1rem;
   padding: 1.5rem 0;
   font-size: 0.9rem;
+
+  @media ${Breakpoint.LAPTOP} {
+    flex-direction: column;
+  }
 
   @media ${Breakpoint.MOBILE_MD} {
     gap: 1.5rem;
@@ -40,9 +45,13 @@ export const Content = styled.div`
 export const LinkContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   flex-direction: row;
   gap: 1.5rem;
+
+  @media ${Breakpoint.LAPTOP} {
+    justify-content: center;
+  }
 
   @media ${Breakpoint.MOBILE_MD} {
     padding: 0 ${Layout.SECION_PADDING_SM};
@@ -60,10 +69,14 @@ export const CaptionContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 0.5rem;
   color: ${({ theme }) => theme.secondaryFontCol};
+
+  @media ${Breakpoint.LAPTOP} {
+    align-items: center;
+  }
 
   @media ${Breakpoint.MOBILE_MD} {
     padding: 0 ${Layout.SECION_PADDING_SM};
