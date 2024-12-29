@@ -33,9 +33,14 @@
         {
             "title": "reflection",
             "content": {
-                "headings": ["A tale of two passions: art and technology"],
+                "headings": [
+                    "A tale of two passions, art and technology"
+                ],
                 "subHeadings": [],
-                "text": ["Growing up, two of my interests were art and technology. I enjoyed creating objects with Lego, folding origami, and designing architectural structures. At the same time, I was fascinated with the inner workings of websites and was very enthusiastic about developing my own. Today, as a software engineer, I get to combine my two passions as part of the software development process — putting on my artist cap when designing user interfaces and applying my interest in technology while programming applications using the latest technologies."],
+                "text": [
+                    "Growing up, two of my interests were art and technology. I enjoyed creating objects with Lego, folding origami, and designing architectural structures. At the same time, I was fascinated with the inner workings of websites and was very enthusiastic about developing my own.",
+                    "Today, as a software engineer, I get to combine my two passions as part of the software development process — putting on my artist cap when designing user interfaces and applying my interest in technology while programming applications using the latest technologies."
+                ],
                 "images": [],
                 "icons": [],
                 "buttons": [],
