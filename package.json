@@ -28,11 +28,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -69,5 +69,5 @@
   "jest": {
     "testEnvironment": "jsdom"
   },
-  "homepage": "http://robokae.github.io/personal-website-ui"
+  "homepage": "http://robokae.github.io"
 }
