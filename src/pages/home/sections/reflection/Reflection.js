@@ -23,8 +23,16 @@ const Content = styled(ContentLayout)`
   }
 `;
 
-const Description = styled(ContentLayout)`
+const Description = styled.div`
   width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+`;
+
+const ResponsiveText = styled.p`
+  text-align: left;
 `;
 
 const Reflection = ({ data }) => {
@@ -36,7 +44,7 @@ const Reflection = ({ data }) => {
             <Typography
               tag={TypographyConstants.SECTION_TITLE_TAG}
               key={index}
-              textAlign="left"
+              textAlign="center"
             >
               {line}
             </Typography>
@@ -44,14 +52,7 @@ const Reflection = ({ data }) => {
         </>
         <Description>
           {data.text.map((line, index) => (
-            <Typography
-              tag={TypographyConstants.H5}
-              fontWeight="normal"
-              key={index}
-              textAlign="left"
-            >
-              {line}
-            </Typography>
+            <ResponsiveText key={index}>{line}</ResponsiveText>
           ))}
         </Description>
       </Content>
