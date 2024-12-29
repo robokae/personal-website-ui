@@ -8,7 +8,7 @@ import { CardHeader, CardLayout, Content, Section } from "./Experience.styles";
 import { useResize } from "hooks/useResize";
 
 const Experience = ({ data }) => {
-  const { headings, subHeadings, text, listContent } = data;
+  const { headings, subHeadings, text } = data;
 
   const [displayCarousel, setDisplayCarousel] = useState();
   const { width } = useResize();
@@ -34,7 +34,7 @@ const Experience = ({ data }) => {
       <Content>
         {headings.map((line, index) => (
           <Typography
-            textAlign="left"
+            textAlign="center"
             key={index}
             tag={TypographyConstants.SECTION_TITLE_TAG}
           >
@@ -42,9 +42,7 @@ const Experience = ({ data }) => {
           </Typography>
         ))}
         {displayCarousel ? (
-          <Carousel arrows paddingX={Layout.SECTION_PADDING}>
-            {cards()}
-          </Carousel>
+          <Carousel arrows>{cards()}</Carousel>
         ) : (
           <CardLayout size={subHeadings.length}>{cards()}</CardLayout>
         )}

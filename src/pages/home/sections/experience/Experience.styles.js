@@ -16,10 +16,17 @@ export const Content = styled(ContentLayout)`
       padding: 0 ${Layout.SECTION_PADDING};
     }
   }
+
+  @media ${Breakpoint.MOBILE_LG} {
+    ${Typography.SECTION_TITLE_TAG} {
+      padding: 0 ${Layout.SECION_PADDING_SM};
+    }
+  }
 `;
 
 export const CardLayout = styled.div`
   width: 100%;
+  margin: auto;
   display: flex;
   flex-direction: row;
   gap: ${Layout.GAP_MD};
