@@ -18,6 +18,8 @@ const Carousel = ({ paddingX, arrows, children: slides }) => {
   const [slideWidth, setSlideWidth] = useState(null);
   const { width } = useResize();
   const scrollConfig = { behavior: "smooth" };
+  const [touchStart, setTouchStart] = useState(null);
+  const TOUCH_MOVE_THRESHOLD = 8;
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -49,14 +51,30 @@ const Carousel = ({ paddingX, arrows, children: slides }) => {
     }
   };
 
-  const handleWheel = () => {
-    const { x: scrollOffset } =
-      carouselRef.current.children[currentSlide].getBoundingClientRect();
-    const scrollDelta = scrollOffset - slideInitialPosition;
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
 
-    if (scrollDelta < (-1 * slideWidth) / 2 && isNotLastSlide(currentSlide)) {
+  const handleTouchEnd = (e) => {
+    const delta = e.changedTouches[0].clientX - touchStart;
+    const isTouchMoveOverThreshold = Math.abs(delta) > TOUCH_MOVE_THRESHOLD;
+    if (isTouchMoveOverThreshold) {
+      if (delta < 0 && isNotLastSlide(currentSlide)) {
+        setCurrentSlide((prevSlide) => prevSlide + 1);
+      } else if (delta > 0 && isNotFirstSlide(currentSlide)) {
+        setCurrentSlide((prevSlide) => prevSlide - 1);
+      }
+    }
+  };
+
+  const handleWheel = () => {
+    const { x: offset } =
+      carouselRef.current.children[currentSlide].getBoundingClientRect();
+    const delta = offset - slideInitialPosition;
+
+    if (delta < (-1 * slideWidth) / 2 && isNotLastSlide(currentSlide)) {
       setCurrentSlide((prevSlide) => prevSlide + 1);
-    } else if (scrollDelta > slideWidth / 2 && isNotFirstSlide(currentSlide)) {
+    } else if (delta > slideWidth / 2 && isNotFirstSlide(currentSlide)) {
       setCurrentSlide((prevSlide) => prevSlide - 1);
     }
   };
@@ -74,6 +92,8 @@ const Carousel = ({ paddingX, arrows, children: slides }) => {
           paddingX={paddingX}
           ref={carouselRef}
           onWheel={handleWheel}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {slides.map((item, index) => {
             return (

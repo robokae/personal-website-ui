@@ -44,6 +44,7 @@ export const Slide = styled.div`
   width: 100%;
   flex-shrink: 0;
   scroll-snap-align: center;
+  scroll-snap-stop: always;
 `;
 
 export const Bottom = styled.div`
