@@ -39,7 +39,7 @@ const Reflection = ({ data }) => {
   return (
     <Section>
       <Content>
-        <>
+        <div>
           {data.headings.map((line, index) => (
             <Typography
               tag={TypographyConstants.SECTION_TITLE_TAG}
@@ -49,7 +49,7 @@ const Reflection = ({ data }) => {
               {line}
             </Typography>
           ))}
-        </>
+        </div>
         <Description>
           {data.text.map((line, index) => (
             <ResponsiveText key={index}>{line}</ResponsiveText>

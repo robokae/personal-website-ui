@@ -7,21 +7,21 @@ import {
   IconContainer,
   ResponsiveCard,
   ResponsiveIcon,
-  TypographyContainer,
+  ResponsiveSectionLayout,
 } from "./Overview.styles";
 
 const Overview = ({ data }) => {
   const { text, icons } = data;
   const ICON_COLOR = Color.NAVY_BLUE;
   const ICON_BACKGROUND_COLORS = [
-    Color.LIGHT_BLUE,
     Color.LIGHT_GREEN,
+    Color.LIGHT_BLUE,
     Color.LIGHT_PURPLE,
     Color.TURQUOISE,
   ];
 
   return (
-    <SectionLayout>
+    <ResponsiveSectionLayout>
       <ContentLayout>
         <Grid gap={Layout.MEDIUM_GAP} size={text.length}>
           {text.map((cardText, index) => {
@@ -35,15 +35,15 @@ const Overview = ({ data }) => {
                     fixedWidth
                   />
                 </IconContainer>
-                <TypographyContainer>
+                <>
                   <Typography>{cardText}</Typography>
-                </TypographyContainer>
+                </>
               </ResponsiveCard>
             );
           })}
         </Grid>
       </ContentLayout>
-    </SectionLayout>
+    </ResponsiveSectionLayout>
   );
 };
 

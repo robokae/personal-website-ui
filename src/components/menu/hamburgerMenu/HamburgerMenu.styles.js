@@ -1,3 +1,4 @@
+import { Link } from "components/Link";
 import { Style } from "constants";
 import { Breakpoint, Layout } from "constants/layout";
 import styled from "styled-components";
@@ -86,4 +87,8 @@ export const MenuOption = styled.li`
   &.link-exit-active {
     visibility: hidden;
   }
+`;
+
+export const MenuLink = styled(Link)`
+  -webkit-tap-highlight-color: transparent;
 `;

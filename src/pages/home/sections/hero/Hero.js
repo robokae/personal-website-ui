@@ -15,6 +15,7 @@ const Container = styled(HeroLayout)`
 
 const Content = styled.div`
   width: 100%;
+  height: 100%;
   max-width: ${Layout.CONTENT_MAX_WIDTH};
   margin-top: ${Layout.HEADER_HEIGHT};
   display: flex;
@@ -25,6 +26,7 @@ const Content = styled.div`
 
   @media ${Breakpoint.MOBILE_LG} {
     gap: ${Layout.GAP_LG};
+    justify-content: space-between;
   }
 `;
 
@@ -67,6 +69,10 @@ const Image = styled.img`
 
   @media ${Breakpoint.TABLET} {
     width: 75%;
+  }
+
+  @media ${Breakpoint.MOBILE_LG} {
+    width: 90%;
   }
 `;
 

@@ -38,13 +38,7 @@ function Footer() {
             ))}
         </LinkContainer>
         <CaptionContainer>
-          {caption && (
-            <Caption>
-              <span>{caption}</span>
-              {isCompactFooter && <span>&bull;</span>}
-              <span>{currentYear}</span>
-            </Caption>
-          )}
+          {caption && <Caption>{`${caption} ${currentYear}`}</Caption>}
         </CaptionContainer>
       </Content>
     </Container>

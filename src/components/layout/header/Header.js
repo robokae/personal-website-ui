@@ -72,7 +72,7 @@ function Header({ links, transitionBackgroundOnScroll }) {
       <CSSTransition
         in={!isBackgroundTransparent}
         classNames="nav-container"
-        timeout={{ exit: 200 }}
+        timeout={{ exit: 150 }}
       >
         <NavContainer>
           <Nav>

@@ -39,7 +39,10 @@ const OverviewSection = ({ content }) => {
   return (
     <>
       {headings.map((heading) => (
-        <Typography tag={TypographyConstants.H2} textAlign="center">
+        <Typography
+          tag={TypographyConstants.SECTION_TITLE_TAG}
+          textAlign="center"
+        >
           {heading}
         </Typography>
       ))}

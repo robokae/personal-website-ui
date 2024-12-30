@@ -2,11 +2,11 @@ import content from "content/hamburgerMenu.json";
 import {
   Container,
   Content,
+  MenuLink,
   MenuOption,
   MenuOptionsContainer,
   Overlay,
 } from "./HamburgerMenu.styles";
-import { Link } from "components/Link";
 import { useLayoutEffect, useRef, useState } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -24,7 +24,11 @@ function HamburgerMenu({ display, clickHandler }) {
   return (
     <TransitionGroup component={null}>
       <Container>
-        <CSSTransition in={display} classNames="overlay" timeout={0}>
+        <CSSTransition
+          in={display}
+          classNames="overlay"
+          timeout={{ enter: 100, exit: 250 }}
+        >
           <Overlay onClick={clickHandler} />
         </CSSTransition>
         <CSSTransition in={display} classNames="content" timeout={100}>
@@ -36,13 +40,12 @@ function HamburgerMenu({ display, clickHandler }) {
                   in={display}
                   classNames="link"
                   timeout={350}
-                  unmountOnExit
                 >
                   <MenuOption>
                     {
-                      <Link onClick={clickHandler} to={link.to}>
+                      <MenuLink onClick={clickHandler} to={link.to}>
                         {link.label}
-                      </Link>
+                      </MenuLink>
                     }
                   </MenuOption>
                 </CSSTransition>

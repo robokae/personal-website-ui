@@ -3,6 +3,13 @@ import Icon from "components/icon/Icon";
 import { Breakpoint, Layout } from "constants/layout";
 import styled from "styled-components";
 import { Style } from "constants/style";
+import { SectionLayout } from "components/layout/Layout";
+
+export const ResponsiveSectionLayout = styled(SectionLayout)`
+  @media ${Breakpoint.MOBILE_LG} {
+    padding: 0;
+  }
+`;
 
 export const Grid = styled.div`
   display: grid;
@@ -12,14 +19,16 @@ export const Grid = styled.div`
 
   @media ${Breakpoint.MOBILE_LG} {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 0.5rem;
   }
 `;
 
 export const ResponsiveCard = styled(Card)`
   @media ${Breakpoint.MOBILE_LG} {
-    padding: 0;
     align-items: center;
     text-align: center;
+    border-radius: 0;
   }
 `;
 
@@ -30,10 +39,6 @@ export const IconContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 0.75rem 0;
-    border-radius: ${Style.BORDER_RADIUS} ${Style.BORDER_RADIUS} 0 0;
-    background-color: ${(props) => props.backgroundColor ?? "transparent"};
-    opacity: 0.8;
   }
 `;
 
@@ -43,14 +48,6 @@ export const ResponsiveIcon = styled(Icon)`
   padding: 0.75rem;
 
   @media ${Breakpoint.MOBILE_LG} {
-    font-size: 1.5rem;
-    padding: 0.5rem;
-  }
-`;
-
-export const TypographyContainer = styled.div`
-  @media ${Breakpoint.MOBILE_LG} {
-    padding: ${Layout.CARD_PADDING};
-    padding-top: 0;
+    font-size: 1rem;
   }
 `;
