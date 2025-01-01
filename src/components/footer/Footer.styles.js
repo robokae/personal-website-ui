@@ -17,7 +17,7 @@ export const Container = styled.footer`
     padding: 0;
   }
 
-  @media ${Breakpoint.MOBILE_MD} {
+  @media ${Breakpoint.MOBILE_S} {
     justify-content: left;
   }
 `;
@@ -37,7 +37,7 @@ export const Content = styled.div`
     flex-direction: column;
   }
 
-  @media ${Breakpoint.MOBILE_MD} {
+  @media ${Breakpoint.MOBILE_S} {
     gap: 1.5rem;
   }
 `;
@@ -53,7 +53,7 @@ export const LinkContainer = styled.div`
     justify-content: center;
   }
 
-  @media ${Breakpoint.MOBILE_MD} {
+  @media ${Breakpoint.MOBILE_S} {
     padding: 0 ${Layout.SECION_PADDING_SM};
     display: grid;
     justify-content: left;
@@ -78,7 +78,7 @@ export const CaptionContainer = styled.div`
     align-items: center;
   }
 
-  @media ${Breakpoint.MOBILE_MD} {
+  @media ${Breakpoint.MOBILE_S} {
     padding: 0 ${Layout.SECION_PADDING_SM};
     align-items: flex-start;
   }
@@ -89,7 +89,7 @@ export const Caption = styled.p`
   flex-direction: row;
   gap: 0.5rem;
 
-  @media ${Breakpoint.MOBILE_MD} {
+  @media ${Breakpoint.MOBILE_S} {
     flex-direction: column;
     gap: 0;
   }
