@@ -65,8 +65,7 @@ function App() {
           <Route path="/*" element={<Error />} />
         </Route>
       </>
-    ),
-    { basename: process.env.REACT_APP_BASE_URL }
+    )
   );
 
   return (
