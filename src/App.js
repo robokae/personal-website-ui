@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import {
   Route,
   createRoutesFromElements,
-  createBrowserRouter,
   RouterProvider,
+  createHashRouter,
 } from "react-router-dom";
 import WebFont from "webfontloader";
 
@@ -44,7 +44,7 @@ function App() {
 
   const [theme, changeTheme] = useTheme();
 
-  const router = createBrowserRouter(
+  const router = createHashRouter(
     createRoutesFromElements(
       <>
         <Route
